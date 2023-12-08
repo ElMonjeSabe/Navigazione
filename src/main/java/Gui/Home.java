@@ -44,6 +44,7 @@ public class Home {
             public void actionPerformed(ActionEvent e) {
                 Passeggero framePasseggero = new Passeggero(frame);
                 framePasseggero.frame.setVisible(true);
+
                 frame.setVisible(false);
 
             }
