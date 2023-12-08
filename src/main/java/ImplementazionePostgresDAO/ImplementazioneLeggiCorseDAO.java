@@ -27,9 +27,9 @@ public class ImplementazioneLeggiCorseDAO implements CorseDAO{
     public void leggiCorseDB(ArrayList<CorsaTabellone> corse) {
         // TODO Auto-generated method stub
         try {
-            PreparedStatement leggiListinoPS = connection.prepareStatement(
+            PreparedStatement leggiTabellaPS = connection.prepareStatement(
                     "SELECT * FROM Tabellone");
-            ResultSet rs = leggiListinoPS.executeQuery();
+            ResultSet rs = leggiTabellaPS.executeQuery();
 
 
             while (rs.next()) {
@@ -39,7 +39,7 @@ public class ImplementazioneLeggiCorseDAO implements CorseDAO{
             }
 
             rs.close();
-            leggiListinoPS.close();
+            leggiTabellaPS.close();
             connection.close();
 
 
