@@ -15,7 +15,7 @@ public class main {
      */
     public static void main(String[] args) {
         Compagnia c = new Compagnia("Compa", "df@egfg.ge", "432626253","edwgagag");
-
+        System.out.println("PORCO");
 
     }
 
