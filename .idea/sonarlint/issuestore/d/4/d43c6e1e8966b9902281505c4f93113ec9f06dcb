@@ -1,0 +1,17 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á–Ì“
+O
+java:S1068
+"2Remove this unused "orarioPartenza" private field.(Ã¿Ë•8û´ƒ¯Ã1
+M
+java:S1068"0Remove this unused "orarioArrivo" private field.(ðò¼é8û´ƒ¯Ã1
+P
+java:S1068"3Remove this unused "dataAttivazione" private field.(‚ÍâÀ8û´ƒ¯Ã1
+R
+java:S1068"0Remove this unused "dataScadenza" private field.(Ïê‹Âøÿÿÿÿ8û´ƒ¯Ã1
+K
+java:S1068")Remove this unused "tappa" private field.(Úî‚Àúÿÿÿÿ8û´ƒ¯Ã1
+F
+java:S1068")Remove this unused "porto" private field.(¬ÔÝþ8û´ƒ¯Ã1
+F
+java:S1068")Remove this unused "corsa" private field.(©š £8û´ƒ¯Ã1

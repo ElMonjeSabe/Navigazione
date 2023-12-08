@@ -1,0 +1,28 @@
+
+v
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(›ĞÍÕ8ùˆÔÃ1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á–Ì“8ŸùˆÔÃ1
+b	java:S107H"AConstructor has 9 parameters, which is greater than 7 authorized.(Íÿ°¶ÿÿÿÿÿ8¬ùˆÔÃ1
+c	java:S107`"BConstructor has 11 parameters, which is greater than 7 authorized.(ÓÓ³Õøÿÿÿÿ8¬ùˆÔÃ1
+>
+java:S1116#"Remove this empty statement.(ôŸìúÿÿÿÿ8°ùˆÔÃ1
+>
+java:S11168"Remove this empty statement.(ôŸìúÿÿÿÿ8±ùˆÔÃ1
+>
+java:S1116N"Remove this empty statement.(ôŸìúÿÿÿÿ8²ùˆÔÃ1
+>
+java:S1116h"Remove this empty statement.(ôŸìúÿÿÿÿ8³ùˆÔÃ1
+o	java:S100o"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²Ìûıÿÿÿÿ8´ùˆÔÃ1
+o	java:S100}"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃÔŠÅùÿÿÿÿ8´ùˆÔÃ1
+k	java:S100…"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò‡Úú8µùˆÔÃ1
+p	java:S100‹"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬ªİ½şÿÿÿÿ8¶ùˆÔÃ1
+H
+java:S1068"&Remove this unused "cf" private field.(¶®ÁÛúÿÿÿÿ8¸ùˆÔÃ1
+E
+java:S1068"(Remove this unused "nome" private field.(«Ÿ¡ù8¸ùˆÔÃ1
+M
+java:S1068"+Remove this unused "cognome" private field.(ô¬šâüÿÿÿÿ8¸ùˆÔÃ1
+K
+java:S1068")Remove this unused "email" private field.(ª«Õìùÿÿÿÿ8¹ùˆÔÃ1
+N
+java:S1068",Remove this unused "password" private field.(œãë­úÿÿÿÿ8¹ùˆÔÃ1

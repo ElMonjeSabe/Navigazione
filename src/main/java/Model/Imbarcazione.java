@@ -1,0 +1,62 @@
+package Model;
+
+import java.util.ArrayList;
+
+/**
+ * The type Imbarcazione.
+ */
+public class Imbarcazione {
+    private String codiceImbarcazione;
+    private String nomeImbarcazione;
+    private String tipoImbarcazione;
+    private int numMaxPersone;
+
+    private int numMaxVeicoli;
+    private Compagnia compagniaPoss;
+    private ArrayList<Corsa> corse= new ArrayList<Corsa>();
+    private ArrayList<Cabina> cabine = new ArrayList<Cabina>();
+
+    /**
+     * Instantiates a new Imbarcazione.
+     *
+     * @param codice     the codice
+     * @param nome       the nome
+     * @param tipo       the tipo
+     * @param maxpersone the maxpersone
+     * @param maxveicoli the maxveicoli
+     * @param compagnia  the compagnia
+     * @param stanza     the stanza
+     */
+    public Imbarcazione(String codice, String nome, String tipo, int maxpersone, int maxveicoli, Compagnia compagnia, Cabina stanza){
+        this.codiceImbarcazione=codice;
+        this.nomeImbarcazione=nome;
+        this.tipoImbarcazione=tipo;
+        this.numMaxPersone=maxpersone;
+        this.numMaxVeicoli=maxveicoli;
+        this.compagniaPoss=compagnia;
+        this.cabine.add(stanza);
+    }
+
+    /**
+     * Instantiates a new Imbarcazione.
+     *
+     * @param codice     the codice
+     * @param nome       the nome
+     * @param tipo       the tipo
+     * @param maxpersone the maxpersone
+     * @param maxveicoli the maxveicoli
+     * @param compagnia  the compagnia
+     * @param stanza     the stanza
+     * @param corsa      the corsa
+     */
+    public Imbarcazione(String codice, String nome, String tipo, int maxpersone, int maxveicoli, Compagnia compagnia, Cabina stanza,Corsa corsa){
+        this.codiceImbarcazione=codice;
+        this.nomeImbarcazione=nome;
+        this.tipoImbarcazione=tipo;
+        this.numMaxPersone=maxpersone;
+        this.numMaxVeicoli=maxveicoli;
+        this.compagniaPoss=compagnia;
+        this.cabine.add(stanza);
+        this.corse.add(corsa);
+    }
+}

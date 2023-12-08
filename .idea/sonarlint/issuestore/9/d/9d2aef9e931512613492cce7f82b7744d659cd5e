@@ -1,0 +1,20 @@
+
+{
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(š…Ï¡úÿÿÿÿ8®æ°Ã1
+{
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(·°ñ•øÿÿÿÿ8ÙğÏ¯Ã1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á–Ì“8ÚğÏ¯Ã1
+b	java:S1074"AConstructor has 8 parameters, which is greater than 7 authorized.(Ùğõºşÿÿÿÿ8”Œ°Ã1
+X
+java:S1068	"6Remove this unused "codiceImbarcazione" private field.(Ù›îÛşÿÿÿÿ8ßğÏ¯Ã1
+Q
+java:S1068
+"4Remove this unused "nomeImbarcazione" private field.(è©ò§8ßğÏ¯Ã1
+Q
+java:S1068"4Remove this unused "tipoImbarcazione" private field.(ÌÀÌœ8ßğÏ¯Ã1
+S
+java:S1068"1Remove this unused "numMaxPersone" private field.(®´¸Ãşÿÿÿÿ8ßğÏ¯Ã1
+S
+java:S1068"1Remove this unused "numMaxVeicoli" private field.(—â™¦úÿÿÿÿ8ßğÏ¯Ã1
+S
+java:S1068"1Remove this unused "compagniaPoss" private field.(£¨¸¼úÿÿÿÿ8ßğÏ¯Ã1

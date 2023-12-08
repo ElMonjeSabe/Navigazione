@@ -1,0 +1,30 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Â¿Âëüÿÿÿÿ
+ˆ
+java:S1450"fRemove the "aggiungiCompagniaButton" field and declare it as a local variable in the relevant methods.(Îô×üşÿÿÿÿ8œÕÔçÃ1
+„
+java:S1450"bRemove the "aggiungiCorsaButton" field and declare it as a local variable in the relevant methods.(ª÷Àõùÿÿÿÿ8ÕÔçÃ1
+‹
+java:S1450"iRemove the "aggiungiImbarcazioneButton" field and declare it as a local variable in the relevant methods.(ÃŸúÿÿÿÿ8ÕÔçÃ1
+w
+java:S1450"ZRemove the "labelTitolo" field and declare it as a local variable in the relevant methods.(ÍşØ˜8ÕÔçÃ1
+
+java:S1450"bRemove the "modificaCorsaButton" field and declare it as a local variable in the relevant methods.(Š—¼˜8ÕÔçÃ1
+v
+java:S1450"YRemove the "panelTesti" field and declare it as a local variable in the relevant methods.(œî¿ñ8ŸÕÔçÃ1
+†
+java:S1450"dRemove the "ritornaAllaHomeButton" field and declare it as a local variable in the relevant methods.(«¸Ğúıÿÿÿÿ8ŸÕÔçÃ1
+v
+java:S1450"YRemove the "textField1" field and declare it as a local variable in the relevant methods.(×ŒàÌ8 ÕÔçÃ1
+{
+java:S1450	"YRemove the "textField2" field and declare it as a local variable in the relevant methods.(ˆûÓ‘ûÿÿÿÿ8 ÕÔçÃ1
+{
+java:S1450
+"YRemove the "textField3" field and declare it as a local variable in the relevant methods.(”€†ğşÿÿÿÿ8 ÕÔçÃ1
+{
+java:S1450"YRemove the "textField4" field and declare it as a local variable in the relevant methods.(ÌÁ¿Šúÿÿÿÿ8¡ÕÔçÃ1
+†
+java:S1450"iRemove the "visualizzaLeMieCorseButton" field and declare it as a local variable in the relevant methods.(Úö¦ú8¡ÕÔçÃ1
+{
+java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8·ŠÅçÃ1
+o	java:S100""NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–­Œßúÿÿÿÿ8¸ŠÅçÃ1

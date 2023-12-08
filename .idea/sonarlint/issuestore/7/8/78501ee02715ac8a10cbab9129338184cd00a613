@@ -1,0 +1,15 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á–Ì“8‘Ÿì¯Ã1
+
+java:S1186I"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ú¥8“Ÿì¯Ã1
+b	java:S107;"AConstructor has 8 parameters, which is greater than 7 authorized.(‹¹ç”úÿÿÿÿ8î»í¯Ã1
+i	java:S100I"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú¥8–Ÿì¯Ã1
+Q
+java:S1068	"/Remove this unused "codiceCorsa" private field.(ô„üÃùÿÿÿÿ8—Ÿì¯Ã1
+P
+java:S1068
+".Remove this unused "costoCorsa" private field.(»£ùøÿÿÿÿ8˜Ÿì¯Ã1
+K
+java:S1068")Remove this unused "stato" private field.(–íØÁøÿÿÿÿ8šŸì¯Ã1
+L
+java:S1068"*Remove this unused "avviso" private field.(êæªçıÿÿÿÿ8šŸì¯Ã1

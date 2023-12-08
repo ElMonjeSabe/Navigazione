@@ -1,0 +1,20 @@
+
+E
+java:S1604"(Make this anonymous inner class a lambda(ĞÁÅ8ê‹„çÃ1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Â¿Âëüÿÿÿÿ8ê‹„çÃ1
+y
+java:S1450"\Remove the "btoPasseggero" field and declare it as a local variable in the relevant methods.(à¬‹8ú‹„çÃ1
+}
+java:S1450"[Remove the "btoTabellone" field and declare it as a local variable in the relevant methods.(Ê”ÛŸùÿÿÿÿ8ú‹„çÃ1
+r
+java:S1450	"URemove the "panel1" field and declare it as a local variable in the relevant methods.(–¾Ê‰8ú‹„çÃ1
+r
+java:S1450"URemove the "panel2" field and declare it as a local variable in the relevant methods.(›ÏÑ´8ú‹„çÃ1
+r
+java:S1450"URemove the "panel3" field and declare it as a local variable in the relevant methods.(€±Áç8ú‹„çÃ1
+f
+java:S3252("IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8Œ„çÃ1
+{
+java:S1171."YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8Œ„çÃ1
+o	java:S100<"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–­Œßúÿÿÿÿ8Œ„çÃ1
+o	java:S100V"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ ¨úúÿÿÿÿ8„Œ„çÃ1
