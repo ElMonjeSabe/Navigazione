@@ -2,7 +2,7 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Gui.Compagnia">
   <grid id="27dc6" binding="panel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
     <constraints>
-      <xy x="20" y="14" width="500" height="406"/>
+      <xy x="20" y="14" width="622" height="406"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -196,21 +196,14 @@
                           <text value="Visualizza le mie corse"/>
                         </properties>
                       </component>
-                      <grid id="815ae" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                      <component id="93e80" class="javax.swing.JButton" binding="btoSocial">
                         <constraints>
-                          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
-                        <properties/>
-                        <border type="none"/>
-                        <children>
-                          <component id="fa624" class="javax.swing.JButton" binding="loginButton" default-binding="true">
-                            <constraints/>
-                            <properties>
-                              <text value="Login"/>
-                            </properties>
-                          </component>
-                        </children>
-                      </grid>
+                        <properties>
+                          <text value="AggiungiSocial"/>
+                        </properties>
+                      </component>
                     </children>
                   </grid>
                 </children>
