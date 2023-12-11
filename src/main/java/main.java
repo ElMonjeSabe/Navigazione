@@ -17,6 +17,6 @@ public class main {
         Compagnia c = new Compagnia("Compa", "df@egfg.ge", "432626253","edwgagag");
         //JDIJIWJDWIJDIWIJDIEWDJIEJOIDIOENDIONENDIENODNEIONDOINEODNOENOIDNOENDIONEIODNIOENDIOENIODENIODNO
     }
-
+        //GG
 
 }
