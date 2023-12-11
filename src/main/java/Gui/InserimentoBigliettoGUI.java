@@ -29,7 +29,7 @@ public class InserimentoBigliettoGUI {
 
 
         frame.setSize(900, 150);
-        frame.setResizable(false);
+        //frame.setResizable(false);
 
         //Apre la finestra la centro dello schermo
         frame.setLocationRelativeTo(null);

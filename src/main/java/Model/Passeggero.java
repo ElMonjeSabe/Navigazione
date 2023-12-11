@@ -8,6 +8,10 @@ import java.util.ArrayList;
  */
 public class Passeggero {
 
+    public String getCf() {
+        return cf;
+    }
+
     private String cf;
     private String nome;
     private String cognome;
@@ -34,6 +38,9 @@ public class Passeggero {
         this.biglietti.add(biglietto);
     };
 
+    public Passeggero(String cf){
+        this.cf = cf;
+    }
     /**
      * Instantiates a new Passeggero.
      *
@@ -66,15 +73,14 @@ public class Passeggero {
      * @param veicolo       the veicolo
      * @param prenotazione  the prenotazione
      * @param corsa         the corsa
-     * @param cabina        the cabina
      */
 //costruttore dove passo gli attributi essenziali, e il biglietto lo creo direttamente
-    public Passeggero(String codicefiscale, String cognome, String nome, String code, int bagagli, boolean veicolo, boolean prenotazione, Corsa corsa, Cabina cabina)
+    public Passeggero(String codicefiscale, String cognome, String nome, String code, int bagagli, boolean veicolo, boolean prenotazione, Corsa corsa)
     {
         this.cognome=cognome;
         this.nome=nome;
         this.cf=codicefiscale;
-        this.biglietti.add(new Biglietto(bagagli,veicolo,LocalDate.now(), prenotazione,this, corsa, cabina));
+        this.biglietti.add(new Biglietto(bagagli,veicolo,LocalDate.now(), prenotazione,this, corsa));
     };
 
     /**
@@ -100,7 +106,7 @@ public class Passeggero {
         this.cf=codicefiscale;
         this.email=email;
         this.password=password;
-        this.biglietti.add(new Biglietto(bagagli,veicolo,LocalDate.now(), prenotazione,this, corsa, cabina));
+        this.biglietti.add(new Biglietto(bagagli,veicolo,LocalDate.now(), prenotazione,this, corsa));
     };
 
     /**
@@ -124,7 +130,7 @@ public class Passeggero {
      */
     void AcquistaBiglietto(int bagagli, boolean veicolo, boolean prenotazione, Corsa corsa, Cabina cabina)
     {
-        biglietti.add(new Biglietto(bagagli,veicolo,LocalDate.now(), prenotazione,this, corsa, cabina));
+        biglietti.add(new Biglietto(bagagli,veicolo,LocalDate.now(), prenotazione,this, corsa));
     }
 
     /**

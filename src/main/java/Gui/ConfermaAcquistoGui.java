@@ -1,11 +1,14 @@
 package Gui;
 
 import Controller.Controller;
+import Model.Biglietto;
+import Model.Corsa;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
 
 public class ConfermaAcquistoGui {
     private JButton btoConferma;
@@ -36,6 +39,15 @@ public class ConfermaAcquistoGui {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frameChiamante.setVisible(true);
+                frame.setVisible(false);
+                frame.dispose();
+            }
+        });
+        btoConferma.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                controller.AcquistaBigliettoDAO();
                 frame.setVisible(false);
                 frame.dispose();
             }
