@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * The type Corsa.
  */
 public class Corsa {
-    private String codiceCorsa;
+    public String codiceCorsa;
     private double costoCorsa;
 
     private String stato;

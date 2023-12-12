@@ -18,10 +18,12 @@ public class ConfermaAcquistoGui {
     JFrame frame;
     JFrame frameChiamante;
     Controller controller;
+    Biglietto biglietto;
 
-    public ConfermaAcquistoGui(JFrame frameChiamante, Controller controller){
+    public ConfermaAcquistoGui(JFrame frameChiamante, Controller controller, Biglietto biglietto){
         this.frameChiamante = frameChiamante;
         this.controller = controller;
+        this.biglietto= biglietto;
         frame = new JFrame("Lista Corse");
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -47,7 +49,8 @@ public class ConfermaAcquistoGui {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                controller.AcquistaBigliettoDAO();
+                controller.AcquistaBigliettoDAO(biglietto);
+
                 frame.setVisible(false);
                 frame.dispose();
             }

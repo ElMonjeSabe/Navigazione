@@ -64,6 +64,7 @@ public class ListaCorse {
         ArrayList<CorsaTabellone> listaCorse = controller.getCorse();
 
         //Inserisce tutte le righe della tabella utilizzando l'arraylist listaCorse
+
         if (listaCorse != null) {
             for (int i = 0; i < listaCorse.size(); i++)
                 tableModel.addRow(new Object[]{listaCorse.get(i).CodiceCorsa, listaCorse.get(i).costocorsa, listaCorse.get(i).partenza, listaCorse.get(i).cittapartenza, listaCorse.get(i).nazionepartenza, listaCorse.get(i).destinazione, listaCorse.get(i).cittadestinazione, listaCorse.get(i).nazionedestinazione, listaCorse.get(i).datapartenza, listaCorse.get(i).dataarrivo, listaCorse.get(i).orariopartenza, listaCorse.get(i).orarioarrivo, listaCorse.get(i).stato, listaCorse.get(i).avviso});

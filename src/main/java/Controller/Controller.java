@@ -49,7 +49,6 @@ public class Controller {
         AcquistaBigliettoDAO a = new ImplementazioneAcquistaBigliettoDAO();
 
 
-
         //generare il codice biglietto e controllarlo con la lista di codici biglietto
 
 
