@@ -1,14 +1,11 @@
 package Gui;
 
 import Controller.Controller;
-import Model.Biglietto;
-import Model.Corsa;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.time.LocalDate;
 
 public class Home {
     private JPanel panel1;
@@ -31,7 +28,7 @@ public class Home {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                Compagnia frameCompagnia = new Compagnia(frame);
+                CompagniaGUI frameCompagnia = new CompagniaGUI(frame, controller);
                 frameCompagnia.frame.setVisible(true);
                 frame.setVisible(false);
 

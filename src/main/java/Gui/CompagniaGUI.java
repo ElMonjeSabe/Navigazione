@@ -1,14 +1,13 @@
 package Gui;
 
-import Model.Social;
+import Controller.Controller;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class Compagnia {
+public class CompagniaGUI {
     private JPanel panel1;
     private JPanel panelTesti;
     private JLabel labelTitolo;
@@ -35,10 +34,13 @@ public class Compagnia {
     private JPanel labelGridAzioni2;
     private JButton btoSocial;
 
+    private Controller controller;
 
-    public Compagnia(JFrame frameChiamante) {
+
+    public CompagniaGUI(JFrame frameChiamante, Controller controller) {
 
         this.frameChiamante = frameChiamante;
+        this.controller = controller;
 
         frame = new JFrame("Seconda Finestrs");
         frame.setContentPane(panel);
@@ -114,7 +116,7 @@ public class Compagnia {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                AggiungiImbarcazione frameImbarcazione = new AggiungiImbarcazione(frame);
+                AggiungiImbarcazione frameImbarcazione = new AggiungiImbarcazione(frame, controller);
                 frameImbarcazione.getFrame().setVisible(true);
 
                 frame.setVisible(false);
@@ -135,6 +137,7 @@ public class Compagnia {
             }
         });
     }
+
 
 
 }

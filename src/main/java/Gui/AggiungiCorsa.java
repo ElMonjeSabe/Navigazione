@@ -23,7 +23,7 @@ public class AggiungiCorsa {
     private JFrame frame;
 
     private ArrayList<Porto> porti= new ArrayList<Porto>();
-    private ArrayList<Compagnia> codiceCompagnie= new ArrayList<Compagnia>();
+    private ArrayList<CompagniaGUI> codiceCompagnie= new ArrayList<CompagniaGUI>();
 
 
 
