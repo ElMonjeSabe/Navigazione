@@ -1,5 +1,7 @@
 package Gui;
 
+import Model.Social;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -31,7 +33,8 @@ public class Compagnia {
     private JLabel labelRiferimenti;
     private JLabel labelAzioni;
     private JPanel labelGridAzioni2;
-    private JButton loginButton;
+    private JButton btoSocial;
+
 
     public Compagnia(JFrame frameChiamante) {
 
@@ -69,9 +72,66 @@ public class Compagnia {
                 String telefono = textTelefono.getText();
                 String sito = textSitoWeb.getText();
                 if (nome.equals("") || email.equals("") || telefono.equals("") || sito.equals("")) {
-                    JOptionPane.showMessageDialog(null, "Inserisci tutti i campi testa di cazzo");
+                    JOptionPane.showMessageDialog(null, "Inserisci tutti i campi!");
                     return;
                 }
+            }
+        });
+        aggiungiCorsaButton.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e the event to be processed
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                AggiungiCorsa frameAggiungiCorsa = new AggiungiCorsa(frame);
+                frameAggiungiCorsa.getFrame().setVisible(true);
+
+                frame.setVisible(false);
+            }
+        });
+        modificaCorsaButton.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e the event to be processed
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ModificaCorsa frameModificaCorsa = new ModificaCorsa(frame);
+                frameModificaCorsa.getFrame().setVisible(true);
+
+                frame.setVisible(false);
+
+            }
+        });
+        aggiungiImbarcazioneButton.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e the event to be processed
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                AggiungiImbarcazione frameImbarcazione = new AggiungiImbarcazione(frame);
+                frameImbarcazione.getFrame().setVisible(true);
+
+                frame.setVisible(false);
+            }
+        });
+        btoSocial.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e the event to be processed
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SocialGUI social = new SocialGUI(frame);
+                social.getFrame().setVisible(true);
+
+                frame.setVisible(false);
             }
         });
     }
