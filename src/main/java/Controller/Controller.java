@@ -2,12 +2,17 @@ package Controller;
 
 //importo le classi del model
 import DAO.AcquistaBigliettoDAO;
+import DAO.AggiungiImbarcazioneDAO;
+import DAO.CaricaCompagnieDAO;
 import DAO.CorseDAO;
+import ImplementazionePostgresDAO.ImpAggiungiImbarcazioneDAO;
+import ImplementazionePostgresDAO.ImpCaricaCompagnieDAO;
 import ImplementazionePostgresDAO.ImplementazioneAcquistaBigliettoDAO;
 import ImplementazionePostgresDAO.ImplementazioneLeggiCorseDAO;
 import Model.Biglietto;
 import Model.Compagnia;
 import Model.CorsaTabellone;
+import Model.Imbarcazione;
 
 import java.util.ArrayList;
 
@@ -18,7 +23,7 @@ public class Controller {
     private Biglietto BigliettoAQ;
     private ArrayList<String> CodiciBiglietti = new ArrayList<String>();
 
-
+    private ArrayList<Compagnia> Compagnie= new ArrayList<Compagnia>();
 
 
 
@@ -55,6 +60,26 @@ public class Controller {
 
         a.AcquistaBigliettoDB(b);
     }
+
+
+    public void CaricaCompagnie(){
+        CaricaCompagnieDAO car = new ImpCaricaCompagnieDAO();
+        Compagnie.clear();
+        car.CaricaCompagnieDB(Compagnie);
+
+    }
+
+    public ArrayList<Compagnia> getCompagnie(){
+        return Compagnie;
+    }
+
+
+
+    public void AggiungiImbarcazioneDAO(Imbarcazione Imba){
+        AggiungiImbarcazioneDAO AccImb = new ImpAggiungiImbarcazioneDAO();
+        AccImb.AggiungiImbarcazioneDB(Imba);
+    }
+
 
 
 }

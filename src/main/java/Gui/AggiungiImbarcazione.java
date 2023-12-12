@@ -1,11 +1,14 @@
 package Gui;
 
+import Controller.Controller;
+import Model.Compagnia;
+import Model.Imbarcazione;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class AggiungiImbarcazione {
-    private JTextField textNomeC;
     private JTextField textNomei;
     private JButton indietroButton;
     private JButton confermaButton;
@@ -14,15 +17,31 @@ public class AggiungiImbarcazione {
     private JPanel panel;
     private JTextField textCapienzaP;
     private JTextField textCapienzaV;
+    private JComboBox cBCompagnie;
 
     private JFrame frame;
     public JFrame frameChiamante;
-    public AggiungiImbarcazione(JFrame frameChiamante) {
+    private Controller controller;
+
+
+
+    public AggiungiImbarcazione(JFrame frameChiamante, Controller controller) {
+        //aggiorna la lista di Compangie nel controller
+        controller.CaricaCompagnie();
+
+        this.controller = controller;
+        this.frameChiamante = frameChiamante;
+
         comboBox1.addItem("traghetto");
         comboBox1.addItem("motonave");
         comboBox1.addItem("aliscafo");
 
-        this.frameChiamante = frameChiamante;
+
+        //Mette i nomi delle Compagnie nella comboBox Compagnie
+        for(Compagnia Comp: controller.getCompagnie()) {
+            cBCompagnie.addItem(Comp.getNomeCompagnia());
+        }
+
 
         frame = new JFrame("Aggiungi Corsa");
         frame.setContentPane(panel);
@@ -45,16 +64,27 @@ public class AggiungiImbarcazione {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String codice = textCodice.getText();
-                String nomec = textNomeC.getText();
                 String nomei = textNomei.getText();
-                String capienzap = textCapienzaP.getText();
-                String capienzav = textCapienzaV.getText();
+                int capienzap = Integer.parseInt(textCapienzaP.getText());
+                int capienzav = Integer.parseInt(textCapienzaV.getText());
 
-                if (codice.equals("") || nomec.equals("") || nomei.equals("") || capienzap.equals("") || capienzav.equals("")) {
-                    JOptionPane.showMessageDialog(null, "identificati col tuo nome, inserisci il \n codice dell'imbarcazione o aggiungi la capienza per aggiungere l'imbarcazione!");
+                if (codice.equals("") || nomei.equals("") || capienzap<=0 ||capienzav<0) {
+
+                    JOptionPane.showMessageDialog(null, "Identificati col tuo nome, inserisci il \n codice dell'imbarcazione o aggiungi la capienza per aggiungere l'imbarcazione!");
+
+                }else{
+
+                    //messaggio di conferma
+
+                    Imbarcazione im = new Imbarcazione(codice, nomei,comboBox1.getSelectedItem().toString(),capienzap,capienzav,cBCompagnie.getSelectedItem().toString());
+                    controller.AggiungiImbarcazioneDAO(im);
+
+
                 }
             }
         });
+
+
 
 
         indietroButton.addActionListener(new ActionListener() {
@@ -70,6 +100,9 @@ public class AggiungiImbarcazione {
                 frame.dispose();
             }
         });
+
+
+
         comboBox1.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.

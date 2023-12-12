@@ -27,7 +27,7 @@ public class Compagnia {
      * @param telefono the telefono
      * @param sitoWeb  the sito web
      */
-    public Compagnia(String nome, String email, String telefono, String sitoWeb){
+    public Compagnia(String nome,  String telefono, String email, String sitoWeb){
         this.nomeCompagnia=nome;
         this.emailCompagnia=email;
         this.telefono=telefono;
@@ -121,11 +121,7 @@ public class Compagnia {
 
     }
 
-    public void AggiungiImbarcazione(String codice, String nome, String tipo, int maxpersone, int maxveicoli, Cabina stanza){
-        Imbarcazione i = new Imbarcazione(codice, nome, tipo, maxpersone,maxveicoli, this, stanza);
-        /*SQL
-        * */
-    }
+
 
     public void AggiungiImbarcazioneConCorsa(String codice, String nome, String tipo, int maxpersone, int maxveicoli, Cabina stanza,Corsa corsa){
         Imbarcazione i = new Imbarcazione(codice, nome, tipo, maxpersone,maxveicoli, this, stanza, corsa);
@@ -140,6 +136,11 @@ public class Compagnia {
     void VisualizzaCorse(){
         /*SQL mostrare la view
          * */
+    }
+
+
+    public String getNomeCompagnia(){
+        return nomeCompagnia;
     }
 
 
