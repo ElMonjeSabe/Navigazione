@@ -40,7 +40,7 @@ public class ListaCorse {
 
         table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 
-        DefaultTableModel tableModel = new DefaultTableModel(new Object[][]{}, new String[]{"Codice", "Prezzo", "Partenza", "Città Partenza", "Nazione Partenza", "Destinazione", "Citta Destinazione", "Nazione Destinazione", "Data Partenza", "Data Arrivo", "Orario Partenza", "Orario Arrivo", "Stato", "Avviso"}) {
+        DefaultTableModel tableModel = new DefaultTableModel(new Object[][]{}, new String[]{"Codice", "Prezzo","Scali", "Partenza", "Città Partenza", "Nazione Partenza", "Destinazione", "Citta Destinazione", "Nazione Destinazione", "Data Partenza", "Data Arrivo", "Orario Partenza", "Orario Arrivo", "Stato", "Avviso"}) {
             public boolean isCellEditable(int row, int column) {
                 // Tutte le celle non sono modificabili
                 return false;
@@ -53,12 +53,13 @@ public class ListaCorse {
         // Imposta la larghezza preferita per le colonne specifiche
         table.getColumnModel().getColumn(0).setPreferredWidth(50);
         table.getColumnModel().getColumn(1).setPreferredWidth(60);
-        table.getColumnModel().getColumn(12).setPreferredWidth(60);
+        table.getColumnModel().getColumn(2).setPreferredWidth(40);
+        table.getColumnModel().getColumn(11).setPreferredWidth(60);
 
         // Disabilita il ridimensionamento automatico per le colonne specifiche
         table.getColumnModel().getColumn(0).setMaxWidth(50);
         table.getColumnModel().getColumn(1).setMaxWidth(60);
-        table.getColumnModel().getColumn(12).setMaxWidth(70);
+        table.getColumnModel().getColumn(11).setMaxWidth(70);
 
         //Si fa passare la lista di corse dal controller
         ArrayList<CorsaTabellone> listaCorse = controller.getCorse();
@@ -67,7 +68,7 @@ public class ListaCorse {
 
         if (listaCorse != null) {
             for (int i = 0; i < listaCorse.size(); i++)
-                tableModel.addRow(new Object[]{listaCorse.get(i).CodiceCorsa, listaCorse.get(i).costocorsa, listaCorse.get(i).partenza, listaCorse.get(i).cittapartenza, listaCorse.get(i).nazionepartenza, listaCorse.get(i).destinazione, listaCorse.get(i).cittadestinazione, listaCorse.get(i).nazionedestinazione, listaCorse.get(i).datapartenza, listaCorse.get(i).dataarrivo, listaCorse.get(i).orariopartenza, listaCorse.get(i).orarioarrivo, listaCorse.get(i).stato, listaCorse.get(i).avviso});
+                tableModel.addRow(new Object[]{listaCorse.get(i).CodiceCorsa, listaCorse.get(i).costocorsa,listaCorse.get(i).scali, listaCorse.get(i).partenza, listaCorse.get(i).cittapartenza, listaCorse.get(i).nazionepartenza, listaCorse.get(i).destinazione, listaCorse.get(i).cittadestinazione, listaCorse.get(i).nazionedestinazione, listaCorse.get(i).datapartenza, listaCorse.get(i).dataarrivo, listaCorse.get(i).orariopartenza, listaCorse.get(i).orarioarrivo, listaCorse.get(i).stato, listaCorse.get(i).avviso});
         }
 
 

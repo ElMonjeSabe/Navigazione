@@ -18,11 +18,16 @@ public class CorsaTabellone {
     public Date dataarrivo;
     public Time orariopartenza;
     public Time orarioarrivo;
+
     public String stato;
+
     public String avviso;
-            public CorsaTabellone(String CodiceCorsa, Float costocorsa, String partenza, String cittapartenza, String nazionepartenza, String destinazione, String cittadestinazione, String nazionedestinazione, Date datapartenza, Date dataarrivo, Time orariopartenza, Time orarioarrivo, String stato, String avviso) {
+
+    public int scali;
+            public CorsaTabellone(String CodiceCorsa, Float costocorsa,int scali, String partenza, String cittapartenza, String nazionepartenza, String destinazione, String cittadestinazione, String nazionedestinazione, Date datapartenza, Date dataarrivo, Time orariopartenza, Time orarioarrivo, String stato, String avviso) {
                 this.CodiceCorsa = CodiceCorsa;
                 this.costocorsa = costocorsa;
+                this.scali = scali;
                 this.partenza = partenza;
                 this.cittapartenza = cittapartenza;
                 this.nazionepartenza = nazionepartenza;
@@ -43,6 +48,7 @@ public class CorsaTabellone {
         return "Corsa{" +
                 "CodiceCorsa='" + CodiceCorsa + '\'' +
                 ", costocorsa='" + costocorsa + '\'' +
+                ",scali='" +scali+
                 ", partenza='" + partenza + '\'' +
                 ", cittapartenza='" + cittapartenza + '\'' +
                 ", nazionepartenza='" + nazionepartenza + '\'' +

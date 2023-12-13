@@ -25,7 +25,7 @@ public class ImplementazioneAcquistaBigliettoDAO implements AcquistaBigliettoDAO
 
     @Override
     public void  AcquistaBigliettoDB(Biglietto b) {
-        // TODO Auto-generated method stub
+
         try {
             //genera il codice del biglietto
             PreparedStatement pstmt = connection.prepareStatement("SELECT codicebiglietto FROM Biglietto");

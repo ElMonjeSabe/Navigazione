@@ -101,7 +101,7 @@ public class CompagniaGUI {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                ModificaCorsa frameModificaCorsa = new ModificaCorsa(frame);
+                ModificaCorsa frameModificaCorsa = new ModificaCorsa(frame, controller);
                 frameModificaCorsa.getFrame().setVisible(true);
 
                 frame.setVisible(false);

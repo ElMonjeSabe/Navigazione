@@ -1,14 +1,8 @@
 package Controller;
 
 //importo le classi del model
-import DAO.AcquistaBigliettoDAO;
-import DAO.AggiungiImbarcazioneDAO;
-import DAO.CaricaCompagnieDAO;
-import DAO.CorseDAO;
-import ImplementazionePostgresDAO.ImpAggiungiImbarcazioneDAO;
-import ImplementazionePostgresDAO.ImpCaricaCompagnieDAO;
-import ImplementazionePostgresDAO.ImplementazioneAcquistaBigliettoDAO;
-import ImplementazionePostgresDAO.ImplementazioneLeggiCorseDAO;
+import DAO.*;
+import ImplementazionePostgresDAO.*;
 import Model.Biglietto;
 import Model.Compagnia;
 import Model.CorsaTabellone;
@@ -80,6 +74,10 @@ public class Controller {
         AccImb.AggiungiImbarcazioneDB(Imba);
     }
 
+    public void ModificaCorsa(String CodiceCorsa, String Avviso, String Stato){
+        GestisciCorsaDAO MC = new ImpGestisciCorsaDAO();
+        MC.ModificaCorsaDB(CodiceCorsa,Avviso, Stato);
 
+    }
 
 }
