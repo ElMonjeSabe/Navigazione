@@ -15,6 +15,9 @@ public class ListaCorse {
     private JPanel panel;
     private JButton btoAcquistaBiglietto;
     private JButton buttonHome;
+    private JComboBox cBImbarcazioni;
+    private JTextField tFPrezzo;
+    private JButton cercaButton;
     private Controller controller;
 
     private JFrame frameChiamante;
@@ -34,6 +37,17 @@ public class ListaCorse {
 
         //Apre la finestra la centro dello schermo
         frame.setLocationRelativeTo(null);
+
+
+
+        cBImbarcazioni.addItem("Tutte");
+        cBImbarcazioni.addItem("Aliscafo");
+        cBImbarcazioni.addItem("Motonave");
+        cBImbarcazioni.addItem("Traghetto");
+
+
+
+
 
         frame.setVisible(true);
 
