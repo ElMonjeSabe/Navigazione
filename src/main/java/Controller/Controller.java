@@ -3,10 +3,7 @@ package Controller;
 //importo le classi del model
 import DAO.*;
 import ImplementazionePostgresDAO.*;
-import Model.Biglietto;
-import Model.Compagnia;
-import Model.CorsaTabellone;
-import Model.Imbarcazione;
+import Model.*;
 
 import java.util.ArrayList;
 
@@ -21,9 +18,9 @@ public class Controller {
 
 
 
-    public void setCompagnia(String nome, String email, String telefono, String sito)
+    public void setCompagnia(String nome, String password, String email, String telefono, String sito)
     {
-            compagnia=new Compagnia(nome,email,telefono,sito);
+            compagnia=new Compagnia(nome,password, email,telefono,sito);
     }
 
 
@@ -78,6 +75,11 @@ public class Controller {
         GestisciCorsaDAO MC = new ImpGestisciCorsaDAO();
         MC.ModificaCorsaDB(CodiceCorsa,Avviso, Stato);
 
+    }
+
+    public void AggiungiPasseggero(Passeggero p){
+        GestionePasseggeroDAO GP = new ImpGestionePasseggeroDAO();
+        GP.AggiungiPasseggeroDB(p);
     }
 
 }

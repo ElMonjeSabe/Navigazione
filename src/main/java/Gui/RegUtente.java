@@ -1,6 +1,7 @@
 package Gui;
 
 import Controller.Controller;
+import Model.Passeggero;
 
 import javax.swing.*;
 import java.awt.*;
@@ -46,6 +47,13 @@ public class RegUtente {
                 frameChiamante.setVisible(true);
                 frame.setVisible(false);
                 frame.dispose();
+            }
+        });
+        confermaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //
+                //si deve gestire la data controller.AggiungiPasseggero(new Passeggero(tfCF.getText(),tfCognome.getText(), tfNome.getText(),tfEmail.getText(),tfPassword.getText()));
             }
         });
     }

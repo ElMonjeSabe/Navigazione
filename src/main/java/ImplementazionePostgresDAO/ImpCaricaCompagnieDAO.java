@@ -35,7 +35,7 @@ public class ImpCaricaCompagnieDAO implements CaricaCompagnieDAO
 
 
             while (rs.next()) {
-                l.add(new Compagnia(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4)));
+                l.add(new Compagnia(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5)));
             }
 
             rs.close();
