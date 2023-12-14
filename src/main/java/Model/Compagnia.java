@@ -7,6 +7,8 @@ import java.util.ArrayList;
  */
 public class Compagnia {
     private String nomeCompagnia;
+
+    private String passwCompagnia;
     private String emailCompagnia;
     private String telefono;
 
@@ -23,12 +25,14 @@ public class Compagnia {
      * Instantiates a new Compagnia.
      *
      * @param nome     the nome
+     * @param password     the password
      * @param email    the email
      * @param telefono the telefono
      * @param sitoWeb  the sito web
      */
-    public Compagnia(String nome,  String telefono, String email, String sitoWeb){
+    public Compagnia(String nome, String password,String telefono, String email, String sitoWeb){
         this.nomeCompagnia=nome;
+        this.passwCompagnia=password;
         this.emailCompagnia=email;
         this.telefono=telefono;
         this.sitoWeb=sitoWeb;
@@ -40,14 +44,16 @@ public class Compagnia {
      * Instantiates a new Compagnia.
      *
      * @param nome     the nome
+     * @param password     the password
      * @param email    the email
      * @param telefono the telefono
      * @param sitoWeb  the sito web
      * @param corsa    the corsa
      * @param social   the social
      */
-    public Compagnia(String nome, String email, String telefono, String sitoWeb, Corsa corsa, Social social){
+    public Compagnia(String nome, String password, String email, String telefono, String sitoWeb, Corsa corsa, Social social){
         this.nomeCompagnia=nome;
+        this.passwCompagnia=password;
         this.emailCompagnia=email;
         this.telefono=telefono;
         this.sitoWeb=sitoWeb;
@@ -58,14 +64,16 @@ public class Compagnia {
      * Instantiates a new Compagnia.
      *
      * @param nome         the nome
+     * @param password     the password
      * @param email        the email
      * @param telefono     the telefono
      * @param sitoWeb      the sito web
      * @param social       the social
      * @param imbarcazione the imbarcazione
      */
-    public Compagnia(String nome, String email, String telefono, String sitoWeb, Social social, Imbarcazione imbarcazione){
+    public Compagnia(String nome, String password, String email, String telefono, String sitoWeb, Social social, Imbarcazione imbarcazione){
         this.nomeCompagnia=nome;
+        this.passwCompagnia=password;
         this.emailCompagnia=email;
         this.telefono=telefono;
         this.sitoWeb=sitoWeb;
@@ -77,13 +85,16 @@ public class Compagnia {
      * Instantiates a new Compagnia.
      *
      * @param nome         the nome
+     * @param password     the password
      * @param email        the email
      * @param telefono     the telefono
      * @param sitoWeb      the sito web
      * @param imbarcazione the imbarcazione
      */
-    public Compagnia(String nome, String email, String telefono, String sitoWeb, Imbarcazione imbarcazione){
+    public Compagnia(String nome, String password,String compagnia, String email, String telefono, String sitoWeb, Imbarcazione imbarcazione){
         this.nomeCompagnia=nome;
+        this.passwCompagnia=password;
+        this.passwCompagnia=compagnia;
         this.emailCompagnia=email;
         this.telefono=telefono;
         this.sitoWeb=sitoWeb;
