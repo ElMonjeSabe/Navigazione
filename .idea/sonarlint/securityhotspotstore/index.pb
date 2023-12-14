@@ -25,11 +25,23 @@ K
 src/main/java/Gui/Home.java,9\0\90f8d526049d657227c324ca3d142145a818d316
 K
 src/main/java/Gui/Home.form,2\3\23f94fb4da6a7017fa80718e66de4adb18b75990
-P
- src/main/java/Gui/Compagnia.form,5\d\5d8fa29d266188a373a73b180b82fe960b48c8b6
-P
- src/main/java/Gui/Compagnia.java,0\f\0f0d4bd6ff955f59f8a3596fdd25347ee12e8d36
 Q
 !src/main/java/Gui/Passeggero.java,8\e\8ea24ac25d824f60081c6d5059cf88decfba35b7
 Q
 !src/main/java/Gui/Passeggero.form,a\b\ab0753ae91afb5ba516e56fe45b1710c1c033190
+[
++src/main/java/Gui/AggiungiImbarcazione.java,b\7\b7d7ce6367357c9ba1980b26884a56b3bae32c6c
+X
+(src/main/java/Controller/Controller.java,0\7\078546e943e5b71a5a13778784b81fa2a5095cd8
+z
+Jsrc/main/java/ImplementazionePostgresDAO/ImplementazioneLeggiCorseDAO.java,4\9\49b6c42578255447818513be1e6aa880ea06502f
+s
+Csrc/main/java/ImplementazionePostgresDAO/ImpCaricaCompagnieDAO.java,b\d\bda258bfecb38dc6c52610c4915365324d6adacd
+_
+/src/main/java/Database/ConnessioneDatabase.java,3\4\349ef23c0d3237f803d665b4680a8b0ee7defef6
+O
+src/main/java/DAO/CorseDAO.java,2\9\291aef806209db471f70567308b2a1de0d0af4bc
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
