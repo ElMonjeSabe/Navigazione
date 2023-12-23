@@ -2,21 +2,19 @@ package Model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * The type Passeggero.
  */
 public class Passeggero {
 
-
-
     private String cf;
     private String nome;
+    private LocalDate dataNascita;
     private String cognome;
     private String email;
-
     private String password;
-
     private ArrayList<Biglietto> biglietti= new ArrayList<Biglietto>();
 
 
@@ -31,10 +29,11 @@ public class Passeggero {
      * @param password      the password
      */
 //costruttore passando tutti gli attributi
-    public Passeggero(String codicefiscale, String cognome, String nome, String email, String password)
+    public Passeggero(String codicefiscale,  String nome, String cognome, LocalDate dataNascita, String email, String password)
     {
         this.cognome=cognome;
         this.nome=nome;
+        this.dataNascita = dataNascita;
         this.cf=codicefiscale;
         this.email=email;
         this.password=password;
@@ -81,5 +80,24 @@ public class Passeggero {
 
     public String getCf() {
         return cf;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+    public LocalDate getDataNascita() {
+        return dataNascita;
+    }
+
+    public String getCognome() {
+        return cognome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
     }
 }

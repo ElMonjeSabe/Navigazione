@@ -30,8 +30,9 @@ public class RegCompagnia {
         frame = new JFrame("Registrazione Compagnia");
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500, 350);
-        frame.setMinimumSize(new Dimension(340, 240));
+        frame.setSize(340, 240);
+
+        frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
@@ -45,5 +46,13 @@ public class RegCompagnia {
             }
         });
 
-}
+        indietroButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frameChiamante.setVisible(true);
+                frame.setVisible(false);
+                frame.dispose();
+            }
+        });
+    }
 }

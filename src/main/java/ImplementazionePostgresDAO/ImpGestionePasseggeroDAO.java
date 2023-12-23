@@ -6,6 +6,7 @@ import Database.ConnessioneDatabase;
 import Model.Passeggero;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -23,16 +24,19 @@ public class ImpGestionePasseggeroDAO implements GestionePasseggeroDAO {
     @Override
     public void AggiungiPasseggeroDB(Passeggero p) {
         try {
-            //genera il codice del biglietto
-            PreparedStatement pstmt = connection.prepareStatement("call InserisciPasseggero(?, ?, ?);");
+            PreparedStatement regUtente = connection.prepareStatement(
+                    "Call aggiungiPass(?,?,?,?,?,?)");
 
-            pstmt.setString(1,CodiceCorsa);
-            pstmt.setString(2,Avviso);
-            pstmt.setString(3,Stato);
+            regUtente.setString(1,p.getCf());
+            regUtente.setString(2,p.getNome());
+            regUtente.setString(3,p.getCognome());
+            regUtente.setDate(4, Date.valueOf(p.getDataNascita()));
+            regUtente.setString(5,p.getEmail());
+            regUtente.setString(6,p.getPassword());
 
-            pstmt.execute();
+            regUtente.execute();
 
-            pstmt.close();
+            regUtente.close();
             connection.close();
 
         } catch (SQLException e) {

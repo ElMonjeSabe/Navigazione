@@ -1,7 +1,6 @@
 package Gui;
 
 import Controller.Controller;
-import Model.Passeggero;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,11 +14,11 @@ public class RegUtente {
     private JTextField tfCognome;
     private JTextField tfPassword;
     private JTextField tfCF;
-    private JComboBox cBGiorno;
-    private JComboBox cBMese;
-    private JComboBox cBAnno;
     private JButton confermaButton;
     private JButton indietroButton;
+    private JComboBox<Integer> comboBoxGiorno;
+    private JComboBox<Integer> comboBoxMese;
+    private JComboBox<Integer> comboBoxAnno;
 
     public JFrame frame;
 
@@ -31,12 +30,32 @@ public class RegUtente {
         this.controller = controller;
         this.frameChiamante = frameChiamante;
 
+        //ComboBox Giorno
+        for(Integer i=1; i<=31; i++){
+            comboBoxGiorno.addItem(i);
+        }
+
+        //ComboBox Mese
+        for(Integer i=1; i<=12; i++){
+            comboBoxMese.addItem(i);
+        }
+
+        //ComboBox Anno
+        for(Integer i=1920; i<=2023; i++){
+            comboBoxAnno.addItem(i);
+        }
+
+
+
+
+
+
 
         frame = new JFrame("Registrazione Utente");
         frame.setContentPane(panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500, 350);
-        frame.setMinimumSize(new Dimension(340, 240));
+        frame.setSize(350, 330);
+        frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
