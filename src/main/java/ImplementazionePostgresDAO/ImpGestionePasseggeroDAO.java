@@ -5,6 +5,7 @@ import DAO.GestisciCorsaDAO;
 import Database.ConnessioneDatabase;
 import Model.Passeggero;
 
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -22,7 +23,7 @@ public class ImpGestionePasseggeroDAO implements GestionePasseggeroDAO {
 
     }
     @Override
-    public void AggiungiPasseggeroDB(Passeggero p) {
+    public int AggiungiPasseggeroDB(Passeggero p) {
         try {
             PreparedStatement regUtente = connection.prepareStatement(
                     "Call aggiungiPass(?,?,?,?,?,?)");
@@ -40,8 +41,16 @@ public class ImpGestionePasseggeroDAO implements GestionePasseggeroDAO {
             connection.close();
 
         } catch (SQLException e) {
+            if (e.getSQLState().equals("23505")) {
+                // gestisci l'errore di chiave duplicata
+                JOptionPane.showMessageDialog(null, "Email già utilizzata" );
 
-            System.out.println("Errore: " + e.getMessage());
+            } else {
+                // gestisci altri errori SQL
+                JOptionPane.showMessageDialog(null, "Errore: " + e.getMessage());
+            }
+            return 0;
         }
+        return 1;
     }
 }

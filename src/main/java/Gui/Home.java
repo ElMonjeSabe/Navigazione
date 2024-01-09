@@ -34,28 +34,30 @@ public class Home {
 
             }
         });
-        btoPasseggero.addActionListener(new ActionListener() {
+       /* btoPasseggero.addActionListener(new ActionListener() {
             /**
              * Invocato durante la pressione del bottone Passeggero.
              *
              * @param e the event to be processed
              */
+           /*
             @Override
             public void actionPerformed(ActionEvent e) {
-                Passeggero framePasseggero = new Passeggero(frame);
+                PasseggeroGUI framePasseggero = new PasseggeroGUI(frame, controller);
                 framePasseggero.frame.setVisible(true);
 
                 frame.setVisible(false);
 
             }
         });
-        btoTabellone.addActionListener(new ActionListener() {
+*/
+       /* btoTabellone.addActionListener(new ActionListener() {
             /**
              * Invocato durante la pressione del bottone ListaCorse.
              *
              * @param e the event to be processed
              */
-            @Override
+         /*   @Override
             public void actionPerformed(ActionEvent e) {
                 controller.LeggiCorseDAO();
                 ListaCorse frameListaCorse = new ListaCorse(frame, controller);
@@ -63,7 +65,7 @@ public class Home {
                 frame.setVisible(false);
 
             }
-        });
+        });*/
 
     }
 

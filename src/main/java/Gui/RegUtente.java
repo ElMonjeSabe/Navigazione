@@ -1,11 +1,12 @@
 package Gui;
 
 import Controller.Controller;
+import Model.Passeggero;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
 
 public class RegUtente {
     private JPanel panel1;
@@ -72,7 +73,18 @@ public class RegUtente {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //
-                //si deve gestire la data controller.AggiungiPasseggero(new Passeggero(tfCF.getText(),tfCognome.getText(), tfNome.getText(),tfEmail.getText(),tfPassword.getText()));
+                //si deve gestire la data
+                LocalDate data = LocalDate.of((Integer) comboBoxAnno.getSelectedItem(),(Integer) comboBoxMese.getSelectedItem(),(Integer) comboBoxGiorno.getSelectedItem());
+                Passeggero p = new Passeggero(tfCF.getText(),tfNome.getText(),tfCognome.getText(), data,tfEmail.getText(),tfPassword.getText());
+                if(controller.AggiungiPasseggero(p)==1){
+                   JOptionPane.showMessageDialog(null, "Registrazione effettuata con successo");
+                    PasseggeroGUI framePasseggeroGUI = new PasseggeroGUI(frame, controller,p);
+                    framePasseggeroGUI.frame.setVisible(true);
+                    frame.setVisible(false);
+               }else{
+                   JOptionPane.showMessageDialog(null, "Errore durante la registrazione");
+
+               }
             }
         });
     }

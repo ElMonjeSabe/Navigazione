@@ -2,6 +2,7 @@ package Gui;
 
 import Controller.Controller;
 import Model.Biglietto;
+import Model.Passeggero;
 
 import javax.swing.*;
 import java.awt.*;
@@ -39,7 +40,7 @@ public class InserimentoBigliettoGUI {
 
 
 
-    InserimentoBigliettoGUI(JFrame frameChimante, Controller controller){
+    InserimentoBigliettoGUI(JFrame frameChimante, Controller controller, Passeggero p){
         this.frameChiamante = frameChimante;
         this.controller = controller;
         frame = new JFrame("Lista Corse");
@@ -48,8 +49,8 @@ public class InserimentoBigliettoGUI {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
-        frame.setSize(900, 150);
-        //frame.setResizable(false);
+        frame.setSize(1050, 280);
+        frame.setResizable(false);
 
         //Apre la finestra la centro dello schermo
         frame.setLocationRelativeTo(null);
@@ -77,12 +78,12 @@ public class InserimentoBigliettoGUI {
 
                 int bagagli = (int) spinnerNumeroBagagli.getValue();
                 boolean veicolo = veicoloCheckBox.isSelected();
-                String cfposs = tFCodeceFiscale.getText();
+
                 String codCorsa = tFCodiceCorsa.getText();
 
-                if(cfposs.equals("") || codCorsa.equals("")){
+                if(codCorsa.equals("")){
 
-                    JOptionPane.showMessageDialog(null,"Inserire codice fiscale e il codice della corsa");
+                    JOptionPane.showMessageDialog(null,"Inserisci il codice della corsa");
 
                 }else if(!ControlloCodCorsa(codCorsa)){
 
@@ -90,7 +91,7 @@ public class InserimentoBigliettoGUI {
 
                 }else{
 
-                    ConfermaAcquistoGui frameConfermaAcquisto = new ConfermaAcquistoGui(frame, controller,new Biglietto(bagagli,veicolo,cfposs,codCorsa));
+                    ConfermaAcquistoGui frameConfermaAcquisto = new ConfermaAcquistoGui(frame, controller,new Biglietto(bagagli,veicolo,p.getCf(),codCorsa));
                     frameConfermaAcquisto.frame.setVisible(true);
                     frameChimante.setEnabled(false);
                     frame.setVisible(false);

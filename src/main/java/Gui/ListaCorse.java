@@ -2,6 +2,7 @@ package Gui;
 
 import Controller.Controller;
 import Model.CorsaTabellone;
+import Model.Passeggero;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -24,7 +25,7 @@ public class ListaCorse {
 
     static JFrame frame;
 
-    public ListaCorse(JFrame frameChiamante, Controller controller) {
+    public ListaCorse(JFrame frameChiamante, Controller controller, Passeggero p) {
 
         this.frameChiamante = frameChiamante;
         this.controller = controller;
@@ -103,7 +104,7 @@ public class ListaCorse {
         btoAcquistaBiglietto.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                InserimentoBigliettoGUI frameInsBiglietto = new InserimentoBigliettoGUI(frame, controller);
+                InserimentoBigliettoGUI frameInsBiglietto = new InserimentoBigliettoGUI(frame, controller, p);
                 frame.setEnabled(false);
                 frameInsBiglietto.frame.setVisible(true);
 

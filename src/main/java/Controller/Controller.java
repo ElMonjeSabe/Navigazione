@@ -77,9 +77,9 @@ public class Controller {
 
     }
 
-    public void AggiungiPasseggero(Passeggero p){
+    public int AggiungiPasseggero(Passeggero p){
         GestionePasseggeroDAO GP = new ImpGestionePasseggeroDAO();
-        GP.AggiungiPasseggeroDB(p);
+        return GP.AggiungiPasseggeroDB(p);
     }
 
 }
