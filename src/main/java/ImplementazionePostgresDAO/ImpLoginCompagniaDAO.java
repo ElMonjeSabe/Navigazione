@@ -1,20 +1,21 @@
 package ImplementazionePostgresDAO;
 
-import DAO.loginPasseggeroDAO;
+import DAO.LoginCompagniaDAO;
+
+
 import Database.ConnessioneDatabase;
 import Model.Compagnia;
-import Model.Passeggero;
+
 
 import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 
-public class ImpLoginPasseggeroDAO implements loginPasseggeroDAO {
+public class ImpLoginCompagniaDAO implements LoginCompagniaDAO {
     private Connection connection;
-    public ImpLoginPasseggeroDAO(){
+    public ImpLoginCompagniaDAO(){
         try {
             connection = ConnessioneDatabase.getInstance().connection;
         } catch (SQLException e) {
@@ -24,22 +25,22 @@ public class ImpLoginPasseggeroDAO implements loginPasseggeroDAO {
 
     }
     @Override
-    public Passeggero loginPasseggeroDB(String email, String password) {
-        Passeggero res=null;
+    public Compagnia loginCompagniaDB(String email, String password) {
+        Compagnia res=null;
         try {
-            PreparedStatement logPasseggero = connection.prepareStatement("select * from passeggero where email=? and passw=?;");
+            PreparedStatement logCompagnia = connection.prepareStatement("select * from compagnia where emailcompagnia=? and passwcompagnia=?;");
 
-            logPasseggero.setString(1,email);
-            logPasseggero.setString(2,password);
-            ResultSet rs = logPasseggero.executeQuery();
+            logCompagnia.setString(1,email);
+            logCompagnia.setString(2,password);
+            ResultSet rs = logCompagnia.executeQuery();
 
             if(rs.next()){
-                res = new Passeggero(rs.getString(1),rs.getString(2),rs.getString(3), rs.getDate(4).toLocalDate(),rs.getString(5), rs.getString(6));
+                res = new Compagnia(rs.getString(1),rs.getString(2),rs.getString(3), rs.getString(4),rs.getString(5));
             }
 
 
             rs.close();
-            logPasseggero.close();
+            logCompagnia.close();
             connection.close();
 
         } catch (SQLException e) {

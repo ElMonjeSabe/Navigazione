@@ -1,6 +1,7 @@
 package Gui;
 
 import Controller.Controller;
+import Model.Compagnia;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -10,7 +11,6 @@ import java.awt.event.ActionListener;
 public class CompagniaGUI {
     private JPanel panel1;
     private JPanel panelTesti;
-    private JLabel labelTitolo;
     private JTextField textEmail;
     public JFrame frame;
     public JFrame frameChiamante;
@@ -33,58 +33,36 @@ public class CompagniaGUI {
     private JLabel labelAzioni;
     private JPanel labelGridAzioni2;
     private JButton btoSocial;
+    private JLabel NomeComp;
+    private JLabel EmailComp;
+    private JLabel TelefonoComp;
+    private JLabel SitoWebComp;
 
     private Controller controller;
 
 
-    public CompagniaGUI(JFrame frameChiamante, Controller controller) {
+    public CompagniaGUI(JFrame frameChiamante, Controller controller, Compagnia c) {
 
         this.frameChiamante = frameChiamante;
         this.controller = controller;
+
+        NomeComp.setText(c.getNomeCompagnia());
+        TelefonoComp.setText(c.getTelefono());
+        EmailComp.setText(c.getEmailCompagnia());
+        SitoWebComp.setText(c.getSitoWeb());
 
         frame = new JFrame("Seconda Finestrs");
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
+        frame.setResizable(false);
+        frame.setSize(400, 250);
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
-        ritornaAllaHomeButton.addActionListener(new ActionListener() {
-            /**
-             * Invoked when an action occurs.
-             *
-             * @param e the event to be processed
-             */
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                frameChiamante.setVisible(true);
-                frame.setVisible(false);
-                frame.dispose();
-            }
-        });
-        aggiungiCompagniaButton.addActionListener(new ActionListener() {
-            /**
-             * Invoked when an action occurs.
-             *
-             * @param e the event to be processed
-             */
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String nome = textNome.getText();
-                String email = textEmail.getText();
-                String telefono = textTelefono.getText();
-                String sito = textSitoWeb.getText();
-                if (nome.equals("") || email.equals("") || telefono.equals("") || sito.equals("")) {
-                    JOptionPane.showMessageDialog(null, "Inserisci tutti i campi!");
-                    return;
-                }
-            }
-        });
+
         aggiungiCorsaButton.addActionListener(new ActionListener() {
-            /**
-             * Invoked when an action occurs.
-             *
-             * @param e the event to be processed
-             */
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 AggiungiCorsa frameAggiungiCorsa = new AggiungiCorsa(frame);

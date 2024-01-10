@@ -36,6 +36,9 @@ public class AggiungiCorsa {
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
+        frame.setResizable(false);
+        frame.setSize(400, 250);
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         countPorti.setText("Totale porti inseriti: "+num);
 

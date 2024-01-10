@@ -1,6 +1,8 @@
 package Gui;
 
 import Controller.Controller;
+import Model.Compagnia;
+import Model.Passeggero;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -51,15 +53,29 @@ public class Accesso {
                 if(rdCompagnia.isSelected()){
                     //Compagnia
                     //Se email e password esistono allora vai alla schermata Compagnia
-                    System.out.println(rdCompagnia.isSelected());
+
+                    Compagnia c = controller.loginCompagnia(tFEmail.getText(),tFPassword.getText());
+                    if(c != null){
+                        JOptionPane.showMessageDialog(null, "login effettuato con successo.");
+                        CompagniaGUI frameCompagniaGUI = new CompagniaGUI(frame, controller, c);
+                        frameCompagniaGUI.frame.setVisible(true);
+                        frame.setVisible(false);
+                    }else{
+                        JOptionPane.showMessageDialog(null, "utente non esistente");
+
+                    }
+
+
+
                 }else if (rdPasseggero.isSelected()){
                     //Utente
                     //Se email e password esistono allora vai alla schermata Passeggero
-                    if(controller.loginPasseggero(tFEmail.getText(),tFPassword.getText())){
+                    Passeggero p = controller.loginPasseggero(tFEmail.getText(),tFPassword.getText());
+                    if(p != null){
                         JOptionPane.showMessageDialog(null, "login effettuato con successo.");
-                        //PasseggeroGUI framePasseggeroGUI = new PasseggeroGUI(frame, controller,p);
-                        //framePasseggeroGUI.frame.setVisible(true);
-                        //frame.setVisible(false);
+                        PasseggeroGUI framePasseggeroGUI = new PasseggeroGUI(frame, controller,p);
+                        framePasseggeroGUI.frame.setVisible(true);
+                        frame.setVisible(false);
                     }else{
                         JOptionPane.showMessageDialog(null, "utente non esistente");
 

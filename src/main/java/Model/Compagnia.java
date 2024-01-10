@@ -71,7 +71,7 @@ public class Compagnia {
      * @param social       the social
      * @param imbarcazione the imbarcazione
      */
-    public Compagnia(String nome, String password, String email, String telefono, String sitoWeb, Social social, Imbarcazione imbarcazione){
+    public Compagnia(String nome, String email, String password,  String telefono, String sitoWeb, Social social, Imbarcazione imbarcazione){
         this.nomeCompagnia=nome;
         this.passwCompagnia=password;
         this.emailCompagnia=email;
@@ -91,16 +91,15 @@ public class Compagnia {
      * @param email        the email
      * @param telefono     the telefono
      * @param sitoWeb      the sito web
-     * @param imbarcazione the imbarcazione
+
      */
-    public Compagnia(String nome, String password,String compagnia, String email, String telefono, String sitoWeb, Imbarcazione imbarcazione){
+    public Compagnia(String nome, String password,String compagnia, String email, String telefono, String sitoWeb){
         this.nomeCompagnia=nome;
         this.passwCompagnia=password;
-        this.passwCompagnia=compagnia;
         this.emailCompagnia=email;
         this.telefono=telefono;
         this.sitoWeb=sitoWeb;
-        this.imbarcazioni.add(imbarcazione);
+
     }
 
 

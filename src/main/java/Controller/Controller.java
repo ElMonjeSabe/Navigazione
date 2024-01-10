@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 public class Controller {
 
+
     private ArrayList<CorsaTabellone> corse = new ArrayList<CorsaTabellone>();
     private Compagnia compagnia;
     private Biglietto BigliettoAQ;
@@ -88,10 +89,14 @@ public class Controller {
         return GC.AggiungiCompagniaDB(c);
     }
 
-    public boolean loginPasseggero(String email, String password){
+    public Passeggero loginPasseggero(String email, String password){
         loginPasseggeroDAO GP = new ImpLoginPasseggeroDAO();
         return GP.loginPasseggeroDB(email,password);
     }
 
 
+    public Compagnia loginCompagnia(String email, String password) {
+        LoginCompagniaDAO GC = new ImpLoginCompagniaDAO();
+        return GC.loginCompagniaDB(email, password);
+    }
 }

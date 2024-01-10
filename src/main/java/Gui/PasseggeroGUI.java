@@ -20,7 +20,6 @@ public class PasseggeroGUI {
     private JTextField textCF;
     private JFormattedTextField textDataNascita = new JFormattedTextField(formatter);
     private JButton aggiungiPasseggeroButton;
-    private JLabel labelTitolo;
     private JButton visualizzaCorseButton;
     private JButton visualizzaBigliettiAcquistatiButton;
     private JButton ritornaAllaHomeButton;
@@ -66,37 +65,12 @@ public class PasseggeroGUI {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setResizable(false);
-        frame.setSize(500, 300);
+        frame.setSize(500, 250);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
 
-       /* aggiungiPasseggeroButton.addActionListener(new ActionListener() {
-            /**
-             * Invoked when an action occurs.
-             *
-             * @param e the event to be processed
-             */ /*
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                String nome = textNome.getText();
-                String cf = textCF.getText();
-                LocalDate datanascita = LocalDate.parse(textDataNascita.getText(), formatter);
-                String email = textEmail.getText();
-                String password = passwordField.getText();
-                if (nome.equals("") || datanascita.equals("") || cf.equals("") || datanascita.equals("")) {
-                    JOptionPane.showMessageDialog(null, "Inserisci tutti i campi testa di cazzo");
-                    return;
-                } else {
-                    if (!email.equals(EMAIL_PATTERN) && password.equals(""))
-                        JOptionPane.showMessageDialog(null, "inserisci beneee!");
-                    else {
-                        JOptionPane.showMessageDialog(null, "ok!");
-                    }
-                }
 
-            }
-        });*/
         visualizzaCorseButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

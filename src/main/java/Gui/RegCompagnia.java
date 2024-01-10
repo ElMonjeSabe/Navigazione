@@ -57,15 +57,25 @@ public class RegCompagnia {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                Compagnia c= new Compagnia(tFNomeCompagnia.getText(),tFPassword.getText(),tfTelefono.getText(),tfEmail.getText(),tfSitoWeb.getText());
-                if(controller.AggiungiCompagnia(c)==1){
-                    JOptionPane.showMessageDialog(null, "Registrazione effettuata con successo");
-                    CompagniaGUI frameCompagniaGUI = new CompagniaGUI(frame, controller);
-                    frameCompagniaGUI.frame.setVisible(true);
-                    frame.setVisible(false);
-                }else{
-                    JOptionPane.showMessageDialog(null, "Errore durante la registrazione");
 
+                if (tFNomeCompagnia.getText().equals("") || tfEmail.getText().equals("") || tfTelefono.getText().equals("") || tfSitoWeb.getText().equals("") || tFPassword.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Inserisci tutti i campi!");
+
+                }else {
+
+
+                    Compagnia c = new Compagnia(tFNomeCompagnia.getText(), tFPassword.getText(), tfTelefono.getText(), tfEmail.getText(), tfSitoWeb.getText());
+
+
+                    if (controller.AggiungiCompagnia(c) == 1) {
+                        JOptionPane.showMessageDialog(null, "Registrazione effettuata con successo");
+                        CompagniaGUI frameCompagniaGUI = new CompagniaGUI(frame, controller, c);
+                        frameCompagniaGUI.frame.setVisible(true);
+                        frame.setVisible(false);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Errore durante la registrazione");
+
+                    }
                 }
 
             }

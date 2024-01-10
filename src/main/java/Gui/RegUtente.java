@@ -27,29 +27,24 @@ public class RegUtente {
 
     public JFrame frameChiamante;
 
-    public RegUtente(JFrame frameChiamante, Controller controller){
+    public RegUtente(JFrame frameChiamante, Controller controller) {
         this.controller = controller;
         this.frameChiamante = frameChiamante;
 
         //ComboBox Giorno
-        for(Integer i=1; i<=31; i++){
+        for (Integer i = 1; i <= 31; i++) {
             comboBoxGiorno.addItem(i);
         }
 
         //ComboBox Mese
-        for(Integer i=1; i<=12; i++){
+        for (Integer i = 1; i <= 12; i++) {
             comboBoxMese.addItem(i);
         }
 
         //ComboBox Anno
-        for(Integer i=1920; i<=2023; i++){
+        for (Integer i = 1920; i <= 2023; i++) {
             comboBoxAnno.addItem(i);
         }
-
-
-
-
-
 
 
         frame = new JFrame("Registrazione Utente");
@@ -72,23 +67,26 @@ public class RegUtente {
         confermaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //
-                //si deve gestire la data
-                LocalDate data = LocalDate.of((Integer) comboBoxAnno.getSelectedItem(),(Integer) comboBoxMese.getSelectedItem(),(Integer) comboBoxGiorno.getSelectedItem());
-                Passeggero p = new Passeggero(tfCF.getText(),tfNome.getText(),tfCognome.getText(), data,tfEmail.getText(),tfPassword.getText());
-                if(controller.AggiungiPasseggero(p)==1){
-                   JOptionPane.showMessageDialog(null, "Registrazione effettuata con successo");
-                    PasseggeroGUI framePasseggeroGUI = new PasseggeroGUI(frame, controller,p);
-                    framePasseggeroGUI.frame.setVisible(true);
-                    frame.setVisible(false);
-               }else{
-                   JOptionPane.showMessageDialog(null, "Errore durante la registrazione");
 
-               }
+                if (tfCF.getText().equals("") || tfNome.getText().equals("") || tfCognome.getText().equals("") || tfEmail.getText().equals("") || tfPassword.getText().equals("")) {
+                    JOptionPane.showMessageDialog(null, "Inserisci tutti i campi!");
+
+                } else {
+                    LocalDate data = LocalDate.of((Integer) comboBoxAnno.getSelectedItem(), (Integer) comboBoxMese.getSelectedItem(), (Integer) comboBoxGiorno.getSelectedItem());
+                    Passeggero p = new Passeggero(tfCF.getText(), tfNome.getText(), tfCognome.getText(), data, tfEmail.getText(), tfPassword.getText());
+                    if (controller.AggiungiPasseggero(p) == 1) {
+                        JOptionPane.showMessageDialog(null, "Registrazione effettuata con successo");
+                        PasseggeroGUI framePasseggeroGUI = new PasseggeroGUI(frame, controller, p);
+                        framePasseggeroGUI.frame.setVisible(true);
+                        frame.setVisible(false);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Errore durante la registrazione");
+
+                    }
+                }
             }
         });
     }
-
 
 
 }

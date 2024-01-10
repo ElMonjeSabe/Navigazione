@@ -1,6 +1,8 @@
 package DAO;
 
+import Model.Passeggero;
+
 public interface loginPasseggeroDAO {
 
-    public boolean loginPasseggeroDB(String email, String password);
+    public Passeggero loginPasseggeroDB(String email, String password);
 }

@@ -18,7 +18,6 @@ public class Passeggero {
     private ArrayList<Biglietto> biglietti= new ArrayList<Biglietto>();
 
 
-
     /**
      * Instantiates a new Passeggero.
      *
