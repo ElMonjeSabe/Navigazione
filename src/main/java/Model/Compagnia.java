@@ -81,6 +81,8 @@ public class Compagnia {
         this.imbarcazioni.add(imbarcazione);
     }
 
+
+
     /**
      * Instantiates a new Compagnia.
      *
@@ -152,6 +154,22 @@ public class Compagnia {
 
     public String getNomeCompagnia(){
         return nomeCompagnia;
+    }
+
+    public String getPasswCompagnia() {
+        return passwCompagnia;
+    }
+
+    public String getEmailCompagnia() {
+        return emailCompagnia;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public String getSitoWeb() {
+        return sitoWeb;
     }
 
 

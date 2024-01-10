@@ -82,4 +82,16 @@ public class Controller {
         return GP.AggiungiPasseggeroDB(p);
     }
 
+
+    public int AggiungiCompagnia(Compagnia c){
+        GestioneCompagniaDAO GC = new ImpGestioneCompagniaDAO();
+        return GC.AggiungiCompagniaDB(c);
+    }
+
+    public boolean loginPasseggero(String email, String password){
+        loginPasseggeroDAO GP = new ImpLoginPasseggeroDAO();
+        return GP.loginPasseggeroDB(email,password);
+    }
+
+
 }

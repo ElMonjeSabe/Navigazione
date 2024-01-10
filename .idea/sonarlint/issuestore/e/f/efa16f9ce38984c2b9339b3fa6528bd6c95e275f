@@ -1,24 +1,15 @@
 
+}
+java:S11043"[Make getPrenotazione a static final constant or non-public and provide accessors if needed.(ìÕ£˜ÿÿÿÿÿ8ûã«ÁÆ1
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á–Ì“8ñ÷ŒÔÃ1
-r	java:S116"QRename this field "Prezzo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°ÚÂÛúÿÿÿÿ8ö÷ŒÔÃ1
-M
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ü÷ŒÔÃ1
-S
-java:S1068
-"1Remove this unused "tipoBiglietto" private field.(åÁ¦šüÿÿÿÿ8ı÷ŒÔÃ1
-L
-java:S1068"*Remove this unused "Prezzo" private field.(°ÚÂÛúÿÿÿÿ8ı÷ŒÔÃ1
-S
-java:S1068"1Remove this unused "numerobagagli" private field.(´ı£Êùÿÿÿÿ8ı÷ŒÔÃ1
-H
-java:S1068"+Remove this unused "veicolo" private field.(×¶ 8ı÷ŒÔÃ1
-M
-java:S1068"0Remove this unused "dataAcquisto" private field.(›—¿8ı÷ŒÔÃ1
-M
-java:S1068"0Remove this unused "prenotazione" private field.(•½äŞ8ı÷ŒÔÃ1
-J
-java:S1068".Remove this unused "possessore" private field.(„U8€øŒÔÃ1
-F
-java:S1068")Remove this unused "corsa" private field.(©š £8‚øŒÔÃ1
-K
-java:S1068")Remove this unused "posto" private field.(ÂŞÛ¤ùÿÿÿÿ8ƒøŒÔÃ1
+Œ
+java:S4165o"jRemove this useless assignment; "prenotazione" already holds the assigned value along all execution paths.(±›ìÄûÿÿÿÿ8“ä«ÁÆ1
+v	java:S1165"ZRename this field "CodiceBiglietto" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ê¨…°8•ä«ÁÆ1
+r	java:S1166"QRename this field "Prezzo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°ÚÂÛúÿÿÿÿ8ö÷ŒÔÃ1
+|
+java:S4144“"YUpdate this method so that its implementation is not identical to "isVeicolo" on line 79.(‹Û›øÿÿÿÿ8›ä«ÁÆ1
+Q
+java:S1172ƒ"3Remove this unused method parameter "dataAcquisto".(Ãƒå8±ä«ÁÆ1
+Y	java:S125¢"<This block of commented-out lines of code should be removed.(˜àö™8Âä«ÁÆ1
+Q
+java:S1656o"/Remove or correct this useless self-assignment.(±›ìÄûÿÿÿÿ8Ää«ÁÆ1

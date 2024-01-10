@@ -2,6 +2,7 @@ package Gui;
 
 import Controller.Controller;
 
+import Model.Compagnia;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -14,12 +15,15 @@ public class RegCompagnia {
     private JButton confermaButton;
     private JButton indietroButton;
     private JPanel panel;
+    private JTextField tfTelefono;
+    private JTextField tfSitoWeb;
 
     public JFrame frame;
 
     private JFrame frameChiamante;
 
     private Controller controller;
+
 
 
     public RegCompagnia(JFrame farmeChiamante, Controller controller) {
@@ -37,21 +41,33 @@ public class RegCompagnia {
         frame.setVisible(true);
 
 
-
-
-        indietroButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-
         indietroButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frameChiamante.setVisible(true);
                 frame.setVisible(false);
                 frame.dispose();
+            }
+        });
+        confermaButton.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e the event to be processed
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Compagnia c= new Compagnia(tFNomeCompagnia.getText(),tFPassword.getText(),tfTelefono.getText(),tfEmail.getText(),tfSitoWeb.getText());
+                if(controller.AggiungiCompagnia(c)==1){
+                    JOptionPane.showMessageDialog(null, "Registrazione effettuata con successo");
+                    CompagniaGUI frameCompagniaGUI = new CompagniaGUI(frame, controller);
+                    frameCompagniaGUI.frame.setVisible(true);
+                    frame.setVisible(false);
+                }else{
+                    JOptionPane.showMessageDialog(null, "Errore durante la registrazione");
+
+                }
+
             }
         });
     }

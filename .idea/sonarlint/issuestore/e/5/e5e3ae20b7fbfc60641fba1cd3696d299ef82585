@@ -1,0 +1,14 @@
+
+E
+java:S1604("(Make this anonymous inner class a lambda(…ş©¹8µ°úŒÏ1
+J
+java:S16040"(Make this anonymous inner class a lambda(¸Êä¼ÿÿÿÿÿ8¶°úŒÏ1
+n
+java:S1104"QMake frame a static final constant or non-public and provide accessors if needed.(Ü˜üí8¶°úŒÏ1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Â¿Âëüÿÿÿÿ8·°úŒÏ1
+f
+java:S3252"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8Ã°úŒÏ1
+L	java:S1066"+Replace this use of System.out by a logger.(ü›¯îùÿÿÿÿ8Æ°úŒÏ1
+]	java:S125<"<This block of commented-out lines of code should be removed.(õóÕíÿÿÿÿÿ8Ç°úŒÏ1
+P
+java:S1068".Remove this unused "controller" private field.(š·Âëüÿÿÿÿ8Ç°úŒÏ1

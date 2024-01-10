@@ -1,28 +1,14 @@
 
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á–Ì“8ò“Ü°Ã1
-o	java:S100i"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷Ú¥ðÿÿÿÿÿ8ÚÎÞÎÃ1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á–Ì“8¼µïÀÆ1
+o	java:S100v"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷Ú¥ðÿÿÿÿÿ8ÌµïÀÆ1
 W
-java:S1854j"5Remove this useless assignment to local variable "c".(âÛ»£øÿÿÿÿ8ÛÎÞÎÃ1
+java:S1854w"5Remove this useless assignment to local variable "c".(âÛ»£øÿÿÿÿ8ÎµïÀÆ1
 H
-java:S1481j"&Remove this unused "c" local variable.(âÛ»£øÿÿÿÿ8ÝÎÞÎÃ1
-o	java:S100s"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õø¢ úÿÿÿÿ8ÞÎÞÎÃ1
-o	java:S100|"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËÒ´Ïøÿÿÿÿ8ßÎÞÎÃ1
-W
-java:S1854}"5Remove this useless assignment to local variable "i".(¼®²áþÿÿÿÿ8ßÎÞÎÃ1
-H
-java:S1481}"&Remove this unused "i" local variable.(¼®²áþÿÿÿÿ8àÎÞÎÃ1
-p	java:S100‚"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±í•’úÿÿÿÿ8àÎÞÎÃ1
+java:S1481w"&Remove this unused "c" local variable.(âÛ»£øÿÿÿÿ8ÐµïÀÆ1
+p	java:S100€"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õø¢ úÿÿÿÿ8ÑµïÀÆ1
+p	java:S100‹"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±í•’úÿÿÿÿ8ÑµïÀÆ1
 X
-java:S1854ƒ"5Remove this useless assignment to local variable "i".(ØŸ¸âúÿÿÿÿ8áÎÞÎÃ1
+java:S1854Œ"5Remove this useless assignment to local variable "i".(ØŸ¸âúÿÿÿÿ8ÒµïÀÆ1
 I
-java:S1481ƒ"&Remove this unused "i" local variable.(ØŸ¸âúÿÿÿÿ8ãÎÞÎÃ1
-k	java:S100Œ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò‡Úú8ãÎÞÎÃ1
-S
-java:S1068	"1Remove this unused "nomeCompagnia" private field.(¥º¨áÿÿÿÿÿ8ø“Ü°Ã1
-T
-java:S1068
-"2Remove this unused "emailCompagnia" private field.(àœÿçüÿÿÿÿ8ø“Ü°Ã1
-I
-java:S1068",Remove this unused "telefono" private field.(›š´Æ8ø“Ü°Ã1
-M
-java:S1068"+Remove this unused "sitoWeb" private field.(¬ÄÛ¹øÿÿÿÿ8ø“Ü°Ã1
+java:S1481Œ"&Remove this unused "i" local variable.(ØŸ¸âúÿÿÿÿ8ÒµïÀÆ1
+k	java:S100•"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò‡Úú8ÓµïÀÆ1

@@ -1,0 +1,10 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Åíáòÿÿÿÿÿ
+l
+java:S2095 "OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(š¬ÅÈ8õä›ÎÎ1
+M
+java:S1135"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ
+M
+java:S1135"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+J
+java:S1128"-Remove this unused import 'Gui.CompagniaGUI'.(¾Õœ8‚å›ÎÎ1

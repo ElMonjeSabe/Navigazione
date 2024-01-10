@@ -45,7 +45,7 @@ public class PasseggeroGUI {
 
     Controller controller;
 
-    Passeggero p;
+    private Passeggero p;
 
 
     public PasseggeroGUI(JFrame frameChiamante, Controller controller, Passeggero p) {

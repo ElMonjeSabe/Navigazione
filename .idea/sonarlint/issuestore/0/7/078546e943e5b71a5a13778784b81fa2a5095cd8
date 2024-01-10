@@ -1,0 +1,39 @@
+
+{
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(·―¥µÿÿÿÿÿ8κ²σΟ1
+{
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Τ£¬θωÿÿÿÿ8κ²σΟ1
+{
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(³Ζ»ςωÿÿÿÿ8κ²σΟ1
+’
+java:S1319&"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‘χώσώÿÿÿÿ8κ²σΟ1
+
+java:S1319?"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(€ΔΗR8κ²σΟ1
+m	java:S117E"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(π«υ«8κ²σΟ1
+m	java:S117F"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ίΦ8κ²σΟ1
+r	java:S117J"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Σ‡½ώÿÿÿÿ8κ²σΟ1
+r	java:S117J"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Σ‡½ώÿÿÿÿ8κ²σΟ1
+r	java:S117J"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Σ‡½ώÿÿÿÿ8κ²σΟ1
+m	java:S117K"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(υΫ8λ²σΟ1
+r	java:S117Q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ό­ΜΙϋÿÿÿÿ8λ²σΟ1
+m	java:S117W"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(φΟεΖ8λ²σΟ1
+m	java:S117\"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—Ώ®Ί8λ²σΟ1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ί›°Ξ8λ²σΟ1
+w	java:S116"VRename this field "BigliettoAQ" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«κεδϋÿÿÿÿ8ρ²σΟ1
+{	java:S116"ZRename this field "CodiciBiglietti" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Τ£¬θωÿÿÿÿ8ρ²σΟ1
+u	java:S116"TRename this field "Compagnie" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³Ζ»ςωÿÿÿÿ8ρ²σΟ1
+z
+java:S1450"XRemove the "compagnia" field and declare it as a local variable in the relevant methods.(ΚΉΈ¨ύÿÿÿÿ8ς²σΟ1
+o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…αχψÿÿÿÿ8χ²σΟ1
+o	java:S100,"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ύ¤‘ωÿÿÿÿ8ψ²σΟ1
+j	java:S1008"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­±°Χ8ω²σΟ1
+j	java:S100E"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(π«υ«8ϊ²σΟ1
+o	java:S100J"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Σ‡½ώÿÿÿÿ8ϊ²σΟ1
+j	java:S100P"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›θ’8ϋ²σΟ1
+o	java:S100V"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(χ„όαϋÿÿÿÿ8ϋ²σΟ1
+O
+java:S1068"-Remove this unused "compagnia" private field.(ΚΉΈ¨ύÿÿÿÿ8ύ²σΟ1
+Q
+java:S1068"/Remove this unused "BigliettoAQ" private field.(«κεδϋÿÿÿÿ8ύ²σΟ1
+U
+java:S1068"3Remove this unused "CodiciBiglietti" private field.(Τ£¬θωÿÿÿÿ8ύ²σΟ1

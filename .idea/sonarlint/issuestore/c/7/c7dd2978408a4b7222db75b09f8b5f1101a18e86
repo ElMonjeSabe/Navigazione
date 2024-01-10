@@ -1,0 +1,16 @@
+
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨’ήμ
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨’ήμ
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨’ήμ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Εναςÿÿÿÿÿ
+j
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(›κοιωÿÿÿÿ
+M
+java:S1135"2Complete the task associated to this TODO comment.(ΥΜ®ώÿÿÿÿ
+@	java:S106("+Replace this use of System.out by a logger.(Ήε›π
+K
+java:S1128"0Remove this unused import 'java.time.LocalDate'.(›‘¬θύÿÿÿÿ
+C
+java:S1128".Remove this unused import 'java.util.HashSet'.(Κ‚κX
+E
+java:S1128	"*Remove this unused import 'java.util.Set'.(φ²„¤ώÿÿÿÿ
