@@ -18,8 +18,7 @@ public class AggiungiCorsa {
     private int num=0;
     private JComboBox comboBox1;
     private JTextField textCodice;
-    private JButton aggiungiImbarcazioneButton;
-    private JButton aggiungiCompagniaButton;
+    private JComboBox comboBox2;
     private JFrame frame;
 
     private ArrayList<Porto> porti= new ArrayList<Porto>();

@@ -13,6 +13,10 @@ public class Corsa {
 
     private String avviso;
 
+    private Imbarcazione FKImb;
+
+    private Compagnia FKComp;
+
     private ArrayList<Biglietto> biglietti;
 
     private ArrayList<Imbarcazione> imbarcazioni;
