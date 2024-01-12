@@ -7,8 +7,7 @@ import Model.Passeggero;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.util.ArrayList;
 
 public class ListaCorse {
@@ -17,8 +16,9 @@ public class ListaCorse {
     private JButton btoAcquistaBiglietto;
     private JButton buttonHome;
     private JComboBox cBImbarcazioni;
-    private JTextField tFPrezzo;
     private JButton cercaButton;
+    private JSlider sliderPrezzo;
+    private JLabel Prezzo;
     private Controller controller;
 
     private JFrame frameChiamante;
@@ -41,13 +41,19 @@ public class ListaCorse {
 
 
 
-        cBImbarcazioni.addItem("Tutte");
-        cBImbarcazioni.addItem("Aliscafo");
-        cBImbarcazioni.addItem("Motonave");
-        cBImbarcazioni.addItem("Traghetto");
+        cBImbarcazioni.addItem("tutte");
+        cBImbarcazioni.addItem("aliscafo");
+        cBImbarcazioni.addItem("motonave");
+        cBImbarcazioni.addItem("traghetto");
 
 
+        sliderPrezzo.setMaximum(2000);
+        sliderPrezzo.setMinimum(0);
+        sliderPrezzo.setMinorTickSpacing(1);
 
+        if(p==null){
+            btoAcquistaBiglietto.setVisible(false);
+        }
 
 
         frame.setVisible(true);
@@ -124,6 +130,31 @@ public class ListaCorse {
         ArrayList<String> listaCodiceCorsa = controller.getCodiceCorsa();*/
 
 
+        sliderPrezzo.addMouseMotionListener(new MouseMotionAdapter() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                super.mouseDragged(e);
+                Prezzo.setText(Integer.toString(sliderPrezzo.getValue()));
+            }
+        });
+        cercaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+
+                //Si fa passare la lista di corse dal controller
+                controller.LeggiCorseFiltrateDAO(cBImbarcazioni.getSelectedItem().toString(), sliderPrezzo.getValue());
+
+                ArrayList<CorsaTabellone> listaCorse = controller.getCorse();
+
+                //Inserisce tutte le righe della tabella utilizzando l'arraylist listaCorse
+                tableModel.setRowCount(0);
+                if (listaCorse != null) {
+                    for (int i = 0; i < listaCorse.size(); i++)
+                        tableModel.addRow(new Object[]{listaCorse.get(i).CodiceCorsa, listaCorse.get(i).costocorsa,listaCorse.get(i).scali, listaCorse.get(i).partenza, listaCorse.get(i).cittapartenza, listaCorse.get(i).nazionepartenza, listaCorse.get(i).destinazione, listaCorse.get(i).cittadestinazione, listaCorse.get(i).nazionedestinazione, listaCorse.get(i).datapartenza, listaCorse.get(i).dataarrivo, listaCorse.get(i).orariopartenza, listaCorse.get(i).orarioarrivo, listaCorse.get(i).stato, listaCorse.get(i).avviso});
+                }
+            }
+        });
     }
 
 

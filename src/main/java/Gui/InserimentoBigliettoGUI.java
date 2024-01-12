@@ -18,6 +18,7 @@ public class InserimentoBigliettoGUI {
     private JTextField tFCodiceCorsa;
     private JSpinner spinnerNumeroBagagli;
     private JButton btoIndietro;
+    private JComboBox comboBox1;
     public JFrame frameChiamante;
     JFrame frame;
     Controller controller;

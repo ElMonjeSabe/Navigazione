@@ -36,6 +36,15 @@ public class Controller {
 
     }
 
+    public void LeggiCorseFiltrateDAO(String TipoImb, int prezzo) {
+        CorseDAO l=new ImplementazioneLeggiCorseDAO();
+        corse.clear();
+        l.leggiCorseFiltroDB(corse, TipoImb, prezzo);  //legge listino dal DB
+
+        // costruisce gli oggetti Model a partire dai risultati del db
+
+    }
+
     public ArrayList<CorsaTabellone> getCorse() {
         return this.corse;
     }

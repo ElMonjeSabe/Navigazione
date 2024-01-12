@@ -14,6 +14,7 @@ public class Home2 {
 
     private static JFrame frame;
     private JPanel panel;
+    private JButton visualizzaCorseButton;
 
 
     Controller controller = new Controller();
@@ -44,6 +45,15 @@ public class Home2 {
                 frameAcc.frame.setVisible(true);
                 frame.setVisible(false);
 
+            }
+        });
+        visualizzaCorseButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                controller.LeggiCorseDAO();
+                ListaCorse frameListaCorse = new ListaCorse(frame, controller,null);
+                frameListaCorse.frame.setVisible(true);
+                frame.setVisible(false);
             }
         });
     }
