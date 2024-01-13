@@ -12,7 +12,7 @@ public class AggiungiImbarcazione {
     private JTextField textNomei;
     private JButton indietroButton;
     private JButton confermaButton;
-    private JComboBox comboBox1;
+    private JComboBox CBTipo;
     private JTextField textCodice;
     private JPanel panel;
     private JTextField textCapienzaP;
@@ -25,22 +25,17 @@ public class AggiungiImbarcazione {
 
 
 
-    public AggiungiImbarcazione(JFrame frameChiamante, Controller controller) {
+    public AggiungiImbarcazione(JFrame frameChiamante, Controller controller, String nomeComp) {
         //aggiorna la lista di Compangie nel controller
         controller.CaricaCompagnie();
 
         this.controller = controller;
         this.frameChiamante = frameChiamante;
 
-        comboBox1.addItem("traghetto");
-        comboBox1.addItem("motonave");
-        comboBox1.addItem("aliscafo");
+        CBTipo.addItem("traghetto");
+        CBTipo.addItem("motonave");
+        CBTipo.addItem("aliscafo");
 
-
-        //Mette i nomi delle Compagnie nella comboBox Compagnie
-        for(Compagnia Comp: controller.getCompagnie()) {
-            cBCompagnie.addItem(Comp.getNomeCompagnia());
-        }
 
 
         frame = new JFrame("Aggiungi Corsa");
@@ -76,8 +71,15 @@ public class AggiungiImbarcazione {
 
                     //messaggio di conferma
 
-                    Imbarcazione im = new Imbarcazione(codice, nomei,comboBox1.getSelectedItem().toString(),capienzap,capienzav,cBCompagnie.getSelectedItem().toString());
-                    controller.AggiungiImbarcazioneDAO(im);
+                    Imbarcazione im = new Imbarcazione(codice, nomei, CBTipo.getSelectedItem().toString(),capienzap,capienzav,nomeComp);
+                    if(controller.AggiungiImbarcazione(im))
+                    {
+                        JOptionPane.showMessageDialog(null, "Imbarcazione aggiunta correttamente");
+                        frameChiamante.setVisible(true);
+                        frame.setVisible(false);
+                        frame.dispose();
+                    }
+
 
 
                 }
@@ -103,7 +105,7 @@ public class AggiungiImbarcazione {
 
 
 
-        comboBox1.addActionListener(new ActionListener() {
+        CBTipo.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.
              *
@@ -111,7 +113,7 @@ public class AggiungiImbarcazione {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(comboBox1.getSelectedItem()!="traghetto")
+                if(CBTipo.getSelectedItem()!="traghetto")
                 {
                     textCapienzaV.setEditable(false);
                     textCapienzaV.setVisible(false);

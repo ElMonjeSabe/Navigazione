@@ -1,8 +1,6 @@
 
 {	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Åíáòÿÿÿÿÿ8ôù›Ï1
 q
-java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÓÔ¾ıÿÿÿÿ8ù³«Ï1
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(–ÿÃÁùÿÿÿÿ8ŸŞÈôÏ1
 T
-java:S1135"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8ùù›Ï1
-N
-java:S1128",Remove this unused import 'Model.Compagnia'.(ÀËáƒıÿÿÿÿ8ùÕ»Ï1
+java:S1135"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8£ŞÈôÏ1

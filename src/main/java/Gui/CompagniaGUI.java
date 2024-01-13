@@ -2,10 +2,12 @@ package Gui;
 
 import Controller.Controller;
 import Model.Compagnia;
+import Model.Porto;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 
 public class CompagniaGUI {
@@ -40,6 +42,8 @@ public class CompagniaGUI {
 
     private Controller controller;
 
+    private ArrayList<String> imbarcazioni= new ArrayList<String>();
+
 
     public CompagniaGUI(JFrame frameChiamante, Controller controller, Compagnia c) {
 
@@ -65,10 +69,28 @@ public class CompagniaGUI {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                AggiungiCorsa frameAggiungiCorsa = new AggiungiCorsa(frame);
-                frameAggiungiCorsa.getFrame().setVisible(true);
 
-                frame.setVisible(false);
+                ArrayList<Porto> porti =controller.GetPorti();
+                if(porti.isEmpty())
+                {
+                    JOptionPane.showMessageDialog(null, "nessun porto trovato");
+                }
+                else{
+                    imbarcazioni=controller.GetImbarcazioni(NomeComp.getText());
+                    if (!imbarcazioni.isEmpty()) {
+
+                        AggiungiCorsa frameAggiungiCorsa = new AggiungiCorsa(frame,controller,imbarcazioni, porti, NomeComp.getText());
+                        frameAggiungiCorsa.getFrame().setVisible(true);
+
+                        frame.setVisible(false);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Errore durante la lettura di imbarcazioni");
+
+                    }
+                }
+
+
+
             }
         });
         modificaCorsaButton.addActionListener(new ActionListener() {
@@ -94,7 +116,7 @@ public class CompagniaGUI {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                AggiungiImbarcazione frameImbarcazione = new AggiungiImbarcazione(frame, controller);
+                AggiungiImbarcazione frameImbarcazione = new AggiungiImbarcazione(frame, controller, NomeComp.getText());
                 frameImbarcazione.getFrame().setVisible(true);
 
                 frame.setVisible(false);

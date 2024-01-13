@@ -6,6 +6,6 @@ import java.util.ArrayList;
 
 public interface AggiungiImbarcazioneDAO {
 
-    public void AggiungiImbarcazioneDB(Imbarcazione im);
+    public boolean AggiungiImbarcazioneDB(Imbarcazione imb);
 
 }

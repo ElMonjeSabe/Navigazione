@@ -1,14 +1,12 @@
 
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á–Ì“8¼µïÀÆ1
-o	java:S100v"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷Ú¥ðÿÿÿÿÿ8ÌµïÀÆ1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á–Ì“8Çœ“ýÏ1
+^	java:S1074"BConstructor has 10 parameters, which is greater than 7 authorized.(æ“ßà8Ëœ“ýÏ1
+]	java:S107H"AConstructor has 8 parameters, which is greater than 7 authorized.(ˆ¦Ê¢8Ëœ“ýÏ1
+]	java:S125"<This block of commented-out lines of code should be removed.(¹Ãß›ÿÿÿÿÿ8Ìœ“ýÏ1
+o	java:S100`"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷Ú¥ðÿÿÿÿÿ8Îœ“ýÏ1
 W
-java:S1854w"5Remove this useless assignment to local variable "c".(âÛ»£øÿÿÿÿ8ÎµïÀÆ1
+java:S1854a"5Remove this useless assignment to local variable "c".(âÛ»£øÿÿÿÿ8Ïœ“ýÏ1
 H
-java:S1481w"&Remove this unused "c" local variable.(âÛ»£øÿÿÿÿ8ÐµïÀÆ1
-p	java:S100€"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õø¢ úÿÿÿÿ8ÑµïÀÆ1
-p	java:S100‹"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±í•’úÿÿÿÿ8ÑµïÀÆ1
-X
-java:S1854Œ"5Remove this useless assignment to local variable "i".(ØŸ¸âúÿÿÿÿ8ÒµïÀÆ1
-I
-java:S1481Œ"&Remove this unused "i" local variable.(ØŸ¸âúÿÿÿÿ8ÒµïÀÆ1
-k	java:S100•"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò‡Úú8ÓµïÀÆ1
+java:S1481a"&Remove this unused "c" local variable.(âÛ»£øÿÿÿÿ8Ñœ“ýÏ1
+R
+java:S1068"0Remove this unused "imbarcazione" private field.(Î°Ø‹øÿÿÿÿ8Òœ“ýÏ1

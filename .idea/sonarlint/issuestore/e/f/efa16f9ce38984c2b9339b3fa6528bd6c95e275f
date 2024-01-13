@@ -1,15 +1,15 @@
 
 }
-java:S11043"[Make getPrenotazione a static final constant or non-public and provide accessors if needed.(ìÕ£˜ÿÿÿÿÿ8ûã«ÁÆ1
+java:S1104"[Make getPrenotazione a static final constant or non-public and provide accessors if needed.(ìÕ£˜ÿÿÿÿÿ8ûã«ÁÆ1
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á–Ì“8ñ÷ŒÔÃ1
 Œ
-java:S4165o"jRemove this useless assignment; "prenotazione" already holds the assigned value along all execution paths.(±›ìÄûÿÿÿÿ8“ä«ÁÆ1
-v	java:S1165"ZRename this field "CodiceBiglietto" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ê¨…°8•ä«ÁÆ1
-r	java:S1166"QRename this field "Prezzo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°ÚÂÛúÿÿÿÿ8ö÷ŒÔÃ1
-|
-java:S4144“"YUpdate this method so that its implementation is not identical to "isVeicolo" on line 79.(‹Û›øÿÿÿÿ8›ä«ÁÆ1
+java:S4165!"jRemove this useless assignment; "prenotazione" already holds the assigned value along all execution paths.(±›ìÄûÿÿÿÿ8“ä«ÁÆ1
+v	java:S116"ZRename this field "CodiceBiglietto" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ê¨…°8•ä«ÁÆ1
+r	java:S116"QRename this field "Prezzo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°ÚÂÛúÿÿÿÿ8ö÷ŒÔÃ1
+}
+java:S4144"ZUpdate this method so that its implementation is not identical to "getVeicolo" on line 58.(âÿıßøÿÿÿÿ8àÜ‡ıÏ1
+P
+java:S1172*"3Remove this unused method parameter "dataAcquisto".(Ãƒå8±ä«ÁÆ1
+X	java:S125?"<This block of commented-out lines of code should be removed.(˜àö™8Âä«ÁÆ1
 Q
-java:S1172ƒ"3Remove this unused method parameter "dataAcquisto".(Ãƒå8±ä«ÁÆ1
-Y	java:S125¢"<This block of commented-out lines of code should be removed.(˜àö™8Âä«ÁÆ1
-Q
-java:S1656o"/Remove or correct this useless self-assignment.(±›ìÄûÿÿÿÿ8Ää«ÁÆ1
+java:S1656!"/Remove or correct this useless self-assignment.(±›ìÄûÿÿÿÿ8Ää«ÁÆ1

@@ -1,14 +1,18 @@
 
+L
+java:S3740"/Provide the parametrized type for this generic.(İ£Û‚8É¨ÂıÏ1
 E
-java:S1604,"(Make this anonymous inner class a lambda(…ş©¹8ÆÚÙ‹Ï1
+java:S16047"(Make this anonymous inner class a lambda(…ş©¹8Ê¨ÂıÏ1
 J
-java:S16044"(Make this anonymous inner class a lambda(¸Êä¼ÿÿÿÿÿ8ÇÚÙ‹Ï1
+java:S1604?"(Make this anonymous inner class a lambda(¸Êä¼ÿÿÿÿÿ8Ê¨ÂıÏ1
+J
+java:S1604e"(Make this anonymous inner class a lambda(¯¨øæüÿÿÿÿ8Ê¨ÂıÏ1
 n
-java:S1104"QMake frame a static final constant or non-public and provide accessors if needed.(Ü˜üí8ÇÚÙ‹Ï1
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Â¿Âëüÿÿÿÿ8ÈÚÙ‹Ï1
+java:S1104"QMake frame a static final constant or non-public and provide accessors if needed.(Ü˜üí8Ê¨ÂıÏ1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Â¿Âëüÿÿÿÿ8Ë¨ÂıÏ1
+m	java:S116"QRename this field "CBTipo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İ£Û‚8Ø¨ÂıÏ1
 f
-java:S3252$"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8ßÚÙ‹Ï1
-B
-java:S1128"%Remove this unused import 'java.awt'.(ï´µ©8¾Ö»Ï1
+java:S3252*"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8İ¨ÂıÏ1
+]	java:S1252"<This block of commented-out lines of code should be removed.(»¹Õäúÿÿÿÿ8Ş¨ÂıÏ1
 P
-java:S1068".Remove this unused "controller" private field.(š·Âëüÿÿÿÿ8ÿÚÙ‹Ï1
+java:S1068".Remove this unused "controller" private field.(š·Âëüÿÿÿÿ8å¨ÂıÏ1

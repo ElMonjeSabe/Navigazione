@@ -3,10 +3,10 @@ v
 java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(›ÐÍÕ8®í©·Î1
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á–Ì“8ŸùˆÔÃ1
 >
-java:S1116("Remove this empty statement.(ôŸŽìúÿÿÿÿ8¼í©·Î1
-j	java:S1001"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†˜‚ö8¼í©·Î1
-o	java:S100?"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃÔŠÅùÿÿÿÿ8½í©·Î1
-j	java:S100G"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò‡Úú8¿í©·Î1
-o	java:S100M"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬ªÝ½þÿÿÿÿ8Àí©·Î1
+java:S1116'"Remove this empty statement.(ôŸŽìúÿÿÿÿ8¼í©·Î1
+j	java:S1000"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†˜‚ö8¼í©·Î1
+o	java:S100>"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃÔŠÅùÿÿÿÿ8½í©·Î1
+j	java:S100F"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò‡Úú8¿í©·Î1
+o	java:S100L"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬ªÝ½þÿÿÿÿ8Àí©·Î1
 H
 java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8Âí©·Î1

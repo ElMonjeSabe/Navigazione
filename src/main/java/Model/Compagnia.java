@@ -16,8 +16,9 @@ public class Compagnia {
 
     private ArrayList<Social> socials;
 
-    private ArrayList<Imbarcazione> imbarcazioni;
+    //private ArrayList<Imbarcazione> imbarcazioni;
 
+    private Imbarcazione imbarcazione;
 
 
 
@@ -30,14 +31,31 @@ public class Compagnia {
      * @param telefono the telefono
      * @param sitoWeb  the sito web
      */
+    public Compagnia(String nome, String password,String telefono, String email, String sitoWeb, Imbarcazione imbarcazione){
+        this.nomeCompagnia=nome;
+        this.passwCompagnia=password;
+        this.emailCompagnia=email;
+        this.telefono=telefono;
+        this.sitoWeb=sitoWeb;
+        this.imbarcazione=imbarcazione;
+    }
+
     public Compagnia(String nome, String password,String telefono, String email, String sitoWeb){
         this.nomeCompagnia=nome;
         this.passwCompagnia=password;
         this.emailCompagnia=email;
         this.telefono=telefono;
         this.sitoWeb=sitoWeb;
+    }
 
 
+    public Compagnia(String nomeComp, String password,String telefono, String email, String sitoWeb, String codice, String nomeImb, String tipo, int maxpersone, int maxveicoli){
+        this.nomeCompagnia=nomeComp;
+        this.passwCompagnia=password;
+        this.emailCompagnia=email;
+        this.telefono=telefono;
+        this.sitoWeb=sitoWeb;
+        this.imbarcazione=new Imbarcazione(codice, nomeImb, tipo, maxpersone, maxveicoli, this.nomeCompagnia);
     }
 
     /**
@@ -51,56 +69,17 @@ public class Compagnia {
      * @param corsa    the corsa
      * @param social   the social
      */
-    public Compagnia(String nome, String password, String email, String telefono, String sitoWeb, Corsa corsa, Social social){
+    public Compagnia(String nome, String password, String email, String telefono, String sitoWeb, Corsa corsa, Social social, Imbarcazione imbarcazione){
         this.nomeCompagnia=nome;
         this.passwCompagnia=password;
         this.emailCompagnia=email;
         this.telefono=telefono;
         this.sitoWeb=sitoWeb;
         this.socials.add(social);
-    }
-
-    /**
-     * Instantiates a new Compagnia.
-     *
-     * @param nome         the nome
-     * @param password     the password
-     * @param email        the email
-     * @param telefono     the telefono
-     * @param sitoWeb      the sito web
-     * @param social       the social
-     * @param imbarcazione the imbarcazione
-     */
-    public Compagnia(String nome, String email, String password,  String telefono, String sitoWeb, Social social, Imbarcazione imbarcazione){
-        this.nomeCompagnia=nome;
-        this.passwCompagnia=password;
-        this.emailCompagnia=email;
-        this.telefono=telefono;
-        this.sitoWeb=sitoWeb;
-        this.socials.add(social);
-        this.imbarcazioni.add(imbarcazione);
+        this.imbarcazione=imbarcazione;
     }
 
 
-
-    /**
-     * Instantiates a new Compagnia.
-     *
-     * @param nome         the nome
-     * @param password     the password
-     * @param email        the email
-     * @param telefono     the telefono
-     * @param sitoWeb      the sito web
-
-     */
-    public Compagnia(String nome, String password,String compagnia, String email, String telefono, String sitoWeb){
-        this.nomeCompagnia=nome;
-        this.passwCompagnia=password;
-        this.emailCompagnia=email;
-        this.telefono=telefono;
-        this.sitoWeb=sitoWeb;
-
-    }
 
 
     /**
@@ -121,34 +100,6 @@ public class Compagnia {
 
     }
 
-    /**
-     * Modifica corsa.
-     */
-    public void ModificaCorsa(String codiceCorsa){
-        /*SQL che cerca il codiceCorsa nel database
-        * Inserisce la tupla trovata in una classe corsa
-        * Vengono effettuate l'eventuali modifiche
-        * SQL che modifica la tupla
-        * */
-
-    }
-
-
-
-    public void AggiungiImbarcazioneConCorsa(String codice, String nome, String tipo, int maxpersone, int maxveicoli, Cabina stanza,Corsa corsa){
-        Imbarcazione i = new Imbarcazione(codice, nome, tipo, maxpersone,maxveicoli, this, stanza, corsa);
-        /*SQL
-         * */
-    }
-
-
-    /**
-     * Visualizza corse.
-     */
-    void VisualizzaCorse(){
-        /*SQL mostrare la view
-         * */
-    }
 
 
     public String getNomeCompagnia(){

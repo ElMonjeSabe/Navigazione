@@ -1,14 +1,0 @@
-
-E
-java:S1604"(Make this anonymous inner class a lambda(ĞÁÅ8ê‹„çÃ1
-E
-java:S1604%"(Make this anonymous inner class a lambda(¼¥8ÑŞŒ¤Æ1
-J
-java:S16044"(Make this anonymous inner class a lambda(óò‡Ùüÿÿÿÿ8ÓŞŒ¤Æ1
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Â¿Âëüÿÿÿÿ8ê‹„çÃ1
-W
-java:S2209>"5Change this instance-reference to a static reference.(­œÌøÿÿÿÿ8ÖâŒ¤Æ1
-f
-java:S3252J"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8Œ„çÃ1
-G
-java:S1068"*Remove this unused "panel1" private field.(–¾Ê‰8ëâŒ¤Æ1

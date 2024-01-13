@@ -1,18 +1,19 @@
 package ImplementazionePostgresDAO;
 
-import DAO.AggiungiImbarcazioneDAO;
+import DAO.AggiungiCorseDAO;
 import Database.ConnessioneDatabase;
 import Model.Imbarcazione;
+import Model.Percorso;
 
 import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class ImpAggiungiImbarcazioneDAO implements AggiungiImbarcazioneDAO {
+public class ImpAggiungiCorseDAO implements AggiungiCorseDAO {
     private Connection connection;
     boolean esito=true;
 
-    public ImpAggiungiImbarcazioneDAO() {
+    public ImpAggiungiCorseDAO() {
         try {
             connection = ConnessioneDatabase.getInstance().connection;
         } catch (SQLException e) {
@@ -22,20 +23,25 @@ public class ImpAggiungiImbarcazioneDAO implements AggiungiImbarcazioneDAO {
     }
 
 
-    public boolean AggiungiImbarcazioneDB(Imbarcazione im) {
+    public boolean AggiungiCorseDB(ArrayList<Percorso> percorsi) {
         // TODO Auto-generated method stub
         try {
-            PreparedStatement pstmt = connection.prepareStatement("call AggiungiImbarcazione( ?,?,?,?,?,?);");
+            for(Percorso per : percorsi){
+                PreparedStatement pstmt = connection.prepareStatement("insert into percorso values(?,?,?,?,?,?,?);");
 
-            pstmt.setString(1,im.getCodice());
-            pstmt.setString(2, im.getNome());
-            pstmt.setString(3, im.getTipo());
-            pstmt.setString(4, im.getNomeCompagniaPoss());
-            pstmt.setInt(5, im.getMaxPass());
-            pstmt.setInt(6, im.getMaxVei());
-            pstmt.execute();
+                pstmt.setString(1,per.getCodCorsa());
+                pstmt.setInt(2, per.getCodPorto());
+                pstmt.setInt(3, per.getTappa());
+                pstmt.setTime(4, Time.valueOf(per.getOrarioPartenza()));
+                pstmt.setTime(5, Time.valueOf(per.getOrarioArrivo()));
+                pstmt.setDate(6, Date.valueOf(per.getDataAttivazione()));
+                pstmt.setDate(7, Date.valueOf(per.getDataScadenza()));
+                pstmt.execute();
 
-            pstmt.close();
+                pstmt.close();
+
+            }
+
             connection.close();
 
 
@@ -53,7 +59,4 @@ public class ImpAggiungiImbarcazioneDAO implements AggiungiImbarcazioneDAO {
 
         return esito;
     }
-
-
-
 }

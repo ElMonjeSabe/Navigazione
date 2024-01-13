@@ -13,17 +13,15 @@ public class Corsa {
 
     private String avviso;
 
-    private Imbarcazione FKImb;
+    private Imbarcazione imbarcazioneUtilizzata;
 
-    private Compagnia FKComp;
+    private Compagnia compagniaOfferente;
 
     private ArrayList<Biglietto> biglietti;
 
-    private ArrayList<Imbarcazione> imbarcazioni;
 
     private ArrayList<Percorso> percorsi;
 
-    private ArrayList<Compagnia> compagnie;
 
     //vedere se fare costruttore passando direttamente l'arraylist di percorsi
 
@@ -43,9 +41,9 @@ public class Corsa {
         this.costoCorsa=costo;
         this.avviso=avviso;
         this.stato=stato;
-        this.imbarcazioni.add(imbarcazione);
+        this.imbarcazioneUtilizzata= imbarcazione;
         this.percorsi.add(percorso);
-        this.compagnie.add(compagnia);
+        this.compagniaOfferente=compagnia;
     }
 
     /**
@@ -65,18 +63,12 @@ public class Corsa {
         this.costoCorsa=costo;
         this.avviso=avviso;
         this.stato=stato;
-        this.imbarcazioni.add(imbarcazione);
+        this.imbarcazioneUtilizzata= imbarcazione;
         this.percorsi.add(percorso);
-        this.compagnie.add(compagnia);
+        this.compagniaOfferente=compagnia;
         this.biglietti.add(biglietto);
     }
 
-    /**
-     * Mostra corse.
-     */
-    public void MostraCorse(){
-
-    }
 
     public String getCodiceCorsa() {
         return codiceCorsa;

@@ -1,11 +1,6 @@
 
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á–Ì“
-u	java:S116"TRename this field "NomePorto" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”ÈÃòıÿÿÿÿ8…•„¯Ã1
-q	java:S116"PRename this field "Citta" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ«óøÿÿÿÿ8…•„¯Ã1
-s	java:S116	"RRename this field "Nazione" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èš¹êşÿÿÿÿ8…•„¯Ã1
-O
-java:S1068"-Remove this unused "NomePorto" private field.(”ÈÃòıÿÿÿÿ8†•„¯Ã1
-K
-java:S1068")Remove this unused "Citta" private field.(ˆ«óøÿÿÿÿ8†•„¯Ã1
-M
-java:S1068	"+Remove this unused "Nazione" private field.(èš¹êşÿÿÿÿ8†•„¯Ã1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á–Ì“8ÍÿÛ€Ğ1
+u	java:S116	"TRename this field "NomePorto" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”ÈÃòıÿÿÿÿ8ÎÿÛ€Ğ1
+q	java:S116
+"PRename this field "Citta" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ«óøÿÿÿÿ8ÎÿÛ€Ğ1
+s	java:S116"RRename this field "Nazione" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(èš¹êşÿÿÿÿ8ÎÿÛ€Ğ1

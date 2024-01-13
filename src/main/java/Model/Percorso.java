@@ -20,6 +20,44 @@ public class Percorso {
     private Porto porto;
 
     private Corsa corsa;
+    private String codCorsa;
+    private int codPorto;
+
+    public LocalTime getOrarioPartenza() {
+        return orarioPartenza;
+    }
+
+    public LocalTime getOrarioArrivo() {
+        return orarioArrivo;
+    }
+
+    public LocalDate getDataAttivazione() {
+        return dataAttivazione;
+    }
+
+    public LocalDate getDataScadenza() {
+        return dataScadenza;
+    }
+
+    public int getTappa() {
+        return tappa;
+    }
+
+    public Porto getPorto() {
+        return porto;
+    }
+
+    public Corsa getCorsa() {
+        return corsa;
+    }
+
+    public String getCodCorsa() {
+        return codCorsa;
+    }
+
+    public int getCodPorto() {
+        return codPorto;
+    }
 
     /**
      * Instantiates a new Percorso.
@@ -40,5 +78,15 @@ public class Percorso {
         this.tappa = tappa;
         this.porto = porto;
         this.corsa = corsa;
+    }
+
+    public Percorso(LocalTime orarioPartenza, LocalTime orarioArrivo, LocalDate dataAttivazione, LocalDate dataScadenza, int tappa, int codPorto, String corsa) {
+        this.orarioPartenza = orarioPartenza;
+        this.orarioArrivo = orarioArrivo;
+        this.dataAttivazione = dataAttivazione;
+        this.dataScadenza = dataScadenza;
+        this.tappa = tappa;
+        this.codPorto=codPorto;
+        this.codCorsa = corsa;
     }
 }

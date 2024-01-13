@@ -1,22 +1,20 @@
 
 C
-java:S1604d"(Make this anonymous inner class a lambda(†éçôûÿÿÿÿ
+java:S1604J"(Make this anonymous inner class a lambda(†éçôûÿÿÿÿ
 g
-java:S1104,"QMake frame a static final constant or non-public and provide accessors if needed.(Ü˜üí
+java:S1104+"QMake frame a static final constant or non-public and provide accessors if needed.(Ü˜üí
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Â¿Âëüÿÿÿÿ
-j	java:S116 "URename this field "PanelCampi" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰•ùŸ
-q	java:S116#"WRename this field "PanelBottoni" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡û æûÿÿÿÿ
-m	java:S116$"SRename this field "NomePass" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È‘úœøÿÿÿÿ
-m	java:S116%"SRename this field "CongPass" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²¾í¸şÿÿÿÿ
-f	java:S116&"QRename this field "CFPass" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨ü‚‰
-h	java:S116'"SRename this field "DaNaPass" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯ÃÂ
-i	java:S116("TRename this field "EmailPass" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ú§³«
+j	java:S116"URename this field "PanelCampi" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰•ùŸ
+q	java:S116""WRename this field "PanelBottoni" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡û æûÿÿÿÿ
+m	java:S116#"SRename this field "NomePass" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È‘úœøÿÿÿÿ
+m	java:S116$"SRename this field "CongPass" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²¾í¸şÿÿÿÿ
+f	java:S116%"QRename this field "CFPass" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨ü‚‰
+h	java:S116&"SRename this field "DaNaPass" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯ÃÂ
+i	java:S116'"TRename this field "EmailPass" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ú§³«
 _
-java:S3252B"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´
-V	java:S125J"<This block of commented-out lines of code should be removed.(ÌŸÅşÿÿÿÿÿ
-V	java:S125Q"<This block of commented-out lines of code should be removed.(¼ Òşüÿÿÿÿ
+java:S3252A"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´
 P
-java:S2209i"5Change this instance-reference to a static reference.(­œÌøÿÿÿÿ
+java:S2209O"5Change this instance-reference to a static reference.(­œÌøÿÿÿÿ
 K
 java:S1128	"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ
 G
@@ -31,29 +29,27 @@ H
 java:S1068"3Remove this unused "textDataNascita" private field.(¿ĞÚZ
 W
 java:S1068"<Remove this unused "aggiungiPasseggeroButton" private field.(™µÂÔşÿÿÿÿ
-E
-java:S1068"/Remove this unused "labelTitolo" private field.(ÍşØ˜
 b
-java:S1068"GRemove this unused "visualizzaBigliettiAcquistatiButton" private field.(£Àñùûÿÿÿÿ
+java:S1068"GRemove this unused "visualizzaBigliettiAcquistatiButton" private field.(£Àñùûÿÿÿÿ
 T
-java:S1068"9Remove this unused "ritornaAllaHomeButton" private field.(«¸Ğúıÿÿÿÿ
+java:S1068"9Remove this unused "ritornaAllaHomeButton" private field.(«¸Ğúıÿÿÿÿ
 L
-java:S1068"1Remove this unused "passwordField" private field.(ù¥üÁùÿÿÿÿ
+java:S1068"1Remove this unused "passwordField" private field.(ù¥üÁùÿÿÿÿ
 C
-java:S1068"-Remove this unused "textEmail" private field.(›ñò
+java:S1068"-Remove this unused "textEmail" private field.(›ñò
 K
-java:S1068"0Remove this unused "panelTabella" private field.(õ¤œËıÿÿÿÿ
+java:S1068"0Remove this unused "panelTabella" private field.(õ¤œËıÿÿÿÿ
 D
-java:S1068"/Remove this unused "panelTitolo" private field.(»¦úU
+java:S1068"/Remove this unused "panelTitolo" private field.(»¦úU
 D
-java:S1068 ".Remove this unused "PanelCampi" private field.(‰•ùŸ
+java:S1068".Remove this unused "PanelCampi" private field.(‰•ùŸ
 E
-java:S1068!"/Remove this unused "panelAzioni" private field.(ò«æ
+java:S1068 "/Remove this unused "panelAzioni" private field.(ò«æ
 K
-java:S1068""0Remove this unused "panelTitolo2" private field.(øÜòœşÿÿÿÿ
+java:S1068!"0Remove this unused "panelTitolo2" private field.(øÜòœşÿÿÿÿ
 K
-java:S1068#"0Remove this unused "PanelBottoni" private field.(¡û æûÿÿÿÿ
+java:S1068""0Remove this unused "PanelBottoni" private field.(¡û æûÿÿÿÿ
 G
-java:S1068*"2Remove this unused "frameChiamante" private field.(Ğ÷©
+java:S1068)"2Remove this unused "frameChiamante" private field.(Ğ÷©
 G
-java:S10680"%Remove this unused "p" private field.(ã€¹‹ıÿÿÿÿ8ƒÖ®ŒÏ1
+java:S1068/"%Remove this unused "p" private field.(ã€¹‹ıÿÿÿÿ8ƒÖ®ŒÏ1
