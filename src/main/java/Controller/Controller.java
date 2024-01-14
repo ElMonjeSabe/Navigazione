@@ -79,9 +79,9 @@ public class Controller {
 
 
 
-    public void ModificaCorsa(String CodiceCorsa, String Avviso, String Stato){
+    public void ModificaCorsa(String CodiceCorsa, String Avviso, String Stato, String NomeCompagnia){
         GestisciCorsaDAO MC = new ImpGestisciCorsaDAO();
-        MC.ModificaCorsaDB(CodiceCorsa,Avviso, Stato);
+        MC.ModificaCorsaDB(CodiceCorsa,Avviso, Stato, NomeCompagnia);
 
     }
 

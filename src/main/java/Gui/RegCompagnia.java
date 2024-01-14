@@ -23,6 +23,7 @@ public class RegCompagnia {
     private JTextField textCodice;
     private JTextField textCapienzaP;
     private JTextField textCapienzaV;
+    private JLabel LCV;
 
     public JFrame frame;
 
@@ -110,14 +111,20 @@ public class RegCompagnia {
                 {
                     textCapienzaV.setEditable(false);
                     textCapienzaV.setVisible(false);
+                    LCV.setVisible(false);
                     textCapienzaV.setText("0");
                 }
                 else
                 {
                     textCapienzaV.setEditable(true);
                     textCapienzaV.setVisible(true);
+                    LCV.setVisible(true);
                 }
             }
         });
+    }
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
     }
 }

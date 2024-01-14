@@ -2,7 +2,7 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Gui.AggiungiCorsa">
   <grid id="27dc6" binding="panel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
     <constraints>
-      <xy x="20" y="20" width="2625" height="513"/>
+      <xy x="7" y="23" width="1407" height="525"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -422,6 +422,12 @@
                         <constraints/>
                         <properties/>
                       </component>
+                      <component id="efc71" class="javax.swing.JLabel">
+                        <constraints/>
+                        <properties>
+                          <text value=":"/>
+                        </properties>
+                      </component>
                       <component id="5561c" class="javax.swing.JComboBox" binding="CBArrivoMinIn">
                         <constraints/>
                         <properties/>
@@ -438,6 +444,12 @@
                       <component id="82b95" class="javax.swing.JComboBox" binding="CBPartenzaOraIn">
                         <constraints/>
                         <properties/>
+                      </component>
+                      <component id="948a0" class="javax.swing.JLabel">
+                        <constraints/>
+                        <properties>
+                          <text value=":"/>
+                        </properties>
                       </component>
                       <component id="6216d" class="javax.swing.JComboBox" binding="CBPartenzaMinIn">
                         <constraints/>
@@ -472,6 +484,108 @@
                   <grid row="5" column="0" row-span="1" col-span="3" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
                 <properties/>
+              </component>
+              <grid id="5b1e3" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                <margin top="0" left="0" bottom="0" right="0"/>
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <component id="97f06" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <text value="Nome Porto"/>
+                    </properties>
+                  </component>
+                  <component id="6c275" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <text value="Orario Partenza"/>
+                    </properties>
+                  </component>
+                  <component id="f9aca" class="javax.swing.JLabel">
+                    <constraints>
+                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <text value="Orario Arrivo"/>
+                    </properties>
+                  </component>
+                  <grid id="2d778" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                    <constraints>
+                      <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="9cdf2" class="javax.swing.JComboBox" binding="CBPartenzaOraOut">
+                        <constraints/>
+                        <properties/>
+                      </component>
+                      <component id="4375" class="javax.swing.JLabel">
+                        <constraints/>
+                        <properties>
+                          <text value=":"/>
+                        </properties>
+                      </component>
+                      <component id="80285" class="javax.swing.JComboBox" binding="CBPartenzaMinOut">
+                        <constraints/>
+                        <properties/>
+                      </component>
+                    </children>
+                  </grid>
+                  <component id="139f4" class="javax.swing.JComboBox" binding="CBPortoOut">
+                    <constraints>
+                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties/>
+                  </component>
+                  <grid id="69909" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                    <constraints>
+                      <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="dd0" class="javax.swing.JComboBox" binding="CBArrivoOraOut">
+                        <constraints/>
+                        <properties/>
+                      </component>
+                      <component id="d9208" class="javax.swing.JLabel">
+                        <constraints/>
+                        <properties>
+                          <text value=":"/>
+                        </properties>
+                      </component>
+                      <component id="e7c7e" class="javax.swing.JComboBox" binding="CBArrivoMinOut">
+                        <constraints/>
+                        <properties/>
+                      </component>
+                    </children>
+                  </grid>
+                </children>
+              </grid>
+              <component id="abe0a" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Porto di Arrivo"/>
+                </properties>
+              </component>
+              <component id="f1025" class="javax.swing.JCheckBox" binding="scaloCheckBox" default-binding="true">
+                <constraints>
+                  <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Scalo"/>
+                </properties>
               </component>
               <grid id="6bbfb" binding="panelScalo" layout-manager="GridLayoutManager" row-count="2" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
@@ -522,6 +636,12 @@
                         <constraints/>
                         <properties/>
                       </component>
+                      <component id="80e15" class="javax.swing.JLabel">
+                        <constraints/>
+                        <properties>
+                          <text value=":"/>
+                        </properties>
+                      </component>
                       <component id="78f7d" class="javax.swing.JComboBox" binding="CBPartenzaMinScalo">
                         <constraints/>
                         <properties/>
@@ -539,6 +659,12 @@
                         <constraints/>
                         <properties/>
                       </component>
+                      <component id="cb95d" class="javax.swing.JLabel">
+                        <constraints/>
+                        <properties>
+                          <text value=":"/>
+                        </properties>
+                      </component>
                       <component id="41c16" class="javax.swing.JComboBox" binding="CBArrivoMinScalo">
                         <constraints/>
                         <properties/>
@@ -547,94 +673,6 @@
                   </grid>
                 </children>
               </grid>
-              <grid id="5b1e3" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-                <margin top="0" left="0" bottom="0" right="0"/>
-                <constraints>
-                  <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties/>
-                <border type="none"/>
-                <children>
-                  <component id="97f06" class="javax.swing.JLabel">
-                    <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                    </constraints>
-                    <properties>
-                      <text value="Nome Porto"/>
-                    </properties>
-                  </component>
-                  <component id="6c275" class="javax.swing.JLabel">
-                    <constraints>
-                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                    </constraints>
-                    <properties>
-                      <text value="Orario Partenza"/>
-                    </properties>
-                  </component>
-                  <component id="f9aca" class="javax.swing.JLabel">
-                    <constraints>
-                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                    </constraints>
-                    <properties>
-                      <text value="Orario Arrivo"/>
-                    </properties>
-                  </component>
-                  <grid id="2d778" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
-                    <constraints>
-                      <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-                    </constraints>
-                    <properties/>
-                    <border type="none"/>
-                    <children>
-                      <component id="9cdf2" class="javax.swing.JComboBox" binding="CBPartenzaOraOut">
-                        <constraints/>
-                        <properties/>
-                      </component>
-                      <component id="80285" class="javax.swing.JComboBox" binding="CBPartenzaMinOut">
-                        <constraints/>
-                        <properties/>
-                      </component>
-                      <grid id="69909" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
-                        <constraints/>
-                        <properties/>
-                        <border type="none"/>
-                        <children>
-                          <component id="dd0" class="javax.swing.JComboBox" binding="CBArrivoOraOut">
-                            <constraints/>
-                            <properties/>
-                          </component>
-                          <component id="e7c7e" class="javax.swing.JComboBox" binding="CBArrivoMinOut">
-                            <constraints/>
-                            <properties/>
-                          </component>
-                        </children>
-                      </grid>
-                    </children>
-                  </grid>
-                  <component id="139f4" class="javax.swing.JComboBox" binding="CBPortoOut">
-                    <constraints>
-                      <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-                    </constraints>
-                    <properties/>
-                  </component>
-                </children>
-              </grid>
-              <component id="abe0a" class="javax.swing.JLabel">
-                <constraints>
-                  <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <text value="Porto di Arrivo"/>
-                </properties>
-              </component>
-              <component id="f1025" class="javax.swing.JCheckBox" binding="scaloCheckBox" default-binding="true">
-                <constraints>
-                  <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <text value="Scalo"/>
-                </properties>
-              </component>
             </children>
           </grid>
         </children>

@@ -21,14 +21,15 @@ public class ImpGestisciCorsaDAO implements GestisciCorsaDAO {
     }
 
     @Override
-    public void ModificaCorsaDB(String CodiceCorsa, String Avviso, String Stato) {
+    public void ModificaCorsaDB(String CodiceCorsa, String Avviso, String Stato, String NomeCompagnia) {
         try {
             //genera il codice del biglietto
-            PreparedStatement pstmt = connection.prepareStatement("call CambiaStato(?, ?, ?);");
+            PreparedStatement pstmt = connection.prepareStatement("call CambiaStato(?, ?, ?, ?);");
 
             pstmt.setString(1,CodiceCorsa);
             pstmt.setString(2,Avviso);
             pstmt.setString(3,Stato);
+            pstmt.setString(4, NomeCompagnia);
 
             pstmt.execute();
 
