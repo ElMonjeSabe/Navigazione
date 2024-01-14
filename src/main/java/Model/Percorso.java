@@ -89,4 +89,16 @@ public class Percorso {
         this.codPorto=codPorto;
         this.codCorsa = corsa;
     }
+
+
+    public void stampaPercorso()
+    {
+        System.out.println(this.orarioPartenza+ " ");
+        System.out.println(this.orarioArrivo+ " ");
+        System.out.println(this.dataAttivazione+ " ");
+        System.out.println(this.dataScadenza+ " ");
+        System.out.println(this.tappa+" ");
+        System.out.println(this.codPorto+" ");
+        System.out.println(this.codCorsa+ "\n\n");
+    }
 }

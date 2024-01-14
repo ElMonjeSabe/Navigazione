@@ -167,12 +167,6 @@ s
 Csrc/main/java/ImplementazionePostgresDAO/ImpGetImbarcazioniDAO.java,b\e\bef1852113d6314bcda97ca267ad955ef4b019f7
 r
 Bsrc/main/java/ImplementazionePostgresDAO/ImpLoginCompagniaDAO.java,4\4\4462e8aa0fadae1fbf39f6a360a665276045cc20
-W
-'src/main/java/Gui/AggiungiPortiGUI.java,f\d\fd07312eaa4832d5093382f23eb85751a83a3203
-W
-'src/main/java/Gui/AggiungiPortiGui.java,b\9\b91e6dfef10652a7c739009ec59340bed3012e1a
-W
-'src/main/java/Gui/AggiungiPortiGui.form,0\c\0ccf8e108e17ac392090986eb10c088493bc2972
 R
 "src/main/java/DAO/GetPortiDao.java,3\5\35a3e428249f3f347b98ac0a07c1292db7659549
 R

@@ -10,11 +10,13 @@ java:S13191"pThe return type of this method should be an interface such as "Lis
 Œ
 java:S1319J"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(€ÄÇR8•ôÍ‡Ğ1
 ’
-java:S1319u"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ğÌ¥ƒùÿÿÿÿ8•ôÍ‡Ğ1
+java:S1319u"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ˆÚŞøÿÿÿÿ8•ôÍ‡Ğ1
 ’
 java:S1319z"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(À´´Èüÿÿÿÿ8•ôÍ‡Ğ1
 Š
-java:S1319"hThe type of "percorsi" should be an interface such as "List" rather than the implementation "ArrayList".(³¨Úõûÿÿÿÿ8•ôÍ‡Ğ1
+java:S1319"hThe type of "percorsi" should be an interface such as "List" rather than the implementation "ArrayList".(¾äØ§úÿÿÿÿ8•ôÍ‡Ğ1
+‡
+java:S1319"eThe type of "corse" should be an interface such as "List" rather than the implementation "ArrayList".(¾äØ§úÿÿÿÿ8§Ôû©Ğ1
 m	java:S117("QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßŒ®”8•ôÍ‡Ğ1
 r	java:S117R"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó‡½şÿÿÿÿ8•ôÍ‡Ğ1
 r	java:S117R"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó‡½şÿÿÿÿ8•ôÍ‡Ğ1
@@ -39,11 +41,11 @@ o	java:S100R"NRename this method name to match the regular expression '^[a-z][
 j	java:S100X"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›ˆè’8¨ôÍ‡Ğ1
 o	java:S100^"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷„üáûÿÿÿÿ8¨ôÍ‡Ğ1
 o	java:S100p"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Š«µˆşÿÿÿÿ8©ôÍ‡Ğ1
-o	java:S100u"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğÌ¥ƒùÿÿÿÿ8©ôÍ‡Ğ1
+o	java:S100u"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆÚŞøÿÿÿÿ8©ôÍ‡Ğ1
 o	java:S100z"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(À´´Èüÿÿÿÿ8ªôÍ‡Ğ1
-o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³¨Úõûÿÿÿÿ8ªôÍ‡Ğ1
+o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾äØ§úÿÿÿÿ8ªôÍ‡Ğ1
 J
-java:S1128"(Remove this unused import 'javax.swing'.(Ìí¿Üüÿÿÿÿ8÷Œ¦‰Ğ1
+java:S1128"(Remove this unused import 'javax.swing'.(Ìí¿Üüÿÿÿÿ8ÓØ¶®Ğ1
 O
 java:S1068"-Remove this unused "compagnia" private field.(Ê¹¸¨ıÿÿÿÿ8«ôÍ‡Ğ1
 Q

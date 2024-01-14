@@ -2,6 +2,7 @@ package Gui;
 
 import Controller.Controller;
 import Model.Compagnia;
+import Model.Imbarcazione;
 import Model.Porto;
 
 import javax.swing.*;
@@ -42,7 +43,7 @@ public class CompagniaGUI {
 
     private Controller controller;
 
-    private ArrayList<String> imbarcazioni= new ArrayList<String>();
+    private ArrayList<Imbarcazione> imbarcazioni= new ArrayList<Imbarcazione>();
 
 
     public CompagniaGUI(JFrame frameChiamante, Controller controller, Compagnia c) {

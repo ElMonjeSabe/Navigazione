@@ -1,13 +1,9 @@
 package Gui;
 
 import Controller.Controller;
-import Model.Compagnia;
-import Model.Imbarcazione;
-import Model.Percorso;
-import Model.Porto;
+import Model.*;
 
 
-import javax.naming.ldap.Control;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,7 +20,7 @@ public class AggiungiCorsa {
     private JButton confermaButton;
     private JLabel countPorti;
     private int num=0;
-    private JComboBox comboBox1;
+    private JComboBox CBStato;
     private JTextField textCodice;
     private JComboBox CBImbarcazioni;
     private JComboBox CBGiornoIn;
@@ -40,7 +36,7 @@ public class AggiungiCorsa {
     private JComboBox CBGiornoOut;
     private JComboBox CBMeseOut;
     private JComboBox CBAnnoOut;
-    private JComboBox CBNomeIn;
+    private JComboBox CBPortoIn;
     private JComboBox CBCittaIn;
     private JComboBox CBNazioneIn;
     private JComboBox CBArrivoOraIn;
@@ -48,7 +44,7 @@ public class AggiungiCorsa {
     private JComboBox CBPartenzaOraIn;
     private JComboBox CBPartenzaMinIn;
     private JLabel txtPortoIn;
-    private JComboBox CBNomeOut;
+    private JComboBox CBPortoOut;
     private JComboBox CBCittaOut;
     private JComboBox CBNazioneOut;
     private JComboBox CBPartenzaOraOut;
@@ -56,7 +52,7 @@ public class AggiungiCorsa {
     private JComboBox CBArrivoOraOut;
     private JComboBox CBArrivoMinOut;
     private JPanel panelScalo;
-    private JComboBox CBNomeScalo;
+    private JComboBox CBPortoScalo;
     private JComboBox CBCittaScalo;
     private JComboBox CBNazioneScalo;
     private JComboBox CBPartenzaOraScalo;
@@ -65,6 +61,11 @@ public class AggiungiCorsa {
     private JComboBox CBArrivoMinScalo;
     private JCheckBox scaloCheckBox;
     private JTextField tfCosto;
+    private JSpinner spGiorni;
+    private JSpinner spGiorniScalo;
+    private JLabel labelScalo;
+    private JSpinner tfGiorniScalo;
+
 
     private int codPortIn;
     private int codPortOut;
@@ -92,33 +93,19 @@ public class AggiungiCorsa {
 
     private LocalDate giorno;
 
-    public AggiungiCorsa(JFrame frameChiamante, Controller controller,  ArrayList<String> imbarcazioni, ArrayList<Porto> porti, String nomeComp) {
+    public AggiungiCorsa(JFrame frameChiamante, Controller controller,  ArrayList<Imbarcazione> imbarcazioni, ArrayList<Porto> porti, String nomeComp) {
         panelScalo.setVisible(false);
-
-        CBCittaIn.setEnabled(false);
-        CBCittaOut.setEnabled(false);
-        CBCittaScalo.setEnabled(false);
-
-        CBNazioneScalo.setEnabled(false);
-        CBNazioneIn.setEnabled(false);
-        CBNazioneOut.setEnabled(false);
+        spGiorniScalo.setVisible(false);
+        labelScalo.setVisible(false);
         for(Porto p: porti)
         {
-            CBNomeIn.addItem(p.getNomePorto());
-            CBNomeOut.addItem(p.getNomePorto());
-            CBNomeScalo.addItem(p.getNomePorto());
-
-            CBCittaIn.addItem(p.getCitta());
-            CBCittaOut.addItem(p.getCitta());
-            CBCittaScalo.addItem(p.getCitta());
-
-            CBNazioneIn.addItem(p.getNazione());
-            CBNazioneOut.addItem(p.getNazione());
-            CBNazioneScalo.addItem(p.getNazione());
+            CBPortoIn.addItem(p.getNomePorto()+", "+p.getCitta()+", "+p.getNazione());
+            CBPortoOut.addItem(p.getNomePorto()+", "+p.getCitta()+", "+p.getNazione());
+            CBPortoScalo.addItem(p.getNomePorto()+", "+p.getCitta()+", "+p.getNazione());
         }
-        codPortIn=porti.getFirst().getIdPorto();
+        /*codPortIn=porti.getFirst().getIdPorto();
         codPortOut=porti.getFirst().getIdPorto();
-        codPortScalo=porti.getFirst().getIdPorto();
+        codPortScalo=porti.getFirst().getIdPorto();*/
 
         for(i=0;i<=23;i++)
         {
@@ -153,9 +140,9 @@ public class AggiungiCorsa {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
-        comboBox1.addItem("regolare");
-        comboBox1.addItem("annullato");
-        comboBox1.addItem("ritardo");
+        CBStato.addItem("regolare");
+        CBStato.addItem("annullato");
+        CBStato.addItem("ritardo");
 
         CBAnnoOut.setEnabled(false);
         //va scelto prima l'anno, poi il mese e poi il giorno, in modo che la data d'inizio venga prima di quella di fine
@@ -179,8 +166,8 @@ public class AggiungiCorsa {
         }
 
 
-        for(String i : imbarcazioni){
-            CBImbarcazioni.addItem(i);
+        for(Imbarcazione i : imbarcazioni){
+            CBImbarcazioni.addItem(i.getNome()+", "+i.getCodice());
         }
 
 
@@ -208,11 +195,13 @@ public class AggiungiCorsa {
             public void actionPerformed(ActionEvent e) {
                 //String codice = textCodice.getText();
                 int codice=0;
-                if (!textCodice.getText().equals("")) {
+                double costo=0.0;
+                if (!textCodice.getText().equals("") || !tfCosto.getText().equals("") ) {
                     try {
                         codice = Integer.parseInt(textCodice.getText());
+                        costo= Double.parseDouble(tfCosto.getText());
                     } catch(NumberFormatException err){
-                        JOptionPane.showMessageDialog(null, "inserisci un codice numerico");
+                        JOptionPane.showMessageDialog(null, "inserisci un codice o un prezzo numerico");
                     }
                     if(CBAnnoOut.isEnabled() && CBMeseOut.isEnabled() && CBGiornoOut.isEnabled() && CBAnnoIn.isEnabled() && CBMeseIn.isEnabled() && CBGiornoIn.isEnabled()){
                         dataIn=LocalDate.of((int) CBAnnoIn.getSelectedItem(), (int) CBMeseIn.getSelectedItem(), (int) CBGiornoIn.getSelectedItem());
@@ -221,43 +210,83 @@ public class AggiungiCorsa {
                             ArrayList<LocalDate> giorni=calcoloDate();
 
                             if(!giorni.isEmpty()){
-                                portoiniziale=new Porto((String) CBNomeIn.getSelectedItem(), (String) CBCittaIn.getSelectedItem(), (String) CBNazioneIn.getSelectedItem(),codPortIn);
-                                portofinale=new Porto((String) CBNomeOut.getSelectedItem(), (String) CBCittaOut.getSelectedItem(), (String) CBNazioneOut.getSelectedItem(),codPortOut);
-                                portoscalo=new Porto((String) CBNomeScalo.getSelectedItem(), (String) CBCittaScalo.getSelectedItem(), (String) CBNazioneScalo.getSelectedItem(),codPortScalo);
+                                portoiniziale=new Porto(
+                                        (String) porti.get(CBPortoIn.getSelectedIndex()).getNomePorto(),
+                                        (String) porti.get(CBPortoIn.getSelectedIndex()).getCitta(),
+                                        (String) porti.get(CBPortoIn.getSelectedIndex()).getNazione(),
+                                        porti.get(CBPortoIn.getSelectedIndex()).getIdPorto());
+
+                                portofinale=new Porto(
+                                        (String) porti.get(CBPortoOut.getSelectedIndex()).getNomePorto(),
+                                        (String) porti.get(CBPortoOut.getSelectedIndex()).getCitta(),
+                                        (String) porti.get(CBPortoOut.getSelectedIndex()).getNazione(),
+                                        porti.get(CBPortoOut.getSelectedIndex()).getIdPorto());
+
                                 timePIn=LocalTime.of((int) CBPartenzaOraIn.getSelectedItem(),(int) CBPartenzaMinIn.getSelectedItem());
                                 timePOut=LocalTime.of((int) CBPartenzaOraOut.getSelectedItem(),(int) CBPartenzaMinOut.getSelectedItem());
+
                                 timeAIn=LocalTime.of((int) CBArrivoOraIn.getSelectedItem(),(int) CBArrivoMinIn.getSelectedItem());
                                 timeAOut=LocalTime.of((int) CBArrivoOraOut.getSelectedItem(),(int) CBArrivoMinOut.getSelectedItem());
+
+                                i=1;
+                                ArrayList<Percorso> percorsi = new ArrayList<Percorso>();
+                                ArrayList<Corsa> corse=new ArrayList<Corsa>();
                                 if(scaloCheckBox.isSelected())
                                 {
+                                    portoscalo=new Porto(
+                                            (String) porti.get(CBPortoScalo.getSelectedIndex()).getNomePorto(),
+                                            (String) porti.get(CBPortoScalo.getSelectedIndex()).getCitta(),
+                                            (String) porti.get(CBPortoScalo.getSelectedIndex()).getNazione(),
+                                            porti.get(CBPortoScalo.getSelectedIndex()).getIdPorto());
+
                                     timePScalo=LocalTime.of((int) CBPartenzaOraScalo.getSelectedItem(),(int) CBPartenzaMinScalo.getSelectedItem());
                                     timeAScalo=LocalTime.of((int) CBArrivoOraScalo.getSelectedItem(),(int) CBArrivoMinScalo.getSelectedItem());
                                     //System.out.println(dataIn.getDayOfWeek());
 
-                                    i=1;
-                                    ArrayList<Percorso> percorsi = new ArrayList<Percorso>();
                                     for(LocalDate l : giorni){
                                         //System.out.println(l.toString());
+                                        corse.add(new Corsa("C"+codice,costo,textAvviso.getText(),(String) CBStato.getSelectedItem(),imbarcazioni.get(CBImbarcazioni.getSelectedIndex()),nomeComp));
+                                        percorsi.add(new Percorso(timePIn,timePOut,l,l.plusDays(2),1,portoiniziale.getIdPorto(),corse.getLast().getCodiceCorsa()));
+                                        percorsi.add(new Percorso(timePScalo,timeAScalo,l,l.plusDays(2),2,portoscalo.getIdPorto(),corse.getLast().getCodiceCorsa()));
+                                        percorsi.add(new Percorso(timeAIn,timeAOut,l,l.plusDays(2),3,portofinale.getIdPorto(),corse.getLast().getCodiceCorsa()));
 
-                                        percorsi.add(new Percorso(timePIn,timePOut,l,l.plusDays(2),1,portoiniziale.getIdPorto(),"C"+codice));
-                                        percorsi.add(new Percorso(timePScalo,timeAScalo,l,l.plusDays(2),2,portoscalo.getIdPorto(),"C"+codice));
-                                        percorsi.add(new Percorso(timeAIn,timeAOut,l,l.plusDays(2),3,portofinale.getIdPorto(),"C"+codice));
                                         codice++;
 
                                     }
                                     //Compagnia c = controller.loginCompagnia(tFEmail.getText(),tFPassword.getText());
-                                    if(controller.AggiungiCorse(percorsi)){
+
+                                    if(controller.AggiungiCorse(percorsi,corse)){
                                         JOptionPane.showMessageDialog(null, "corse aggiunte con successo");
                                         frameChiamante.setVisible(true);
                                         frame.setVisible(false);
                                         frame.dispose();
                                     }else{
-                                        JOptionPane.showMessageDialog(null, "utente non esistente");
+                                        JOptionPane.showMessageDialog(null, "errore durante l'inserimento delle corse");
 
                                     }
 
                                 }
                                 else{
+                                    for(LocalDate l : giorni){
+                                        //System.out.println(l.toString());
+                                        corse.add(new Corsa("C"+codice,costo,textAvviso.getText(),(String) CBStato.getSelectedItem(),imbarcazioni.get(CBImbarcazioni.getSelectedIndex()),nomeComp));
+                                        percorsi.add(new Percorso(timePIn,timePOut,l,l.plusDays(2),1,portoiniziale.getIdPorto(),corse.getLast().getCodiceCorsa()));
+                                        percorsi.getLast().stampaPercorso();
+                                        percorsi.add(new Percorso(timeAIn,timeAOut,l,l.plusDays(2),2,portofinale.getIdPorto(),corse.getLast().getCodiceCorsa()));
+                                        percorsi.getLast().stampaPercorso();
+                                        //corse.getLast().stampaCorsa();
+                                        codice++;
+                                    }
+                                    //Compagnia c = controller.loginCompagnia(tFEmail.getText(),tFPassword.getText());
+                                    if(controller.AggiungiCorse(percorsi,corse)){
+                                        JOptionPane.showMessageDialog(null, "corse aggiunte con successo");
+                                        frameChiamante.setVisible(true);
+                                        frame.setVisible(false);
+                                        frame.dispose();
+                                    }else{
+                                        JOptionPane.showMessageDialog(null, "errore durante l'inserimento delle corse");
+
+                                    }
 
                                 }
                             }
@@ -279,7 +308,7 @@ public class AggiungiCorsa {
 
                 }
                 else{
-                    JOptionPane.showMessageDialog(null, "inserisci il codice della corsa!");
+                    JOptionPane.showMessageDialog(null, "inserisci il codice o il prezzo della corsa!");
                 }
 
 
@@ -313,53 +342,20 @@ public class AggiungiCorsa {
             public void actionPerformed(ActionEvent e) {
                 if(scaloCheckBox.isSelected()){
                     panelScalo.setVisible(true);
+                    spGiorniScalo.setVisible(true);
+                    labelScalo.setVisible(true);
                 }
                 else{
                     panelScalo.setVisible(false);
+                    spGiorniScalo.setVisible(false);
+                    labelScalo.setVisible(false);
                 }
                 frame.pack();
                 frame.setVisible(true);
             }
         });
-        CBNomeOut.addActionListener(new ActionListener() {
-            /**
-             * Invoked when an action occurs.
-             *
-             * @param e the event to be processed
-             */
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                CBCittaOut.setSelectedIndex(CBNomeOut.getSelectedIndex());
-                CBNazioneOut.setSelectedIndex(CBNomeOut.getSelectedIndex());
-                codPortOut=porti.get(CBNomeOut.getSelectedIndex()).getIdPorto();
-            }
-        });
-        CBNomeScalo.addActionListener(new ActionListener() {
-            /**
-             * Invoked when an action occurs.
-             *
-             * @param e the event to be processed
-             */
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                CBCittaScalo.setSelectedIndex(CBNomeScalo.getSelectedIndex());
-                CBNazioneScalo.setSelectedIndex(CBNomeScalo.getSelectedIndex());
-                codPortScalo=porti.get(CBNomeScalo.getSelectedIndex()).getIdPorto();
-            }
-        });
-        CBNomeIn.addActionListener(new ActionListener() {
-            /**
-             * Invoked when an action occurs.
-             *
-             * @param e the event to be processed
-             */
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                CBCittaIn.setSelectedIndex(CBNomeIn.getSelectedIndex());
-                CBNazioneIn.setSelectedIndex(CBNomeIn.getSelectedIndex());
-                codPortIn=porti.get(CBNomeIn.getSelectedIndex()).getIdPorto();
-            }
-        });
+
+
     }
 
     public JFrame getFrame() {

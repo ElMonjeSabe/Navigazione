@@ -3,6 +3,7 @@ package ImplementazionePostgresDAO;
 import DAO.GetImbarcazioniDAO;
 import Database.ConnessioneDatabase;
 import Model.Compagnia;
+import Model.Imbarcazione;
 
 import javax.swing.*;
 import java.sql.Connection;
@@ -24,17 +25,17 @@ public class ImpGetImbarcazioniDAO implements GetImbarcazioniDAO {
 
     }
     @Override
-    public ArrayList<String> GetImbarcazioniDB(String nomeComp) {
-        ArrayList<String> imbarcazioni= new ArrayList<String>();
+    public ArrayList<Imbarcazione> GetImbarcazioniDB(String nomeComp) {
+        ArrayList<Imbarcazione> imbarcazioni= new ArrayList<Imbarcazione>();
         try {
-            PreparedStatement imbLista = connection.prepareStatement("select nomeimbarcazione from Imbarcazione where compposs=?;");
+            PreparedStatement imbLista = connection.prepareStatement("select * from Imbarcazione where compposs=?;");
 
             imbLista.setString(1,nomeComp);
 
             ResultSet rs = imbLista.executeQuery();
 
             while(rs.next()){
-                imbarcazioni.add(rs.getString(1));
+                imbarcazioni.add(new Imbarcazione(rs.getString(1),rs.getString(2),rs.getString(3),rs.getInt(5),rs.getInt(6),rs.getString(4)));
             }
 
 

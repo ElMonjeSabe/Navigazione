@@ -17,6 +17,8 @@ public class Corsa {
 
     private Compagnia compagniaOfferente;
 
+    private String nomeCompagniaOfferente;
+
     private ArrayList<Biglietto> biglietti;
 
 
@@ -46,6 +48,18 @@ public class Corsa {
         this.compagniaOfferente=compagnia;
     }
 
+
+
+    public Corsa(String codice, double costo, String avviso, String stato, Imbarcazione imbarcazione, String nomeComp){
+        this.codiceCorsa=codice;
+        this.costoCorsa=costo;
+        this.avviso=avviso;
+        this.stato=stato;
+        this.imbarcazioneUtilizzata= imbarcazione;
+        this.nomeCompagniaOfferente=nomeComp;
+    }
+
+
     /**
      * Instantiates a new Corsa.
      *
@@ -72,5 +86,36 @@ public class Corsa {
 
     public String getCodiceCorsa() {
         return codiceCorsa;
+    }
+
+
+    public double getCostoCorsa() {
+        return costoCorsa;
+    }
+
+    public String getStato() {
+        return stato;
+    }
+
+    public String getAvviso() {
+        return avviso;
+    }
+
+    public Imbarcazione getImbarcazioneUtilizzata() {
+        return imbarcazioneUtilizzata;
+    }
+
+    public String getNomeCompagniaOfferente() {
+        return nomeCompagniaOfferente;
+    }
+
+    public void stampaCorsa()
+    {
+        System.out.println(this.codiceCorsa+ " ");
+        System.out.println(this.costoCorsa+ " ");
+        System.out.println(this.avviso+ " ");
+        System.out.println(this.stato+ " ");
+        System.out.println(this.imbarcazioneUtilizzata.getCodice()+" ");
+        System.out.println(this.nomeCompagniaOfferente+ "\n\n");
     }
 }

@@ -114,7 +114,7 @@ public class Controller {
         return AggImb.AggiungiImbarcazioneDB(imb);
     }
 
-    public ArrayList<String> GetImbarcazioni(String nomeComp) {
+    public ArrayList<Imbarcazione> GetImbarcazioni(String nomeComp) {
         GetImbarcazioniDAO getImb = new ImpGetImbarcazioniDAO();
         return getImb.GetImbarcazioniDB(nomeComp);
     }
@@ -124,8 +124,8 @@ public class Controller {
         return getPor.GetPortiDB();
     }
 
-    public boolean AggiungiCorse(ArrayList<Percorso> percorsi) {
+    public boolean AggiungiCorse(ArrayList<Percorso> percorsi, ArrayList<Corsa> corse) {
         AggiungiCorseDAO addCors= new ImpAggiungiCorseDAO();
-        return addCors.AggiungiCorseDB(percorsi);
+        return addCors.AggiungiCorseDB(percorsi, corse);
     }
 }
