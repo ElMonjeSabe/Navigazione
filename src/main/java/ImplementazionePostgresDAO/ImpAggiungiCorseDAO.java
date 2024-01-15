@@ -53,7 +53,7 @@ public class ImpAggiungiCorseDAO implements AggiungiCorseDAO {
 
                 pstmt.setString(1,per.getCorsa().getCodiceCorsa());
                 pstmt.setInt(2, per.getPorto().getIdPorto());
-                pstmt.setInt(3, per.getTappa());
+                pstmt.setString(3, per.getTipoPercorso());
                 pstmt.setTime(4, Time.valueOf(per.getOrarioPartenza()));
                 pstmt.setTime(5, Time.valueOf(per.getOrarioArrivo()));
                 pstmt.setDate(6, Date.valueOf(per.getDataAttivazione()));

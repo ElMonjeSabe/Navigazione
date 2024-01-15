@@ -15,7 +15,7 @@ public class Percorso {
 
     private LocalDate dataScadenza;
 
-    private int tappa;
+    private String tipoPercorso;
 
     private Porto porto;
 
@@ -36,22 +36,22 @@ public class Percorso {
      * @param porto           the porto
      * @param corsa           the corsa
      */
-    public Percorso(LocalTime orarioPartenza, LocalTime orarioArrivo, LocalDate dataAttivazione, LocalDate dataScadenza, int tappa, Porto porto, Corsa corsa) {
+    public Percorso(LocalTime orarioPartenza, LocalTime orarioArrivo, LocalDate dataAttivazione, LocalDate dataScadenza, String tappa, Porto porto, Corsa corsa) {
         this.orarioPartenza = orarioPartenza;
         this.orarioArrivo = orarioArrivo;
         this.dataAttivazione = dataAttivazione;
         this.dataScadenza = dataScadenza;
-        this.tappa = tappa;
+        this.tipoPercorso = tappa;
         this.porto = porto;
         this.corsa = corsa;
     }
 
-    public Percorso(LocalTime orarioPartenza, LocalTime orarioArrivo, LocalDate dataAttivazione, LocalDate dataScadenza, int tappa, int codPorto, String corsa) {
+    public Percorso(LocalTime orarioPartenza, LocalTime orarioArrivo, LocalDate dataAttivazione, LocalDate dataScadenza, String tappa, int codPorto, String corsa) {
         this.orarioPartenza = orarioPartenza;
         this.orarioArrivo = orarioArrivo;
         this.dataAttivazione = dataAttivazione;
         this.dataScadenza = dataScadenza;
-        this.tappa = tappa;
+        this.tipoPercorso = tappa;
         this.codPorto=codPorto;
         this.codCorsa = corsa;
     }
@@ -73,8 +73,8 @@ public class Percorso {
         return dataScadenza;
     }
 
-    public int getTappa() {
-        return tappa;
+    public String getTipoPercorso() {
+        return tipoPercorso;
     }
 
     public Porto getPorto() {
@@ -99,7 +99,7 @@ public class Percorso {
         System.out.println(this.orarioArrivo+ " ");
         System.out.println(this.dataAttivazione+ " ");
         System.out.println(this.dataScadenza+ " ");
-        System.out.println(this.tappa+" ");
+        System.out.println(this.tipoPercorso+" ");
         System.out.println(this.codPorto+" ");
         System.out.println(this.codCorsa+ "\n\n");
     }
