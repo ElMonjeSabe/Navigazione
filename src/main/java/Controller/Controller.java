@@ -128,4 +128,9 @@ public class Controller {
         AggiungiCorseDAO addCors= new ImpAggiungiCorseDAO();
         return addCors.AggiungiCorseDB(percorsi, corse);
     }
+
+    public ArrayList<Cabina> GetCabineDisponibili(String CodiceCorsa){
+        CabineDisponibiliDAO cabdis = new ImpCabineDisponibiliDAO();
+        return cabdis.CabineDisponibiliDB(CodiceCorsa);
+    }
 }

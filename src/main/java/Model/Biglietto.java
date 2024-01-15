@@ -21,18 +21,23 @@ public class Biglietto {
     private Passeggero possessore;
     private Corsa corsa;
 
+    private int cabina;
 
+    public int getCabina() {
+        return cabina;
+    }
 
     private String cfposs;
     private String codCorsa;
 
-    public Biglietto(int bagagli, boolean veicolo, String cfposs, String codCorsa) {
+    public Biglietto(int bagagli, boolean veicolo, String cfposs, String codCorsa, int cabina) {
         this.numerobagagli=bagagli;
         this.veicolo=veicolo;
         this.dataAcquisto=LocalDate.now();
         this.prenotazione=prenotazione;
         this.cfposs=cfposs;
         this.codCorsa = codCorsa;
+        this.cabina = cabina;
     }
 
 

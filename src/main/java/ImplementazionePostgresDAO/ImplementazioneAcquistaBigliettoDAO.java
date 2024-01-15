@@ -46,7 +46,7 @@ public class ImplementazioneAcquistaBigliettoDAO implements AcquistaBigliettoDAO
 
 
             //chiama la procedura per inserire il biglietto
-            pstmt = connection.prepareStatement("call AcquistaBiglietto( ?,?,?,?,?,?);");
+            pstmt = connection.prepareStatement("call AcquistaBiglietto( ?,?,?,?,?,?,?);");
 
             pstmt.setString(1, codiceBiglietto);
             pstmt.setDate(2, Date.valueOf(LocalDate.now()));
@@ -54,6 +54,7 @@ public class ImplementazioneAcquistaBigliettoDAO implements AcquistaBigliettoDAO
             pstmt.setObject(4, b.getNumerobagagli());
             pstmt.setString(5, b.getcfposs());
             pstmt.setString(6, b.getcodCorsa());
+            pstmt.setInt(7,b.getCabina());
 
             pstmt.execute();
 

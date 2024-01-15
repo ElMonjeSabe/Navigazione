@@ -25,6 +25,19 @@ public class Cabina {
 
     }
 
+    public int getNumero() {
+        return numero;
+    }
+
+    public int getPostiletto() {
+        return postiletto;
+    }
+
+    public Cabina(int numero, int letti){
+        this.numero=numero;
+        this.postiletto=letti;
+    }
+
     /**
      * Aggiungi imbarcazione.
      *

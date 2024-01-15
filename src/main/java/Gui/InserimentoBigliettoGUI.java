@@ -2,13 +2,12 @@ package Gui;
 
 import Controller.Controller;
 import Model.Biglietto;
+import Model.Cabina;
 import Model.Passeggero;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.time.LocalDate;
+import java.awt.event.*;
+import java.util.ArrayList;
 
 public class InserimentoBigliettoGUI {
     private JPanel panel;
@@ -18,7 +17,7 @@ public class InserimentoBigliettoGUI {
     private JTextField tFCodiceCorsa;
     private JSpinner spinnerNumeroBagagli;
     private JButton btoIndietro;
-    private JComboBox comboBox1;
+    private JComboBox cBCabine;
     public JFrame frameChiamante;
     JFrame frame;
     Controller controller;
@@ -41,7 +40,7 @@ public class InserimentoBigliettoGUI {
 
 
 
-    InserimentoBigliettoGUI(JFrame frameChimante, Controller controller, Passeggero p){
+    InserimentoBigliettoGUI(JFrame frameChimante, Controller controller, Passeggero p) {
         this.frameChiamante = frameChimante;
         this.controller = controller;
         frame = new JFrame("Lista Corse");
@@ -55,8 +54,6 @@ public class InserimentoBigliettoGUI {
 
         //Apre la finestra la centro dello schermo
         frame.setLocationRelativeTo(null);
-
-
 
 
         frame.setVisible(true);
@@ -82,17 +79,17 @@ public class InserimentoBigliettoGUI {
 
                 String codCorsa = tFCodiceCorsa.getText();
 
-                if(codCorsa.equals("")){
+                if (codCorsa.equals("") || cBCabine.getSelectedItem().equals(null)) {
 
-                    JOptionPane.showMessageDialog(null,"Inserisci il codice della corsa");
+                    JOptionPane.showMessageDialog(null, "Inserisci il codice della corsa e la cabina");
 
-                }else if(!ControlloCodCorsa(codCorsa)){
+                } else if (!ControlloCodCorsa(codCorsa)) {
 
-                    JOptionPane.showMessageDialog(null,"Codice corsa non valido");
+                    JOptionPane.showMessageDialog(null, "Codice corsa non valido");
 
-                }else{
+                } else {
 
-                    ConfermaAcquistoGui frameConfermaAcquisto = new ConfermaAcquistoGui(frame, controller,new Biglietto(bagagli,veicolo,p.getCf(),codCorsa));
+                    ConfermaAcquistoGui frameConfermaAcquisto = new ConfermaAcquistoGui(frame, controller, new Biglietto(bagagli, veicolo, p.getCf(), codCorsa, Integer.parseInt(cBCabine.getSelectedItem().toString())));
                     frameConfermaAcquisto.frame.setVisible(true);
                     frameChimante.setEnabled(false);
                     frame.setVisible(false);
@@ -100,15 +97,30 @@ public class InserimentoBigliettoGUI {
 
             }
         });
+
+
+        tFCodiceCorsa.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                super.keyReleased(e);
+                ArrayList<Cabina> cabineDisponibili = controller.GetCabineDisponibili(tFCodiceCorsa.getText());
+                if (cabineDisponibili == null) {
+                    JOptionPane.showMessageDialog(null, "Biglietti esauriti");
+
+                } else {
+                    cBCabine.removeAllItems();
+                    while (!cabineDisponibili.isEmpty()) {
+                        cBCabine.addItem(Integer.toString(cabineDisponibili.getFirst().getNumero()));
+                        cabineDisponibili.removeFirst();
+                    }
+                }
+            }
+        });
+
+
+
+
+
     }
-
-
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
-    }
-
-
-
-
 
 }
