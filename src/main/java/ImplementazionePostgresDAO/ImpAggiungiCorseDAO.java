@@ -26,8 +26,15 @@ public class ImpAggiungiCorseDAO implements AggiungiCorseDAO {
 
 
     public boolean AggiungiCorseDB(ArrayList<Percorso> percorsi, ArrayList<Corsa> corse) {
+
+        //avvio una transazione
+
         // TODO Auto-generated method stub
         try {
+            pstmt=connection.prepareStatement("begin;");
+            pstmt.execute();
+            pstmt.close();
+
             for(Corsa c: corse) {
                 pstmt = connection.prepareStatement("insert into corsa values(?,?,?,?,?,?)");
                 pstmt.setString(1, c.getCodiceCorsa());
@@ -35,41 +42,49 @@ public class ImpAggiungiCorseDAO implements AggiungiCorseDAO {
                 pstmt.setString(3, c.getAvviso());
                 pstmt.setString(4, c.getStato());
                 pstmt.setString(5, c.getImbarcazioneUtilizzata().getCodice());
-                pstmt.setString(6, c.getNomeCompagniaOfferente());
+                pstmt.setString(6, c.getCompagniaOfferente().getNomeCompagnia());
 
                 pstmt.execute();
                 pstmt.close();
             }
 
-                for(Percorso per : percorsi){
-                    pstmt = connection.prepareStatement("insert into percorso values(?,?,?,?,?,?,?);");
+            for(Percorso per : percorsi){
+                pstmt = connection.prepareStatement("insert into percorso values(?,?,?,?,?,?,?);");
 
-                    pstmt.setString(1,per.getCodCorsa());
-                    pstmt.setInt(2, per.getCodPorto());
-                    pstmt.setInt(3, per.getTappa());
-                    pstmt.setTime(4, Time.valueOf(per.getOrarioPartenza()));
-                    pstmt.setTime(5, Time.valueOf(per.getOrarioArrivo()));
-                    pstmt.setDate(6, Date.valueOf(per.getDataAttivazione()));
-                    pstmt.setDate(7, Date.valueOf(per.getDataScadenza()));
+                pstmt.setString(1,per.getCorsa().getCodiceCorsa());
+                pstmt.setInt(2, per.getPorto().getIdPorto());
+                pstmt.setInt(3, per.getTappa());
+                pstmt.setTime(4, Time.valueOf(per.getOrarioPartenza()));
+                pstmt.setTime(5, Time.valueOf(per.getOrarioArrivo()));
+                pstmt.setDate(6, Date.valueOf(per.getDataAttivazione()));
+                pstmt.setDate(7, Date.valueOf(per.getDataScadenza()));
 
-                    pstmt.execute();
-                    pstmt.close();
+                pstmt.execute();
+                pstmt.close();
 
-                }
-
+            }
+            pstmt=connection.prepareStatement("commit;");
+            pstmt.execute();
+            pstmt.close();
 
 
             connection.close();
 
         } catch (SQLException e) {
-            if (e.getSQLState().equals("23505")) {
-                // gestisci l'errore di chiave duplicata
-                JOptionPane.showMessageDialog(null, "Errore: Codice non valido" );
+            // gestisci altri errori SQL
+            JOptionPane.showMessageDialog(null, "Errore: " + e.getMessage());
 
-            } else {
-                // gestisci altri errori SQL
-                JOptionPane.showMessageDialog(null, "Errore: " + e.getMessage());
+            try{
+                pstmt=connection.prepareStatement("rollback ;");
+                pstmt.execute();
+                pstmt.close();
+                connection.close();
             }
+            catch (SQLException ee){
+                JOptionPane.showMessageDialog(null, "Errore: " + ee.getMessage());
+            }
+
+
             esito=false;
         }
 
