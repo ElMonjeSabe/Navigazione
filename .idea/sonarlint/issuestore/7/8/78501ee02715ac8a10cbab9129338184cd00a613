@@ -2,12 +2,10 @@
 y
 java:S1104	"WMake codiceCorsa a static final constant or non-public and provide accessors if needed.(ëºË‚şÿÿÿÿ8ª¶˜«Ğ1
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á–Ì“8«¶˜«Ğ1
-b	java:S107K"AConstructor has 8 parameters, which is greater than 7 authorized.(‹¹ç”úÿÿÿÿ8®¶˜«Ğ1
-G	java:S106r"+Replace this use of System.out by a logger.(¸ö–8°¶˜«Ğ1
-L	java:S106s"+Replace this use of System.out by a logger.(™ı¬ùÿÿÿÿ8°¶˜«Ğ1
-L	java:S106t"+Replace this use of System.out by a logger.(™ûáéøÿÿÿÿ8°¶˜«Ğ1
-L	java:S106u"+Replace this use of System.out by a logger.(°ÈÜÇşÿÿÿÿ8°¶˜«Ğ1
-G	java:S106v"+Replace this use of System.out by a logger.(÷øåª8²¶˜«Ğ1
-G	java:S106w"+Replace this use of System.out by a logger.(É¥£Ì8²¶˜«Ğ1
-X
-java:S1068"6Remove this unused "compagniaOfferente" private field.(›Õ•úÿÿÿÿ8²¶˜«Ğ1
+b	java:S107V"AConstructor has 8 parameters, which is greater than 7 authorized.(‹¹ç”úÿÿÿÿ8®¶˜«Ğ1
+H	java:S106"+Replace this use of System.out by a logger.(¸ö–8°¶˜«Ğ1
+M	java:S106‚"+Replace this use of System.out by a logger.(™ı¬ùÿÿÿÿ8°¶˜«Ğ1
+M	java:S106ƒ"+Replace this use of System.out by a logger.(™ûáéøÿÿÿÿ8°¶˜«Ğ1
+M	java:S106„"+Replace this use of System.out by a logger.(°ÈÜÇşÿÿÿÿ8°¶˜«Ğ1
+H	java:S106…"+Replace this use of System.out by a logger.(÷øåª8²¶˜«Ğ1
+H	java:S106†"+Replace this use of System.out by a logger.(É¥£Ì8²¶˜«Ğ1

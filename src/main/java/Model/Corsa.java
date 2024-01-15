@@ -60,6 +60,17 @@ public class Corsa {
     }
 
 
+
+    public Corsa(String codice, double costo, String avviso, String stato, Imbarcazione imbarcazione, Compagnia compagnia){
+        this.codiceCorsa=codice;
+        this.costoCorsa=costo;
+        this.avviso=avviso;
+        this.stato=stato;
+        this.imbarcazioneUtilizzata= imbarcazione;
+        this.compagniaOfferente=compagnia;
+    }
+
+
     /**
      * Instantiates a new Corsa.
      *
@@ -107,6 +118,10 @@ public class Corsa {
 
     public String getNomeCompagniaOfferente() {
         return nomeCompagniaOfferente;
+    }
+
+    public Compagnia getCompagniaOfferente() {
+        return compagniaOfferente;
     }
 
     public void stampaCorsa()

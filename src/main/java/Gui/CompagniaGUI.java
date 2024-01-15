@@ -80,7 +80,7 @@ public class CompagniaGUI {
                     imbarcazioni=controller.GetImbarcazioni(NomeComp.getText());
                     if (!imbarcazioni.isEmpty()) {
 
-                        AggiungiCorsa frameAggiungiCorsa = new AggiungiCorsa(frame,controller,imbarcazioni, porti, NomeComp.getText());
+                        AggiungiCorsa frameAggiungiCorsa = new AggiungiCorsa(frame,controller,imbarcazioni, porti, c);
                         frameAggiungiCorsa.getFrame().setVisible(true);
 
                         frame.setVisible(false);
