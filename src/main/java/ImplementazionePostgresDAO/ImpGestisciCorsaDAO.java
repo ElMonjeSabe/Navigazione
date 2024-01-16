@@ -41,4 +41,34 @@ public class ImpGestisciCorsaDAO implements GestisciCorsaDAO {
             System.out.println("Errore: " + e.getMessage());
         }
     }
+
+
+
+
+    @Override
+    public float GetPrezzoCorsaDB(String CodCorsa) {
+        float prezzo = 0;
+        try {
+            //genera il codice del biglietto
+
+            PreparedStatement pstmt = connection.prepareStatement("Select costocorsa from tabellone where codicecorsa = ?;");
+
+            pstmt.setString(1,CodCorsa);
+            ResultSet rs = pstmt.executeQuery();
+
+            while(rs.next()){
+            prezzo = rs.getFloat(1);
+            }
+            rs.close();
+            pstmt.close();
+            connection.close();
+
+        } catch (SQLException e) {
+
+            System.out.println("Errore: " + e.getMessage());
+        }
+        return prezzo;
+    }
+
+
 }

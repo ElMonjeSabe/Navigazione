@@ -4,5 +4,5 @@ import Model.Biglietto;
 
 public interface AcquistaBigliettoDAO {
 
-    void AcquistaBigliettoDB(Biglietto b);
+    int AcquistaBigliettoDB(Biglietto b);
 }

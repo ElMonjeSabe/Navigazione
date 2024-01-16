@@ -20,6 +20,18 @@ public class Controller {
 
 
 
+    public void setPasseggero(Passeggero passeggero) {
+        this.passeggero = passeggero;
+    }
+
+    public Passeggero getPasseggero() {
+        return passeggero;
+    }
+
+    private Passeggero passeggero;
+
+
+
     public void setCompagnia(String nome, String password, String email, String telefono, String sito)
     {
             compagnia=new Compagnia(nome,password, email,telefono,sito);
@@ -52,15 +64,9 @@ public class Controller {
 
 
 
-    public void AcquistaBigliettoDAO(Biglietto b){
+    public int AcquistaBigliettoDAO(Biglietto b){
         AcquistaBigliettoDAO a = new ImplementazioneAcquistaBigliettoDAO();
-
-
-        //generare il codice biglietto e controllarlo con la lista di codici biglietto
-
-
-
-        a.AcquistaBigliettoDB(b);
+        return a.AcquistaBigliettoDB(b);
     }
 
 
@@ -132,5 +138,10 @@ public class Controller {
     public ArrayList<Cabina> GetCabineDisponibili(String CodiceCorsa){
         CabineDisponibiliDAO cabdis = new ImpCabineDisponibiliDAO();
         return cabdis.CabineDisponibiliDB(CodiceCorsa);
+    }
+
+    public float GetPrezzoCorsa(String CodCorsa){
+        GestisciCorsaDAO prezzoCorsa = new ImpGestisciCorsaDAO();
+        return prezzoCorsa.GetPrezzoCorsaDB(CodCorsa);
     }
 }

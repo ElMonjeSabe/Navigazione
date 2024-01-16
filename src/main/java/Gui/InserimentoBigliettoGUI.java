@@ -7,6 +7,8 @@ import Model.Passeggero;
 
 import javax.swing.*;
 import java.awt.event.*;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 
 public class InserimentoBigliettoGUI {
@@ -18,6 +20,7 @@ public class InserimentoBigliettoGUI {
     private JSpinner spinnerNumeroBagagli;
     private JButton btoIndietro;
     private JComboBox cBCabine;
+
     public JFrame frameChiamante;
     JFrame frame;
     Controller controller;
@@ -43,7 +46,7 @@ public class InserimentoBigliettoGUI {
     InserimentoBigliettoGUI(JFrame frameChimante, Controller controller, Passeggero p) {
         this.frameChiamante = frameChimante;
         this.controller = controller;
-        frame = new JFrame("Lista Corse");
+        frame = new JFrame("Acquisto Biglietto");
 
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -79,7 +82,7 @@ public class InserimentoBigliettoGUI {
 
                 String codCorsa = tFCodiceCorsa.getText();
 
-                if (codCorsa.equals("") || cBCabine.getSelectedItem().equals(null)) {
+                if (codCorsa.equals("") || cBCabine.getSelectedItem() == null) {
 
                     JOptionPane.showMessageDialog(null, "Inserisci il codice della corsa e la cabina");
 
@@ -88,8 +91,14 @@ public class InserimentoBigliettoGUI {
                     JOptionPane.showMessageDialog(null, "Codice corsa non valido");
 
                 } else {
+                    float prezzo;
+                    if(Period.between(LocalDate.now(), controller.getPasseggero().getDataNascita()).getYears()<16) {
+                        prezzo = controller.GetPrezzoCorsa(tFCodiceCorsa.getText()) / 2;
+                    }else{
+                        prezzo = controller.GetPrezzoCorsa(tFCodiceCorsa.getText());//bisogna definire prima se è una prenotazione e controllare anche se ha delle valige
+                    }
 
-                    ConfermaAcquistoGui frameConfermaAcquisto = new ConfermaAcquistoGui(frame, controller, new Biglietto(bagagli, veicolo, p.getCf(), codCorsa, Integer.parseInt(cBCabine.getSelectedItem().toString())));
+                    ConfermaAcquistoGui frameConfermaAcquisto = new ConfermaAcquistoGui(frame, controller, new Biglietto(bagagli, veicolo, p.getCf(), codCorsa, Integer.parseInt(cBCabine.getSelectedItem().toString())), frameChiamante, prezzo);
                     frameConfermaAcquisto.frame.setVisible(true);
                     frameChimante.setEnabled(false);
                     frame.setVisible(false);

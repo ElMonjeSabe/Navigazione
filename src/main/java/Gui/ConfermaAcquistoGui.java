@@ -20,11 +20,14 @@ public class ConfermaAcquistoGui {
     Controller controller;
     Biglietto biglietto;
 
-    public ConfermaAcquistoGui(JFrame frameChiamante, Controller controller, Biglietto biglietto){
+    JFrame corse;
+
+    public ConfermaAcquistoGui(JFrame frameChiamante, Controller controller, Biglietto biglietto, JFrame frameCorse, float prezzoDef){
         this.frameChiamante = frameChiamante;
         this.controller = controller;
         this.biglietto= biglietto;
-        frame = new JFrame("Lista Corse");
+        this.corse = frameCorse;
+        frame = new JFrame("Conferma Acquisto");
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 150);
@@ -32,8 +35,11 @@ public class ConfermaAcquistoGui {
         frame.setLocationRelativeTo(null);
 
 
-        //setta il prezzo
-        prezzo.setText(String.valueOf(2344)+"E");
+
+
+
+
+        prezzo.setText(String.valueOf(prezzoDef)+"€");
         frame.setVisible(true);
 
 
@@ -49,10 +55,15 @@ public class ConfermaAcquistoGui {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                controller.AcquistaBigliettoDAO(biglietto);
-
-                frame.setVisible(false);
-                frame.dispose();
+                if(controller.AcquistaBigliettoDAO(biglietto)==1) {
+                    JOptionPane.showMessageDialog(null, "Acquisto effettuato con successo");
+                    frameChiamante.setVisible(false);
+                    corse.setEnabled(true);
+                    frame.setVisible(false);
+                    frame.dispose();
+                }else{
+                    JOptionPane.showMessageDialog(null, "Problema durante l'acquisto");
+                }
             }
         });
     }

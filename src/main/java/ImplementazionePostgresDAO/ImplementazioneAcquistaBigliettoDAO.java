@@ -24,7 +24,7 @@ public class ImplementazioneAcquistaBigliettoDAO implements AcquistaBigliettoDAO
     }
 
     @Override
-    public void  AcquistaBigliettoDB(Biglietto b) {
+    public int AcquistaBigliettoDB(Biglietto b) {
 
         try {
             //genera il codice del biglietto
@@ -61,9 +61,11 @@ public class ImplementazioneAcquistaBigliettoDAO implements AcquistaBigliettoDAO
             pstmt.close();
             connection.close();
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println("Errore: " + e.getMessage());
+            return 0;
         }
+        return 1;
 
     }
 

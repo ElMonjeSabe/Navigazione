@@ -52,6 +52,7 @@ public class PasseggeroGUI {
         this.frameChiamante = frameChiamante;
         this.controller = controller;
         this.p =p;
+        controller.setPasseggero(p);
 
 
         NomePass.setText(p.getNome());
