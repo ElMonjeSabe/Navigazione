@@ -2,6 +2,7 @@ package ImplementazionePostgresDAO;
 
 import DAO.GestisciCorsaDAO;
 import Database.ConnessioneDatabase;
+import Model.CorsaTabellone;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -49,18 +50,18 @@ public class ImpGestisciCorsaDAO implements GestisciCorsaDAO {
 
 
     @Override
-    public float GetPrezzoCorsaDB(String CodCorsa) {
-        float prezzo = 0;
+    public CorsaTabellone GetCorsaDB(String CodCorsa) {
+        CorsaTabellone corsa = null;
         try {
             //genera il codice del biglietto
 
-            PreparedStatement pstmt = connection.prepareStatement("Select costocorsa from tabellone where codicecorsa = ?;");
+            PreparedStatement pstmt = connection.prepareStatement("Select * from tabellone where codicecorsa = ?;");
 
             pstmt.setString(1,CodCorsa);
             ResultSet rs = pstmt.executeQuery();
 
-            while(rs.next()){
-            prezzo = rs.getFloat(1);
+            while (rs.next()) {
+                corsa = new CorsaTabellone(rs.getString(1), rs.getFloat(2), rs.getInt(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getDate(10).toLocalDate(), rs.getDate(11).toLocalDate(), rs.getTime(12), rs.getTime(13), rs.getString(14), rs.getString(15));
             }
             rs.close();
             pstmt.close();
@@ -69,8 +70,9 @@ public class ImpGestisciCorsaDAO implements GestisciCorsaDAO {
         } catch (SQLException e) {
 
             System.out.println("Errore: " + e.getMessage());
+
         }
-        return prezzo;
+        return corsa;
     }
 
 

@@ -1,10 +1,12 @@
 package DAO;
 
+import Model.CorsaTabellone;
+
 public interface GestisciCorsaDAO {
 
     //public void AggiungiCorsa();
 
     boolean ModificaCorsaDB(String CodiceCorsa, String Avviso, String Stato, String NomeCompagnia);
 
-    float GetPrezzoCorsaDB(String CodCorsa);
+    CorsaTabellone GetCorsaDB(String CodCorsa);
 }

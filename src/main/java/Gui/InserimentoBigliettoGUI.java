@@ -3,12 +3,14 @@ package Gui;
 import Controller.Controller;
 import Model.Biglietto;
 import Model.Cabina;
+import Model.CorsaTabellone;
 import Model.Passeggero;
 
 import javax.swing.*;
 import java.awt.event.*;
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.ZoneId;
 import java.util.ArrayList;
 
 public class InserimentoBigliettoGUI {
@@ -91,11 +93,21 @@ public class InserimentoBigliettoGUI {
                     JOptionPane.showMessageDialog(null, "Codice corsa non valido");
 
                 } else {
-                    float prezzo;
-                    if(Period.between(LocalDate.now(), controller.getPasseggero().getDataNascita()).getYears()<16) {
-                        prezzo = controller.GetPrezzoCorsa(tFCodiceCorsa.getText()) / 2;
-                    }else{
-                        prezzo = controller.GetPrezzoCorsa(tFCodiceCorsa.getText());//bisogna definire prima se è una prenotazione e controllare anche se ha delle valige
+                    //definire il costo totale del biglietto
+
+                    CorsaTabellone corsa = controller.GetCorsa(tFCodiceCorsa.getText());
+                    float prezzo = corsa.costocorsa;
+
+                    if(Period.between(controller.getPasseggero().getDataNascita(),LocalDate.now()).getYears() <16) {
+                        prezzo = corsa.costocorsa/ 2;
+                    }else {
+                        if (LocalDate.now().isBefore(corsa.datapartenza) && (Integer) spinnerNumeroBagagli.getValue()>0){
+                            prezzo = (float) (corsa.costocorsa * 1.3);
+                        }else if(LocalDate.now().isBefore(corsa.datapartenza)){
+                            prezzo = (float) (corsa.costocorsa * 1.1);
+                        }else if ((Integer) spinnerNumeroBagagli.getValue()>0) {
+                            prezzo = (float) (corsa.costocorsa * 1.2);
+                            }
                     }
 
                     ConfermaAcquistoGui frameConfermaAcquisto = new ConfermaAcquistoGui(frame, controller, new Biglietto(bagagli, veicolo, p.getCf(), codCorsa, Integer.parseInt(cBCabine.getSelectedItem().toString())), frameChiamante, prezzo);

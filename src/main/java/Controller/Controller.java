@@ -18,8 +18,6 @@ public class Controller {
 
     private ArrayList<Compagnia> Compagnie= new ArrayList<Compagnia>();
 
-
-
     public void setPasseggero(Passeggero passeggero) {
         this.passeggero = passeggero;
     }
@@ -137,9 +135,9 @@ public class Controller {
         return cabdis.CabineDisponibiliDB(CodiceCorsa);
     }
 
-    public float GetPrezzoCorsa(String CodCorsa){
-        GestisciCorsaDAO prezzoCorsa = new ImpGestisciCorsaDAO();
-        return prezzoCorsa.GetPrezzoCorsaDB(CodCorsa);
+    public CorsaTabellone GetCorsa(String CodCorsa){
+        GestisciCorsaDAO Corsa = new ImpGestisciCorsaDAO();
+       return Corsa.GetCorsaDB(CodCorsa);
     }
 
     public boolean RegistrazioneCompagnia(Compagnia comp, Imbarcazione imb){

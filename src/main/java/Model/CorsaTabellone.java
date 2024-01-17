@@ -2,6 +2,7 @@ package Model;
 
 
 import java.sql.Time;
+import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -14,8 +15,8 @@ public class CorsaTabellone {
     public String destinazione;
     public String cittadestinazione;
     public String nazionedestinazione;
-    public Date datapartenza;
-    public Date dataarrivo;
+    public LocalDate datapartenza;
+    public LocalDate dataarrivo;
     public Time orariopartenza;
     public Time orarioarrivo;
 
@@ -24,7 +25,7 @@ public class CorsaTabellone {
     public String avviso;
 
     public int scali;
-            public CorsaTabellone(String CodiceCorsa, Float costocorsa,int scali, String partenza, String cittapartenza, String nazionepartenza, String destinazione, String cittadestinazione, String nazionedestinazione, Date datapartenza, Date dataarrivo, Time orariopartenza, Time orarioarrivo, String stato, String avviso) {
+            public CorsaTabellone(String CodiceCorsa, Float costocorsa,int scali, String partenza, String cittapartenza, String nazionepartenza, String destinazione, String cittadestinazione, String nazionedestinazione, LocalDate datapartenza, LocalDate dataarrivo, Time orariopartenza, Time orarioarrivo, String stato, String avviso) {
                 this.CodiceCorsa = CodiceCorsa;
                 this.costocorsa = costocorsa;
                 this.scali = scali;
