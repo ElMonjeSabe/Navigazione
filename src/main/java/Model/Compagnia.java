@@ -82,26 +82,6 @@ public class Compagnia {
 
 
 
-    /**
-     * Crea corsa.
-     *
-     * @param codice       the codice
-     * @param costo        the costo
-     * @param avviso       the avviso
-     * @param stato        the stato
-     * @param imbarcazione the imbarcazione
-     * @param percorso     the percorso
-     * @param compagnia    the compagnia
-     */
-    public void CreaCorsa(String codice, double costo, String avviso, String stato, Imbarcazione imbarcazione, Percorso percorso, Compagnia compagnia) {
-       Corsa c = new Corsa(codice,costo,avviso, stato, imbarcazione, percorso, compagnia);
-
-       /* SQL*/
-
-    }
-
-
-
     public String getNomeCompagnia(){
         return nomeCompagnia;
     }

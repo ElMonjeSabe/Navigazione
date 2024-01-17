@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Gui.ModificaCorsa">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Gui.AggiungiCabina">
   <grid id="27dc6" binding="panel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
     <constraints>
       <xy x="20" y="20" width="500" height="400"/>
@@ -7,29 +7,29 @@
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="c8bbe" layout-manager="GridLayoutManager" row-count="5" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="721bb" layout-manager="GridLayoutManager" row-count="4" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints/>
         <properties/>
         <border type="none"/>
         <children>
-          <component id="9e1f6" class="javax.swing.JLabel">
+          <component id="10680" class="javax.swing.JLabel">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Stato"/>
+              <text value="Imbarcazione"/>
             </properties>
           </component>
-          <component id="f75b6" class="javax.swing.JLabel">
+          <component id="889b0" class="javax.swing.JLabel">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Avviso"/>
+              <text value="Posti Letto"/>
             </properties>
           </component>
-          <component id="9a9a3" class="javax.swing.JTextField" binding="textAvviso">
+          <component id="f68fc" class="javax.swing.JTextField" binding="textAvviso">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -37,55 +37,38 @@
             </constraints>
             <properties/>
           </component>
-          <component id="257ff" class="javax.swing.JButton" binding="indietroButton" default-binding="true">
+          <component id="dfe" class="javax.swing.JButton" binding="indietroButton" default-binding="true">
             <constraints>
-              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Indietro"/>
             </properties>
           </component>
-          <component id="c062" class="javax.swing.JButton" binding="confermaButton" default-binding="true">
+          <component id="5f473" class="javax.swing.JButton" binding="confermaButton" default-binding="true">
             <constraints>
-              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Conferma"/>
             </properties>
           </component>
-          <component id="1dfc1" class="javax.swing.JComboBox" binding="CBStato">
+          <component id="7982d" class="javax.swing.JComboBox" binding="CBImbarcazione">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties/>
           </component>
-          <component id="73d8c" class="javax.swing.JLabel">
+          <component id="e795a" class="javax.swing.JLabel" binding="lbCabine">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Codice Corsa"/>
+              <text value="Cabine Disponibili:"/>
             </properties>
-          </component>
-          <component id="e6cc5" class="javax.swing.JButton" binding="btoCancella">
-            <constraints>
-              <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Cancella Corsa"/>
-            </properties>
-          </component>
-          <component id="1def5" class="javax.swing.JComboBox" binding="CBCodice">
-            <constraints>
-              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties/>
           </component>
         </children>
       </grid>
-      <vspacer id="29af6">
-        <constraints/>
-      </vspacer>
     </children>
   </grid>
 </form>

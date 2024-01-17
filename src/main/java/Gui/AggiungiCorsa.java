@@ -85,22 +85,26 @@ public class AggiungiCorsa {
     private LocalDate giorno;
 
     public AggiungiCorsa(JFrame frameChiamante, Controller controller,  ArrayList<Imbarcazione> imbarcazioni, ArrayList<Porto> porti, Compagnia compagnia) {
+
+        this.frameChiamante = frameChiamante;
+        this.controller=controller;
+
         //parto con la finestra senza le scelte per aggiungere il porto di scalo
         panelScalo.setVisible(false);
         spGiorniScalo.setVisible(false);
         labelScalo.setVisible(false);
         panelArrivoPartenza.setVisible(false);
         panelPartenza.setVisible(false);
+
+        //vado a riempire i combobox per selezionare i porti
         for(Porto p: porti)
         {
             CBPortoIn.addItem(p.getNomePorto()+", "+p.getCitta()+", "+p.getNazione());
             CBPortoOut.addItem(p.getNomePorto()+", "+p.getCitta()+", "+p.getNazione());
             CBPortoScalo.addItem(p.getNomePorto()+", "+p.getCitta()+", "+p.getNazione());
         }
-        /*codPortIn=porti.getFirst().getIdPorto();
-        codPortOut=porti.getFirst().getIdPorto();
-        codPortScalo=porti.getFirst().getIdPorto();*/
 
+        //formatto anche i combobox per gli orari
         for(i=0;i<=23;i++)
         {
             CBPartenzaOraIn.addItem(i);
@@ -119,8 +123,6 @@ public class AggiungiCorsa {
             CBArrivoMinOut.addItem(i);
         }
 
-        this.frameChiamante = frameChiamante;
-        this.controller=controller;
 
         frame = new JFrame("Aggiungi Corsa");
         frame.setContentPane(panel);
@@ -131,14 +133,15 @@ public class AggiungiCorsa {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
+        //combobox per lo stato della corsa
         CBStato.addItem("regolare");
         CBStato.addItem("annullato");
         CBStato.addItem("ritardo");
 
+        //formatto anche i combobox per selezionare il periodo di date
         CBAnnoOut.setEnabled(false);
         //va scelto prima l'anno, poi il mese e poi il giorno, in modo che la data d'inizio venga prima di quella di fine
-        //CBGiornoIn.setEnabled(false);
-        //CBMeseIn.setEnabled(false);
+
         //ComboBox Giorno per la data d'inizio
         for ( i = 1; i <= 31; i++) {
             CBGiornoIn.addItem(i);
@@ -156,7 +159,7 @@ public class AggiungiCorsa {
             CBAnnoIn.addItem(i);
         }
 
-
+        //formatto anche il combobox degli imbarcazioni disponibile della compagnia utilizzante
         for(Imbarcazione i : imbarcazioni){
             CBImbarcazioni.addItem(i.getNome()+", "+i.getCodice());
         }
@@ -502,6 +505,8 @@ public class AggiungiCorsa {
     public JFrame getFrame() {
         return frame;
     }
+
+    //funzione per riempire e calcolare le date in baso al periodo selezionato e alle giornate scelte
     public ArrayList<LocalDate> calcoloDate(){
 
         ArrayList<LocalDate> days=new ArrayList<>();

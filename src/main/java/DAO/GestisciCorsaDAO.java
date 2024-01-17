@@ -4,7 +4,7 @@ public interface GestisciCorsaDAO {
 
     //public void AggiungiCorsa();
 
-    void ModificaCorsaDB(String CodiceCorsa, String Avviso, String Stato, String NomeCompagnia);
+    boolean ModificaCorsaDB(String CodiceCorsa, String Avviso, String Stato, String NomeCompagnia);
 
     float GetPrezzoCorsaDB(String CodCorsa);
 }

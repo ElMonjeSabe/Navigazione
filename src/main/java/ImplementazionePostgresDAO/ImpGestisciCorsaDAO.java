@@ -21,7 +21,7 @@ public class ImpGestisciCorsaDAO implements GestisciCorsaDAO {
     }
 
     @Override
-    public void ModificaCorsaDB(String CodiceCorsa, String Avviso, String Stato, String NomeCompagnia) {
+    public boolean ModificaCorsaDB(String CodiceCorsa, String Avviso, String Stato, String NomeCompagnia) {
         try {
             //genera il codice del biglietto
             PreparedStatement pstmt = connection.prepareStatement("call CambiaStato(?, ?, ?, ?);");
@@ -30,15 +30,18 @@ public class ImpGestisciCorsaDAO implements GestisciCorsaDAO {
             pstmt.setString(2,Avviso);
             pstmt.setString(3,Stato);
             pstmt.setString(4, NomeCompagnia);
-
             pstmt.execute();
 
             pstmt.close();
             connection.close();
 
+            return true;
+
         } catch (SQLException e) {
 
             System.out.println("Errore: " + e.getMessage());
+
+            return false;
         }
     }
 

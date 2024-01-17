@@ -60,7 +60,7 @@ public class Home2 {
 
     public static void main(String[] args) {
 
-        frame = new JFrame("Home2");
+        frame = new JFrame("Schermata Principale");
         frame.setContentPane(new Home2().panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 350);

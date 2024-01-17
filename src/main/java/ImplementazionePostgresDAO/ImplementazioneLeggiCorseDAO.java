@@ -51,43 +51,43 @@ public class ImplementazioneLeggiCorseDAO implements CorseDAO{
         }
     }
 
-        @Override
-        public void leggiCorseFiltroDB(ArrayList<CorsaTabellone> corse, String TipoImb, int prezzo) {
-            // TODO Auto-generated method stub
-                try {
-                PreparedStatement leggiTabellaPS = connection.prepareStatement(
-                        "SELECT CodiceCorsa,costocorsa,scali,partenza,cittapartenza,nazionepartenza,destinazione,cittadestinazione,nazionedestinazione,datapartenza,dataarrivo,orariopartenza,orarioarrivo,stato,avviso\n" +
-                                "FROM Tabellone NATURAL JOIN Corsa JOIN Imbarcazione ON FKImb = CodiceImbarcazione\n" +
-                                "WHERE TipoImbarcazione LIKE ? AND costocorsa < ?");
+    @Override
+    public void leggiCorseFiltroDB(ArrayList<CorsaTabellone> corse, String TipoImb, int prezzo) {
+        // TODO Auto-generated method stub
+        try {
+            PreparedStatement leggiTabellaPS = connection.prepareStatement(
+                    "SELECT CodiceCorsa,costocorsa,scali,partenza,cittapartenza,nazionepartenza,destinazione,cittadestinazione,nazionedestinazione,datapartenza,dataarrivo,orariopartenza,orarioarrivo,stato,avviso\n" +
+                            "FROM Tabellone NATURAL JOIN Corsa JOIN Imbarcazione ON FKImb = CodiceImbarcazione\n" +
+                            "WHERE TipoImbarcazione LIKE ? AND costocorsa < ?");
 
 
 
-                if(TipoImb.equals("tutte")){
-                        leggiTabellaPS.setString(1, "%");
-                    }else {
-                        leggiTabellaPS.setString(1, TipoImb);
-                    }
-                leggiTabellaPS.setInt(2, prezzo);
+            if(TipoImb.equals("tutte")){
+                leggiTabellaPS.setString(1, "%");
+            }else {
+                leggiTabellaPS.setString(1, TipoImb);
+            }
+            leggiTabellaPS.setInt(2, prezzo);
 
 
-                ResultSet rs = leggiTabellaPS.executeQuery();
+            ResultSet rs = leggiTabellaPS.executeQuery();
 
 
-                while (rs.next()) {
+            while (rs.next()) {
 
-                    corse.add(new CorsaTabellone(rs.getString(1),rs.getFloat(2),rs.getInt(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getDate(10),rs.getDate(11),rs.getTime(12),rs.getTime(13),rs.getString(14),rs.getString(15)));
-
-                }
-
-                rs.close();
-                leggiTabellaPS.close();
-                connection.close();
-
-
-            } catch (SQLException e) {
-                JOptionPane.showMessageDialog(null, "Errore: " + e.getMessage());
+                corse.add(new CorsaTabellone(rs.getString(1),rs.getFloat(2),rs.getInt(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9),rs.getDate(10),rs.getDate(11),rs.getTime(12),rs.getTime(13),rs.getString(14),rs.getString(15)));
 
             }
+
+            rs.close();
+            leggiTabellaPS.close();
+            connection.close();
+
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Errore: " + e.getMessage());
+
+        }
 
     }
 }

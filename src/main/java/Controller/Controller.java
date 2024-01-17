@@ -34,7 +34,7 @@ public class Controller {
 
     public void setCompagnia(String nome, String password, String email, String telefono, String sito)
     {
-            compagnia=new Compagnia(nome,password, email,telefono,sito);
+        compagnia=new Compagnia(nome,password, email,telefono,sito);
     }
 
 
@@ -77,6 +77,7 @@ public class Controller {
 
     }
 
+
     public ArrayList<Compagnia> getCompagnie(){
         return Compagnie;
     }
@@ -85,10 +86,9 @@ public class Controller {
 
 
 
-    public void ModificaCorsa(String CodiceCorsa, String Avviso, String Stato, String NomeCompagnia){
+    public boolean ModificaCorsa(String CodiceCorsa, String Avviso, String Stato, String NomeCompagnia){
         GestisciCorsaDAO MC = new ImpGestisciCorsaDAO();
-        MC.ModificaCorsaDB(CodiceCorsa,Avviso, Stato, NomeCompagnia);
-
+        return MC.ModificaCorsaDB(CodiceCorsa,Avviso, Stato, NomeCompagnia);
     }
 
     public int AggiungiPasseggero(Passeggero p){
@@ -97,10 +97,7 @@ public class Controller {
     }
 
 
-    public int AggiungiCompagnia(Compagnia c){
-        GestioneCompagniaDAO GC = new ImpGestioneCompagniaDAO();
-        return GC.AggiungiCompagniaDB(c);
-    }
+
 
     public Passeggero loginPasseggero(String email, String password){
         loginPasseggeroDAO GP = new ImpLoginPasseggeroDAO();
@@ -144,4 +141,25 @@ public class Controller {
         GestisciCorsaDAO prezzoCorsa = new ImpGestisciCorsaDAO();
         return prezzoCorsa.GetPrezzoCorsaDB(CodCorsa);
     }
+
+    public boolean RegistrazioneCompagnia(Compagnia comp, Imbarcazione imb){
+        RegistrazioneCompagniaDAO regComp= new ImpRegistrazioneCompagniaDAO();
+        return regComp.RegistrazioneCompagniaDB(comp, imb);
+    }
+
+    public boolean AggiungiSocial(Social soc){
+        AggiungiSocialDAO aggSoc= new ImpAggiungiSocialDAO();
+        return aggSoc.AggiungiSocialDB(soc);
+    }
+
+    public ArrayList<String> GetCodiceCorse(String nomeComp) {
+        GetCodCorseDAO getCodCorse = new ImpGetCodCorseDAO();
+        return getCodCorse.GetCodCorseDB(nomeComp);
+    }
+
+    public boolean CancellaCorsa(String codice){
+        CancellaCorsaDAO CancCorsa= new ImpCancellaCorsaDAO();
+        return CancCorsa.CancellaCorsaDB(codice);
+    }
+
 }

@@ -2,33 +2,44 @@ package Gui;
 
 import Controller.Controller;
 import Model.Compagnia;
+import Model.Imbarcazione;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.format.TextStyle;
+import java.util.ArrayList;
+import java.util.Locale;
 
 public class ModificaCorsa {
     private JTextField textNomeC;
     private JTextField textAvviso;
     private JButton indietroButton;
     private JButton confermaButton;
-    private JComboBox comboBox1;
+    private JComboBox CBStato;
     private JTextField textCodice;
     private JPanel panel;
     private JButton btoCancella;
+    private JComboBox CBCodice;
+    private JComboBox CBImbarcazione;
     private JFrame frame;
 
 
 
 
-
+    private ArrayList<String> codici;
     private Controller controller;
     public JFrame frameChiamante;
     public ModificaCorsa(JFrame frameChiamante, Controller controller, Compagnia c) {
 
-        comboBox1.addItem("regolare");
-        comboBox1.addItem("annullato");
-        comboBox1.addItem("ritardo");
+        CBStato.addItem("regolare");
+        CBStato.addItem("annullato");
+        CBStato.addItem("ritardo");
+
+        codici=controller.GetCodiceCorse(c.getNomeCompagnia());
+        for(String s: codici){
+            CBCodice.addItem(s);
+        }
 
         this.controller = controller;
         this.frameChiamante = frameChiamante;
@@ -61,11 +72,27 @@ public class ModificaCorsa {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                String codice = textCodice.getText();
 
-                if (codice.equals("")) {
-                    JOptionPane.showMessageDialog(null, "identificati col tuo nome e inserisci il \ncodice della corsa per eliminarlo!");
+                int conferma=JOptionPane.showConfirmDialog(null, "Conferma la cancellazione della corsa: "+CBCodice.getSelectedItem().toString());
+
+                /*
+                   -1 se si chiude la finestra
+                    0 se si preme Sì
+                    1 se si preme No
+                    2 se si preme Annulla*/
+                if(conferma==0){
+                    if(controller.CancellaCorsa(CBCodice.getSelectedItem().toString())){
+                        JOptionPane.showMessageDialog(null, "modifica avvenuta correttamente");
+                        frameChiamante.setVisible(true);
+                        frame.setVisible(false);
+                        frame.dispose();
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "errore durante la modifica");
+                    }
+
                 }
+
             }
         });
         confermaButton.addActionListener(new ActionListener() {
@@ -76,15 +103,25 @@ public class ModificaCorsa {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                String codice = textCodice.getText();
-                if (codice.equals("")) {
-                    JOptionPane.showMessageDialog(null, "identificati col tuo nome e inserisci il \ncodice della corsa per confermare la modifica!");
-                }else{
-                    controller.ModificaCorsa(codice,textAvviso.getText(),comboBox1.getSelectedItem().toString(), c.getNomeCompagnia());
+
+                if(controller.ModificaCorsa(
+                        CBCodice.getSelectedItem().toString(),
+                        textAvviso.getText(),
+                        CBStato.getSelectedItem().toString(),
+                        c.getNomeCompagnia()))
+                {
+                    JOptionPane.showMessageDialog(null, "modifica avvenuta correttamente");
                     frameChiamante.setVisible(true);
                     frame.setVisible(false);
                     frame.dispose();
+
                 }
+                else{
+                    JOptionPane.showMessageDialog(null, "errore durante la modifica");
+
+                }
+
+
 
             }
         });

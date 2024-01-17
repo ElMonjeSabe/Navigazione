@@ -1,6 +1,7 @@
 package Gui;
 
 import Controller.Controller;
+import Model.Compagnia;
 import Model.CorsaTabellone;
 import Model.Passeggero;
 
@@ -19,6 +20,7 @@ public class ListaCorse {
     private JButton cercaButton;
     private JSlider sliderPrezzo;
     private JLabel Prezzo;
+
     private Controller controller;
 
     private JFrame frameChiamante;
@@ -45,6 +47,7 @@ public class ListaCorse {
         cBImbarcazioni.addItem("aliscafo");
         cBImbarcazioni.addItem("motonave");
         cBImbarcazioni.addItem("traghetto");
+
 
 
         sliderPrezzo.setMaximum(2000);
@@ -89,7 +92,22 @@ public class ListaCorse {
 
         if (listaCorse != null) {
             for (int i = 0; i < listaCorse.size(); i++)
-                tableModel.addRow(new Object[]{listaCorse.get(i).CodiceCorsa, listaCorse.get(i).costocorsa,listaCorse.get(i).scali, listaCorse.get(i).partenza, listaCorse.get(i).cittapartenza, listaCorse.get(i).nazionepartenza, listaCorse.get(i).destinazione, listaCorse.get(i).cittadestinazione, listaCorse.get(i).nazionedestinazione, listaCorse.get(i).datapartenza, listaCorse.get(i).dataarrivo, listaCorse.get(i).orariopartenza, listaCorse.get(i).orarioarrivo, listaCorse.get(i).stato, listaCorse.get(i).avviso});
+                tableModel.addRow(new Object[]{
+                        listaCorse.get(i).CodiceCorsa,
+                        listaCorse.get(i).costocorsa,
+                        listaCorse.get(i).scali,
+                        listaCorse.get(i).partenza,
+                        listaCorse.get(i).cittapartenza,
+                        listaCorse.get(i).nazionepartenza,
+                        listaCorse.get(i).destinazione,
+                        listaCorse.get(i).cittadestinazione,
+                        listaCorse.get(i).nazionedestinazione,
+                        listaCorse.get(i).datapartenza,
+                        listaCorse.get(i).dataarrivo,
+                        listaCorse.get(i).orariopartenza,
+                        listaCorse.get(i).orarioarrivo,
+                        listaCorse.get(i).stato,
+                        listaCorse.get(i).avviso});
         }
 
 
@@ -151,7 +169,22 @@ public class ListaCorse {
                 tableModel.setRowCount(0);
                 if (listaCorse != null) {
                     for (int i = 0; i < listaCorse.size(); i++)
-                        tableModel.addRow(new Object[]{listaCorse.get(i).CodiceCorsa, listaCorse.get(i).costocorsa,listaCorse.get(i).scali, listaCorse.get(i).partenza, listaCorse.get(i).cittapartenza, listaCorse.get(i).nazionepartenza, listaCorse.get(i).destinazione, listaCorse.get(i).cittadestinazione, listaCorse.get(i).nazionedestinazione, listaCorse.get(i).datapartenza, listaCorse.get(i).dataarrivo, listaCorse.get(i).orariopartenza, listaCorse.get(i).orarioarrivo, listaCorse.get(i).stato, listaCorse.get(i).avviso});
+                        tableModel.addRow(new Object[]{
+                                listaCorse.get(i).CodiceCorsa,
+                                listaCorse.get(i).costocorsa,
+                                listaCorse.get(i).scali,
+                                listaCorse.get(i).partenza,
+                                listaCorse.get(i).cittapartenza,
+                                listaCorse.get(i).nazionepartenza,
+                                listaCorse.get(i).destinazione,
+                                listaCorse.get(i).cittadestinazione,
+                                listaCorse.get(i).nazionedestinazione,
+                                listaCorse.get(i).datapartenza,
+                                listaCorse.get(i).dataarrivo,
+                                listaCorse.get(i).orariopartenza,
+                                listaCorse.get(i).orarioarrivo,
+                                listaCorse.get(i).stato,
+                                listaCorse.get(i).avviso});
                 }
             }
         });

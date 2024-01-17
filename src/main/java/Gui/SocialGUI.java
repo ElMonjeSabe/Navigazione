@@ -1,5 +1,9 @@
 package Gui;
 
+import Model.Compagnia;
+import Controller.Controller;
+import Model.Social;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,11 +17,12 @@ public class SocialGUI {
     private JPanel panel;
     private JFrame frame;
     public JFrame frameChiamante;
-    public SocialGUI(JFrame frameChiamante) {
+    public SocialGUI(JFrame frameChiamante, Controller controller,Compagnia comp) {
 
         this.frameChiamante = frameChiamante;
 
-        frame = new JFrame("Social");
+
+        frame = new JFrame("Aggiungi Social");
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
@@ -31,11 +36,21 @@ public class SocialGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String url = textURL.getText();
-                String nomec = textNomeC.getText();
                 String nomes = textNomeS.getText();
 
-                if (url.equals("") || nomec.equals("") ||nomec.equals("") ) {
-                    JOptionPane.showMessageDialog(null, "identificati col tuo nome, inserisci \nl'url del social e/o aggiungi il nome per aggiungere il social!");
+                if (url.equals("") || nomes.equals("") ) {
+                    JOptionPane.showMessageDialog(null, "inserisci l'url del social e/o aggiungi " +
+                            "\nil nome valdi per aggiungere il social!");
+                }
+                else{
+                    Social social = new Social( url, nomes,comp);
+                    if(controller.AggiungiSocial(social)){
+                        JOptionPane.showMessageDialog(null, "Social aggiunto correttamente");
+                        frameChiamante.setVisible(true);
+                        frame.setVisible(false);
+                        frame.dispose();
+                    }
+
                 }
             }
         });

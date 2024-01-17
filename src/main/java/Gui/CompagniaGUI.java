@@ -40,6 +40,7 @@ public class CompagniaGUI {
     private JLabel EmailComp;
     private JLabel TelefonoComp;
     private JLabel SitoWebComp;
+    private JButton aggiungiCabinaButton;
 
     private Controller controller;
 
@@ -56,12 +57,12 @@ public class CompagniaGUI {
         EmailComp.setText(c.getEmailCompagnia());
         SitoWebComp.setText(c.getSitoWeb());
 
-        frame = new JFrame("Seconda Finestrs");
+        frame = new JFrame("Schermata Compagnia");
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setResizable(false);
-        frame.setSize(400, 250);
+        //frame.setSize(400, 250);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
@@ -131,10 +132,37 @@ public class CompagniaGUI {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                SocialGUI social = new SocialGUI(frame);
+                SocialGUI social = new SocialGUI(frame,controller,c);
                 social.getFrame().setVisible(true);
 
                 frame.setVisible(false);
+            }
+        });
+        visualizzaLeMieCorseButton.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e the event to be processed
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        aggiungiCabinaButton.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e the event to be processed
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                AggiungiCabina cabinaGUI = new AggiungiCabina(frame,controller,c);
+                cabinaGUI.getFrame().setVisible(true);
+
+                frame.setVisible(false);
+
             }
         });
     }

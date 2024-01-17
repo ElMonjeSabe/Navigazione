@@ -83,17 +83,17 @@ public class RegCompagnia {
                 else{
                     if(codice.length()<=5 && tFNomeCompagnia.getText().length()<=30)
                     {
-                        Compagnia c = new Compagnia(tFNomeCompagnia.getText(), tFPassword.getText(), tfTelefono.getText(), tfEmail.getText(), tfSitoWeb.getText());
+                        Compagnia comp = new Compagnia(tFNomeCompagnia.getText(), tFPassword.getText(), tfTelefono.getText(), tfEmail.getText(), tfSitoWeb.getText());
+                        Imbarcazione imb= new Imbarcazione(codice,nomei,(String) CBTipo.getSelectedItem(),capienzap,capienzav,tFNomeCompagnia.getText());
+                        if (controller.RegistrazioneCompagnia(comp,imb)) {
 
-                        if (controller.AggiungiCompagnia(c) == 1) {
-                            Imbarcazione imb= new Imbarcazione(codice,nomei,(String) CBTipo.getSelectedItem(),capienzap,capienzav,tFNomeCompagnia.getText());
-                            controller.AggiungiImbarcazione(imb);
                             JOptionPane.showMessageDialog(null, "Registrazione effettuata con successo");
-                            CompagniaGUI frameCompagniaGUI = new CompagniaGUI(frame, controller, c);
+                            CompagniaGUI frameCompagniaGUI = new CompagniaGUI(frame, controller, comp);
                             frameCompagniaGUI.frame.setVisible(true);
                             frame.setVisible(false);
                         } else {
-                            JOptionPane.showMessageDialog(null, "Errore durante la registrazione");
+                            JOptionPane.showMessageDialog(null, "Errore durante la registrazione. " +
+                                    "\nricontrolla i dati inseriti");
 
                         }
                     }
