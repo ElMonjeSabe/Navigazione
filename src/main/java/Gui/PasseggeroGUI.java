@@ -6,7 +6,6 @@ import Model.Passeggero;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class PasseggeroGUI {
@@ -47,12 +46,12 @@ public class PasseggeroGUI {
     private Passeggero p;
 
 
-    public PasseggeroGUI(JFrame frameChiamante, Controller controller, Passeggero p) {
+    public PasseggeroGUI(JFrame frameChiamante, Controller controller) {
 
         this.frameChiamante = frameChiamante;
         this.controller = controller;
-        this.p =p;
-        controller.setPasseggero(p);
+        p = controller.getPasseggero();
+
 
 
         NomePass.setText(p.getNome());
@@ -81,6 +80,7 @@ public class PasseggeroGUI {
                 frame.setVisible(false);
             }
         });
+
     }
 
 

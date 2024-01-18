@@ -74,7 +74,7 @@ public class ImplementazioneLeggiCorseDAO implements CorseDAO{
             PreparedStatement leggiTabellaPS = connection.prepareStatement(
                     "SELECT CodiceCorsa,costocorsa,scali,nomecompagnia,partenza,cittapartenza,nazionepartenza,destinazione,cittadestinazione,nazionedestinazione,datapartenza,dataarrivo,orariopartenza,orarioarrivo,stato,avviso\n" +
                             "FROM Tabellone NATURAL JOIN Corsa JOIN Imbarcazione ON FKImb = CodiceImbarcazione\n" +
-                            "WHERE TipoImbarcazione LIKE ? AND costocorsa < ? AND nomecompagnia LIKE ?");
+                            "WHERE TipoImbarcazione LIKE ? AND costocorsa <= ? AND nomecompagnia LIKE ?");
 
 
 

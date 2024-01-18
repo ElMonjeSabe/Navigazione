@@ -41,6 +41,8 @@ public class AggiungiCabina {
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
+        //Apre la finestra la centro dello schermo
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
         CBLetti.addItem("1");

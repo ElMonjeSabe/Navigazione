@@ -88,7 +88,8 @@ public class RegCompagnia {
                         if (controller.RegistrazioneCompagnia(comp,imb)) {
 
                             JOptionPane.showMessageDialog(null, "Registrazione effettuata con successo");
-                            CompagniaGUI frameCompagniaGUI = new CompagniaGUI(frame, controller, comp);
+                            controller.setCompagnia(comp);
+                            CompagniaGUI frameCompagniaGUI = new CompagniaGUI(frame, controller);
                             frameCompagniaGUI.frame.setVisible(true);
                             frame.setVisible(false);
                         } else {

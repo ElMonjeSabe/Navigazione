@@ -12,13 +12,17 @@ public class Home2 {
     private JButton btUtente;
     private JButton btAccedi;
 
+
+
     private static JFrame frame;
     private JPanel panel;
     private JButton visualizzaCorseButton;
 
 
     Controller controller = new Controller();
-
+    public static JFrame getFrame() {
+        return frame;
+    }
     public Home2() {
 
 

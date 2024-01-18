@@ -87,7 +87,7 @@ public class InserimentoBigliettoGUI {
         //prima di tutto vado a prelevarmi tutti la lista di codici e li metto nella combobox
         codCorse=controller.GetCodiceCorse();
         //
-        for(String s: codCorse){
+ /*       for(String s: codCorse){
             cBCorse.addItem(s);
         }
         //essendo che sara' selezionata la prima corsa, prendo tutte le cabine disponibili della prima corsa e li metto
@@ -96,7 +96,7 @@ public class InserimentoBigliettoGUI {
         for(Cabina cab: cabine){
             cBCabine.addItem(cab.getNumero());
         }
-
+*/
 
 
         btoIndietro.addActionListener(new ActionListener() {

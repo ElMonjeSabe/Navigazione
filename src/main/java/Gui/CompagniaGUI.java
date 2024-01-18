@@ -45,12 +45,13 @@ public class CompagniaGUI {
     private Controller controller;
 
     private ArrayList<Imbarcazione> imbarcazioni= new ArrayList<Imbarcazione>();
+    private Compagnia c;
 
-
-    public CompagniaGUI(JFrame frameChiamante, Controller controller, Compagnia c) {
+    public CompagniaGUI(JFrame frameChiamante, Controller controller) {
 
         this.frameChiamante = frameChiamante;
         this.controller = controller;
+        c = controller.getCompagnia();
 
         NomeComp.setText(c.getNomeCompagnia());
         TelefonoComp.setText(c.getTelefono());
@@ -62,7 +63,6 @@ public class CompagniaGUI {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setResizable(false);
-        //frame.setSize(400, 250);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 

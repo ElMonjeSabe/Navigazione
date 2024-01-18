@@ -179,4 +179,12 @@ public class Controller {
         return aggCab.AggiungiCabinaDB(cab,imb);
     }
 
+    public Compagnia getCompagnia() {
+        return compagnia;
+    }
+
+    public void setCompagnia(Compagnia c){
+        this.compagnia = c;
+    }
+
 }

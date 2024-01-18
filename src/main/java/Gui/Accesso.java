@@ -18,11 +18,12 @@ public class Accesso {
     private JRadioButton rdCompagnia;
 
     public JFrame frame;
+
     private JFrame frameChiamante;
     private Controller controller;
 
-    public Accesso(JFrame frameChiamnte, Controller controller){
-        this.frameChiamante = frameChiamnte;
+    public Accesso(JFrame frameChiamante, Controller controller){
+        this.frameChiamante = frameChiamante;
         this.controller = controller;
 
 
@@ -57,7 +58,9 @@ public class Accesso {
                     Compagnia c = controller.loginCompagnia(tFEmail.getText(),tFPassword.getText());
                     if(c != null){
                         JOptionPane.showMessageDialog(null, "login effettuato con successo.");
-                        CompagniaGUI frameCompagniaGUI = new CompagniaGUI(frame, controller, c);
+                        controller.setCompagnia(c);
+                        frameChiamante.dispose();
+                        CompagniaGUI frameCompagniaGUI = new CompagniaGUI(frame, controller);
                         frameCompagniaGUI.frame.setVisible(true);
                         frame.setVisible(false);
                     }else{
@@ -73,7 +76,9 @@ public class Accesso {
                     Passeggero p = controller.loginPasseggero(tFEmail.getText(),tFPassword.getText());
                     if(p != null){
                         JOptionPane.showMessageDialog(null, "login effettuato con successo.");
-                        PasseggeroGUI framePasseggeroGUI = new PasseggeroGUI(frame, controller,p);
+                        controller.setPasseggero(p);
+                        frameChiamante.dispose();
+                        PasseggeroGUI framePasseggeroGUI = new PasseggeroGUI(frame, controller);
                         framePasseggeroGUI.frame.setVisible(true);
                         frame.setVisible(false);
                     }else{

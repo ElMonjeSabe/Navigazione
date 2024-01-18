@@ -75,10 +75,13 @@ public class RegUtente {
                     LocalDate data = LocalDate.of((Integer) comboBoxAnno.getSelectedItem(), (Integer) comboBoxMese.getSelectedItem(), (Integer) comboBoxGiorno.getSelectedItem());
                     Passeggero p = new Passeggero(tfCF.getText(), tfNome.getText(), tfCognome.getText(), data, tfEmail.getText(), tfPassword.getText());
                     if (controller.AggiungiPasseggero(p) == 1) {
+
                         JOptionPane.showMessageDialog(null, "Registrazione effettuata con successo");
-                        PasseggeroGUI framePasseggeroGUI = new PasseggeroGUI(frame, controller, p);
+                        controller.setPasseggero(p);
+                        PasseggeroGUI framePasseggeroGUI = new PasseggeroGUI(frame, controller);
                         framePasseggeroGUI.frame.setVisible(true);
                         frame.setVisible(false);
+
                     } else {
                         JOptionPane.showMessageDialog(null, "Errore durante la registrazione");
 
