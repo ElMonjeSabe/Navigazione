@@ -32,6 +32,35 @@ public class ImpGetCodCorseDAO implements GetCodCorseDAO {
 
             pstmt.setString(1,nomeComp);
 
+
+            ResultSet rs = pstmt.executeQuery();
+
+            while(rs.next()){
+                codici.add(rs.getString(1));
+            }
+
+
+
+            rs.close();
+            pstmt.close();
+            connection.close();
+
+        } catch (SQLException e) {
+
+            // gestisci altri errori SQL
+            JOptionPane.showMessageDialog(null, "Errore: " + e.getMessage());
+
+        }
+
+        return codici;
+    }
+
+    public ArrayList<String> GetCodCorseDB() {
+        ArrayList<String> codici= new ArrayList<String>();
+        try {
+            PreparedStatement pstmt = connection.prepareStatement("select codicecorsa from corsa;");
+
+
             ResultSet rs = pstmt.executeQuery();
 
             while(rs.next()){

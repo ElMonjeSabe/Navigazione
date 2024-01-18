@@ -9,6 +9,8 @@ import java.util.Date;
 public class CorsaTabellone {
     public String CodiceCorsa;
     public Float costocorsa;
+
+    public String nomeCompagnia;
     public String partenza;
     public String cittapartenza;
     public String nazionepartenza;
@@ -25,10 +27,11 @@ public class CorsaTabellone {
     public String avviso;
 
     public int scali;
-            public CorsaTabellone(String CodiceCorsa, Float costocorsa,int scali, String partenza, String cittapartenza, String nazionepartenza, String destinazione, String cittadestinazione, String nazionedestinazione, LocalDate datapartenza, LocalDate dataarrivo, Time orariopartenza, Time orarioarrivo, String stato, String avviso) {
+            public CorsaTabellone(String CodiceCorsa, Float costocorsa, int scali, String nomeCompagnia, String partenza, String cittapartenza, String nazionepartenza, String destinazione, String cittadestinazione, String nazionedestinazione, LocalDate datapartenza, LocalDate dataarrivo, Time orariopartenza, Time orarioarrivo, String stato, String avviso) {
                 this.CodiceCorsa = CodiceCorsa;
                 this.costocorsa = costocorsa;
                 this.scali = scali;
+                this.nomeCompagnia=nomeCompagnia;
                 this.partenza = partenza;
                 this.cittapartenza = cittapartenza;
                 this.nazionepartenza = nazionepartenza;
@@ -50,6 +53,7 @@ public class CorsaTabellone {
                 "CodiceCorsa='" + CodiceCorsa + '\'' +
                 ", costocorsa='" + costocorsa + '\'' +
                 ",scali='" +scali+
+                ", NomeCompagnia='" + nomeCompagnia + '\'' +
                 ", partenza='" + partenza + '\'' +
                 ", cittapartenza='" + cittapartenza + '\'' +
                 ", nazionepartenza='" + nazionepartenza + '\'' +

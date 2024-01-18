@@ -21,7 +21,7 @@ public class CompagniaGUI {
     private JButton aggiungiCorsaButton;
     private JButton modificaCorsaButton;
     private JButton aggiungiImbarcazioneButton;
-    private JButton visualizzaLeMieCorseButton;
+    private JButton visualizzaCorseButton;
     private JButton aggiungiCompagniaButton;
     private JButton ritornaAllaHomeButton;
     private JTextField textNome;
@@ -138,7 +138,7 @@ public class CompagniaGUI {
                 frame.setVisible(false);
             }
         });
-        visualizzaLeMieCorseButton.addActionListener(new ActionListener() {
+        visualizzaCorseButton.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.
              *
@@ -146,6 +146,10 @@ public class CompagniaGUI {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
+                controller.LeggiCorseDAO();
+                ListaCorse frameListaCorse = new ListaCorse(frame, controller,null);
+                frameListaCorse.frame.setVisible(true);
+                frame.setVisible(false);
 
             }
         });

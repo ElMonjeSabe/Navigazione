@@ -1,15 +1,15 @@
 
-m	java:S1177"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”åØå8ÁÖªÑ1
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Åíáòÿÿÿÿÿ8ÁÖªÑ1
+r	java:S117G"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æº—şÿÿÿÿ8—¬ğÒÑ1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Åíáòÿÿÿÿÿ8˜¬ğÒÑ1
 q
-java:S2095 "OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ü”í‹üÿÿÿÿ8àÖªÑ1
+java:S2095 "OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ü”í‹üÿÿÿÿ8ß¬ğÒÑ1
 q
-java:S2095:"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ü”í‹üÿÿÿÿ8àÖªÑ1
+java:S2095J"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ü”í‹üÿÿÿÿ8°¡ŸÓÑ1
 T
-java:S1135"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8ğÖªÑ1
+java:S1135"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8â¬ğÒÑ1
 T
-java:S1135"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8ğÖªÑ1
+java:S1135"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8ã¬ğÒÑ1
 T
-java:S11358"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8ğÖªÑ1
-T
-java:S6126;"2Replace this String concatenation with Text block.(’¿èúÿÿÿÿ8ğÖªÑ1
+java:S1135H"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8æ¬ğÒÑ1
+O
+java:S6126K"2Replace this String concatenation with Text block.(ş÷œ´8¾¡ŸÓÑ1

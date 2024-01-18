@@ -61,7 +61,23 @@ public class ImpGestisciCorsaDAO implements GestisciCorsaDAO {
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                corsa = new CorsaTabellone(rs.getString(1), rs.getFloat(2), rs.getInt(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getDate(10).toLocalDate(), rs.getDate(11).toLocalDate(), rs.getTime(12), rs.getTime(13), rs.getString(14), rs.getString(15));
+                corsa = new CorsaTabellone(
+                        rs.getString(1),
+                        rs.getFloat(2),
+                        rs.getInt(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getString(8),
+                        rs.getString(9),
+                        rs.getString(10),
+                        rs.getDate(11).toLocalDate(),
+                        rs.getDate(12).toLocalDate(),
+                        rs.getTime(13),
+                        rs.getTime(14),
+                        rs.getString(15),
+                        rs.getString(16));
             }
             rs.close();
             pstmt.close();

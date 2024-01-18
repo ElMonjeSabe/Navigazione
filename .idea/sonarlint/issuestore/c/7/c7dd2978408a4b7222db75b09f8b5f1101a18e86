@@ -1,21 +1,22 @@
 
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë“¥ÿÿÿÿÿÿ8ß”’«Ñ1
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë“¥ÿÿÿÿÿÿ8ß”’«Ñ1
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë“¥ÿÿÿÿÿÿ8ß”’«Ñ1
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë“¥ÿÿÿÿÿÿ8ß”’«Ñ1
-r	java:S1174"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Å¶—÷ûÿÿÿÿ8ß”’«Ñ1
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Åíáòÿÿÿÿÿ8à”’«Ñ1
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë“¥ÿÿÿÿÿÿ8ÑÊ¯ÒÑ1
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë“¥ÿÿÿÿÿÿ8ÑÊ¯ÒÑ1
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë“¥ÿÿÿÿÿÿ8ÑÊ¯ÒÑ1
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë“¥ÿÿÿÿÿÿ8ÑÊ¯ÒÑ1
+m	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷¨Şù8ÑÊ¯ÒÑ1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Åíáòÿÿÿÿÿ8ÒÊ¯ÒÑ1
 q
-java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¦¥Å—ùÿÿÿÿ8æ”’«Ñ1
-l
-java:S20959"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(õö›ˆ8æ”’«Ñ1
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¦¥Å—ùÿÿÿÿ8„Ë¯ÒÑ1
+q
+java:S2095:"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ë¿Ò´üÿÿÿÿ8„Ë¯ÒÑ1
 T
-java:S1135"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8è”’«Ñ1
-G	java:S106*"+Replace this use of System.out by a logger.(¹å›ğ8é”’«Ñ1
-G	java:S106G"+Replace this use of System.out by a logger.(¹å›ğ8ê”’«Ñ1
+java:S1135"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8‡Ë¯ÒÑ1
+G	java:S106+"+Replace this use of System.out by a logger.(¹å›ğ8‰Ë¯ÒÑ1
+G	java:S106X"+Replace this use of System.out by a logger.(¹å›ğ8‹Ë¯ÒÑ1
 R
-java:S1128"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ8Ÿ†ˆ­Ñ1
+java:S1128"0Remove this unused import 'java.time.LocalDate'.(›‘¬èıÿÿÿÿ8ŒË¯ÒÑ1
 J
-java:S1128".Remove this unused import 'java.util.HashSet'.(Ê‚êX8Ÿ†ˆ­Ñ1
+java:S1128	".Remove this unused import 'java.util.HashSet'.(Ê‚êX8ŒË¯ÒÑ1
 L
-java:S1128	"*Remove this unused import 'java.util.Set'.(ö²„¤şÿÿÿÿ8Ÿ†ˆ­Ñ1
+java:S1128
+"*Remove this unused import 'java.util.Set'.(ö²„¤şÿÿÿÿ8ŒË¯ÒÑ1

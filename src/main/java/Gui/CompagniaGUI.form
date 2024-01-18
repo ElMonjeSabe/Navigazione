@@ -166,12 +166,12 @@
                           <text value="Aggiungi Imbarcazione"/>
                         </properties>
                       </component>
-                      <component id="a7c45" class="javax.swing.JButton" binding="visualizzaLeMieCorseButton" default-binding="true">
+                      <component id="a7c45" class="javax.swing.JButton" binding="visualizzaCorseButton">
                         <constraints>
                           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
-                          <text value="Visualizza le mie corse"/>
+                          <text value="Visualizza corse"/>
                         </properties>
                       </component>
                       <component id="93e80" class="javax.swing.JButton" binding="btoSocial">

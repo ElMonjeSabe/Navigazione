@@ -26,8 +26,9 @@ public class ImpCaricaCompagnieDAO implements CaricaCompagnieDAO
     }
 
 
-    public void CaricaCompagnieDB(ArrayList<Compagnia> l){
-        // TODO Auto-generated method stub
+    @Override
+    public ArrayList<Compagnia> CaricaCompagnieDB() {
+        ArrayList<Compagnia> comps= new ArrayList<Compagnia>();
         try {
             PreparedStatement leggiCompagniePS = connection.prepareStatement(
                     "SELECT * FROM Compagnia");
@@ -35,7 +36,12 @@ public class ImpCaricaCompagnieDAO implements CaricaCompagnieDAO
 
 
             while (rs.next()) {
-                l.add(new Compagnia(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5)));
+                comps.add(new Compagnia(
+                        rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5)));
             }
 
             rs.close();
@@ -47,5 +53,6 @@ public class ImpCaricaCompagnieDAO implements CaricaCompagnieDAO
             JOptionPane.showMessageDialog(null, "Errore: " + e.getMessage());
 
         }
+        return comps;
     }
 }

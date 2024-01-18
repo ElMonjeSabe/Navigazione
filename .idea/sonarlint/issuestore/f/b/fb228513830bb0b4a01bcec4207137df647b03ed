@@ -4,9 +4,4 @@ java:S2293"YReplace the type specification in this constructor call with the d
 v
 java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(›ĞÍÕ8š­¼¯Ã1
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á–Ì“8œ­¼¯Ã1
-o	java:S100!"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®åü™ıÿÿÿÿ8—ÎŞÎÃ1
-G
-java:S1068	"*Remove this unused "numero" private field.(Œ»ÓŒ8¦­¼¯Ã1
-K
-java:S1068
-".Remove this unused "postiletto" private field.(ó¸8¦­¼¯Ã1
+o	java:S100."NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®åü™ıÿÿÿÿ8—ÎŞÎÃ1

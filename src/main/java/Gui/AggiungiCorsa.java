@@ -246,7 +246,7 @@ public class AggiungiCorsa {
                                     //essendo uno scalo, dal porto di partenza devo sapere la partenza e arrivo. La partenza dallo scalo può anche essere il giorno dopo
                                     //perciò arrivo di partenza può essere diverso da quello di scalo
                                     timePIn=LocalTime.of((int) CBPartenzaOraIn.getSelectedItem(),(int) CBPartenzaMinIn.getSelectedItem());
-                                    timePOut=LocalTime.of((int) CBArrivoOraOut.getSelectedItem(),(int) CBArrivoMinOut.getSelectedItem());
+                                    timePOut=LocalTime.of((int) CBArrivoOraIn.getSelectedItem(),(int) CBArrivoMinIn.getSelectedItem());
 
                                     timePScalo=LocalTime.of((int) CBPartenzaOraScalo.getSelectedItem(),(int) CBPartenzaMinScalo.getSelectedItem());
 
@@ -365,7 +365,7 @@ public class AggiungiCorsa {
                                     //essendo uno scalo, dal porto di partenza devo sapere la partenza e arrivo. La partenza dallo scalo può anche essere il giorno dopo
                                     //perciò arrivo di partenza può essere diverso da quello di scalo
                                     timePIn = LocalTime.of((int) CBPartenzaOraIn.getSelectedItem(), (int) CBPartenzaMinIn.getSelectedItem());
-                                    timePOut = LocalTime.of((int) CBArrivoOraOut.getSelectedItem(), (int) CBArrivoMinOut.getSelectedItem());
+                                    timePOut=LocalTime.of((int) CBArrivoOraIn.getSelectedItem(),(int) CBArrivoMinIn.getSelectedItem());
 
                                     timePScalo = LocalTime.of((int) CBPartenzaOraScalo.getSelectedItem(), (int) CBPartenzaMinScalo.getSelectedItem());
 

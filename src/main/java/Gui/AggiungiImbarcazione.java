@@ -17,7 +17,6 @@ public class AggiungiImbarcazione {
     private JPanel panel;
     private JTextField textCapienzaP;
     private JTextField textCapienzaV;
-    private JComboBox cBCompagnie;
 
     private JFrame frame;
     public JFrame frameChiamante;
@@ -27,7 +26,6 @@ public class AggiungiImbarcazione {
 
     public AggiungiImbarcazione(JFrame frameChiamante, Controller controller, String nomeComp) {
         //aggiorna la lista di Compangie nel controller
-        controller.CaricaCompagnie();
 
         this.controller = controller;
         this.frameChiamante = frameChiamante;
@@ -38,7 +36,7 @@ public class AggiungiImbarcazione {
 
 
 
-        frame = new JFrame("Aggiungi Corsa");
+        frame = new JFrame("Aggiungi Imbarcazione");
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();

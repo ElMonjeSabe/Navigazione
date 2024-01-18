@@ -5,7 +5,6 @@ import DAO.*;
 import ImplementazionePostgresDAO.*;
 import Model.*;
 
-import javax.swing.*;
 import java.util.ArrayList;
 
 public class Controller {
@@ -47,10 +46,10 @@ public class Controller {
 
     }
 
-    public void LeggiCorseFiltrateDAO(String TipoImb, int prezzo) {
+    public void LeggiCorseFiltrateDAO(String TipoImb, int prezzo, String comp) {
         CorseDAO l=new ImplementazioneLeggiCorseDAO();
         corse.clear();
-        l.leggiCorseFiltroDB(corse, TipoImb, prezzo);  //legge listino dal DB
+        l.leggiCorseFiltroDB(corse, TipoImb, prezzo, comp);  //legge listino dal DB
 
         // costruisce gli oggetti Model a partire dai risultati del db
 
@@ -68,12 +67,7 @@ public class Controller {
     }
 
 
-    public void CaricaCompagnie(){
-        CaricaCompagnieDAO car = new ImpCaricaCompagnieDAO();
-        Compagnie.clear();
-        car.CaricaCompagnieDB(Compagnie);
 
-    }
 
 
     public ArrayList<Compagnia> getCompagnie(){
@@ -149,15 +143,40 @@ public class Controller {
         AggiungiSocialDAO aggSoc= new ImpAggiungiSocialDAO();
         return aggSoc.AggiungiSocialDB(soc);
     }
-
+    //mi prendo tutte le codice di una compagnia, utilizzato durante la modifica della corsa
     public ArrayList<String> GetCodiceCorse(String nomeComp) {
         GetCodCorseDAO getCodCorse = new ImpGetCodCorseDAO();
         return getCodCorse.GetCodCorseDB(nomeComp);
+    }
+    //senza passare nessuna compagnia, utilizzato durante l'acquisto di biglietti
+    public ArrayList<String> GetCodiceCorse() {
+        GetCodCorseDAO getCodCorse = new ImpGetCodCorseDAO();
+        return getCodCorse.GetCodCorseDB();
     }
 
     public boolean CancellaCorsa(String codice){
         CancellaCorsaDAO CancCorsa= new ImpCancellaCorsaDAO();
         return CancCorsa.CancellaCorsaDB(codice);
+    }
+
+    public ArrayList<Compagnia> CaricaCompagnie(){
+        CaricaCompagnieDAO car = new ImpCaricaCompagnieDAO();
+        return car.CaricaCompagnieDB();
+    }
+    //passando il codice della corsa, utilizzato durante l'acquisto di biglietti
+    public ArrayList<Cabina> GetCabine(String CDCorsa){
+        GetCabineDAO cab = new ImpGetCabineDAO();
+        return cab.GetCabineDB(CDCorsa);
+    }
+    //passando imbarcazione, utilizzato per aggiungere le cabine
+    public int GetUltimaCabina(Imbarcazione imb){
+        GetCabineDAO cab = new ImpGetCabineDAO();
+        return cab.GetUltimaCabinaDB(imb);
+    }
+
+    public boolean AggiungiCabina(Cabina cab, Imbarcazione imb){
+        AggiungiCabinaDAO aggCab= new ImpAggiungiCabinaDAO();
+        return aggCab.AggiungiCabinaDB(cab,imb);
     }
 
 }

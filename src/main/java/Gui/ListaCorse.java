@@ -20,12 +20,15 @@ public class ListaCorse {
     private JButton cercaButton;
     private JSlider sliderPrezzo;
     private JLabel Prezzo;
+    private JComboBox CBCompagnie;
 
     private Controller controller;
 
     private JFrame frameChiamante;
 
     static JFrame frame;
+
+    private ArrayList<Compagnia> compagnie;
 
     public ListaCorse(JFrame frameChiamante, Controller controller, Passeggero p) {
 
@@ -47,6 +50,12 @@ public class ListaCorse {
         cBImbarcazioni.addItem("aliscafo");
         cBImbarcazioni.addItem("motonave");
         cBImbarcazioni.addItem("traghetto");
+        compagnie=controller.CaricaCompagnie();
+
+        CBCompagnie.addItem("tutte");
+        for(Compagnia c: compagnie){
+            CBCompagnie.addItem(c.getNomeCompagnia());
+        }
 
 
 
@@ -64,7 +73,7 @@ public class ListaCorse {
 
         table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 
-        DefaultTableModel tableModel = new DefaultTableModel(new Object[][]{}, new String[]{"Codice", "Prezzo","Scali", "Partenza", "Città Partenza", "Nazione Partenza", "Destinazione", "Citta Destinazione", "Nazione Destinazione", "Data Partenza", "Data Arrivo", "Orario Partenza", "Orario Arrivo", "Stato", "Avviso"}) {
+        DefaultTableModel tableModel = new DefaultTableModel(new Object[][]{}, new String[]{"Codice", "Prezzo","Scali","Nome Compagnia", "Partenza", "Città Partenza", "Nazione Partenza", "Destinazione", "Citta Destinazione", "Nazione Destinazione", "Data Partenza", "Data Arrivo", "Orario Partenza", "Orario Arrivo", "Stato", "Avviso"}) {
             public boolean isCellEditable(int row, int column) {
                 // Tutte le celle non sono modificabili
                 return false;
@@ -96,6 +105,7 @@ public class ListaCorse {
                         listaCorse.get(i).CodiceCorsa,
                         listaCorse.get(i).costocorsa,
                         listaCorse.get(i).scali,
+                        listaCorse.get(i).nomeCompagnia,
                         listaCorse.get(i).partenza,
                         listaCorse.get(i).cittapartenza,
                         listaCorse.get(i).nazionepartenza,
@@ -119,6 +129,7 @@ public class ListaCorse {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 frameChiamante.setVisible(true);
                 frame.setVisible(false);
                 frame.dispose();
@@ -161,7 +172,7 @@ public class ListaCorse {
 
 
                 //Si fa passare la lista di corse dal controller
-                controller.LeggiCorseFiltrateDAO(cBImbarcazioni.getSelectedItem().toString(), sliderPrezzo.getValue());
+                controller.LeggiCorseFiltrateDAO(cBImbarcazioni.getSelectedItem().toString(), sliderPrezzo.getValue(), CBCompagnie.getSelectedItem().toString());
 
                 ArrayList<CorsaTabellone> listaCorse = controller.getCorse();
 
@@ -173,6 +184,7 @@ public class ListaCorse {
                                 listaCorse.get(i).CodiceCorsa,
                                 listaCorse.get(i).costocorsa,
                                 listaCorse.get(i).scali,
+                                listaCorse.get(i).nomeCompagnia,
                                 listaCorse.get(i).partenza,
                                 listaCorse.get(i).cittapartenza,
                                 listaCorse.get(i).nazionepartenza,

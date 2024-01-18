@@ -1,16 +1,12 @@
 package Gui;
 
 import Controller.Controller;
-import Model.Biglietto;
-import Model.Cabina;
-import Model.CorsaTabellone;
-import Model.Passeggero;
+import Model.*;
 
 import javax.swing.*;
 import java.awt.event.*;
 import java.time.LocalDate;
 import java.time.Period;
-import java.time.ZoneId;
 import java.util.ArrayList;
 
 public class InserimentoBigliettoGUI {
@@ -22,12 +18,15 @@ public class InserimentoBigliettoGUI {
     private JSpinner spinnerNumeroBagagli;
     private JButton btoIndietro;
     private JComboBox cBCabine;
+    private JComboBox cBCorse;
 
     public JFrame frameChiamante;
     JFrame frame;
     Controller controller;
 
 
+    private ArrayList<Cabina> cabine= new ArrayList<Cabina>();
+    private ArrayList<String> codCorse=new ArrayList<String>();
     private boolean ControlloCodCorsa(String cod) {
         for (int i = 0; i < controller.getCorse().size(); i++) {
             if (cod.equals(controller.getCorse().get(i).CodiceCorsa)) {
@@ -37,6 +36,30 @@ public class InserimentoBigliettoGUI {
         return false;
     }
 
+    /*
+    LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI
+    LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI
+    LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI
+    LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI
+    LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI
+
+
+    Con una textfield per inserire il codice corsa era molto difficile gestirlo, soprattutto quando dovevi recuperare
+    le cabine disponibili, quindi non ho eliminato niente, ho solo aggiunto una mia soluzione con la scelta delle cabine
+    tramite una checkbox. Vedi se ti piace così.
+
+    Per prendere le cabine purtroppo non sono riuscito a fare una procedura
+    in postegresql perche' mi dava un errore strano, quindi l'ho fatto direttamente nella query nell'implementazione
+    getCabine. Lascio comunque la procedura che ho scritto in CoseDaAggiungere
+
+
+    LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI
+    LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI
+    LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI
+    LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI
+    LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI
+
+    */
 
 
 
@@ -44,9 +67,8 @@ public class InserimentoBigliettoGUI {
 
 
 
-
-    InserimentoBigliettoGUI(JFrame frameChimante, Controller controller, Passeggero p) {
-        this.frameChiamante = frameChimante;
+    InserimentoBigliettoGUI(JFrame frameChiamante, Controller controller, Passeggero p) {
+        this.frameChiamante = frameChiamante;
         this.controller = controller;
         frame = new JFrame("Acquisto Biglietto");
 
@@ -62,13 +84,26 @@ public class InserimentoBigliettoGUI {
 
 
         frame.setVisible(true);
+        //prima di tutto vado a prelevarmi tutti la lista di codici e li metto nella combobox
+        codCorse=controller.GetCodiceCorse();
+        //
+        for(String s: codCorse){
+            cBCorse.addItem(s);
+        }
+        //essendo che sara' selezionata la prima corsa, prendo tutte le cabine disponibili della prima corsa e li metto
+        //nella combobox
+        cabine=controller.GetCabine(codCorse.getFirst().toString());
+        for(Cabina cab: cabine){
+            cBCabine.addItem(cab.getNumero());
+        }
+
 
 
         btoIndietro.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frameChiamante.setVisible(true);
-                frameChimante.setEnabled(true);
+                frameChiamante.setEnabled(true);
                 frame.setVisible(false);
                 frame.dispose();
             }
@@ -112,7 +147,7 @@ public class InserimentoBigliettoGUI {
 
                     ConfermaAcquistoGui frameConfermaAcquisto = new ConfermaAcquistoGui(frame, controller, new Biglietto(bagagli, veicolo, p.getCf(), codCorsa, Integer.parseInt(cBCabine.getSelectedItem().toString())), frameChiamante, prezzo);
                     frameConfermaAcquisto.frame.setVisible(true);
-                    frameChimante.setEnabled(false);
+                    frameChiamante.setEnabled(false);
                     frame.setVisible(false);
                 }
 
@@ -139,9 +174,24 @@ public class InserimentoBigliettoGUI {
         });
 
 
+        cBCorse.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e the event to be processed
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //ogni volta che cambio e seleziono un'altra corsa, rifaccio il calcolo delle cabine disponibili
+                //per quella corsa
+                cabine=controller.GetCabine(cBCorse.getSelectedItem().toString());
+                cBCabine.removeAllItems();
+                for(Cabina cab: cabine){
+                    cBCabine.addItem(cab.getNumero());
+                }
 
-
-
+            }
+        });
     }
 
 }
