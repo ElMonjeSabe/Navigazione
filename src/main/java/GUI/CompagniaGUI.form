@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Gui.PasseggeroGUI">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="GUI.CompagniaGUI">
   <grid id="27dc6" binding="panel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
     <constraints>
-      <xy x="20" y="20" width="519" height="400"/>
+      <xy x="20" y="14" width="622" height="406"/>
     </constraints>
-    <properties>
-      <foreground color="-9472904"/>
-    </properties>
+    <properties/>
     <border type="none"/>
     <children>
-      <grid id="8791f" binding="panelTabella" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="20" left="20" bottom="20" right="20"/>
+      <grid id="8301f" binding="panelTabella" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="10" left="10" bottom="10" right="10"/>
         <constraints/>
         <properties/>
         <border type="none"/>
         <children>
-          <grid id="5906f" binding="panelDati" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="80a65" binding="panelTesti" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
@@ -25,7 +23,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <grid id="edcdc" binding="panelTitolo" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="5c238" binding="panelGridRiferimenti" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -33,41 +31,39 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <grid id="d0774" binding="PanelCampi" layout-manager="GridLayoutManager" row-count="5" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                  <grid id="a971b" binding="PanelGridRiferimenti2" layout-manager="GridLayoutManager" row-count="4" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
-                    <properties>
-                      <foreground color="-9472904"/>
-                    </properties>
+                    <properties/>
                     <border type="none"/>
                     <children>
-                      <component id="65cea" class="javax.swing.JLabel">
+                      <component id="46027" class="javax.swing.JLabel">
                         <constraints>
                           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
-                          <text value="Cognome:"/>
+                          <text value="E-Mail:"/>
                         </properties>
                       </component>
-                      <component id="43865" class="javax.swing.JLabel">
+                      <component id="3f858" class="javax.swing.JLabel">
                         <constraints>
                           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
-                          <text value="Codice Fiscale:"/>
+                          <text value="Telefono:"/>
                         </properties>
                       </component>
-                      <component id="a4e6c" class="javax.swing.JLabel">
+                      <component id="ea405" class="javax.swing.JLabel">
                         <constraints>
                           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
-                          <text value="Data Nascita:"/>
+                          <text value="SitoWeb:"/>
                         </properties>
                       </component>
-                      <component id="64587" class="javax.swing.JLabel">
+                      <component id="25959" class="javax.swing.JLabel">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
@@ -75,15 +71,7 @@
                           <text value="Nome:"/>
                         </properties>
                       </component>
-                      <component id="e2a00" class="javax.swing.JLabel">
-                        <constraints>
-                          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
-                        </constraints>
-                        <properties>
-                          <text value="E-Mail:"/>
-                        </properties>
-                      </component>
-                      <component id="2dd1a" class="javax.swing.JLabel" binding="NomePass">
+                      <component id="ec243" class="javax.swing.JLabel" binding="NomeComp">
                         <constraints>
                           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
@@ -92,7 +80,7 @@
                           <text value="Label"/>
                         </properties>
                       </component>
-                      <component id="fa37c" class="javax.swing.JLabel" binding="CongPass">
+                      <component id="7ec08" class="javax.swing.JLabel" binding="EmailComp">
                         <constraints>
                           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
@@ -101,7 +89,7 @@
                           <text value="Label"/>
                         </properties>
                       </component>
-                      <component id="774dc" class="javax.swing.JLabel" binding="CFPass">
+                      <component id="46024" class="javax.swing.JLabel" binding="TelefonoComp">
                         <constraints>
                           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
@@ -110,7 +98,7 @@
                           <text value="Label"/>
                         </properties>
                       </component>
-                      <component id="52dd0" class="javax.swing.JLabel" binding="DaNaPass">
+                      <component id="97130" class="javax.swing.JLabel" binding="SitoWebComp">
                         <constraints>
                           <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                         </constraints>
@@ -119,59 +107,42 @@
                           <text value="Label"/>
                         </properties>
                       </component>
-                      <component id="98ae6" class="javax.swing.JLabel" binding="EmailPass">
-                        <constraints>
-                          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                        </constraints>
-                        <properties>
-                          <foreground color="-9472904"/>
-                          <text value="Label"/>
-                        </properties>
-                      </component>
                     </children>
                   </grid>
-                  <component id="a5d0" class="javax.swing.JLabel">
+                  <component id="65c72" class="javax.swing.JLabel" binding="labelRiferimenti">
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <text value="Dati Anagrafici"/>
+                      <text value="Riferimenti:"/>
                     </properties>
                   </component>
                 </children>
               </grid>
-              <grid id="f2cf0" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
-                <constraints>
-                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties/>
-                <border type="none"/>
-                <children/>
-              </grid>
             </children>
           </grid>
-          <grid id="fb0f" binding="panelAzioni" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+          <grid id="9e124" binding="panelAzioni" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties/>
             <border type="none"/>
             <children>
-              <grid id="3ce76" binding="panelTitolo2" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="e5009" binding="panelGridAzioni" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints/>
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <component id="37348" class="javax.swing.JLabel">
+                  <component id="e0890" class="javax.swing.JLabel" binding="labelAzioni">
                     <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <text value="Azioni:"/>
                     </properties>
                   </component>
-                  <grid id="3c646" binding="PanelBottoni" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+                  <grid id="3c545" binding="labelGridAzioni2" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                     <margin top="0" left="0" bottom="0" right="0"/>
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -179,20 +150,44 @@
                     <properties/>
                     <border type="none"/>
                     <children>
-                      <component id="9dd7b" class="javax.swing.JButton" binding="visualizzaCorseButton" default-binding="true">
+                      <component id="71f5e" class="javax.swing.JButton" binding="modificaCorsaButton" default-binding="true">
                         <constraints>
                           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
-                          <text value="VisualizzaCorse"/>
+                          <text value="Modifica Corsa"/>
                         </properties>
                       </component>
-                      <component id="f1d56" class="javax.swing.JButton" binding="visualizzaBigliettiAcquistatiButton" default-binding="true">
+                      <component id="f4fb3" class="javax.swing.JButton" binding="aggiungiImbarcazioneButton" default-binding="true">
                         <constraints>
                           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                         </constraints>
                         <properties>
-                          <text value="Visualizza Biglietti Acquistati"/>
+                          <text value="Aggiungi Imbarcazione"/>
+                        </properties>
+                      </component>
+                      <component id="a7c45" class="javax.swing.JButton" binding="visualizzaCorseButton">
+                        <constraints>
+                          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Visualizza corse"/>
+                        </properties>
+                      </component>
+                      <component id="93e80" class="javax.swing.JButton" binding="btoSocial">
+                        <constraints>
+                          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="AggiungiSocial"/>
+                        </properties>
+                      </component>
+                      <component id="74bc5" class="javax.swing.JButton" binding="aggiungiCabinaButton" default-binding="true">
+                        <constraints>
+                          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                        </constraints>
+                        <properties>
+                          <text value="Aggiungi Cabina"/>
                         </properties>
                       </component>
                     </children>
@@ -201,6 +196,14 @@
               </grid>
             </children>
           </grid>
+          <component id="79dbf" class="javax.swing.JButton" binding="aggiungiCorsaButton" default-binding="true">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Aggiungi Corsa"/>
+            </properties>
+          </component>
         </children>
       </grid>
     </children>

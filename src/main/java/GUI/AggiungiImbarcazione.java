@@ -1,7 +1,6 @@
-package Gui;
+package GUI;
 
 import Controller.Controller;
-import Model.Compagnia;
 import Model.Imbarcazione;
 
 import javax.swing.*;

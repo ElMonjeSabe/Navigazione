@@ -1,15 +1,12 @@
-package Gui;
+package GUI;
 
 import Controller.Controller;
 import Model.Compagnia;
-import Model.Imbarcazione;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.time.format.TextStyle;
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class ModificaCorsa {
     private JTextField textNomeC;

@@ -2,7 +2,6 @@ package ImplementazionePostgresDAO;
 
 import DAO.CaricaCompagnieDAO;
 import Database.ConnessioneDatabase;
-import Gui.CompagniaGUI;
 import Model.Compagnia;
 
 import javax.swing.*;

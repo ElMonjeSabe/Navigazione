@@ -1,10 +1,8 @@
 package ImplementazionePostgresDAO;
 
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import DAO.CorseDAO;
 import Database.ConnessioneDatabase;
@@ -30,7 +28,10 @@ public class ImplementazioneLeggiCorseDAO implements CorseDAO{
         // TODO Auto-generated method stub
         try {
             PreparedStatement leggiTabellaPS = connection.prepareStatement(
-                    "SELECT * FROM Tabellone");
+                    "SELECT * FROM Tabellone WHERE datapartenza IN (?,?)");
+            leggiTabellaPS.setDate(1, Date.valueOf(LocalDate.now()));
+            leggiTabellaPS.setDate(2, Date.valueOf(LocalDate.now().plusDays(1)));
+
             ResultSet rs = leggiTabellaPS.executeQuery();
 
 
@@ -74,7 +75,7 @@ public class ImplementazioneLeggiCorseDAO implements CorseDAO{
             PreparedStatement leggiTabellaPS = connection.prepareStatement(
                     "SELECT CodiceCorsa,costocorsa,scali,nomecompagnia,partenza,cittapartenza,nazionepartenza,destinazione,cittadestinazione,nazionedestinazione,datapartenza,dataarrivo,orariopartenza,orarioarrivo,stato,avviso\n" +
                             "FROM Tabellone NATURAL JOIN Corsa JOIN Imbarcazione ON FKImb = CodiceImbarcazione\n" +
-                            "WHERE TipoImbarcazione LIKE ? AND costocorsa <= ? AND nomecompagnia LIKE ?");
+                            "WHERE TipoImbarcazione LIKE ? AND costocorsa <= ? AND nomecompagnia LIKE ? AND datapartenza IN (?,?)");
 
 
 
@@ -90,7 +91,8 @@ public class ImplementazioneLeggiCorseDAO implements CorseDAO{
             }else {
                 leggiTabellaPS.setString(3, comp);
             }
-
+            leggiTabellaPS.setDate(4, Date.valueOf(LocalDate.now()));
+            leggiTabellaPS.setDate(5, Date.valueOf(LocalDate.now().plusDays(1)));
 
             ResultSet rs = leggiTabellaPS.executeQuery();
 

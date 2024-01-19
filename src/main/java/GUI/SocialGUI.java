@@ -1,4 +1,4 @@
-package Gui;
+package GUI;
 
 import Model.Compagnia;
 import Controller.Controller;
@@ -45,7 +45,7 @@ public class SocialGUI {
                             "\nil nome valdi per aggiungere il social!");
                 }
                 else{
-                    Social social = new Social( url, nomes,comp);
+                    Social social = new Social( url, nomes,controller.getCompagnia());
                     if(controller.AggiungiSocial(social)){
                         JOptionPane.showMessageDialog(null, "Social aggiunto correttamente");
                         frameChiamante.setVisible(true);
