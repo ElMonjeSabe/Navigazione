@@ -15,7 +15,6 @@ public class Imbarcazione {
     private int numMaxVeicoli;
     private Compagnia compagniaPoss;
     private ArrayList<Corsa> corse= new ArrayList<Corsa>();
-    private ArrayList<Cabina> cabine = new ArrayList<Cabina>();
 
     /**
      * Instantiates a new Imbarcazione.
@@ -48,17 +47,16 @@ public class Imbarcazione {
      * @param maxpersone the maxpersone
      * @param maxveicoli the maxveicoli
      * @param compagnia  the compagnia
-     * @param stanza     the stanza
      * @param corsa      the corsa
      */
-    public Imbarcazione(String codice, String nome, String tipo, int maxpersone, int maxveicoli, Compagnia compagnia, Cabina stanza,Corsa corsa){
+    public Imbarcazione(String codice, String nome, String tipo, int maxpersone, int maxveicoli, Compagnia compagnia, Corsa corsa){
         this.codiceImbarcazione=codice;
         this.nomeImbarcazione=nome;
         this.tipoImbarcazione=tipo;
         this.numMaxPersone=maxpersone;
         this.numMaxVeicoli=maxveicoli;
         this.compagniaPoss=compagnia;
-        this.cabine.add(stanza);
+
         this.corse.add(corsa);
     }
 

@@ -17,7 +17,7 @@ public class InserimentoBigliettoGUI {
     private JTextField tFCodiceCorsa;
     private JSpinner spinnerNumeroBagagli;
     private JButton btoIndietro;
-    private JComboBox cBCabine;
+
     private JComboBox cBCorse;
 
     public JFrame frameChiamante;
@@ -25,7 +25,6 @@ public class InserimentoBigliettoGUI {
     Controller controller;
 
 
-    private ArrayList<Cabina> cabine= new ArrayList<Cabina>();
     private ArrayList<String> codCorse=new ArrayList<String>();
     private boolean ControlloCodCorsa(String cod) {
         for (int i = 0; i < controller.getCorse().size(); i++) {
@@ -36,30 +35,7 @@ public class InserimentoBigliettoGUI {
         return false;
     }
 
-    /*
-    LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI
-    LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI
-    LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI
-    LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI
-    LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI
 
-
-    Con una textfield per inserire il codice corsa era molto difficile gestirlo, soprattutto quando dovevi recuperare
-    le cabine disponibili, quindi non ho eliminato niente, ho solo aggiunto una mia soluzione con la scelta delle cabine
-    tramite una checkbox. Vedi se ti piace così.
-
-    Per prendere le cabine purtroppo non sono riuscito a fare una procedura
-    in postegresql perche' mi dava un errore strano, quindi l'ho fatto direttamente nella query nell'implementazione
-    getCabine. Lascio comunque la procedura che ho scritto in CoseDaAggiungere
-
-
-    LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI
-    LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI
-    LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI
-    LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI
-    LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI LEGGI
-
-    */
 
 
 
@@ -87,16 +63,7 @@ public class InserimentoBigliettoGUI {
         //prima di tutto vado a prelevarmi tutti la lista di codici e li metto nella combobox
         codCorse=controller.GetCodiceCorse();
         //
- /*       for(String s: codCorse){
-            cBCorse.addItem(s);
-        }
-        //essendo che sara' selezionata la prima corsa, prendo tutte le cabine disponibili della prima corsa e li metto
-        //nella combobox
-        cabine=controller.GetCabine(codCorse.getFirst().toString());
-        for(Cabina cab: cabine){
-            cBCabine.addItem(cab.getNumero());
-        }
-*/
+
 
 
         btoIndietro.addActionListener(new ActionListener() {
@@ -119,9 +86,9 @@ public class InserimentoBigliettoGUI {
 
                 String codCorsa = tFCodiceCorsa.getText();
 
-                if (codCorsa.equals("") || cBCabine.getSelectedItem() == null) {
+                if (codCorsa.equals("")) {
 
-                    JOptionPane.showMessageDialog(null, "Inserisci il codice della corsa e la cabina");
+                    JOptionPane.showMessageDialog(null, "Inserisci il codice");
 
                 } else if (!ControlloCodCorsa(codCorsa)) {
 
@@ -145,7 +112,7 @@ public class InserimentoBigliettoGUI {
                             }
                     }
 
-                    ConfermaAcquistoGui frameConfermaAcquisto = new ConfermaAcquistoGui(frame, controller, new Biglietto(bagagli, veicolo, p.getCf(), codCorsa, Integer.parseInt(cBCabine.getSelectedItem().toString())), frameChiamante, prezzo);
+                    ConfermaAcquistoGui frameConfermaAcquisto = new ConfermaAcquistoGui(frame, controller, new Biglietto(bagagli, veicolo, p.getCf(), codCorsa), frameChiamante, prezzo);
                     frameConfermaAcquisto.frame.setVisible(true);
                     frameChiamante.setEnabled(false);
                     frame.setVisible(false);
@@ -155,43 +122,6 @@ public class InserimentoBigliettoGUI {
         });
 
 
-        tFCodiceCorsa.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyReleased(KeyEvent e) {
-                super.keyReleased(e);
-                ArrayList<Cabina> cabineDisponibili = controller.GetCabineDisponibili(tFCodiceCorsa.getText());
-                if (cabineDisponibili == null) {
-                    JOptionPane.showMessageDialog(null, "Biglietti esauriti");
-
-                } else {
-                    cBCabine.removeAllItems();
-                    while (!cabineDisponibili.isEmpty()) {
-                        cBCabine.addItem(Integer.toString(cabineDisponibili.getFirst().getNumero()));
-                        cabineDisponibili.removeFirst();
-                    }
-                }
-            }
-        });
-
-
-        cBCorse.addActionListener(new ActionListener() {
-            /**
-             * Invoked when an action occurs.
-             *
-             * @param e the event to be processed
-             */
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //ogni volta che cambio e seleziono un'altra corsa, rifaccio il calcolo delle cabine disponibili
-                //per quella corsa
-                cabine=controller.GetCabine(cBCorse.getSelectedItem().toString());
-                cBCabine.removeAllItems();
-                for(Cabina cab: cabine){
-                    cBCabine.addItem(cab.getNumero());
-                }
-
-            }
-        });
     }
 
 }

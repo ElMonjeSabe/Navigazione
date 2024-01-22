@@ -57,9 +57,8 @@ public class Passeggero {
      * @param veicolo      the veicolo
      * @param prenotazione the prenotazione
      * @param corsa        the corsa
-     * @param cabina       the cabina
      */
-    void AcquistaBiglietto(int bagagli, boolean veicolo, boolean prenotazione, Corsa corsa, Cabina cabina)
+    void AcquistaBiglietto(int bagagli, boolean veicolo, boolean prenotazione, Corsa corsa)
     {
         biglietti.add(new Biglietto(bagagli,veicolo,LocalDate.now(), prenotazione,this, corsa));
     }

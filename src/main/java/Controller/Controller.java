@@ -124,10 +124,7 @@ public class Controller {
         return addCors.AggiungiCorseDB(percorsi, corse);
     }
 
-    public ArrayList<Cabina> GetCabineDisponibili(String CodiceCorsa){
-        CabineDisponibiliDAO cabdis = new ImpCabineDisponibiliDAO();
-        return cabdis.CabineDisponibiliDB(CodiceCorsa);
-    }
+
 
     public CorsaTabellone GetCorsa(String CodCorsa){
         GestisciCorsaDAO Corsa = new ImpGestisciCorsaDAO();
@@ -163,21 +160,7 @@ public class Controller {
         CaricaCompagnieDAO car = new ImpCaricaCompagnieDAO();
         return car.CaricaCompagnieDB();
     }
-    //passando il codice della corsa, utilizzato durante l'acquisto di biglietti
-    public ArrayList<Cabina> GetCabine(String CDCorsa){
-        GetCabineDAO cab = new ImpGetCabineDAO();
-        return cab.GetCabineDB(CDCorsa);
-    }
-    //passando imbarcazione, utilizzato per aggiungere le cabine
-    public int GetUltimaCabina(Imbarcazione imb){
-        GetCabineDAO cab = new ImpGetCabineDAO();
-        return cab.GetUltimaCabinaDB(imb);
-    }
 
-    public boolean AggiungiCabina(Cabina cab, Imbarcazione imb){
-        AggiungiCabinaDAO aggCab= new ImpAggiungiCabinaDAO();
-        return aggCab.AggiungiCabinaDB(cab,imb);
-    }
 
     public Compagnia getCompagnia() {
         return compagnia;

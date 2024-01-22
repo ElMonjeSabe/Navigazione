@@ -40,7 +40,7 @@ public class CompagniaGUI {
     private JLabel EmailComp;
     private JLabel TelefonoComp;
     private JLabel SitoWebComp;
-    private JButton aggiungiCabinaButton;
+
 
     private Controller controller;
 
@@ -153,22 +153,7 @@ public class CompagniaGUI {
 
             }
         });
-        aggiungiCabinaButton.addActionListener(new ActionListener() {
-            /**
-             * Invoked when an action occurs.
-             *
-             * @param e the event to be processed
-             */
-            @Override
-            public void actionPerformed(ActionEvent e) {
 
-                AggiungiCabina cabinaGUI = new AggiungiCabina(frame,controller,c);
-                cabinaGUI.getFrame().setVisible(true);
-
-                frame.setVisible(false);
-
-            }
-        });
     }
 
 
