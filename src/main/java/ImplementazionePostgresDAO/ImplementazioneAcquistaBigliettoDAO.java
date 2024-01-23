@@ -24,41 +24,45 @@ public class ImplementazioneAcquistaBigliettoDAO implements AcquistaBigliettoDAO
     }
 
     @Override
-    public int AcquistaBigliettoDB(Biglietto b) {
+    public int AcquistaBigliettoDB(ArrayList<Biglietto> b) {
 
         try {
+            PreparedStatement pstmt;
             //genera il codice del biglietto
-            PreparedStatement pstmt = connection.prepareStatement("SELECT codicebiglietto FROM Biglietto");
-            ResultSet rs = pstmt.executeQuery();
+            for(int i = 0; i<b.size(); i++) {
+                pstmt = connection.prepareStatement("SELECT codicebiglietto FROM Biglietto");
+                ResultSet rs = pstmt.executeQuery();
 
-            Set<String> codiciBiglietti = new HashSet<>();
+                Set<String> codiciBiglietti = new HashSet<>();
 
-            while (rs.next()) {
-                codiciBiglietti.add(rs.getString(1));
+                while (rs.next()) {
+                    codiciBiglietti.add(rs.getString(1));
+                }
+
+                String codiceBiglietto;
+                do {
+                    codiceBiglietto = generateRandomString(5);
+                } while (codiciBiglietti.contains(codiceBiglietto));
+
+                rs.close();
+
+
+                //chiama la procedura per inserire il biglietto
+                pstmt = connection.prepareStatement("call AcquistaBiglietto( ?,?,?,?,?,?,?);");
+
+                pstmt.setString(1, codiceBiglietto);
+                pstmt.setString(2, b.get(i).getTipoBiglietto());
+                pstmt.setDate(3, Date.valueOf(LocalDate.now()));
+                pstmt.setBoolean(4, b.get(i).getVeicolo());
+                pstmt.setObject(5, b.get(i).getNumerobagagli());
+                pstmt.setString(6, b.get(i).getcfposs());
+                pstmt.setString(7, b.get(i).getcodCorsa());
+
+
+                pstmt.execute();
+                if(i<b.size())pstmt.close();
+
             }
-
-            String codiceBiglietto;
-            do {
-                codiceBiglietto= generateRandomString(5);
-            } while (codiciBiglietti.contains(codiceBiglietto));
-
-            rs.close();
-
-
-            //chiama la procedura per inserire il biglietto
-            pstmt = connection.prepareStatement("call AcquistaBiglietto( ?,?,?,?,?,?);");
-
-            pstmt.setString(1, codiceBiglietto);
-            pstmt.setDate(2, Date.valueOf(LocalDate.now()));
-            pstmt.setBoolean(3, b.getVeicolo());
-            pstmt.setObject(4, b.getNumerobagagli());
-            pstmt.setString(5, b.getcfposs());
-            pstmt.setString(6, b.getcodCorsa());
-
-
-            pstmt.execute();
-
-            pstmt.close();
             connection.close();
 
         } catch (SQLException e) {

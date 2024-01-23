@@ -34,6 +34,9 @@ public class ListaCorse {
 
         this.frameChiamante = frameChiamante;
         this.controller = controller;
+
+
+
         frame = new JFrame("Lista Corse");
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -139,7 +142,7 @@ public class ListaCorse {
         btoAcquistaBiglietto.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                InserimentoBigliettoGUI frameInsBiglietto = new InserimentoBigliettoGUI(frame, controller, p);
+                InserimentoBigliettoGUI frameInsBiglietto = new InserimentoBigliettoGUI(frame, controller);
                 frame.setEnabled(false);
                 frameInsBiglietto.frame.setVisible(true);
 

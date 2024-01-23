@@ -61,7 +61,7 @@ public class Controller {
 
 
 
-    public int AcquistaBigliettoDAO(Biglietto b){
+    public int AcquistaBigliettoDAO(ArrayList<Biglietto> b){
         AcquistaBigliettoDAO a = new ImplementazioneAcquistaBigliettoDAO();
         return a.AcquistaBigliettoDB(b);
     }

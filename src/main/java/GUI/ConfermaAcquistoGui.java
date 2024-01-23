@@ -6,6 +6,7 @@ import Model.Biglietto;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class ConfermaAcquistoGui {
     private JButton btoConferma;
@@ -15,14 +16,13 @@ public class ConfermaAcquistoGui {
     JFrame frame;
     JFrame frameChiamante;
     Controller controller;
-    Biglietto biglietto;
 
     JFrame corse;
 
-    public ConfermaAcquistoGui(JFrame frameChiamante, Controller controller, Biglietto biglietto, JFrame frameCorse, float prezzoDef){
+    public ConfermaAcquistoGui(JFrame frameChiamante, Controller controller, ArrayList<Biglietto> biglietti, JFrame frameCorse, float prezzoDef){
         this.frameChiamante = frameChiamante;
         this.controller = controller;
-        this.biglietto= biglietto;
+
         this.corse = frameCorse;
         frame = new JFrame("Conferma Acquisto");
         frame.setContentPane(panel);
@@ -52,15 +52,7 @@ public class ConfermaAcquistoGui {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                if(controller.AcquistaBigliettoDAO(biglietto)==1) {
-                    JOptionPane.showMessageDialog(null, "Acquisto effettuato con successo");
-                    frameChiamante.setVisible(false);
-                    corse.setEnabled(true);
-                    frame.setVisible(false);
-                    frame.dispose();
-                }else{
-                    JOptionPane.showMessageDialog(null, "Problema durante l'acquisto");
-                }
+
             }
         });
     }

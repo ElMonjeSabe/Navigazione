@@ -25,7 +25,6 @@ public class Home2 {
     }
     public Home2() {
 
-
         btUtente.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

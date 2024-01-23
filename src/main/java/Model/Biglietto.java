@@ -13,7 +13,6 @@ public class Biglietto {
     private String tipoBiglietto;
     private String CodiceBiglietto;
     private double Prezzo;
-
     private int numerobagagli;
     private boolean veicolo;
     private LocalDate dataAcquisto;
@@ -27,8 +26,9 @@ public class Biglietto {
     private String cfposs;
     private String codCorsa;
 
-    public Biglietto(int bagagli, boolean veicolo, String cfposs, String codCorsa) {
+    public Biglietto(int bagagli,String tipoBiglietto ,boolean veicolo, String cfposs, String codCorsa) {
         this.numerobagagli=bagagli;
+        this.tipoBiglietto = tipoBiglietto;
         this.veicolo=veicolo;
         this.dataAcquisto=LocalDate.now();
         this.cfposs=cfposs;
