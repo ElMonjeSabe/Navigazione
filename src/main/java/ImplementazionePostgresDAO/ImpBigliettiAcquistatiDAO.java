@@ -1,0 +1,107 @@
+package ImplementazionePostgresDAO;
+
+import DAO.BigliettiAcquistatiDAO;
+import Database.ConnessioneDatabase;
+import Model.BigliettiAcquistati;
+import Model.CorsaTabellone;
+
+import javax.swing.*;
+import java.sql.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+public class ImpBigliettiAcquistatiDAO implements BigliettiAcquistatiDAO {
+    private Connection connection;
+
+    public  ImpBigliettiAcquistatiDAO() {
+
+        try {
+            connection = ConnessioneDatabase.getInstance().connection;
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void leggiBigliettiAcquistatiUtenteDB(ArrayList<BigliettiAcquistati> bigliettiAcquistati, String cf) {
+        // TODO Auto-generated method stub
+        try {
+            PreparedStatement leggiBiglAcqPS = connection.prepareStatement(
+                    "SELECT * FROM bigliettiAcquistati WHERE cf = ?");
+            leggiBiglAcqPS.setString(1, cf);
+
+
+            ResultSet rs = leggiBiglAcqPS.executeQuery();
+
+
+            while (rs.next()) {
+
+                bigliettiAcquistati.add(new BigliettiAcquistati(
+                        rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getDate(5).toLocalDate(),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getFloat(8),
+                        rs.getDate(9).toLocalDate(),
+                        rs.getBoolean(10),
+                        rs.getInt(11),
+                        rs.getBoolean(12)));
+
+            }
+
+            rs.close();
+            leggiBiglAcqPS.close();
+            connection.close();
+
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Errore: " + e.getMessage());
+
+        }
+    }
+
+    @Override
+    public void leggiBigliettiAcquistatiCompagniaDB(ArrayList<BigliettiAcquistati> bigliettiAcquistati, String NomeCompagnia) {
+        // TODO Auto-generated method stub
+        try {
+            PreparedStatement leggiBiglAcqPS = connection.prepareStatement(
+                    "SELECT b.* FROM bigliettiAcquistati b JOIN corsa c ON b.codicecorsa = c.codicecorsa  WHERE c.FKComp = ?");
+            leggiBiglAcqPS.setString(1, NomeCompagnia);
+
+
+            ResultSet rs = leggiBiglAcqPS.executeQuery();
+
+
+            while (rs.next()) {
+
+                bigliettiAcquistati.add(new BigliettiAcquistati(
+                        rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getDate(5).toLocalDate(),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getFloat(8),
+                        rs.getDate(9).toLocalDate(),
+                        rs.getBoolean(10),
+                        rs.getInt(11),
+                        rs.getBoolean(12)));
+
+            }
+
+            rs.close();
+            leggiBiglAcqPS.close();
+            connection.close();
+
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Errore: " + e.getMessage());
+
+        }
+    }
+}

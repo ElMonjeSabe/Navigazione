@@ -40,6 +40,7 @@ public class CompagniaGUI {
     private JLabel EmailComp;
     private JLabel TelefonoComp;
     private JLabel SitoWebComp;
+    private JButton bigliettiAcquistatiButton;
 
 
     private Controller controller;
@@ -154,6 +155,15 @@ public class CompagniaGUI {
             }
         });
 
+        bigliettiAcquistatiButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                controller.leggiBigliettiAcquistatiCompagnia();
+                BigliettiAcquistatiGUI frameListaBA = new BigliettiAcquistatiGUI(frame, controller);
+                frameListaBA.frame.setVisible(true);
+                frame.setVisible(false);
+            }
+        });
     }
 
 

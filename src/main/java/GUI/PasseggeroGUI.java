@@ -81,6 +81,15 @@ public class PasseggeroGUI {
             }
         });
 
+        visualizzaBigliettiAcquistatiButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                controller.leggiBigliettiAcquistatiUtente();
+                BigliettiAcquistatiGUI frameListaBA = new BigliettiAcquistatiGUI(frame, controller);
+                frameListaBA.frame.setVisible(true);
+                frame.setVisible(false);
+            }
+        });
     }
 
 

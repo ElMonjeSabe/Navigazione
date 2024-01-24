@@ -11,6 +11,7 @@ public class Controller {
 
 
     private ArrayList<CorsaTabellone> corse = new ArrayList<CorsaTabellone>();
+    private ArrayList<BigliettiAcquistati> biglietti = new ArrayList<BigliettiAcquistati>();
     private Compagnia compagnia;
     private Biglietto BigliettoAQ;
     private ArrayList<String> CodiciBiglietti = new ArrayList<String>();
@@ -170,4 +171,18 @@ public class Controller {
         this.compagnia = c;
     }
 
+    public void leggiBigliettiAcquistatiUtente(){
+        BigliettiAcquistatiDAO BA = new ImpBigliettiAcquistatiDAO();
+        biglietti.clear();
+        BA.leggiBigliettiAcquistatiUtenteDB(biglietti, passeggero.getCf());
+    }
+    public void leggiBigliettiAcquistatiCompagnia(){
+        BigliettiAcquistatiDAO BA = new ImpBigliettiAcquistatiDAO();
+        biglietti.clear();
+        BA.leggiBigliettiAcquistatiCompagniaDB(biglietti, compagnia.getNomeCompagnia());
+    }
+
+    public ArrayList<BigliettiAcquistati> getBiglietti() {
+        return biglietti;
+    }
 }
