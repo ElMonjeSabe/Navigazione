@@ -1,76 +1,76 @@
 
 {
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(·¯¥µÿÿÿÿÿ8¥ƒÕÑ1
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(·¯¥µÿÿÿÿÿ8â©÷ñÓ1
+v
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(æˆ•ô8ã©÷ñÓ1
 {
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ô£¬èùÿÿÿÿ8¥ƒÕÑ1
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ô£¬èùÿÿÿÿ8ã©÷ñÓ1
 {
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(³Æ»òùÿÿÿÿ8¥ƒÕÑ1
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(³Æ»òùÿÿÿÿ8ã©÷ñÓ1
 ’
-java:S1319:"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‘÷şóşÿÿÿÿ8¥ƒÕÑ1
+java:S1319K"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‘÷şóşÿÿÿÿ8ã©÷ñÓ1
+~
+java:S1319Q"aThe type of "b" should be an interface such as "List" rather than the implementation "ArrayList".(á¦Ûä8ã©÷ñÓ1
 Œ
-java:S1319I"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(€ÄÇR8¥ƒÕÑ1
-’
-java:S1319p"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ˆÚŞøÿÿÿÿ8¥ƒÕÑ1
-’
-java:S1319u"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(À´´Èüÿÿÿÿ8¥ƒÕÑ1
-Š
-java:S1319z"hThe type of "percorsi" should be an interface such as "List" rather than the implementation "ArrayList".(¾äØ§úÿÿÿÿ8¥ƒÕÑ1
-‡
-java:S1319z"eThe type of "corse" should be an interface such as "List" rather than the implementation "ArrayList".(¾äØ§úÿÿÿÿ8¥ƒÕÑ1
-
-java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÏŒô“8¥ƒÕÑ1
+java:S1319Z"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(€ÄÇR8ã©÷ñÓ1
+“
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ˆÚŞøÿÿÿÿ8ã©÷ñÓ1
+“
+java:S1319†"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(À´´Èüÿÿÿÿ8ã©÷ñÓ1
+‹
+java:S1319‹"hThe type of "percorsi" should be an interface such as "List" rather than the implementation "ArrayList".(¾äØ§úÿÿÿÿ8ã©÷ñÓ1
+ˆ
+java:S1319‹"eThe type of "corse" should be an interface such as "List" rather than the implementation "ArrayList".(¾äØ§úÿÿÿÿ8ã©÷ñÓ1
 
-java:S1319“"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(±Ÿß…8¦ƒÕÑ1
+java:S1319¡"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(±Ÿß…8ã©÷ñÓ1
 
-java:S1319˜"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¶ìËE8¦ƒÕÑ1
+java:S1319¦"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¶ìËE8ã©÷ñÓ1
 “
-java:S1319¢"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(çÖ°‘ùÿÿÿÿ8¦ƒÕÑ1
-“
-java:S1319§"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(»½Ê°ÿÿÿÿÿ8¦ƒÕÑ1
-r	java:S1171"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿Ïˆ¥úÿÿÿÿ8¦ƒÕÑ1
-r	java:S117Q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğì‰ßıÿÿÿÿ8¦ƒÕÑ1
-r	java:S117Q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğì‰ßıÿÿÿÿ8¦ƒÕÑ1
-r	java:S117Q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğì‰ßıÿÿÿÿ8¦ƒÕÑ1
-r	java:S117Q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğì‰ßıÿÿÿÿ8¦ƒÕÑ1
-m	java:S117R"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õÛ8¦ƒÕÑ1
-r	java:S117W"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü­ÌÉûÿÿÿÿ8¦ƒÕÑ1
-m	java:S117_"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—¿®º8¦ƒÕÑ1
-r	java:S117e"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­›†Åşÿÿÿÿ8¦ƒÕÑ1
-m	java:S117l"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿»ÑÀ8¦ƒÕÑ1
-m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÏŒô“8¦ƒÕÑ1
-s	java:S117„"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“íˆÌúÿÿÿÿ8¦ƒÕÑ1
-n	java:S117…"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Üùí¶8¦ƒÕÑ1
-n	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷íÛƒ8¦ƒÕÑ1
-s	java:S117§"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»½Ê°ÿÿÿÿÿ8¦ƒÕÑ1
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8§ƒÕÑ1
-w	java:S116"VRename this field "BigliettoAQ" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«êåäûÿÿÿÿ8¬ƒÕÑ1
-{	java:S116"ZRename this field "CodiciBiglietti" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ô£¬èùÿÿÿÿ8¬ƒÕÑ1
-u	java:S116"TRename this field "Compagnie" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³Æ»òùÿÿÿÿ8¬ƒÕÑ1
-z
-java:S1450"XRemove the "compagnia" field and declare it as a local variable in the relevant methods.(Ê¹¸¨ıÿÿÿÿ8­ƒÕÑ1
-o	java:S100("NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…á÷øÿÿÿÿ8°ƒÕÑ1
-o	java:S1001"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿Ïˆ¥úÿÿÿÿ8°ƒÕÑ1
-j	java:S100@"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğìŞ8±ƒÕÑ1
-o	java:S100Q"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğì‰ßıÿÿÿÿ8±ƒÕÑ1
-j	java:S100V"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›ˆè’8²ƒÕÑ1
-o	java:S100k"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Š«µˆşÿÿÿÿ8²ƒÕÑ1
-o	java:S100p"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆÚŞøÿÿÿÿ8³ƒÕÑ1
-o	java:S100u"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(À´´Èüÿÿÿÿ8³ƒÕÑ1
-o	java:S100z"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾äØ§úÿÿÿÿ8³ƒÕÑ1
-j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÏŒô“8´ƒÕÑ1
-p	java:S100„"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“íˆÌúÿÿÿÿ8´ƒÕÑ1
-p	java:S100‰"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„š£±úÿÿÿÿ8´ƒÕÑ1
-p	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿—ÄÉùÿÿÿÿ8´ƒÕÑ1
-k	java:S100“"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±Ÿß…8µƒÕÑ1
-j	java:S100˜"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶ìËE8µƒÕÑ1
-p	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Âó…ğûÿÿÿÿ8µƒÕÑ1
-p	java:S100¢"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(çÖ°‘ùÿÿÿÿ8µƒÕÑ1
-p	java:S100§"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»½Ê°ÿÿÿÿÿ8¶ƒÕÑ1
-k	java:S100¬"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ó±ä8äÈ—ÕÑ1
-k	java:S100±"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³˜…ƒ8ı‰ÖÕÑ1
-O
-java:S1068"-Remove this unused "compagnia" private field.(Ê¹¸¨ıÿÿÿÿ8·ƒÕÑ1
+java:S1319°"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(çÖ°‘ùÿÿÿÿ8ã©÷ñÓ1
+
+java:S1319Ï"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÄÏ®’8ã©÷ñÓ1
+r	java:S117:"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿Ïˆ¥úÿÿÿÿ8ã©÷ñÓ1
+m	java:S117B"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñÔñ 8¸¸òÓ1
+r	java:S117b"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğì‰ßıÿÿÿÿ8ã©÷ñÓ1
+r	java:S117b"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğì‰ßıÿÿÿÿ8ã©÷ñÓ1
+r	java:S117b"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğì‰ßıÿÿÿÿ8ã©÷ñÓ1
+r	java:S117b"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğì‰ßıÿÿÿÿ8ã©÷ñÓ1
+m	java:S117c"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õÛ8ã©÷ñÓ1
+r	java:S117h"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü­ÌÉûÿÿÿÿ8ã©÷ñÓ1
+m	java:S117p"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—¿®º8ã©÷ñÓ1
+r	java:S117v"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­›†Åşÿÿÿÿ8ã©÷ñÓ1
+m	java:S117}"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿»ÑÀ8ã©÷ñÓ1
+s	java:S117’"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“íˆÌúÿÿÿÿ8ã©÷ñÓ1
+n	java:S117“"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Üùí¶8ã©÷ñÓ1
+n	java:S117¬"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷íÛƒ8ä©÷ñÓ1
+s	java:S117¿"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äÿ‚Çùÿÿÿÿ8ä©÷ñÓ1
+s	java:S117Ä"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äÿ‚Çùÿÿÿÿ8ä©÷ñÓ1
+s	java:S117É"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äÿ‚Çùÿÿÿÿ8ä©÷ñÓ1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(º›°Î8ä©÷ñÓ1
+w	java:S116"VRename this field "BigliettoAQ" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«êåäûÿÿÿÿ8ì©÷ñÓ1
+{	java:S116"ZRename this field "CodiciBiglietti" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ô£¬èùÿÿÿÿ8ì©÷ñÓ1
+u	java:S116"TRename this field "Compagnie" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³Æ»òùÿÿÿÿ8ì©÷ñÓ1
+o	java:S100)"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…á÷øÿÿÿÿ8ñ©÷ñÓ1
+o	java:S1001"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Àå–Îüÿÿÿÿ8Ü ĞòÓ1
+o	java:S100:"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿Ïˆ¥úÿÿÿÿ8ò©÷ñÓ1
+j	java:S100B"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñÔñ 8‹µ¸òÓ1
+j	java:S100Q"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(á¦Ûä8ò©÷ñÓ1
+o	java:S100b"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğì‰ßıÿÿÿÿ8ó©÷ñÓ1
+j	java:S100g"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›ˆè’8ó©÷ñÓ1
+o	java:S100|"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Š«µˆşÿÿÿÿ8ô©÷ñÓ1
+p	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆÚŞøÿÿÿÿ8ô©÷ñÓ1
+p	java:S100†"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(À´´Èüÿÿÿÿ8õ©÷ñÓ1
+p	java:S100‹"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾äØ§úÿÿÿÿ8ö©÷ñÓ1
+p	java:S100’"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“íˆÌúÿÿÿÿ8÷©÷ñÓ1
+p	java:S100—"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„š£±úÿÿÿÿ8÷©÷ñÓ1
+p	java:S100œ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿—ÄÉùÿÿÿÿ8ø©÷ñÓ1
+k	java:S100¡"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±Ÿß…8ø©÷ñÓ1
+j	java:S100¦"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶ìËE8ù©÷ñÓ1
+p	java:S100«"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Âó…ğûÿÿÿÿ8ú©÷ñÓ1
+p	java:S100°"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(çÖ°‘ùÿÿÿÿ8û©÷ñÓ1
+R
+java:S1172Ã"4Remove this unused method parameter "nomeCompagnia".(Ÿ¯Š8’úĞòÓ1
 Q
-java:S1068"/Remove this unused "BigliettoAQ" private field.(«êåäûÿÿÿÿ8·ƒÕÑ1
+java:S1068"/Remove this unused "BigliettoAQ" private field.(«êåäûÿÿÿÿ8ı©÷ñÓ1
 U
-java:S1068"3Remove this unused "CodiciBiglietti" private field.(Ô£¬èùÿÿÿÿ8·ƒÕÑ1
+java:S1068"3Remove this unused "CodiciBiglietti" private field.(Ô£¬èùÿÿÿÿ8ı©÷ñÓ1

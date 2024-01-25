@@ -46,11 +46,27 @@ public class Controller {
         // costruisce gli oggetti Model a partire dai risultati del db
 
     }
+    public void LeggiCorseCompagniaDAO(String nomeCompagnia) {
+        CorseDAO l=new ImplementazioneLeggiCorseDAO();
+        corse.clear();
+        l.leggiCorseCompagniaDB(corse,nomeCompagnia);  //legge listino dal DB
+
+        // costruisce gli oggetti Model a partire dai risultati del db
+
+    }
 
     public void LeggiCorseFiltrateDAO(String TipoImb, int prezzo, String comp) {
         CorseDAO l=new ImplementazioneLeggiCorseDAO();
         corse.clear();
         l.leggiCorseFiltroDB(corse, TipoImb, prezzo, comp);  //legge listino dal DB
+
+        // costruisce gli oggetti Model a partire dai risultati del db
+
+    }
+    public void LeggiCorseCompagniaFiltrateDAO(String TipoImb, int prezzo, String comp) {
+        CorseDAO l=new ImplementazioneLeggiCorseDAO();
+        corse.clear();
+        l.leggiCorseCompagniaFiltroDB(corse, TipoImb, prezzo, comp);  //legge listino dal DB
 
         // costruisce gli oggetti Model a partire dai risultati del db
 
@@ -176,11 +192,17 @@ public class Controller {
         biglietti.clear();
         BA.leggiBigliettiAcquistatiUtenteDB(biglietti, passeggero.getCf());
     }
-    public void leggiBigliettiAcquistatiCompagnia(){
+    public void leggiBigliettiAcquistatiCompagnia(String nomeCompagnia){
         BigliettiAcquistatiDAO BA = new ImpBigliettiAcquistatiDAO();
         biglietti.clear();
         BA.leggiBigliettiAcquistatiCompagniaDB(biglietti, compagnia.getNomeCompagnia());
     }
+    public void leggiBigliettiFiltratiAcquistatiCompagnia(String codiceCorsa, int prezzo,String nomeCompagnia){
+        BigliettiAcquistatiDAO BA = new ImpBigliettiAcquistatiDAO();
+        biglietti.clear();
+        BA.leggiBigliettiFiltratiAcquistatiCompagniaDB(biglietti, codiceCorsa,prezzo, nomeCompagnia);
+    }
+
 
     public ArrayList<BigliettiAcquistati> getBiglietti() {
         return biglietti;

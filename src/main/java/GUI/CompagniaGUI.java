@@ -40,7 +40,7 @@ public class CompagniaGUI {
     private JLabel EmailComp;
     private JLabel TelefonoComp;
     private JLabel SitoWebComp;
-    private JButton bigliettiAcquistatiButton;
+    private JButton bigliettiPasseggeriButton;
 
 
     private Controller controller;
@@ -147,19 +147,19 @@ public class CompagniaGUI {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                controller.LeggiCorseDAO();
-                ListaCorse frameListaCorse = new ListaCorse(frame, controller,null);
-                frameListaCorse.frame.setVisible(true);
+                controller.LeggiCorseCompagniaDAO(c.getNomeCompagnia());
+                ListaCorseCompagnia frameListaCorseCompagnia = new ListaCorseCompagnia(frame, controller,c);
+                frameListaCorseCompagnia.getFrame().setVisible(true);
                 frame.setVisible(false);
 
             }
         });
 
-        bigliettiAcquistatiButton.addActionListener(new ActionListener() {
+        bigliettiPasseggeriButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                controller.leggiBigliettiAcquistatiCompagnia();
-                BigliettiAcquistatiGUI frameListaBA = new BigliettiAcquistatiGUI(frame, controller);
+                controller.leggiBigliettiAcquistatiCompagnia(c.getNomeCompagnia());
+                BigliettiPasseggeriGUI frameListaBA = new BigliettiPasseggeriGUI(frame, controller, c);
                 frameListaBA.frame.setVisible(true);
                 frame.setVisible(false);
             }

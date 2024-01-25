@@ -1,14 +1,14 @@
 
 J
-java:S1604"(Make this anonymous inner class a lambda(²¡•€üÿÿÿÿ8æáÍıÏ1
+java:S1604"(Make this anonymous inner class a lambda(²¡•€üÿÿÿÿ8æáÍıÏ1
 J
-java:S1604!"(Make this anonymous inner class a lambda(Ïî›¨ıÿÿÿÿ8çáÍıÏ1
+java:S1604%"(Make this anonymous inner class a lambda(Ïî›¨ıÿÿÿÿ8çáÍıÏ1
 J
-java:S1604)"(Make this anonymous inner class a lambda(äÛ¿ñúÿÿÿÿ8çáÍıÏ1
+java:S1604-"(Make this anonymous inner class a lambda(äÛ¿ñúÿÿÿÿ8çáÍıÏ1
 J
-java:S16042"(Make this anonymous inner class a lambda(†éçôûÿÿÿÿ8çáÍıÏ1
+java:S16046"(Make this anonymous inner class a lambda(†éçôûÿÿÿÿ8çáÍıÏ1
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Â¿Âëüÿÿÿÿ
 W
-java:S22097"5Change this instance-reference to a static reference.(­œÌøÿÿÿÿ8…âÍıÏ1
+java:S2209;"5Change this instance-reference to a static reference.(­œÌøÿÿÿÿ8…âÍıÏ1
 _
-java:S3252A"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´
+java:S3252E"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´
