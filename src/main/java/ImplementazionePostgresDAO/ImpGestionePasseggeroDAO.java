@@ -27,7 +27,7 @@ public class ImpGestionePasseggeroDAO implements GestionePasseggeroDAO {
         try {
             PreparedStatement regUtente = connection.prepareStatement(
                     "Call aggiungiPass(?,?,?,?,?,?)");
-
+            System.out.println(p.getCf().length()+" "+p.getCf());
             regUtente.setString(1,p.getCf());
             regUtente.setString(2,p.getNome());
             regUtente.setString(3,p.getCognome());
@@ -43,7 +43,7 @@ public class ImpGestionePasseggeroDAO implements GestionePasseggeroDAO {
         } catch (SQLException e) {
             if (e.getSQLState().equals("23505")) {
                 // gestisci l'errore di chiave duplicata
-                JOptionPane.showMessageDialog(null, "Email già utilizzata" );
+                JOptionPane.showMessageDialog(null, "Email già utilizzata"+e.getMessage() );
 
             } else {
                 // gestisci altri errori SQL

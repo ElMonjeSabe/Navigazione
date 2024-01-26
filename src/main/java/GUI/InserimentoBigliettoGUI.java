@@ -124,16 +124,20 @@ public class InserimentoBigliettoGUI {
 
 
 
-                    if(NumVeicoli!=0){
-                        biglietti.add(new Biglietto((Integer) cBValige.getSelectedItem(),"intero", true, p.getCf(), codCorsa));
-                        NumVeicoli--;
-                    }
+
 
                     //Calcola se è una prenotazione
                     if(LocalDate.now().isBefore(corsa.datapartenza)) {
                         prezzoTotale += prezzo + 2;
                     }else{
                         prezzoTotale += prezzo;
+                    }
+
+                    if(NumVeicoli!=0){
+                        biglietti.add(new Biglietto((Integer) cBValige.getSelectedItem(),"intero", true, p.getCf(), codCorsa));
+                        NumVeicoli--;
+                    }else{
+                        biglietti.add(new Biglietto((Integer) cBValige.getSelectedItem(),"intero", false, p.getCf(), codCorsa));
                     }
 
                     for(int i = 1; i<(Integer)cBAdulti.getSelectedItem();i++){
@@ -179,6 +183,7 @@ public class InserimentoBigliettoGUI {
                             JOptionPane.showMessageDialog(null, "Acquisto effettuato con successo");
 
                             frameChiamante.setEnabled(true);
+
                         }else{
                             JOptionPane.showMessageDialog(null, "Problema durante l'acquisto");
                         }

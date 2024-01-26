@@ -72,6 +72,7 @@ public class RegUtente {
                     JOptionPane.showMessageDialog(null, "Inserisci tutti i campi!");
 
                 } else {
+
                     LocalDate data = LocalDate.of((Integer) comboBoxAnno.getSelectedItem(), (Integer) comboBoxMese.getSelectedItem(), (Integer) comboBoxGiorno.getSelectedItem());
                     Passeggero p = new Passeggero(tfCF.getText(), tfNome.getText(), tfCognome.getText(), data, tfEmail.getText(), tfPassword.getText());
                     if (controller.AggiungiPasseggero(p) == 1) {
