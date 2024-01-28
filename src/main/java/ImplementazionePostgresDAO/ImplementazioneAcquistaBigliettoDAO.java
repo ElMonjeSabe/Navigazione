@@ -28,24 +28,14 @@ public class ImplementazioneAcquistaBigliettoDAO implements AcquistaBigliettoDAO
     public int AcquistaBigliettoDB(ArrayList<Biglietto> b) {
         int v=0;
         try {
-            PreparedStatement pstmt;
-            pstmt = connection.prepareStatement("Select verifica_nummaxpersone(?,?,?)");
-            pstmt.setString(1, b.get(0).getcodCorsa());
-            pstmt.setInt(2, b.size());
 
-            //calcola il numero di veicoli
-            for (Biglietto bigli: b) if(bigli.getVeicolo()==true)v++;
-            pstmt.setInt(3, v);
-
-            ResultSet rs = pstmt.executeQuery();
-            rs.next();
 
 
                 //genera il codice del biglietto
                 for (int i = 0; i < b.size(); i++) {
 
-                    pstmt = connection.prepareStatement("SELECT codicebiglietto FROM Biglietto");
-                    rs = pstmt.executeQuery();
+                   PreparedStatement pstmt = connection.prepareStatement("SELECT codicebiglietto FROM Biglietto");
+                   ResultSet rs = pstmt.executeQuery();
 
                     Set<String> codiciBiglietti = new HashSet<>();
 

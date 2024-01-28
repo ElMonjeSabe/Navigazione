@@ -17,13 +17,13 @@ public class Controller {
 
     private Passeggero passeggero;
 
-    private ArrayList<Compagnia> Compagnie= new ArrayList<Compagnia>();
+    private ArrayList<Compagnia> compagnie= new ArrayList<Compagnia>();
+
+    private Integer postiPersoneDisp;
+    private Integer postiVeicoliDisp;
 
 
-
-
-
-    //METODI
+//METODI
 
     public void setPasseggero(Passeggero passeggero) {
         this.passeggero = passeggero;
@@ -102,7 +102,7 @@ public class Controller {
 
 
     public ArrayList<Compagnia> getCompagnie(){
-        return Compagnie;
+        return compagnie;
     }
 
 
@@ -259,4 +259,21 @@ public class Controller {
 
 
 
+    public Integer getPostiPersoneDisp() {
+        return postiPersoneDisp;
+    }
+
+
+
+    public Integer getPostiVeicoliDisp() {
+        return postiVeicoliDisp;
+    }
+
+
+    public void getPostiDisponibili(String codCorsa){
+        GetPostiDisponibiliDAO postDisp = new ImpGetPostiDisponibiliDAO();
+        int [] posti = postDisp.getPostiDisponibiliDB(codCorsa);
+        postiPersoneDisp = posti[0] ;
+        postiVeicoliDisp = posti[1];
+    }
 }

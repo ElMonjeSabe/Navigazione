@@ -4,6 +4,9 @@ import Controller.Controller;
 import Model.*;
 
 import javax.swing.*;
+import javax.swing.event.CaretListener;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import java.awt.event.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -19,6 +22,7 @@ public class InserimentoBigliettoGUI {
     private JComboBox cBMinorenni;
     private JComboBox cBValige;
     private JComboBox cBVeicoli;
+    private JLabel jlPPD;
 
     private JComboBox cBCorse;
 
@@ -66,13 +70,7 @@ public class InserimentoBigliettoGUI {
         //Apre la finestra la centro dello schermo
         frame.setLocationRelativeTo(null);
 
-        for(int i = 0; i<10;i++){
-            cBAdulti.addItem(i);
-            cBMinorenni.addItem(i);
-        }
-        for(int i = 0; i<20;i++){
-            cBValige.addItem(i);
-        }
+
 
 
 
@@ -111,8 +109,14 @@ public class InserimentoBigliettoGUI {
                     JOptionPane.showMessageDialog(null, "Codice corsa non valido");
 
                 } else if((Integer)cBAdulti.getSelectedItem() == 0 && (Integer)cBMinorenni.getSelectedItem() == 0 ){
+
                     JOptionPane.showMessageDialog(null, "Devi selezionare almeno un passeggero");
-            }   else{
+
+                } else if (((Integer)cBMinorenni.getSelectedItem()+(Integer)cBAdulti.getSelectedItem()) > controller.getPostiPersoneDisp()) {
+
+                    JOptionPane.showMessageDialog(null, "Persone inserite più di quelle disponibili");
+
+                } else{
                     //definire il costo totale del biglietto
 
                     CorsaTabellone corsa = controller.GetCorsa(tFCodiceCorsa.getText());
@@ -210,6 +214,30 @@ public class InserimentoBigliettoGUI {
                     cBVeicoli.addItem(i);
                 }
             }
+        });
+
+
+ 
+
+
+        tFCodiceCorsa.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                super.keyReleased(e);
+                if(ControlloCodCorsa(tFCodiceCorsa.getText())){
+                    
+                    controller.getPostiDisponibili(tFCodiceCorsa.getText());
+                    jlPPD.setText(controller.getPostiPersoneDisp().toString());
+                    for(int i = 0; i<20;i++){
+                        cBAdulti.addItem(i);
+                        cBMinorenni.addItem(i);
+                    }
+                    for(int i = 0; i<controller.getPostiVeicoliDisp();i++){
+                        cBValige.addItem(i);
+                    }
+                }
+            }
+
         });
     }
 
