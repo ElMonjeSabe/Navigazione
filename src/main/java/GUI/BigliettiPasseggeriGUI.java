@@ -90,7 +90,7 @@ public class BigliettiPasseggeriGUI {
                         listaBA.get(i).cf,
                         listaBA.get(i).nome,
                         listaBA.get(i).cognome,
-                        listaBA.get(i).dataacquisto,
+                        listaBA.get(i).datanascita,
                         listaBA.get(i).codicebiglietto,
                         listaBA.get(i).tipobiglietto,
                         listaBA.get(i).prezzo,

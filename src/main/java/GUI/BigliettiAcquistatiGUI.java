@@ -39,7 +39,7 @@ public class BigliettiAcquistatiGUI {
 
 
         table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
-        DefaultTableModel tableModel = new DefaultTableModel(new Object[][]{}, new String[]{"Codice Corsa", "CF","Nome","Cognome","Datanascita","Codice Biglietto","Tipobiglietto","Prezzo","Data Acquisto","Veicolo", "Numbagagli" ,"Prenotazione"}) {
+        DefaultTableModel tableModel = new DefaultTableModel(new Object[][]{}, new String[]{"Codice Corsa", "Codice Biglietto","Tipobiglietto","Prezzo","Data Acquisto","Veicolo", "Numbagagli" ,"Prenotazione"}) {
             public boolean isCellEditable(int row, int column) {
                 // Tutte le celle non sono modificabili
                 return false;
@@ -49,10 +49,9 @@ public class BigliettiAcquistatiGUI {
         table.setModel(tableModel);
         // Imposta la larghezza preferita per le colonne specifiche
         table.getColumnModel().getColumn(0).setPreferredWidth(30);
-        table.getColumnModel().getColumn(1).setPreferredWidth(100);
-        table.getColumnModel().getColumn(9).setPreferredWidth(10);
-        table.getColumnModel().getColumn(10).setPreferredWidth(8);
-        table.getColumnModel().getColumn(11).setPreferredWidth(30);
+        table.getColumnModel().getColumn(5).setPreferredWidth(10);
+        table.getColumnModel().getColumn(6).setPreferredWidth(8);
+        table.getColumnModel().getColumn(7).setPreferredWidth(30);
 
         //Si fa passare la lista dei biglietti dal controller
         ArrayList<Model.BigliettiAcquistati> listaBA = controller.getBiglietti();
@@ -63,10 +62,6 @@ public class BigliettiAcquistatiGUI {
             for (int i = 0; i < listaBA.size(); i++)
                 tableModel.addRow(new Object[]{
                         listaBA.get(i).codicecorsa,
-                        listaBA.get(i).cf,
-                        listaBA.get(i).nome,
-                        listaBA.get(i).cognome,
-                        listaBA.get(i).dataacquisto,
                         listaBA.get(i).codicebiglietto,
                         listaBA.get(i).tipobiglietto,
                         listaBA.get(i).prezzo,

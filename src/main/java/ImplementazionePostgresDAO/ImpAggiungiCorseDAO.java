@@ -31,7 +31,7 @@ public class ImpAggiungiCorseDAO implements AggiungiCorseDAO {
 
         // TODO Auto-generated method stub
         try {
-            pstmt=connection.prepareStatement("begin;");
+            pstmt=connection.prepareStatement("begin");
             pstmt.execute();
             pstmt.close();
 
@@ -63,7 +63,7 @@ public class ImpAggiungiCorseDAO implements AggiungiCorseDAO {
                 pstmt.close();
 
             }
-            pstmt=connection.prepareStatement("commit;");
+            pstmt=connection.prepareStatement("END;");
             pstmt.execute();
             pstmt.close();
 

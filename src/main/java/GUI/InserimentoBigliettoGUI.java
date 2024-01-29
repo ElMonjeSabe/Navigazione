@@ -24,8 +24,6 @@ public class InserimentoBigliettoGUI {
     private JComboBox cBVeicoli;
     private JLabel jlPPD;
 
-    private JComboBox cBCorse;
-
     public JFrame frameChiamante;
     JFrame frame;
     Controller controller;
@@ -70,6 +68,7 @@ public class InserimentoBigliettoGUI {
         //Apre la finestra la centro dello schermo
         frame.setLocationRelativeTo(null);
 
+        for (int i=0; i<=40; i++) cBValige.addItem(i);
 
 
 
@@ -210,7 +209,7 @@ public class InserimentoBigliettoGUI {
             @Override
             public void itemStateChanged(ItemEvent e) {
                 cBVeicoli.removeAllItems();
-                for(int i = 0; i <= (Integer) cBAdulti.getSelectedItem(); i++){
+                for(int i = 0; i <= (Integer) cBAdulti.getSelectedItem() && i<=controller.getPostiVeicoliDisp(); i++){
                     cBVeicoli.addItem(i);
                 }
             }
@@ -228,13 +227,11 @@ public class InserimentoBigliettoGUI {
                     
                     controller.getPostiDisponibili(tFCodiceCorsa.getText());
                     jlPPD.setText(controller.getPostiPersoneDisp().toString());
-                    for(int i = 0; i<20;i++){
+                    for(int i = 0; i<=20;i++){
                         cBAdulti.addItem(i);
                         cBMinorenni.addItem(i);
                     }
-                    for(int i = 0; i<controller.getPostiVeicoliDisp();i++){
-                        cBValige.addItem(i);
-                    }
+
                 }
             }
 
