@@ -47,11 +47,7 @@ public class BigliettiAcquistatiGUI {
         };
 
         table.setModel(tableModel);
-        // Imposta la larghezza preferita per le colonne specifiche
-        table.getColumnModel().getColumn(0).setPreferredWidth(30);
-        table.getColumnModel().getColumn(5).setPreferredWidth(10);
-        table.getColumnModel().getColumn(6).setPreferredWidth(8);
-        table.getColumnModel().getColumn(7).setPreferredWidth(30);
+
 
         //Si fa passare la lista dei biglietti dal controller
         ArrayList<Model.BigliettiAcquistati> listaBA = controller.getBiglietti();

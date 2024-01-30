@@ -74,16 +74,7 @@ public class ListaCorseCompagnia {
 
         table.setModel(tableModel);
 
-        // Imposta la larghezza preferita per le colonne specifiche
-        table.getColumnModel().getColumn(0).setPreferredWidth(50);
-        table.getColumnModel().getColumn(1).setPreferredWidth(60);
-        table.getColumnModel().getColumn(2).setPreferredWidth(40);
-        table.getColumnModel().getColumn(11).setPreferredWidth(60);
 
-        // Disabilita il ridimensionamento automatico per le colonne specifiche
-        table.getColumnModel().getColumn(0).setMaxWidth(50);
-        table.getColumnModel().getColumn(1).setMaxWidth(60);
-        table.getColumnModel().getColumn(11).setMaxWidth(70);
 
         //Si fa passare la lista di corse dal controller
         ArrayList<CorsaTabellone> listaCorse = controller.getCorse();

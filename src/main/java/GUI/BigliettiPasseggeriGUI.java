@@ -70,12 +70,6 @@ public class BigliettiPasseggeriGUI {
         };
 
         table.setModel(tableModel);
-        // Imposta la larghezza preferita per le colonne specifiche
-        table.getColumnModel().getColumn(0).setPreferredWidth(30);
-        table.getColumnModel().getColumn(1).setPreferredWidth(100);
-        table.getColumnModel().getColumn(9).setPreferredWidth(10);
-        table.getColumnModel().getColumn(10).setPreferredWidth(8);
-        table.getColumnModel().getColumn(11).setPreferredWidth(30);
 
         //Si fa passare la lista dei biglietti dal controller
         listaBA = controller.getBiglietti();

@@ -6,6 +6,8 @@ import Model.CorsaTabellone;
 import Model.Passeggero;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
@@ -14,7 +16,7 @@ import java.util.ArrayList;
 public class ListaCorse {
     private JTable table;
     private JPanel panel;
-    private JButton btoAcquistaBiglietto;
+
     private JButton buttonHome;
     private JComboBox cBImbarcazioni;
     private JButton cercaButton;
@@ -36,7 +38,6 @@ public class ListaCorse {
         this.controller = controller;
 
 
-
         frame = new JFrame("Lista Corse");
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -48,27 +49,23 @@ public class ListaCorse {
         frame.setLocationRelativeTo(null);
 
 
-
         cBImbarcazioni.addItem("tutte");
         cBImbarcazioni.addItem("aliscafo");
         cBImbarcazioni.addItem("motonave");
         cBImbarcazioni.addItem("traghetto");
-        compagnie=controller.CaricaCompagnie();
+        compagnie = controller.CaricaCompagnie();
 
         CBCompagnie.addItem("tutte");
-        for(Compagnia c: compagnie){
+        for (Compagnia c : compagnie) {
             CBCompagnie.addItem(c.getNomeCompagnia());
         }
-
 
 
         sliderPrezzo.setMaximum(10000);
         sliderPrezzo.setMinimum(0);
         sliderPrezzo.setMinorTickSpacing(1);
 
-        if(p==null){
-            btoAcquistaBiglietto.setVisible(false);
-        }
+
 
 
         frame.setVisible(true);
@@ -76,7 +73,7 @@ public class ListaCorse {
 
         table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 
-        DefaultTableModel tableModel = new DefaultTableModel(new Object[][]{}, new String[]{"Codice", "Prezzo","Scali","Nome Compagnia", "Partenza", "Città Partenza", "Nazione Partenza", "Destinazione", "Citta Destinazione", "Nazione Destinazione", "Data Partenza", "Data Arrivo", "Orario Partenza", "Orario Arrivo", "Stato", "Avviso"}) {
+        DefaultTableModel tableModel = new DefaultTableModel(new Object[][]{}, new String[]{"Codice", "Prezzo", "Scali", "Nome Compagnia", "Partenza", "Città Partenza", "Nazione Partenza", "Destinazione", "Citta Destinazione", "Nazione Destinazione", "Data Partenza", "Data Arrivo", "Orario Partenza", "Orario Arrivo", "Stato", "Avviso"}) {
             public boolean isCellEditable(int row, int column) {
                 // Tutte le celle non sono modificabili
                 return false;
@@ -86,16 +83,7 @@ public class ListaCorse {
 
         table.setModel(tableModel);
 
-        // Imposta la larghezza preferita per le colonne specifiche
-        table.getColumnModel().getColumn(0).setPreferredWidth(50);
-        table.getColumnModel().getColumn(1).setPreferredWidth(60);
-        table.getColumnModel().getColumn(2).setPreferredWidth(40);
-        table.getColumnModel().getColumn(11).setPreferredWidth(60);
 
-        // Disabilita il ridimensionamento automatico per le colonne specifiche
-        table.getColumnModel().getColumn(0).setMaxWidth(50);
-        table.getColumnModel().getColumn(1).setMaxWidth(60);
-        table.getColumnModel().getColumn(11).setMaxWidth(70);
 
         //Si fa passare la lista di corse dal controller
         ArrayList<CorsaTabellone> listaCorse = controller.getCorse();
@@ -140,27 +128,8 @@ public class ListaCorse {
 
             }
         });
-        btoAcquistaBiglietto.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                InserimentoBigliettoGUI frameInsBiglietto = new InserimentoBigliettoGUI(frame, controller);
-                frame.setEnabled(false);
-                frameInsBiglietto.frame.setVisible(true);
 
 
-            }
-        });
-/*
-        ArrayList<String> listaCodiceCorsa = Controller.getCodiceCorsa();
-        ArrayList<Float> listaCosto = Controller.getCostoCorsa();
-        ArrayList<String> listaPartenza = controller.getCodiceCorsa();
-        ArrayList<String> listaCittaPartenza = controller.getCodiceCorsa();
-        ArrayList<String> listaNazionePartenza = controller.getCodiceCorsa();
-        ArrayList<String> listaDestinazione = controller.getCodiceCorsa();
-        ArrayList<String> listaCittaDestinazione = controller.getCodiceCorsa();
-        ArrayList<String> listaNazioneDestinazione = controller.getCodiceCorsa();
-        ArrayList<String> listaDataPartenza = controller.getCodiceCorsa();
-        ArrayList<String> listaCodiceCorsa = controller.getCodiceCorsa();*/
 
 
         sliderPrezzo.addMouseMotionListener(new MouseMotionAdapter() {
@@ -170,6 +139,8 @@ public class ListaCorse {
                 Prezzo.setText(Integer.toString(sliderPrezzo.getValue()));
             }
         });
+
+
         cercaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -204,8 +175,28 @@ public class ListaCorse {
                 }
             }
         });
-    }
 
+
+
+        //Permette di selezionare una riga con un click del mouse
+        table.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+            public void valueChanged(ListSelectionEvent event) {
+                if(p != null){
+                    if (!event.getValueIsAdjusting() && table.getSelectedRow() != -1) {
+                        // Ottieni l'indice della riga selezionata
+                        int selectedRow = table.getSelectedRow();
+
+                        // Ottieni il valore della cella alla colonna 0 (Dato1) della riga selezionata e
+                        //invia il codice della corsa al controller
+                        controller.setCodCorsaAcq(table.getValueAt(selectedRow, 0).toString());
+                        InserimentoBigliettoGUI frameInsBiglietto = new InserimentoBigliettoGUI(frame, controller);
+                        frame.setEnabled(false);
+                        frameInsBiglietto.frame.setVisible(true);
+                    }
+                }
+            }
+        });
+    }
 
 }
 

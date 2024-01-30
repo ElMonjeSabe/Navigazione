@@ -22,6 +22,8 @@ public class Controller {
     private Integer postiPersoneDisp;
     private Integer postiVeicoliDisp;
 
+    private String codCorsa;
+
 
 //METODI
 
@@ -270,10 +272,20 @@ public class Controller {
     }
 
 
-    public void getPostiDisponibili(String codCorsa){
+    public void getPostiDisponibili(){
         GetPostiDisponibiliDAO postDisp = new ImpGetPostiDisponibiliDAO();
-        int [] posti = postDisp.getPostiDisponibiliDB(codCorsa);
+        int [] posti = postDisp.getPostiDisponibiliDB(this.codCorsa);
         postiPersoneDisp = posti[0] ;
         postiVeicoliDisp = posti[1];
+    }
+
+
+    public void setCodCorsaAcq(String codCorsa) {
+        this.codCorsa = codCorsa;
+    }
+
+
+    public String getCodCorsaAcq() {
+        return this.codCorsa;
     }
 }

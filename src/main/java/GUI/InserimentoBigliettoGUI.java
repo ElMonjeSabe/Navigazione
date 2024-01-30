@@ -4,9 +4,6 @@ import Controller.Controller;
 import Model.*;
 
 import javax.swing.*;
-import javax.swing.event.CaretListener;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import java.awt.event.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -14,8 +11,6 @@ import java.util.ArrayList;
 public class InserimentoBigliettoGUI {
     private JPanel panel;
     private JButton btoAcquista;
-    private JTextField tFCodeceFiscale;
-    private JTextField tFCodiceCorsa;
 
     private JButton btoIndietro;
     private JComboBox cBAdulti;
@@ -23,6 +18,7 @@ public class InserimentoBigliettoGUI {
     private JComboBox cBValige;
     private JComboBox cBVeicoli;
     private JLabel jlPPD;
+    private JLabel labelCodCorsa;
 
     public JFrame frameChiamante;
     JFrame frame;
@@ -30,15 +26,8 @@ public class InserimentoBigliettoGUI {
 
     Passeggero p;
 
-    private ArrayList<String> codCorse=new ArrayList<String>();
-    private boolean ControlloCodCorsa(String cod) {
-        for (int i = 0; i < controller.getCorse().size(); i++) {
-            if (cod.equals(controller.getCorse().get(i).CodiceCorsa)) {
-                return true;
-            }
-        }
-        return false;
-    }
+    private String codCorsa;
+
 
 
 
@@ -70,15 +59,19 @@ public class InserimentoBigliettoGUI {
 
         for (int i=0; i<=40; i++) cBValige.addItem(i);
 
+        for(int i = 0; i<=20;i++){
+            cBAdulti.addItem(i);
+            cBMinorenni.addItem(i);
+        }
 
-
-
+        labelCodCorsa.setText(controller.getCodCorsaAcq());
         frame.setVisible(true);
-        //prima di tutto vado a prelevarmi tutti la lista di codici e li metto nella combobox
-        codCorse=controller.GetCodiceCorse();
-        //
 
 
+        codCorsa=controller.getCodCorsaAcq();
+
+        controller.getPostiDisponibili();
+        jlPPD.setText(controller.getPostiPersoneDisp().toString());
 
         btoIndietro.addActionListener(new ActionListener() {
             @Override
@@ -97,17 +90,8 @@ public class InserimentoBigliettoGUI {
 
 
 
-                String codCorsa = tFCodiceCorsa.getText();
 
-                if (codCorsa.equals("")) {
-
-                    JOptionPane.showMessageDialog(null, "Inserisci il codice");
-
-                } else if (!ControlloCodCorsa(codCorsa)) {
-
-                    JOptionPane.showMessageDialog(null, "Codice corsa non valido");
-
-                } else if((Integer)cBAdulti.getSelectedItem() == 0 && (Integer)cBMinorenni.getSelectedItem() == 0 ){
+                if((Integer)cBAdulti.getSelectedItem() == 0 && (Integer)cBMinorenni.getSelectedItem() == 0 ){
 
                     JOptionPane.showMessageDialog(null, "Devi selezionare almeno un passeggero");
 
@@ -118,7 +102,7 @@ public class InserimentoBigliettoGUI {
                 } else{
                     //definire il costo totale del biglietto
 
-                    CorsaTabellone corsa = controller.GetCorsa(tFCodiceCorsa.getText());
+                    CorsaTabellone corsa = controller.GetCorsa(labelCodCorsa.getText());
                     float prezzo = corsa.costocorsa;
                     float prezzoTotale = 0;
                     ArrayList<Biglietto> biglietti = new ArrayList<Biglietto>();
@@ -137,10 +121,10 @@ public class InserimentoBigliettoGUI {
                     }
 
                     if(NumVeicoli!=0){
-                        biglietti.add(new Biglietto((Integer) cBValige.getSelectedItem(),"intero", true, p.getCf(), codCorsa));
+                        biglietti.add(new Biglietto((Integer) cBValige.getSelectedItem(),"intero", true, p.getCf(), labelCodCorsa.getText()));
                         NumVeicoli--;
                     }else{
-                        biglietti.add(new Biglietto((Integer) cBValige.getSelectedItem(),"intero", false, p.getCf(), codCorsa));
+                        biglietti.add(new Biglietto((Integer) cBValige.getSelectedItem(),"intero", false, p.getCf(), labelCodCorsa.getText()));
                     }
 
                     for(int i = 1; i<(Integer)cBAdulti.getSelectedItem();i++){
@@ -154,10 +138,10 @@ public class InserimentoBigliettoGUI {
 
                         //Verifica se deve distribuire i veicoli per i magiorenni ancora disponibili
                         if(NumVeicoli==0) {
-                            biglietti.add(new Biglietto(0,"intero", false, p.getCf(), codCorsa));
+                            biglietti.add(new Biglietto(0,"intero", false, p.getCf(), labelCodCorsa.getText()));
                         }else{
                             NumVeicoli--;
-                            biglietti.add(new Biglietto(0, "intero",true, p.getCf(), codCorsa));
+                            biglietti.add(new Biglietto(0, "intero",true, p.getCf(), labelCodCorsa.getText()));
                         }
 
                     }
@@ -175,7 +159,7 @@ public class InserimentoBigliettoGUI {
                             prezzoTotale += prezzo/ 2;
                         }
 
-                        biglietti.add(new Biglietto(0, "ridotto", false, p.getCf(), codCorsa));
+                        biglietti.add(new Biglietto(0, "ridotto", false, p.getCf(), labelCodCorsa.getText()));
 
                     }
 
@@ -219,23 +203,7 @@ public class InserimentoBigliettoGUI {
  
 
 
-        tFCodiceCorsa.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyReleased(KeyEvent e) {
-                super.keyReleased(e);
-                if(ControlloCodCorsa(tFCodiceCorsa.getText())){
-                    
-                    controller.getPostiDisponibili(tFCodiceCorsa.getText());
-                    jlPPD.setText(controller.getPostiPersoneDisp().toString());
-                    for(int i = 0; i<=20;i++){
-                        cBAdulti.addItem(i);
-                        cBMinorenni.addItem(i);
-                    }
 
-                }
-            }
-
-        });
     }
 
 }
