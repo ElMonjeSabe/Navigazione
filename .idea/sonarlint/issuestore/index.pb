@@ -237,3 +237,5 @@ P
 .src/main/java/GUI/InserimentoBigliettoGUI.form,2\4\2473b33005bad54df397045f66ddd158f01b1a38
 ^
 .src/main/java/GUI/InserimentoBigliettoGUI.java,8\c\8ccb4fcc6c0ff188364e0f0f3d37149bc9577583
+T
+$src/main/java/GUI/AggiungiCorsa.java,a\4\a41323fbe4bb4231f5a78b0b0e091c5c04a7c94b

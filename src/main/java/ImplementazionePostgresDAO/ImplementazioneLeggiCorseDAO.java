@@ -72,7 +72,8 @@ public class ImplementazioneLeggiCorseDAO implements CorseDAO{
         // TODO Auto-generated method stub
         try {
             PreparedStatement leggiTabellaPS = connection.prepareStatement(
-                    "SELECT * FROM Tabellone WHERE nomecompagnia=?");
+                    "SELECT * FROM Tabellone WHERE nomecompagnia=?"+
+                            "\nORDER BY CodiceCorsa");
             leggiTabellaPS.setString(1,nomeCompagnia);
 
             ResultSet rs = leggiTabellaPS.executeQuery();
@@ -180,7 +181,8 @@ public class ImplementazioneLeggiCorseDAO implements CorseDAO{
             PreparedStatement leggiTabellaPS = connection.prepareStatement(
                     "SELECT CodiceCorsa,costocorsa,scali,nomecompagnia,partenza,cittapartenza,nazionepartenza,destinazione,cittadestinazione,nazionedestinazione,datapartenza,dataarrivo,orariopartenza,orarioarrivo,stato,avviso\n" +
                             "FROM Tabellone NATURAL JOIN Corsa JOIN Imbarcazione ON FKImb = CodiceImbarcazione\n" +
-                            "WHERE TipoImbarcazione LIKE ? AND costocorsa <= ? AND nomecompagnia LIKE ?");
+                            "WHERE TipoImbarcazione LIKE ? AND costocorsa <= ? AND nomecompagnia LIKE ?"+
+                            "\nORDER BY CodiceCorsa");
 
 
 

@@ -207,7 +207,7 @@ public class AggiungiCorsa {
                     } catch(NumberFormatException err){
                         JOptionPane.showMessageDialog(null, "inserisci un codice, un giorno o un prezzo numerico");
                     }
-                    if(costo<0 || giorniPartenza<0 || giorniScalo<0 || giorniAttesa<0)
+                    if(costo<0 || giorniPartenza<0 || giorniScalo<0 || giorniAttesa<0 || codice>9999999 || codice<0)
                     {
                         JOptionPane.showMessageDialog(null, "inserisci un codice, un giorno o un prezzo numerico positivo");
                     }
@@ -257,7 +257,7 @@ public class AggiungiCorsa {
 
                                     for(LocalDate l : giorni){
                                         //creo la corsa partenza-arrivo
-                                        corse.add(new Corsa("C"+codice,costo,textAvviso.getText(),(String) CBStato.getSelectedItem(),imbarcazioni.get(CBImbarcazioni.getSelectedIndex()),compagnia));
+                                        corse.add(new Corsa("C"+codice+"S0",costo,textAvviso.getText(),(String) CBStato.getSelectedItem(),imbarcazioni.get(CBImbarcazioni.getSelectedIndex()),compagnia));
                                         //percorso partenza-scalo
                                         percorsi.add(new Percorso(timePIn,timePOut,l,l.plusDays(giorniPartenza),"partenza",portoiniziale,corse.getLast()));
                                         //percorso scalo-arrivo (tenendo conto anche il tempo di attesa)
@@ -265,19 +265,19 @@ public class AggiungiCorsa {
                                         //percorso arrivo-arrivo
                                         percorsi.add(new Percorso(timeAOut,timeAOut,l.plusDays(giorniScalo+giorniAttesa),l.plusDays(giorniScalo+giorniAttesa),"destinazione",portofinale,corse.getLast()));
 
-                                        codice++;
+                                        //codice++;
 
                                         //creo la corsa partenza-scalo (con costo dimezzato)
-                                        corse.add(new Corsa("C"+codice,costo/2,textAvviso.getText(),(String) CBStato.getSelectedItem(),imbarcazioni.get(CBImbarcazioni.getSelectedIndex()),compagnia));
+                                        corse.add(new Corsa("C"+codice+"S1",costo/2,textAvviso.getText(),(String) CBStato.getSelectedItem(),imbarcazioni.get(CBImbarcazioni.getSelectedIndex()),compagnia));
                                         //percorso partenza-scalo
                                         percorsi.add(new Percorso(timePIn,timePOut,l,l.plusDays(giorniPartenza),"partenza",portoiniziale,corse.getLast()));
                                         //percorso scalo-scalo
                                         percorsi.add(new Percorso(timePScalo,timePScalo,l.plusDays(giorniAttesa),l.plusDays(giorniAttesa),"destinazione",portoscalo,corse.getLast()));
 
-                                        codice++;
+                                        //codice++;
 
                                         //creo la corsa scalo-arrivo (con costo dimezzato)
-                                        corse.add(new Corsa("C"+codice,costo/2,textAvviso.getText(),(String) CBStato.getSelectedItem(),imbarcazioni.get(CBImbarcazioni.getSelectedIndex()),compagnia));
+                                        corse.add(new Corsa("C"+codice+"S2",costo/2,textAvviso.getText(),(String) CBStato.getSelectedItem(),imbarcazioni.get(CBImbarcazioni.getSelectedIndex()),compagnia));
                                         //percorso scalo-arrivo
                                         percorsi.add(new Percorso(timePScalo,timeAOut,l.plusDays(giorniAttesa),l.plusDays(giorniScalo+giorniAttesa),"partenza",portoscalo,corse.getLast()));
                                         //percorso arrivo-arrivo
@@ -371,7 +371,7 @@ public class AggiungiCorsa {
 
                                     timeAOut = LocalTime.of((int) CBArrivoOraOut.getSelectedItem(), (int) CBArrivoMinOut.getSelectedItem());
 
-                                    corse.add(new Corsa("C"+codice,costo,textAvviso.getText(),(String) CBStato.getSelectedItem(),imbarcazioni.get(CBImbarcazioni.getSelectedIndex()),compagnia));
+                                    corse.add(new Corsa("C"+codice+"S0",costo,textAvviso.getText(),(String) CBStato.getSelectedItem(),imbarcazioni.get(CBImbarcazioni.getSelectedIndex()),compagnia));
                                     //percorso partenza-scalo
                                     percorsi.add(new Percorso(timePIn,timePOut,dataIn,dataIn.plusDays(giorniPartenza),"partenza",portoiniziale,corse.getLast()));
                                     //percorso scalo-arrivo (tenendo conto anche il tempo di attesa)
@@ -379,19 +379,19 @@ public class AggiungiCorsa {
                                     //percorso arrivo-arrivo
                                     percorsi.add(new Percorso(timeAOut,timeAOut,dataIn.plusDays(giorniScalo+giorniAttesa),dataIn.plusDays(giorniScalo+giorniAttesa),"destinazione",portofinale,corse.getLast()));
 
-                                    codice++;
+                                    //codice++;
 
                                     //creo la corsa partenza-scalo (con costo dimezzato)
-                                    corse.add(new Corsa("C"+codice,costo/2,textAvviso.getText(),(String) CBStato.getSelectedItem(),imbarcazioni.get(CBImbarcazioni.getSelectedIndex()),compagnia));
+                                    corse.add(new Corsa("C"+codice+"S1",costo/2,textAvviso.getText(),(String) CBStato.getSelectedItem(),imbarcazioni.get(CBImbarcazioni.getSelectedIndex()),compagnia));
                                     //percorso partenza-scalo
                                     percorsi.add(new Percorso(timePIn,timePOut,dataIn,dataIn.plusDays(giorniPartenza),"partenza",portoiniziale,corse.getLast()));
                                     //percorso scalo-scalo
                                     percorsi.add(new Percorso(timePScalo,timePScalo,dataIn.plusDays(giorniAttesa),dataIn.plusDays(giorniAttesa),"destinazione",portoscalo,corse.getLast()));
 
-                                    codice++;
+                                    //codice++;
 
                                     //creo la corsa scalo-arrivo (con costo dimezzato)
-                                    corse.add(new Corsa("C"+codice,costo/2,textAvviso.getText(),(String) CBStato.getSelectedItem(),imbarcazioni.get(CBImbarcazioni.getSelectedIndex()),compagnia));
+                                    corse.add(new Corsa("C"+codice+"S2",costo/2,textAvviso.getText(),(String) CBStato.getSelectedItem(),imbarcazioni.get(CBImbarcazioni.getSelectedIndex()),compagnia));
                                     //percorso scalo-arrivo
                                     percorsi.add(new Percorso(timePScalo,timeAOut,dataIn.plusDays(giorniAttesa),dataIn.plusDays(giorniScalo+giorniAttesa),"partenza",portoscalo,corse.getLast()));
                                     //percorso arrivo-arrivo
