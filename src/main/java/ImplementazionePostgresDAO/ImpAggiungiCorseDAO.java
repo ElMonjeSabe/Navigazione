@@ -71,7 +71,7 @@ public class ImpAggiungiCorseDAO implements AggiungiCorseDAO {
             connection.close();
 
         } catch (SQLException e) {
-            // gestisci altri errori SQL
+
             JOptionPane.showMessageDialog(null, "Errore: " + e.getMessage());
 
             try{
