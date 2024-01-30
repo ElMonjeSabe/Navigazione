@@ -305,7 +305,7 @@ public class AggiungiCorsa {
                                     timeAOut=LocalTime.of((int) CBArrivoOraOut.getSelectedItem(),(int) CBArrivoMinOut.getSelectedItem());
                                     for(LocalDate l : giorni){
                                         //creo la corsa partenza-arrivo
-                                        corse.add(new Corsa("C"+codice,costo,textAvviso.getText(),(String) CBStato.getSelectedItem(),imbarcazioni.get(CBImbarcazioni.getSelectedIndex()),compagnia));
+                                        corse.add(new Corsa("C"+codice+"S0",costo,textAvviso.getText(),(String) CBStato.getSelectedItem(),imbarcazioni.get(CBImbarcazioni.getSelectedIndex()),compagnia));
                                         //percorso partenza-arrivo
                                         percorsi.add(new Percorso(timePIn,timeAOut,l,l.plusDays(giorniPartenza),"partenza",portoiniziale,corse.getLast()));
                                         //percorso arrivo-arrivo
@@ -411,7 +411,7 @@ public class AggiungiCorsa {
 
                                     timeAOut=LocalTime.of((int) CBArrivoOraOut.getSelectedItem(),(int) CBArrivoMinOut.getSelectedItem());
 
-                                    corse.add(new Corsa("C"+codice,costo,textAvviso.getText(),(String) CBStato.getSelectedItem(),imbarcazioni.get(CBImbarcazioni.getSelectedIndex()),compagnia));
+                                    corse.add(new Corsa("C"+codice+"S0",costo,textAvviso.getText(),(String) CBStato.getSelectedItem(),imbarcazioni.get(CBImbarcazioni.getSelectedIndex()),compagnia));
                                     //percorso partenza-arrivo
                                     percorsi.add(new Percorso(timePIn,timeAOut,dataIn,dataIn.plusDays(giorniPartenza),"partenza",portoiniziale,corse.getLast()));
                                     //percorso arrivo-arrivo
