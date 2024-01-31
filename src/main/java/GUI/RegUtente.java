@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
+import java.time.Period;
 
 public class RegUtente {
     private JPanel panel1;
@@ -42,7 +43,7 @@ public class RegUtente {
         }
 
         //ComboBox Anno
-        for (Integer i = 1920; i <= 2023; i++) {
+        for (Integer i = 1920; i <= 2006; i++) {
             comboBoxAnno.addItem(i);
         }
 
@@ -74,18 +75,22 @@ public class RegUtente {
                 } else {
 
                     LocalDate data = LocalDate.of((Integer) comboBoxAnno.getSelectedItem(), (Integer) comboBoxMese.getSelectedItem(), (Integer) comboBoxGiorno.getSelectedItem());
-                    Passeggero p = new Passeggero(tfCF.getText(), tfNome.getText(), tfCognome.getText(), data, tfEmail.getText(), tfPassword.getText());
-                    if (controller.AggiungiPasseggero(p) == 1) {
+                    if( Period.between(data, LocalDate.now()).getYears() >= 18) {
+                        Passeggero p = new Passeggero(tfCF.getText(), tfNome.getText(), tfCognome.getText(), data, tfEmail.getText(), tfPassword.getText());
+                        if (controller.AggiungiPasseggero(p) == 1) {
 
-                        JOptionPane.showMessageDialog(null, "Registrazione effettuata con successo");
-                        controller.setPasseggero(p);
-                        PasseggeroGUI framePasseggeroGUI = new PasseggeroGUI(frame, controller);
-                        framePasseggeroGUI.frame.setVisible(true);
-                        frame.setVisible(false);
+                            JOptionPane.showMessageDialog(null, "Registrazione effettuata con successo");
+                            controller.setPasseggero(p);
+                            PasseggeroGUI framePasseggeroGUI = new PasseggeroGUI(frame, controller);
+                            framePasseggeroGUI.frame.setVisible(true);
+                            frame.setVisible(false);
 
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Errore durante la registrazione");
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Errore durante la registrazione");
 
+                        }
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Devi essere maggiorenne per poterti inscrivere");
                     }
                 }
             }
