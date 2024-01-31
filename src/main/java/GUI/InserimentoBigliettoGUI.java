@@ -104,6 +104,8 @@ public class InserimentoBigliettoGUI {
 
                     CorsaTabellone corsa = controller.GetCorsa(labelCodCorsa.getText());
                     float prezzo = corsa.costocorsa;
+                    int numMinorenni = (int) cBMinorenni.getSelectedItem();
+                    int numAdulti = (int) cBAdulti.getSelectedItem();
                     float prezzoTotale = 0;
                     ArrayList<Biglietto> biglietti = new ArrayList<Biglietto>();
                     Integer NumVeicoli= (Integer) cBVeicoli.getSelectedItem();
@@ -115,26 +117,31 @@ public class InserimentoBigliettoGUI {
 
                     //Calcola se è una prenotazione
                     if(LocalDate.now().isBefore(corsa.datapartenza)) {
-                        prezzoTotale += prezzo + 2;
+                        prezzoTotale = 2*(numAdulti+numMinorenni)+(numAdulti*prezzo)+(numMinorenni*(prezzo/2))+ (5*(int)cBValige.getSelectedItem());
+
                     }else{
-                        prezzoTotale += prezzo;
+                        prezzoTotale = (numAdulti*prezzo)+(numMinorenni*(prezzo/2))+ (5*(int)cBValige.getSelectedItem());
                     }
+
+                    if( NumVeicoli == null )NumVeicoli=0;
+
+
 
                     if(NumVeicoli!=0){
                         biglietti.add(new Biglietto((Integer) cBValige.getSelectedItem(),"intero", true, p.getCf(), labelCodCorsa.getText()));
                         NumVeicoli--;
-                    }else{
+
+                    } else if ((Integer) cBAdulti.getSelectedItem()==0) {
+                        biglietti.add(new Biglietto((Integer) cBValige.getSelectedItem(),"ridotto", false, p.getCf(), labelCodCorsa.getText()));
+                        numMinorenni--;
+                    } else {
                         biglietti.add(new Biglietto((Integer) cBValige.getSelectedItem(),"intero", false, p.getCf(), labelCodCorsa.getText()));
                     }
 
-                    for(int i = 1; i<(Integer)cBAdulti.getSelectedItem();i++){
 
-                        //Calcola se è una prenotazione
-                        if(LocalDate.now().isBefore(corsa.datapartenza)) {
-                            prezzoTotale += prezzo + 2;
-                        }else{
-                            prezzoTotale += prezzo;
-                        }
+
+                    for(int i = 1; i < numAdulti; i++){
+
 
                         //Verifica se deve distribuire i veicoli per i magiorenni ancora disponibili
                         if(NumVeicoli==0) {
@@ -146,25 +153,17 @@ public class InserimentoBigliettoGUI {
 
                     }
 
-                    //Aggiunta prezzo valige
-                    prezzoTotale += 5 * (Integer) cBValige.getSelectedItem();
 
 
-                    for(int i = 0; i<(Integer)cBMinorenni.getSelectedItem();i++){
 
-                        //Calcola se è una prenotazione
-                        if(LocalDate.now().isBefore(corsa.datapartenza)) {
-                            prezzoTotale += (prezzo/2) + 2;
-                        }else{
-                            prezzoTotale += prezzo/ 2;
-                        }
-
+                    for(int i = 0; i < numMinorenni;i++){
                         biglietti.add(new Biglietto(0, "ridotto", false, p.getCf(), labelCodCorsa.getText()));
-
                     }
+
 
                     //Con l'acquisto
                     int risposta = JOptionPane.showConfirmDialog(null, "Il prezzo totale è di "+prezzoTotale+"€. Vuoi procedere all'acquisto?", "Conferma Acquisto", JOptionPane.YES_NO_OPTION);
+
                     if (risposta == JOptionPane.YES_OPTION) {
                         if(controller.AcquistaBigliettoDAO(biglietti)==1) {
                             JOptionPane.showMessageDialog(null, "Acquisto effettuato con successo");
