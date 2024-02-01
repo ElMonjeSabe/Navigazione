@@ -65,16 +65,13 @@ public class AggiungiCorsa {
     private JPanel panelArrivoPartenza;
 
     //costanti che mi serviranno per indicare il tipo di percorso durante la creazioni di oggetti Percorso
-
     private static final String PARTENZA= "partenza";
     private static final String SCALO = "scalo";
     private static final String DESTINAZIONE = "destinazione";
 
     //creo l'oggetto JFrame per settare alcune configurazione quali ad esempio la dimensione
     private JFrame frame;
-
     private Controller controller;
-
     private int i;
 
     //sono variabili che mi serviranno per memorizzare tutti le dati che mi servono:

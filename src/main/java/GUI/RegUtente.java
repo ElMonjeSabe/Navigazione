@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.time.Period;
 
 public class RegUtente {
+
     private JPanel panel1;
     private JTextField tfEmail;
     private JTextField tfNome;
@@ -23,10 +24,10 @@ public class RegUtente {
     private JComboBox<Integer> comboBoxAnno;
 
     public JFrame frame;
-
     private Controller controller;
 
     public JFrame frameChiamante;
+
 
     public RegUtente(JFrame frameChiamante, Controller controller) {
         this.controller = controller;
@@ -65,6 +66,8 @@ public class RegUtente {
                 frame.dispose();
             }
         });
+
+
         confermaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -96,6 +99,4 @@ public class RegUtente {
             }
         });
     }
-
-
 }

@@ -17,6 +17,8 @@ public class BigliettiAcquistatiGUI {
     Controller controller;
     JFrame frame;
 
+
+
     public BigliettiAcquistatiGUI(JFrame frameChiamante, Controller controller){
         this.frameChiamante = frameChiamante;
         this.controller = controller;

@@ -28,6 +28,8 @@ public class BigliettiPasseggeriGUI {
     private ArrayList<BigliettiAcquistati> listaBA;
     private int i;
 
+
+
     public BigliettiPasseggeriGUI(JFrame frameChiamante, Controller controller, Compagnia comp){
         this.frameChiamante = frameChiamante;
         this.controller = controller;

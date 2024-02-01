@@ -22,9 +22,7 @@ public class ListaCorseCompagnia {
     private JLabel Prezzo;
     private JPanel panel;
     private Controller controller;
-
     private JFrame frameChiamante;
-
     static JFrame frame;
 
 
@@ -32,7 +30,6 @@ public class ListaCorseCompagnia {
 
         this.frameChiamante = frameChiamante;
         this.controller = controller;
-
 
 
         frame = new JFrame("Lista Corse Compagnia");
@@ -45,23 +42,19 @@ public class ListaCorseCompagnia {
         //Apre la finestra la centro dello schermo
         frame.setLocationRelativeTo(null);
 
-
         cBImbarcazioni.addItem("tutte");
         cBImbarcazioni.addItem("aliscafo");
         cBImbarcazioni.addItem("motonave");
         cBImbarcazioni.addItem("traghetto");
 
-
         sliderPrezzo.setMaximum(10000);
         sliderPrezzo.setMinimum(0);
         sliderPrezzo.setMinorTickSpacing(1);
 
-
-
         frame.setVisible(true);
 
-
         table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+
 
         DefaultTableModel tableModel = new DefaultTableModel(new Object[][]{}, new String[]{"Codice", "Prezzo","Scali","Nome Compagnia", "Partenza", "Città Partenza", "Nazione Partenza", "Destinazione", "Citta Destinazione", "Nazione Destinazione", "Data Partenza", "Data Arrivo", "Orario Partenza", "Orario Arrivo", "Stato", "Avviso"}) {
             @Override
@@ -75,12 +68,10 @@ public class ListaCorseCompagnia {
         table.setModel(tableModel);
 
 
-
         //Si fa passare la lista di corse dal controller
         ArrayList<CorsaTabellone> listaCorse = controller.getCorse();
 
         //Inserisce tutte le righe della tabella utilizzando l'arraylist listaCorse
-
         if (listaCorse != null) {
             for (int i = 0; i < listaCorse.size(); i++)
                 tableModel.addRow(new Object[]{
@@ -103,7 +94,6 @@ public class ListaCorseCompagnia {
         }
 
 
-
         sliderPrezzo.addMouseMotionListener(new MouseMotionAdapter() {
             @Override
             public void mouseDragged(MouseEvent e) {
@@ -111,10 +101,11 @@ public class ListaCorseCompagnia {
                 Prezzo.setText(Integer.toString(sliderPrezzo.getValue()));
             }
         });
+
+
         cercaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
 
                 //Si fa passare la lista di corse dal controller
                 controller.LeggiCorseCompagniaFiltrateDAO(cBImbarcazioni.getSelectedItem().toString(), sliderPrezzo.getValue(), comp.getNomeCompagnia());
@@ -145,6 +136,8 @@ public class ListaCorseCompagnia {
                 }
             }
         });
+
+
         buttonHome.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.
@@ -159,6 +152,8 @@ public class ListaCorseCompagnia {
             }
         });
     }
+
+
     public JFrame getFrame() {
         return frame;
     }

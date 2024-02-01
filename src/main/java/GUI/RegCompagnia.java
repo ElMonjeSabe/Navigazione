@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class RegCompagnia {
+
     private JTextField tFNomeCompagnia;
     private JTextField tfEmail;
     private JTextField tFPassword;
@@ -26,9 +27,7 @@ public class RegCompagnia {
     private JLabel LCV;
 
     public JFrame frame;
-
     private JFrame frameChiamante;
-
     private Controller controller;
 
 
@@ -106,6 +105,8 @@ public class RegCompagnia {
 
             }
         });
+
+
         CBTipo.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.
@@ -130,6 +131,4 @@ public class RegCompagnia {
             }
         });
     }
-
-
 }

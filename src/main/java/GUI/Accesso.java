@@ -18,9 +18,10 @@ public class Accesso {
     private JRadioButton rdCompagnia;
 
     public JFrame frame;
-
     private JFrame frameChiamante;
     private Controller controller;
+
+
 
     public Accesso(JFrame frameChiamante, Controller controller){
         this.frameChiamante = frameChiamante;

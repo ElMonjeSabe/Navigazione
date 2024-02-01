@@ -9,40 +9,18 @@ import java.awt.event.ActionListener;
 import java.time.format.DateTimeFormatter;
 
 public class PasseggeroGUI {
-    private static final String EMAIL_PATTERN =
-            "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-                    + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/d");
-    private JPanel panelDati;
-    private JTextField textNome;
-    private JTextField textCF;
-    private JFormattedTextField textDataNascita = new JFormattedTextField(formatter);
-    private JButton aggiungiPasseggeroButton;
     private JButton visualizzaCorseButton;
     private JButton visualizzaBigliettiAcquistatiButton;
-    private JButton ritornaAllaHomeButton;
     private JPanel panel;
-    private JPasswordField passwordField;
-    private JTextField textEmail;
-    private JPanel panelTabella;
-    private JPanel panelTitolo;
-    private JPanel PanelCampi;
-    private JPanel panelAzioni;
-    private JPanel panelTitolo2;
-    private JPanel PanelBottoni;
     private JLabel NomePass;
     private JLabel CongPass;
     private JLabel CFPass;
     private JLabel DaNaPass;
     private JLabel EmailPass;
-
     private JFrame frameChiamante;
 
     public JFrame frame;
-
     Controller controller;
-
     private Passeggero p;
 
 
@@ -50,9 +28,8 @@ public class PasseggeroGUI {
 
         this.frameChiamante = frameChiamante;
         this.controller = controller;
+
         p = controller.getPasseggero();
-
-
 
         NomePass.setText(p.getNome());
         CongPass.setText(p.getCognome());
@@ -63,12 +40,10 @@ public class PasseggeroGUI {
         frame = new JFrame("Passeggero");
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
         frame.setResizable(false);
         frame.setSize(500, 250);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-
 
 
         visualizzaCorseButton.addActionListener(new ActionListener() {
@@ -81,6 +56,7 @@ public class PasseggeroGUI {
             }
         });
 
+
         visualizzaBigliettiAcquistatiButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -91,7 +67,4 @@ public class PasseggeroGUI {
             }
         });
     }
-
-
-
 }

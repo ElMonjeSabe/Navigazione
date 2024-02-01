@@ -11,18 +11,18 @@ public class Home2 {
     private JButton btCompagnia;
     private JButton btUtente;
     private JButton btAccedi;
-
-
-
     private static JFrame frame;
     private JPanel panel;
     private JButton visualizzaCorseButton;
 
 
     Controller controller = new Controller();
-    public static JFrame getFrame() {
+    public static JFrame getFrame() { //???????????????????????????????????????????????????????????????
+
         return frame;
     }
+
+
     public Home2() {
 
         btUtente.addActionListener(new ActionListener() {
@@ -33,6 +33,8 @@ public class Home2 {
                 frame.setVisible(false);
             }
         });
+
+
         btCompagnia.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -41,15 +43,18 @@ public class Home2 {
                 frame.setVisible(false);
             }
         });
+
+
         btAccedi.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Accesso frameAcc = new Accesso(frame, controller);
                 frameAcc.frame.setVisible(true);
                 frame.setVisible(false);
-
             }
         });
+
+
         visualizzaCorseButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -61,21 +66,15 @@ public class Home2 {
         });
     }
 
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
         frame = new JFrame("Schermata Principale");
         frame.setContentPane(new Home2().panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 350);
         frame.setMinimumSize(new Dimension(340, 240));
-
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-
-
     }
-
-
-
 
 }

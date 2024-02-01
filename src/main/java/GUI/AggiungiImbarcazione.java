@@ -16,8 +16,8 @@ public class AggiungiImbarcazione {
     private JPanel panel;
     private JTextField textCapienzaP;
     private JTextField textCapienzaV;
-
     private JFrame frame;
+
     public JFrame frameChiamante;
     private Controller controller;
 
@@ -128,7 +128,8 @@ public class AggiungiImbarcazione {
     }
 
 
-    public JFrame getFrame() {
+
+   public JFrame getFrame() {
         return frame;
     }
 }

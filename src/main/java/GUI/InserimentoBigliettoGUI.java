@@ -11,7 +11,6 @@ import java.util.ArrayList;
 public class InserimentoBigliettoGUI {
     private JPanel panel;
     private JButton btoAcquista;
-
     private JButton btoIndietro;
     private JComboBox cBAdulti;
     private JComboBox cBMinorenni;
@@ -23,14 +22,7 @@ public class InserimentoBigliettoGUI {
     public JFrame frameChiamante;
     JFrame frame;
     Controller controller;
-
     Passeggero p;
-
-    private String codCorsa;
-
-
-
-
 
 
 
@@ -68,10 +60,11 @@ public class InserimentoBigliettoGUI {
         frame.setVisible(true);
 
 
-        codCorsa=controller.getCodCorsaAcq();
+
 
         controller.getPostiDisponibili();
         jlPPD.setText(controller.getPostiPersoneDisp().toString());
+
 
         btoIndietro.addActionListener(new ActionListener() {
             @Override
@@ -88,9 +81,6 @@ public class InserimentoBigliettoGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-
-
-
                 if((Integer)cBAdulti.getSelectedItem() == 0 && (Integer)cBMinorenni.getSelectedItem() == 0 ){
 
                     JOptionPane.showMessageDialog(null, "Devi selezionare almeno un passeggero");
@@ -100,7 +90,6 @@ public class InserimentoBigliettoGUI {
                     JOptionPane.showMessageDialog(null, "Persone inserite più di quelle disponibili");
 
                 } else{
-                    //definire il costo totale del biglietto
 
                     CorsaTabellone corsa = controller.GetCorsa(labelCodCorsa.getText());
                     float prezzo = corsa.costocorsa;
@@ -111,10 +100,7 @@ public class InserimentoBigliettoGUI {
                     Integer NumVeicoli= (Integer) cBVeicoli.getSelectedItem();
 
 
-
-
-
-
+                    //definire il costo totale del biglietto
                     //Calcola se è una prenotazione
                     if(LocalDate.now().isBefore(corsa.datapartenza)) {
                         prezzoTotale = 2*(numAdulti+numMinorenni)+(numAdulti*prezzo)+(numMinorenni*(prezzo/2))+ (5*(int)cBValige.getSelectedItem());
@@ -123,10 +109,12 @@ public class InserimentoBigliettoGUI {
                         prezzoTotale = (numAdulti*prezzo)+(numMinorenni*(prezzo/2))+ (5*(int)cBValige.getSelectedItem());
                     }
 
+
+                    //per quando i biglietti sono solo minorenni e non si selezionano veicoli
                     if( NumVeicoli == null )NumVeicoli=0;
 
 
-
+                    //serve per assegnare tutte le valige ad il primo passeggero
                     if(NumVeicoli!=0){
                         biglietti.add(new Biglietto((Integer) cBValige.getSelectedItem(),"intero", true, p.getCf(), labelCodCorsa.getText()));
                         NumVeicoli--;
@@ -139,7 +127,7 @@ public class InserimentoBigliettoGUI {
                     }
 
 
-
+                    //Crea tutti i biglietti adulti e li aggiunge all'arrayList biglietti
                     for(int i = 1; i < numAdulti; i++){
 
 
@@ -154,22 +142,20 @@ public class InserimentoBigliettoGUI {
                     }
 
 
-
-
+                    //Crea tutti i biglietti minorenni e li aggiunge all'arrayList biglietti
                     for(int i = 0; i < numMinorenni;i++){
                         biglietti.add(new Biglietto(0, "ridotto", false, p.getCf(), labelCodCorsa.getText()));
                     }
 
 
-                    //Con l'acquisto
+                    //Messaggio di conferma dell'acquisto con prezzo totale
                     int risposta = JOptionPane.showConfirmDialog(null, "Il prezzo totale è di "+prezzoTotale+"€. Vuoi procedere all'acquisto?", "Conferma Acquisto", JOptionPane.YES_NO_OPTION);
 
+                    //controllo risposta utente
                     if (risposta == JOptionPane.YES_OPTION) {
                         if(controller.AcquistaBigliettoDAO(biglietti)==1) {
                             JOptionPane.showMessageDialog(null, "Acquisto effettuato con successo");
-
                             frameChiamante.setEnabled(true);
-
                         }else{
                             JOptionPane.showMessageDialog(null, "Problema durante l'acquisto");
                         }
@@ -178,16 +164,13 @@ public class InserimentoBigliettoGUI {
                         frameChiamante.setEnabled(true);
                         frame.setVisible(false);
                         frame.dispose();
-
                     }
-
-
                 }
-
             }
         });
 
 
+        //inserisce i numeri possibili di veicoli selezionabili tenendo conto degli adulti inseriti e veicoli ancora disponibili per quella corsa
         cBAdulti.addItemListener(new ItemListener() {
             @Override
             public void itemStateChanged(ItemEvent e) {
@@ -197,11 +180,6 @@ public class InserimentoBigliettoGUI {
                 }
             }
         });
-
-
- 
-
-
 
     }
 

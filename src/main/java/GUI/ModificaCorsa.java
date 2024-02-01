@@ -17,29 +17,30 @@ public class ModificaCorsa {
     private JButton btoCancella;
     private JComboBox CBCodice;
     private JFrame frame;
-
-
     private ArrayList<String> codici;
     private Controller controller;
+
     public JFrame frameChiamante;
+
+
     public ModificaCorsa(JFrame frameChiamante, Controller controller, Compagnia c) {
+
+        this.controller = controller;
+        this.frameChiamante = frameChiamante;
 
         CBStato.addItem("regolare");
         CBStato.addItem("annullato");
         CBStato.addItem("ritardo");
 
         codici=controller.GetCodiceCorse(c.getNomeCompagnia());
+
         for(String s: codici){
             CBCodice.addItem(s);
         }
 
-        this.controller = controller;
-        this.frameChiamante = frameChiamante;
-
         frame = new JFrame("Modifica stato corsa");
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
         //Apre la finestra la centro dello schermo
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
@@ -58,6 +59,8 @@ public class ModificaCorsa {
                 frame.dispose();
             }
         });
+
+
         btoCancella.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.
@@ -89,6 +92,8 @@ public class ModificaCorsa {
 
             }
         });
+
+
         confermaButton.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.
@@ -114,12 +119,10 @@ public class ModificaCorsa {
                     JOptionPane.showMessageDialog(null, "errore durante la modifica");
 
                 }
-
-
-
             }
         });
     }
+
 
     public JFrame getFrame() {
 

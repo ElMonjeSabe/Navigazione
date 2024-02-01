@@ -16,11 +16,13 @@ public class SocialGUI {
     private JTextField textNomeS;
     private JPanel panel;
     private JFrame frame;
+
     public JFrame frameChiamante;
+
+
     public SocialGUI(JFrame frameChiamante, Controller controller,Compagnia comp) {
 
         this.frameChiamante = frameChiamante;
-
 
         frame = new JFrame("Aggiungi Social");
         frame.setContentPane(panel);
@@ -72,6 +74,7 @@ public class SocialGUI {
             }
         });
     }
+
 
     public JFrame getFrame() {
         return frame;

@@ -16,27 +16,23 @@ import java.util.ArrayList;
 public class ListaCorse {
     private JTable table;
     private JPanel panel;
-
     private JButton buttonHome;
     private JComboBox cBImbarcazioni;
     private JButton cercaButton;
     private JSlider sliderPrezzo;
     private JLabel Prezzo;
     private JComboBox CBCompagnie;
-
     private Controller controller;
-
     private JFrame frameChiamante;
-
     static JFrame frame;
-
     private ArrayList<Compagnia> compagnie;
+
+
 
     public ListaCorse(JFrame frameChiamante, Controller controller, Passeggero p) {
 
         this.frameChiamante = frameChiamante;
         this.controller = controller;
-
 
         frame = new JFrame("Lista Corse");
         frame.setContentPane(panel);
@@ -47,7 +43,6 @@ public class ListaCorse {
 
         //Apre la finestra la centro dello schermo
         frame.setLocationRelativeTo(null);
-
 
         cBImbarcazioni.addItem("tutte");
         cBImbarcazioni.addItem("aliscafo");
@@ -60,18 +55,14 @@ public class ListaCorse {
             CBCompagnie.addItem(c.getNomeCompagnia());
         }
 
-
         sliderPrezzo.setMaximum(10000);
         sliderPrezzo.setMinimum(0);
         sliderPrezzo.setMinorTickSpacing(1);
 
-
-
-
         frame.setVisible(true);
 
-
         table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+
 
         DefaultTableModel tableModel = new DefaultTableModel(new Object[][]{}, new String[]{"Codice", "Prezzo", "Scali", "Nome Compagnia", "Partenza", "Città Partenza", "Nazione Partenza", "Destinazione", "Citta Destinazione", "Nazione Destinazione", "Data Partenza", "Data Arrivo", "Orario Partenza", "Orario Arrivo", "Stato", "Avviso"}) {
             public boolean isCellEditable(int row, int column) {
@@ -83,14 +74,11 @@ public class ListaCorse {
 
         table.setModel(tableModel);
 
-
-
         //Si fa passare la lista di corse dal controller
         ArrayList<CorsaTabellone> listaCorse = controller.getCorse();
 
 
         //Inserisce tutte le righe della tabella utilizzando l'arraylist listaCorse
-
         if (listaCorse != null) {
             for (int i = 0; i < listaCorse.size(); i++)
                 tableModel.addRow(new Object[]{
@@ -121,15 +109,11 @@ public class ListaCorse {
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-
                 frameChiamante.setVisible(true);
                 frame.setVisible(false);
                 frame.dispose();
-
             }
         });
-
-
 
 
         sliderPrezzo.addMouseMotionListener(new MouseMotionAdapter() {
@@ -144,7 +128,6 @@ public class ListaCorse {
         cercaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
 
                 //Si fa passare la lista di corse dal controller
                 controller.LeggiCorseFiltrateDAO(cBImbarcazioni.getSelectedItem().toString(), sliderPrezzo.getValue(), CBCompagnie.getSelectedItem().toString());
@@ -177,7 +160,6 @@ public class ListaCorse {
         });
 
 
-
         //Permette di selezionare una riga con un click del mouse
         table.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             public void valueChanged(ListSelectionEvent event) {
@@ -192,11 +174,13 @@ public class ListaCorse {
                         InserimentoBigliettoGUI frameInsBiglietto = new InserimentoBigliettoGUI(frame, controller);
                         frame.setEnabled(false);
                         frameInsBiglietto.frame.setVisible(true);
+
+                        // Deseleziona la riga
+                        table.clearSelection();
                     }
                 }
             }
         });
     }
-
 }
 

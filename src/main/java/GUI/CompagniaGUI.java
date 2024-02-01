@@ -14,33 +14,24 @@ import java.util.ArrayList;
 public class CompagniaGUI {
 
     public JFrame frame;
+
     public JFrame frameChiamante;
     private JPanel panel;
     private JButton aggiungiCorsaButton;
     private JButton modificaCorsaButton;
     private JButton aggiungiImbarcazioneButton;
     private JButton visualizzaCorseButton;
-    private JPanel panelTesti;
-    private JPanel panelTabella;
-    private JPanel panelAzioni;
-    private JPanel panelGridRiferimenti;
-    private JPanel panelGridAzioni;
-    private JPanel PanelGridRiferimenti2;
-    private JLabel labelRiferimenti;
-    private JLabel labelAzioni;
-    private JPanel labelGridAzioni2;
     private JButton btoSocial;
     private JLabel NomeComp;
     private JLabel EmailComp;
     private JLabel TelefonoComp;
     private JLabel SitoWebComp;
     private JButton bigliettiPasseggeriButton;
-
-
     private Controller controller;
-
     private ArrayList<Imbarcazione> imbarcazioni= new ArrayList<Imbarcazione>();
     private Compagnia c;
+
+
 
     public CompagniaGUI(JFrame frameChiamante, Controller controller) {
 
@@ -85,11 +76,10 @@ public class CompagniaGUI {
 
                     }
                 }
-
-
-
             }
         });
+
+
         modificaCorsaButton.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.
@@ -105,6 +95,8 @@ public class CompagniaGUI {
 
             }
         });
+
+
         aggiungiImbarcazioneButton.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.
@@ -119,6 +111,8 @@ public class CompagniaGUI {
                 frame.setVisible(false);
             }
         });
+
+
         btoSocial.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.
@@ -133,6 +127,8 @@ public class CompagniaGUI {
                 frame.setVisible(false);
             }
         });
+
+
         visualizzaCorseButton.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.
@@ -149,6 +145,7 @@ public class CompagniaGUI {
             }
         });
 
+
         bigliettiPasseggeriButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -159,7 +156,5 @@ public class CompagniaGUI {
             }
         });
     }
-
-
 
 }
