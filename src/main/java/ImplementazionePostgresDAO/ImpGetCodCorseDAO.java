@@ -2,7 +2,6 @@ package ImplementazionePostgresDAO;
 
 import DAO.GetCodCorseDAO;
 import Database.ConnessioneDatabase;
-import Model.Imbarcazione;
 
 import javax.swing.*;
 import java.sql.Connection;
@@ -18,7 +17,6 @@ public class ImpGetCodCorseDAO implements GetCodCorseDAO {
         try {
             connection = ConnessioneDatabase.getInstance().connection;
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 

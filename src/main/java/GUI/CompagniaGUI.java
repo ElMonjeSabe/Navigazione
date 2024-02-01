@@ -12,9 +12,7 @@ import java.util.ArrayList;
 
 
 public class CompagniaGUI {
-    private JPanel panel1;
-    private JPanel panelTesti;
-    private JTextField textEmail;
+
     public JFrame frame;
     public JFrame frameChiamante;
     private JPanel panel;
@@ -22,11 +20,7 @@ public class CompagniaGUI {
     private JButton modificaCorsaButton;
     private JButton aggiungiImbarcazioneButton;
     private JButton visualizzaCorseButton;
-    private JButton aggiungiCompagniaButton;
-    private JButton ritornaAllaHomeButton;
-    private JTextField textNome;
-    private JTextField textTelefono;
-    private JTextField textSitoWeb;
+    private JPanel panelTesti;
     private JPanel panelTabella;
     private JPanel panelAzioni;
     private JPanel panelGridRiferimenti;

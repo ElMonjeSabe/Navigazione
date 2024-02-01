@@ -1,7 +1,6 @@
 package ImplementazionePostgresDAO;
 
 import DAO.GestionePasseggeroDAO;
-import DAO.GestisciCorsaDAO;
 import Database.ConnessioneDatabase;
 import Model.Passeggero;
 
@@ -17,7 +16,6 @@ public class ImpGestionePasseggeroDAO implements GestionePasseggeroDAO {
         try {
             connection = ConnessioneDatabase.getInstance().connection;
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
@@ -27,7 +25,7 @@ public class ImpGestionePasseggeroDAO implements GestionePasseggeroDAO {
         try {
             PreparedStatement regUtente = connection.prepareStatement(
                     "Call aggiungiPass(?,?,?,?,?,?)");
-            System.out.println(p.getCf().length()+" "+p.getCf());
+            //System.out.println(p.getCf().length()+" "+p.getCf());
             regUtente.setString(1,p.getCf());
             regUtente.setString(2,p.getNome());
             regUtente.setString(3,p.getCognome());

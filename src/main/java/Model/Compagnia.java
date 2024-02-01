@@ -16,8 +16,6 @@ public class Compagnia {
 
     private ArrayList<Social> socials;
 
-    //private ArrayList<Imbarcazione> imbarcazioni;
-
     private Imbarcazione imbarcazione;
 
 

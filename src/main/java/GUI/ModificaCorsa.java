@@ -9,19 +9,14 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class ModificaCorsa {
-    private JTextField textNomeC;
     private JTextField textAvviso;
     private JButton indietroButton;
     private JButton confermaButton;
     private JComboBox CBStato;
-    private JTextField textCodice;
     private JPanel panel;
     private JButton btoCancella;
     private JComboBox CBCodice;
-    private JComboBox CBImbarcazione;
     private JFrame frame;
-
-
 
 
     private ArrayList<String> codici;

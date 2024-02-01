@@ -40,6 +40,7 @@ public class BigliettiAcquistatiGUI {
 
         table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         DefaultTableModel tableModel = new DefaultTableModel(new Object[][]{}, new String[]{"Codice Corsa", "Codice Biglietto","Tipobiglietto","Prezzo","Data Acquisto","Veicolo", "Numbagagli" ,"Prenotazione"}) {
+           @Override
             public boolean isCellEditable(int row, int column) {
                 // Tutte le celle non sono modificabili
                 return false;

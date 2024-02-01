@@ -48,7 +48,7 @@ public class RegCompagnia {
 
         frame.pack();
         frame.setResizable(true);
-        //frame.setSize(400, 250);
+
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
@@ -131,7 +131,5 @@ public class RegCompagnia {
         });
     }
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
-    }
+
 }

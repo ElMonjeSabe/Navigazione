@@ -18,14 +18,13 @@ public class ImplementazioneLeggiCorseDAO implements CorseDAO{
         try {
             connection = ConnessioneDatabase.getInstance().connection;
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
 
     @Override
     public void leggiCorseDB(ArrayList<CorsaTabellone> corse) {
-        // TODO Auto-generated method stub
+
         try {
             PreparedStatement leggiTabellaPS = connection.prepareStatement(
                     "SELECT * FROM Tabellone WHERE datapartenza IN (?,?)");
@@ -64,12 +63,10 @@ public class ImplementazioneLeggiCorseDAO implements CorseDAO{
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Errore: " + e.getMessage());
-
         }
     }
 
     public void leggiCorseCompagniaDB(ArrayList<CorsaTabellone> corse, String nomeCompagnia) {
-        // TODO Auto-generated method stub
         try {
             PreparedStatement leggiTabellaPS = connection.prepareStatement(
                     "SELECT * FROM Tabellone WHERE nomecompagnia=?"+
@@ -114,7 +111,6 @@ public class ImplementazioneLeggiCorseDAO implements CorseDAO{
 
     @Override
     public void leggiCorseFiltroDB(ArrayList<CorsaTabellone> corse, String TipoImb, int prezzo, String comp) {
-        // TODO Auto-generated method stub
         try {
             PreparedStatement leggiTabellaPS = connection.prepareStatement(
                     "SELECT CodiceCorsa,costocorsa,scali,nomecompagnia,partenza,cittapartenza,nazionepartenza,destinazione,cittadestinazione,nazionedestinazione,datapartenza,dataarrivo,orariopartenza,orarioarrivo,stato,avviso\n" +
@@ -176,7 +172,7 @@ public class ImplementazioneLeggiCorseDAO implements CorseDAO{
     }
     @Override
     public void leggiCorseCompagniaFiltroDB(ArrayList<CorsaTabellone> corse, String TipoImb, int prezzo, String comp) {
-        // TODO Auto-generated method stub
+
         try {
             PreparedStatement leggiTabellaPS = connection.prepareStatement(
                     "SELECT CodiceCorsa,costocorsa,scali,nomecompagnia,partenza,cittapartenza,nazionepartenza,destinazione,cittadestinazione,nazionedestinazione,datapartenza,dataarrivo,orariopartenza,orarioarrivo,stato,avviso\n" +

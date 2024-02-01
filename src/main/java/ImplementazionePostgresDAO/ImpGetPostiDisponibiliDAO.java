@@ -17,7 +17,6 @@ public class ImpGetPostiDisponibiliDAO implements GetPostiDisponibiliDAO {
         try {
             connection = ConnessioneDatabase.getInstance().connection;
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 

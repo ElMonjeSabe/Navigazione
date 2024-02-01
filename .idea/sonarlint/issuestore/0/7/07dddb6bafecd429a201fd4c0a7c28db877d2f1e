@@ -1,7 +1,6 @@
 
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á–Ì“8Çœ“ýÏ1
-^	java:S1074"BConstructor has 10 parameters, which is greater than 7 authorized.(æ“ßà8Ëœ“ýÏ1
-]	java:S107H"AConstructor has 8 parameters, which is greater than 7 authorized.(ˆ¦Ê¢8Ëœ“ýÏ1
-]	java:S125"<This block of commented-out lines of code should be removed.(¹Ãß›ÿÿÿÿÿ8Ìœ“ýÏ1
+^	java:S1072"BConstructor has 10 parameters, which is greater than 7 authorized.(æ“ßà8Ëœ“ýÏ1
+]	java:S107F"AConstructor has 8 parameters, which is greater than 7 authorized.(ˆ¦Ê¢8Ëœ“ýÏ1
 R
-java:S1068"0Remove this unused "imbarcazione" private field.(Î°Ø‹øÿÿÿÿ8Òœ“ýÏ1
+java:S1068"0Remove this unused "imbarcazione" private field.(Î°Ø‹øÿÿÿÿ8Òœ“ýÏ1

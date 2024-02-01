@@ -6,7 +6,6 @@ import Model.Imbarcazione;
 
 import javax.swing.*;
 import java.sql.*;
-import java.util.ArrayList;
 
 public class ImpAggiungiImbarcazioneDAO implements AggiungiImbarcazioneDAO {
     private Connection connection;
@@ -16,14 +15,12 @@ public class ImpAggiungiImbarcazioneDAO implements AggiungiImbarcazioneDAO {
         try {
             connection = ConnessioneDatabase.getInstance().connection;
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
 
 
     public boolean AggiungiImbarcazioneDB(Imbarcazione im) {
-        // TODO Auto-generated method stub
         try {
             PreparedStatement pstmt = connection.prepareStatement("call AggiungiImbarcazione( ?,?,?,?,?,?);");
 

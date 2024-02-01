@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SocialGUI {
-    private JTextField textNomeC;
+
     private JTextField textURL;
     private JButton indietroButton;
     private JButton confermaButton;
@@ -45,7 +45,7 @@ public class SocialGUI {
                             "\nil nome valdi per aggiungere il social!");
                 }
                 else{
-                    Social social = new Social( url, nomes,controller.getCompagnia());
+                    Social social = new Social( url, nomes,comp);
                     if(controller.AggiungiSocial(social)){
                         JOptionPane.showMessageDialog(null, "Social aggiunto correttamente");
                         frameChiamante.setVisible(true);

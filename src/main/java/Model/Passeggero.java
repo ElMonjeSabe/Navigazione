@@ -2,7 +2,6 @@ package Model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * The type Passeggero.

@@ -3,7 +3,6 @@ package ImplementazionePostgresDAO;
 import DAO.AggiungiCorseDAO;
 import Database.ConnessioneDatabase;
 import Model.Corsa;
-import Model.Imbarcazione;
 import Model.Percorso;
 
 import javax.swing.*;
@@ -19,7 +18,6 @@ public class ImpAggiungiCorseDAO implements AggiungiCorseDAO {
         try {
             connection = ConnessioneDatabase.getInstance().connection;
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -28,8 +26,6 @@ public class ImpAggiungiCorseDAO implements AggiungiCorseDAO {
     public boolean AggiungiCorseDB(ArrayList<Percorso> percorsi, ArrayList<Corsa> corse) {
 
         //avvio una transazione
-
-        // TODO Auto-generated method stub
         try {
             pstmt=connection.prepareStatement("begin");
             pstmt.execute();

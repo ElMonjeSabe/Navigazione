@@ -3,6 +3,7 @@ package ImplementazionePostgresDAO;
 import DAO.CancellaCorsaDAO;
 import Database.ConnessioneDatabase;
 
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -16,7 +17,6 @@ public class ImpCancellaCorsaDAO implements CancellaCorsaDAO {
         try {
             connection = ConnessioneDatabase.getInstance().connection;
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -37,7 +37,7 @@ public class ImpCancellaCorsaDAO implements CancellaCorsaDAO {
 
         } catch (SQLException e) {
 
-            System.out.println("Errore: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Errore: " + e.getMessage());
 
             return false;
         }

@@ -1,6 +1,5 @@
 package DAO;
 
-import Model.Corsa;
 import Model.CorsaTabellone;
 
 import java.util.ArrayList;

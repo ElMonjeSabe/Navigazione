@@ -2,7 +2,6 @@ package ImplementazionePostgresDAO;
 
 import DAO.AggiungiSocialDAO;
 import Database.ConnessioneDatabase;
-import Model.Compagnia;
 import Model.Social;
 
 import javax.swing.*;
@@ -18,14 +17,12 @@ public class ImpAggiungiSocialDAO implements AggiungiSocialDAO {
         try {
             connection = ConnessioneDatabase.getInstance().connection;
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
 
 
     public boolean AggiungiSocialDB(Social soc) {
-        // TODO Auto-generated method stub
         try {
             PreparedStatement pstmt = connection.prepareStatement("insert into Social values(?,?,?);");
 

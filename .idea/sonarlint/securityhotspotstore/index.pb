@@ -241,3 +241,19 @@ T
 $src/main/java/GUI/AggiungiCorsa.java,a\4\a41323fbe4bb4231f5a78b0b0e091c5c04a7c94b
 T
 $src/main/java/GUI/AggiungiCorsa.form,c\1\c1bd905edcdba7bd03e8031e34c1407999d4b336
+N
+src/main/java/GUI/Accesso.java,2\7\27e3e159f83519d34dd02931402c1f3e5f9d9fe4
+T
+$src/main/java/GUI/PasseggeroGUI.java,8\6\860d1a20108d635dfe6f6937c9b2b85c011769cf
+S
+#src/main/java/GUI/RegCompagnia.java,2\e\2e3b8b16de18f696758445d6c01f33ce0000ec58
+P
+ src/main/java/GUI/RegUtente.java,6\8\683ee0c9b6009982391212b16b9ef66cfaae0ee1
+P
+ src/main/java/GUI/SocialGUI.form,b\e\be8b2e1ac48390025017e6226de5fc3a89b1f6af
+w
+Gsrc/main/java/ImplementazionePostgresDAO/ImpGetPostiDisponibiliDAO.java,e\6\e6c197a76879604806355a17a22dff53e8dc23cc
+Å
+Qsrc/main/java/ImplementazionePostgresDAO/ImplementazioneAcquistaBigliettoDAO.java,4\c\4c742e373b9e4f80b863194d7618ac37f5698049
+\
+,src/main/java/Model/BigliettiAcquistati.java,3\f\3f6783a387a53419c177c25c511d7ff0cd7d5fd8

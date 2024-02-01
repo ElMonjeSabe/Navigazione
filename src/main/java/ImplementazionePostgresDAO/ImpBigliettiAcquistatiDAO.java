@@ -3,11 +3,9 @@ package ImplementazionePostgresDAO;
 import DAO.BigliettiAcquistatiDAO;
 import Database.ConnessioneDatabase;
 import Model.BigliettiAcquistati;
-import Model.CorsaTabellone;
 
 import javax.swing.*;
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ImpBigliettiAcquistatiDAO implements BigliettiAcquistatiDAO {
@@ -18,14 +16,12 @@ public class ImpBigliettiAcquistatiDAO implements BigliettiAcquistatiDAO {
         try {
             connection = ConnessioneDatabase.getInstance().connection;
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
 
     @Override
     public void leggiBigliettiAcquistatiUtenteDB(ArrayList<BigliettiAcquistati> bigliettiAcquistati, String cf) {
-        // TODO Auto-generated method stub
         try {
             PreparedStatement leggiBiglAcqPS = connection.prepareStatement(
                     "SELECT * FROM bigliettiAcquistati WHERE cf = ?");
@@ -66,7 +62,6 @@ public class ImpBigliettiAcquistatiDAO implements BigliettiAcquistatiDAO {
 
     @Override
     public void leggiBigliettiAcquistatiCompagniaDB(ArrayList<BigliettiAcquistati> bigliettiAcquistati, String NomeCompagnia) {
-        // TODO Auto-generated method stub
         try {
             PreparedStatement leggiBiglAcqPS = connection.prepareStatement(
                     "SELECT b.* FROM bigliettiAcquistati b JOIN corsa c ON b.codicecorsa = c.codicecorsa  WHERE c.FKComp = ?");

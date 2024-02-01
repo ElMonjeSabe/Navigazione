@@ -1,8 +1,5 @@
 
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Åíáòÿÿÿÿÿ
 q
-java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ùî¹ëùÿÿÿÿ8Ã…”ŒÏ1
-M
-java:S1135"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ
-N
-java:S1128"1Remove this unused import 'DAO.GestisciCorsaDAO'.(Ö¤‚Æ8É…”ŒÏ1
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ùî¹ëùÿÿÿÿ8Ã…”ŒÏ1
+]	java:S125"<This block of commented-out lines of code should be removed.(†ëË”úÿÿÿÿ8­•Ñ•Ö1

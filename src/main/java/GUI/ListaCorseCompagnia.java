@@ -3,7 +3,6 @@ package GUI;
 import Controller.Controller;
 import Model.Compagnia;
 import Model.CorsaTabellone;
-import Model.Passeggero;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -65,6 +64,7 @@ public class ListaCorseCompagnia {
         table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 
         DefaultTableModel tableModel = new DefaultTableModel(new Object[][]{}, new String[]{"Codice", "Prezzo","Scali","Nome Compagnia", "Partenza", "Città Partenza", "Nazione Partenza", "Destinazione", "Citta Destinazione", "Nazione Destinazione", "Data Partenza", "Data Arrivo", "Orario Partenza", "Orario Arrivo", "Stato", "Avviso"}) {
+            @Override
             public boolean isCellEditable(int row, int column) {
                 // Tutte le celle non sono modificabili
                 return false;

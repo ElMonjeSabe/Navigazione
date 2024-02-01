@@ -3,14 +3,12 @@ package ImplementazionePostgresDAO;
 import DAO.AcquistaBigliettoDAO;
 import Database.ConnessioneDatabase;
 import Model.Biglietto;
-import Model.CorsaTabellone;
 
 import javax.swing.*;
 import java.sql.*;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class ImplementazioneAcquistaBigliettoDAO implements AcquistaBigliettoDAO {
     private Connection connection;
@@ -19,7 +17,6 @@ public class ImplementazioneAcquistaBigliettoDAO implements AcquistaBigliettoDAO
         try {
             connection = ConnessioneDatabase.getInstance().connection;
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -82,7 +79,7 @@ public class ImplementazioneAcquistaBigliettoDAO implements AcquistaBigliettoDAO
 
              }else{
                  JOptionPane.showMessageDialog(null, "Errore sconosciuto");
-                 System.out.println(e.getMessage());
+                 //System.out.println(e.getMessage());
 
              }
             return 0;

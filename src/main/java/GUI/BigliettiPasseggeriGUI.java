@@ -3,7 +3,6 @@ package GUI;
 import Controller.Controller;
 import Model.BigliettiAcquistati;
 import Model.Compagnia;
-import Model.CorsaTabellone;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -63,6 +62,7 @@ public class BigliettiPasseggeriGUI {
 
         table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         DefaultTableModel tableModel = new DefaultTableModel(new Object[][]{}, new String[]{"Codice Corsa", "CF","Nome","Cognome","Datanascita","Codice Biglietto","Tipobiglietto","Prezzo","Data Acquisto","Veicolo", "Numbagagli" ,"Prenotazione"}) {
+           @Override
             public boolean isCellEditable(int row, int column) {
                 // Tutte le celle non sono modificabili
                 return false;
@@ -122,7 +122,7 @@ public class BigliettiPasseggeriGUI {
 
 
                 //Inserisce tutte le righe della tabella utilizzando l'arraylist listaBA
-//tipobiglietto,prezzo,dataacquisto,veicolo,numbagagli,prenotazione
+                //tipobiglietto,prezzo,dataacquisto,veicolo,numbagagli,prenotazione
                 if (listaBA != null) {
                     for (i = 0; i < listaBA.size(); i++){
                         tableModel.addRow(new Object[]{

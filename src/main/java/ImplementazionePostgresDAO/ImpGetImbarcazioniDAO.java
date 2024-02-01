@@ -2,7 +2,6 @@ package ImplementazionePostgresDAO;
 
 import DAO.GetImbarcazioniDAO;
 import Database.ConnessioneDatabase;
-import Model.Compagnia;
 import Model.Imbarcazione;
 
 import javax.swing.*;
@@ -19,7 +18,6 @@ public class ImpGetImbarcazioniDAO implements GetImbarcazioniDAO {
         try {
             connection = ConnessioneDatabase.getInstance().connection;
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 

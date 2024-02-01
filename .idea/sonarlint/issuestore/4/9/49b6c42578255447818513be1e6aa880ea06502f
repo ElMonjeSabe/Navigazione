@@ -1,30 +1,20 @@
 
 k
-java:S1192B"IDefine a constant instead of duplicating this literal "Errore: " 4 times.(Õ§òÿøÿÿÿÿ8–š»òÓ1
+java:S1192A"IDefine a constant instead of duplicating this literal "Errore: " 4 times.(Õ§òÿøÿÿÿÿ8–š»òÓ1
 h
-java:S1192~"FDefine a constant instead of duplicating this literal "tutte" 4 times.(ÇÃ—Õùÿÿÿÿ8—š»òÓ1
-r	java:S117t"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æº—şÿÿÿÿ8—¬ğÒÑ1
-n	java:S117²"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²”ê„8—š»òÓ1
+java:S1192z"FDefine a constant instead of duplicating this literal "tutte" 4 times.(ÇÃ—Õùÿÿÿÿ8—š»òÓ1
+r	java:S117q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æº—şÿÿÿÿ8—¬ğÒÑ1
+n	java:S117®"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²”ê„8—š»òÓ1
 {	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Åíáòÿÿÿÿÿ8˜¬ğÒÑ1
+q
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ü”í‹üÿÿÿÿ8ØÔ·“Ö1
+q
+java:S2095G"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ü”í‹üÿÿÿÿ8È€·“Ö1
 r
-java:S2095µ"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ü”í‹üÿÿÿÿ8°¡ŸÓÑ1
+java:S2095±"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ü”í‹üÿÿÿÿ8ØÔ·“Ö1
 q
-java:S2095J"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ü”í‹üÿÿÿÿ8ß¬ğÒÑ1
-q
-java:S2095w"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ü”í‹üÿÿÿÿ8ÉÕ»òÓ1
-q
-java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ü”í‹üÿÿÿÿ8ˆôÖòÓ1
-T
-java:S1135"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8â¬ğÒÑ1
-T
-java:S1135"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8ã¬ğÒÑ1
-T
-java:S1135H"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8æ¬ğÒÑ1
-T
-java:S1135u"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8†›»òÓ1
+java:S2095s"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ü”í‹üÿÿÿÿ8ØÔ·“Ö1
 O
-java:S6126x"2Replace this String concatenation with Text block.(ş÷œ´8¾¡ŸÓÑ1
-U
-java:S1135³"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8Ÿ¨ÖòÓ1
+java:S6126t"2Replace this String concatenation with Text block.(ş÷œ´8àÔ·“Ö1
 P
-java:S6126¶"2Replace this String concatenation with Text block.(ş÷œ´8‡›»òÓ1
+java:S6126²"2Replace this String concatenation with Text block.(ş÷œ´8äÔ·“Ö1

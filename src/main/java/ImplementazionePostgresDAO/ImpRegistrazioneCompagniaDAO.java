@@ -20,7 +20,6 @@ public class ImpRegistrazioneCompagniaDAO implements RegistrazioneCompagniaDAO {
         try {
             connection = ConnessioneDatabase.getInstance().connection;
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -29,8 +28,6 @@ public class ImpRegistrazioneCompagniaDAO implements RegistrazioneCompagniaDAO {
     public boolean RegistrazioneCompagniaDB(Compagnia comp, Imbarcazione imb) {
 
         //avvio una transazione
-
-        // TODO Auto-generated method stub
         try {
             pstmt=connection.prepareStatement("begin;");
             pstmt.execute();
