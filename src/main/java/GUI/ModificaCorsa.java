@@ -41,7 +41,8 @@ public class ModificaCorsa {
         frame = new JFrame("Modifica stato corsa");
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //Apre la finestra la centro dello schermo
+        //ridimensiono la finestra
+        frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 

@@ -25,8 +25,6 @@ public class Corsa {
     private ArrayList<Percorso> percorsi;
 
 
-    //vedere se fare costruttore passando direttamente l'arraylist di percorsi
-
     /**
      * Instantiates a new Corsa.
      *
@@ -116,21 +114,10 @@ public class Corsa {
         return imbarcazioneUtilizzata;
     }
 
-    public String getNomeCompagniaOfferente() {
-        return nomeCompagniaOfferente;
-    }
+
 
     public Compagnia getCompagniaOfferente() {
         return compagniaOfferente;
     }
 
-    public void stampaCorsa()
-    {
-        System.out.println(this.codiceCorsa+ " ");
-        System.out.println(this.costoCorsa+ " ");
-        System.out.println(this.avviso+ " ");
-        System.out.println(this.stato+ " ");
-        System.out.println(this.imbarcazioneUtilizzata.getCodice()+" ");
-        System.out.println(this.nomeCompagniaOfferente+ "\n\n");
-    }
 }

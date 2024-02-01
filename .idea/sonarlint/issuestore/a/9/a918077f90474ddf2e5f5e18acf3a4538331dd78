@@ -4,7 +4,4 @@ java:S2293"YReplace the type specification in this constructor call with the d
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á–Ì“8ŸùˆÔÃ1
 >
 java:S1116&"Remove this empty statement.(ôŸŽìúÿÿÿÿ8¼í©·Î1
-j	java:S100/"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†˜‚ö8¼í©·Î1
-o	java:S100<"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñ¥éþûÿÿÿÿ8·­ç•Ö1
-j	java:S100D"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ò‡Úú8¿í©·Î1
-o	java:S100J"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬ªÝ½þÿÿÿÿ8Àí©·Î1
+o	java:S1001"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñ¥éþûÿÿÿÿ8·­ç•Ö1

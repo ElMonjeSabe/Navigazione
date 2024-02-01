@@ -207,6 +207,7 @@ public class AggiungiCorsa {
                 //indica i giorni di attesa dalla partenza di scalo per arrivare al porto di arrivo, dopo essere arrivato, dal porto di partenza, a quello di scalo
                 int giorniAttesa=0;
 
+
                 if (!textCodice.getText().equals("") || !tfCosto.getText().equals("") || spGiorniPartenza.equals("") || spGiorniScalo.equals("") || spGiorniAttesa.equals("") ) {
                     try {
                         //controllo se questi valori sono interi

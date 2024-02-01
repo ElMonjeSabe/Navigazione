@@ -6,9 +6,9 @@ r	java:S117"QRename this local variable to match the regular expression '^[a-
 m	java:S1174"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷¨Þù8ÑÊ¯ÒÑ1
 {	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Åíáòÿÿÿÿÿ8ÒÊ¯ÒÑ1
 q
-java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¦¥Å—ùÿÿÿÿ8„Ë¯ÒÑ1
-q
 java:S20959"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ë¿Ò´üÿÿÿÿ8„Ë¯ÒÑ1
+q
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¦¥Å—ùÿÿÿÿ8„Ë¯ÒÑ1
 G	java:S106*"+Replace this use of System.out by a logger.(¹å›ð8‰Ë¯ÒÑ1
 G	java:S106W"+Replace this use of System.out by a logger.(¹å›ð8‹Ë¯ÒÑ1
 R

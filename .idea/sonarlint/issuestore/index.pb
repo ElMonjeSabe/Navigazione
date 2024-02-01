@@ -1,8 +1,6 @@
 
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-G
-src/main/java/main.java,d\3\d3c26bf08301c98991887bafaf09d331e2067b4c
 R
 "src/main/java/Model/Biglietto.java,e\f\efa16f9ce38984c2b9339b3fa6528bd6c95e275f
 S
@@ -35,16 +33,10 @@ S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
 ]
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
-L
-src/main/java/Gui/Home2.form,5\2\52b8ca1f821da21afd3040b8d9b59497da931d5e
-L
-src/main/java/Gui/Home2.java,6\c\6ce02b66d5cdecd4f1af8786efaf5e68e9666ef9
 N
 src/main/java/Gui/Accesso.form,5\e\5eadebb7332bba7ae85ffadeb3f1d8fcb25a0b62
 S
 #src/main/java/Gui/CompagniaGUI.form,5\6\562475391d9f7d47868b5eacbbc0b8c82ca06477
-Z
-*src/main/java/Gui/ConfermaAcquistoGui.form,6\a\6aaf14678470467ff9d9919ec802ad439cba8e6a
 N
 src/main/java/Gui/Accesso.java,e\5\e5e3ae20b7fbfc60641fba1cd3696d299ef82585
 S
@@ -79,8 +71,6 @@ G.idea/sonarlint/issuestore/5/2/52b8ca1f821da21afd3040b8d9b59497da931d5e,d\a\da
 Q.idea/sonarlint/securityhotspotstore/5/2/52b8ca1f821da21afd3040b8d9b59497da931d5e,3\4\34f13efad92cf728261221fdbd18449feb5df224
 Å
 Q.idea/sonarlint/securityhotspotstore/a/e/ae515d2f548116a4fb3bfc3b27045f8985f36ace,c\9\c9cf73f6c14841b3deb17081b7bfb0ec6c7cfb68
-w
-G.idea/sonarlint/issuestore/6/a/6aaf14678470467ff9d9919ec802ad439cba8e6a,3\c\3c1987131f78d6e5a871cb0491c5cfb62cf17d6f
 Å
 Q.idea/sonarlint/securityhotspotstore/e/5/e5e3ae20b7fbfc60641fba1cd3696d299ef82585,7\6\76637ed363a93e8051f5a1203672486197a1e748
 w
@@ -95,8 +85,6 @@ G.idea/sonarlint/issuestore/5/6/562475391d9f7d47868b5eacbbc0b8c82ca06477,0\8\08
 Q.idea/sonarlint/securityhotspotstore/6/c/6ce02b66d5cdecd4f1af8786efaf5e68e9666ef9,f\f\ff19682b482528a2ba1be459c79f6a17941c7d9a
 Å
 Q.idea/sonarlint/securityhotspotstore/c/7/c7dd2978408a4b7222db75b09f8b5f1101a18e86,1\6\161c6bbaeceaa74aa55525dca4d4940fe9babb3b
-Å
-Q.idea/sonarlint/securityhotspotstore/6/a/6aaf14678470467ff9d9919ec802ad439cba8e6a,b\b\bb847473a36a5c27a699c78469331b362ce97983
 Å
 Q.idea/sonarlint/securityhotspotstore/5/6/562475391d9f7d47868b5eacbbc0b8c82ca06477,3\e\3e77d17296f3de7bac647ee4014f70fed099fcaa
 Å
@@ -203,8 +191,6 @@ Y
 .src/main/java/Gui/InserimentoBigliettoGUI.java,5\3\53a3ef3ae7bcd50bc5cde65a76aff6c300834462
 [
 +src/main/java/GUI/AggiungiImbarcazione.java,3\0\30be6f7ce76160855bd5126cbed381cf25b1f441
-L
-src/main/java/GUI/Home2.java,9\4\94c259839547da120ce3671659d14594e87757d0
 S
 #src/main/java/GUI/CompagniaGUI.form,c\7\c73a9436f9ecc04f4e0088c771756c9084cda38d
 S
@@ -257,3 +243,7 @@ Gsrc/main/java/ImplementazionePostgresDAO/ImpGetPostiDisponibiliDAO.java,e\6\e6
 Qsrc/main/java/ImplementazionePostgresDAO/ImplementazioneAcquistaBigliettoDAO.java,4\c\4c742e373b9e4f80b863194d7618ac37f5698049
 \
 ,src/main/java/Model/BigliettiAcquistati.java,3\f\3f6783a387a53419c177c25c511d7ff0cd7d5fd8
+K
+src/main/java/GUI/Home.java,3\c\3cdbf704492b54ced45c9ce2d236deccb04af514
+K
+src/main/java/GUI/Home.form,7\d\7dcdd7a9bdb225cf74b15d4425ef6e1139aaa09c

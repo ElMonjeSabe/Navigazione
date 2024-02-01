@@ -25,7 +25,7 @@ public class ImpCancellaCorsaDAO implements CancellaCorsaDAO {
     public boolean CancellaCorsaDB(String codice) {
         try {
             //genera il codice del biglietto
-            PreparedStatement pstmt = connection.prepareStatement("delete from corsa where codicecorsa=?;");
+            PreparedStatement pstmt = connection.prepareStatement("delete from corsa where substring(codicecorsa,2,7)=substring(?,2,7);");
 
             pstmt.setString(1,codice);
             pstmt.execute();

@@ -7,7 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Home2 {
+public class Home {
     private JButton btCompagnia;
     private JButton btUtente;
     private JButton btAccedi;
@@ -17,13 +17,13 @@ public class Home2 {
 
 
     Controller controller = new Controller();
-    public static JFrame getFrame() { //???????????????????????????????????????????????????????????????
+    public static JFrame getFrame() {
 
         return frame;
     }
 
 
-    public Home2() {
+    public Home() {
 
         btUtente.addActionListener(new ActionListener() {
             @Override
@@ -69,7 +69,7 @@ public class Home2 {
 
     public static void main(String[] args) {
         frame = new JFrame("Schermata Principale");
-        frame.setContentPane(new Home2().panel);
+        frame.setContentPane(new Home().panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 350);
         frame.setMinimumSize(new Dimension(340, 240));

@@ -85,22 +85,5 @@ public class Percorso {
         return corsa;
     }
 
-    public String getCodCorsa() {
-        return codCorsa;
-    }
 
-    public int getCodPorto() {
-        return codPorto;
-    }
-
-    public void stampaPercorso()
-    {
-        System.out.println(this.orarioPartenza+ " ");
-        System.out.println(this.orarioArrivo+ " ");
-        System.out.println(this.dataAttivazione+ " ");
-        System.out.println(this.dataScadenza+ " ");
-        System.out.println(this.tipoPercorso+" ");
-        System.out.println(this.codPorto+" ");
-        System.out.println(this.codCorsa+ "\n\n");
-    }
 }

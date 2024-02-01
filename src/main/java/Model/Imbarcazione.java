@@ -15,6 +15,8 @@ public class Imbarcazione {
     private Compagnia compagniaPoss;
     private ArrayList<Corsa> corse= new ArrayList<Corsa>();
 
+    private String nomeCompagniaPoss;
+
     /**
      * Instantiates a new Imbarcazione.
      *
@@ -27,7 +29,7 @@ public class Imbarcazione {
      */
 
 
-    String nomeCompagniaPoss;
+
     public Imbarcazione(String codice, String nome, String tipo, int maxpersone, int maxveicoli, String compagnia){
         this.codiceImbarcazione=codice;
         this.nomeImbarcazione=nome;

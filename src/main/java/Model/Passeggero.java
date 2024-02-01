@@ -38,17 +38,6 @@ public class Passeggero {
     };
 
 
-
-    /**
-     * Acquista biglietto.
-     *
-     * @param b the b
-     */
-    void AcquistaBiglietto(Biglietto b){
-
-        biglietti.add(b);
-    }
-
     /**
      * Acquista biglietto.
      *
@@ -62,18 +51,6 @@ public class Passeggero {
         biglietti.add(new Biglietto(bagagli,veicolo,LocalDate.now(), prenotazione,this, corsa));
     }
 
-    /**
-     * Visualizza corse.
-     */
-    void VisualizzaCorse(){
-        /*SQL mostrare la view
-        * */
-    }
-
-
-    public void VisualizzaBiglietti(){
-        //qury sql per prendere i biglietti di quell'utente (cf)
-    }
 
     public String getCf() {
         return cf;

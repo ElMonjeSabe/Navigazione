@@ -4,7 +4,6 @@ import java.time.LocalDate;
 
 public class BigliettiAcquistati {
 
-    //mettere nome camel case (ES. CodiceCorsa) e nei campo, al posto di public, mettere private
 
     public String codicecorsa;
     public String cf;
