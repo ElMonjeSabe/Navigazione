@@ -1,8 +1,5 @@
 package Model;
 
-/**
- * The type Porto.
- */
 public class Porto {
 
 
@@ -12,13 +9,7 @@ public class Porto {
     private int idPorto;
 
 
-    /**
-     * Instantiates a new Porto.
-     *
-     * @param nomePorto the nome porto
-     * @param citta     the citta
-     * @param nazione   the nazione
-     */
+
     public Porto(String nomePorto, String citta, String nazione, int idPorto) {
         NomePorto = nomePorto;
         Citta = citta;

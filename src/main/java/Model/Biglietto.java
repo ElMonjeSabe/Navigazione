@@ -2,13 +2,10 @@ package Model;
 
 import java.time.LocalDate;
 
-/**
- * The type Biglietto.
- */
+
 public class Biglietto {
 
     private String tipoBiglietto;
-    private String CodiceBiglietto;
     private double Prezzo;
     private int numerobagagli;
     private boolean veicolo;
@@ -31,9 +28,7 @@ public class Biglietto {
     }
 
 
-    /**
-     * Instantiates a new Biglietto.
-     */
+
     public Biglietto(int bagagli, boolean veicolo, LocalDate dataAcquisto, boolean prenotazione,Passeggero possessore, Corsa corsa)
  {
         this.numerobagagli=bagagli;
@@ -82,14 +77,8 @@ public class Biglietto {
         return Prezzo;
     }
 
-    public int getNumerobagagli() {
+    public int getNumeroBagagli() {
         return numerobagagli;
     }
-
-
-
-
-
-
 
 }

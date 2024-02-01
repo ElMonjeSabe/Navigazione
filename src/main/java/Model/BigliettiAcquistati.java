@@ -12,13 +12,11 @@ public class BigliettiAcquistati {
     public String codicebiglietto;
     public String tipobiglietto;
     public LocalDate datanascita;
-
     public LocalDate dataacquisto;
     public int numeroBagagli;
 
     public float prezzo;
     public Boolean veicolo;
-
     public Boolean prenotazione;
 
     public BigliettiAcquistati(String codicecorsa, String cf, String nome, String cognome, LocalDate datanascita, String codicebiglietto, String tipobiglietto, float prezzo, LocalDate dataacquisto,Boolean veicolo,int numeroBagagli, Boolean prenotazione) {

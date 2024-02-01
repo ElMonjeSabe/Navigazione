@@ -53,7 +53,7 @@ public class ImplementazioneAcquistaBigliettoDAO implements AcquistaBigliettoDAO
                 pstmt.setString(2, b.get(i).getTipoBiglietto());
                 pstmt.setDate(3, Date.valueOf(LocalDate.now()));
                 pstmt.setBoolean(4, b.get(i).getVeicolo());
-                pstmt.setObject(5, b.get(i).getNumerobagagli());
+                pstmt.setObject(5, b.get(i).getNumeroBagagli());
                 pstmt.setString(6, b.get(i).getcfposs());
                 pstmt.setString(7, b.get(i).getcodCorsa());
 

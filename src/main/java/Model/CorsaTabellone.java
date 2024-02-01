@@ -9,7 +9,6 @@ import java.util.Date;
 public class CorsaTabellone {
     public String CodiceCorsa;
     public Float costocorsa;
-
     public String nomeCompagnia;
     public String partenza;
     public String cittapartenza;
@@ -25,8 +24,10 @@ public class CorsaTabellone {
     public String stato;
 
     public String avviso;
-
     public int scali;
+
+
+
             public CorsaTabellone(String CodiceCorsa, Float costocorsa, int scali, String nomeCompagnia, String partenza, String cittapartenza, String nazionepartenza, String destinazione, String cittadestinazione, String nazionedestinazione, LocalDate datapartenza, LocalDate dataarrivo, Time orariopartenza, Time orarioarrivo, String stato, String avviso) {
                 this.CodiceCorsa = CodiceCorsa;
                 this.costocorsa = costocorsa;
