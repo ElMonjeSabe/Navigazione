@@ -27,7 +27,6 @@ public class Accesso {
     private Controller controller;
 
 
-
     public Accesso(JFrame frameChiamante, Controller controller){
         this.frameChiamante = frameChiamante;
         this.controller = controller;

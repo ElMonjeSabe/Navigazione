@@ -28,7 +28,6 @@ public class ListaCorse {
     private ArrayList<Compagnia> compagnie;
 
 
-
     public ListaCorse(JFrame frameChiamante, Controller controller, Passeggero p) {
 
         this.frameChiamante = frameChiamante;

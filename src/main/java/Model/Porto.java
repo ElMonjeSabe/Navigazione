@@ -9,7 +9,6 @@ public class Porto {
     private int idPorto;
 
 
-
     public Porto(String nomePorto, String citta, String nazione, int idPorto) {
         NomePorto = nomePorto;
         Citta = citta;

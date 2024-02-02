@@ -23,7 +23,6 @@ public class Percorso {
 //    private int codPorto;
 
 
-
     public Percorso(LocalTime orarioPartenza, LocalTime orarioArrivo, LocalDate dataAttivazione, LocalDate dataScadenza, String tappa, Porto porto, Corsa corsa) {
         this.orarioPartenza = orarioPartenza;
         this.orarioArrivo = orarioArrivo;

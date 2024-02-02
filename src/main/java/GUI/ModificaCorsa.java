@@ -143,6 +143,7 @@ public class ModificaCorsa {
     });
 
 }
+
     public JFrame getFrame() {
 
         return frame;

@@ -29,7 +29,6 @@ public class BigliettiPasseggeriGUI {
     private int i;
 
 
-
     public BigliettiPasseggeriGUI(JFrame frameChiamante, Controller controller, Compagnia comp){
         this.frameChiamante = frameChiamante;
         this.controller = controller;

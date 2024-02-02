@@ -100,7 +100,6 @@ public class AggiungiCorsa {
     private Porto portoscalo;
 
 
-
     public AggiungiCorsa(JFrame frameChiamante, Controller controller,  ArrayList<Imbarcazione> imbarcazioni, ArrayList<Porto> porti, Compagnia compagnia) {
 
         this.frameChiamante = frameChiamante;

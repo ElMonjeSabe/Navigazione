@@ -28,7 +28,6 @@ public class Biglietto {
     }
 
 
-
     public Biglietto(int bagagli, boolean veicolo, LocalDate dataAcquisto, boolean prenotazione,Passeggero possessore, Corsa corsa)
  {
         this.numerobagagli=bagagli;

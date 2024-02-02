@@ -15,6 +15,7 @@ import java.sql.SQLException;
 
 public class ImpLoginCompagniaDAO implements LoginCompagniaDAO {
     private Connection connection;
+
     public ImpLoginCompagniaDAO(){
         try {
             connection = ConnessioneDatabase.getInstance().connection;

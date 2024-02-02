@@ -3,7 +3,6 @@ package Model;
 import java.time.LocalDate;
 
 
-
 public class Passeggero {
 
     private String cf;
@@ -14,7 +13,7 @@ public class Passeggero {
     private String password;
 
 
-//costruttore passando tutti gli attributi
+    //costruttore passando tutti gli attributi
     public Passeggero(String codicefiscale,  String nome, String cognome, LocalDate dataNascita, String email, String password)
     {
         this.cognome=cognome;
@@ -33,6 +32,7 @@ public class Passeggero {
     public String getNome() {
         return nome;
     }
+
     public LocalDate getDataNascita() {
         return dataNascita;
     }

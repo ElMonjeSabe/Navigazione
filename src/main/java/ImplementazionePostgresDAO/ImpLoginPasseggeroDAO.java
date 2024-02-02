@@ -14,6 +14,7 @@ import java.time.LocalDate;
 
 public class ImpLoginPasseggeroDAO implements loginPasseggeroDAO {
     private Connection connection;
+
     public ImpLoginPasseggeroDAO(){
         try {
             connection = ConnessioneDatabase.getInstance().connection;

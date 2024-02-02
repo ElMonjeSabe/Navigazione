@@ -17,6 +17,7 @@ public class Home {
 
 
     Controller controller = new Controller();
+
     public static JFrame getFrame() {
 
         return frame;

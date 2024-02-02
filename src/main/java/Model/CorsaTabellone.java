@@ -27,8 +27,7 @@ public class CorsaTabellone {
     public int scali;
 
 
-
-            public CorsaTabellone(String CodiceCorsa, Float costocorsa, int scali, String nomeCompagnia, String partenza, String cittapartenza, String nazionepartenza, String destinazione, String cittadestinazione, String nazionedestinazione, LocalDate datapartenza, LocalDate dataarrivo, Time orariopartenza, Time orarioarrivo, String stato, String avviso) {
+    public CorsaTabellone(String CodiceCorsa, Float costocorsa, int scali, String nomeCompagnia, String partenza, String cittapartenza, String nazionepartenza, String destinazione, String cittadestinazione, String nazionedestinazione, LocalDate datapartenza, LocalDate dataarrivo, Time orariopartenza, Time orarioarrivo, String stato, String avviso) {
                 this.CodiceCorsa = CodiceCorsa;
                 this.costocorsa = costocorsa;
                 this.scali = scali;

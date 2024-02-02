@@ -12,8 +12,6 @@ public class Compagnia {
     private String sitoWeb;
 
 
-
-
     public Compagnia(String nome, String password,String telefono, String email, String sitoWeb){
         this.nomeCompagnia=nome;
         this.passwCompagnia=password;

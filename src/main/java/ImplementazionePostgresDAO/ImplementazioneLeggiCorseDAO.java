@@ -170,6 +170,7 @@ public class ImplementazioneLeggiCorseDAO implements CorseDAO{
         }
 
     }
+
     @Override
     public void leggiCorseCompagniaFiltroDB(ArrayList<CorsaTabellone> corse, String TipoImb, int prezzo, String comp) {
 

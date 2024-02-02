@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 public class ImpGetPortiDAO implements GetPortiDAO {
     private Connection connection;
+
     public ImpGetPortiDAO(){
         try {
             connection = ConnessioneDatabase.getInstance().connection;

@@ -30,7 +30,6 @@ public class AggiungiImbarcazione {
     private Controller controller;
 
 
-
     public AggiungiImbarcazione(JFrame frameChiamante, Controller controller, String nomeComp) {
         //aggiorna la lista di Compangie nel controller
 
@@ -225,9 +224,7 @@ public class AggiungiImbarcazione {
     }
 
 
-
-
-   public JFrame getFrame() {
+    public JFrame getFrame() {
         return frame;
     }
 

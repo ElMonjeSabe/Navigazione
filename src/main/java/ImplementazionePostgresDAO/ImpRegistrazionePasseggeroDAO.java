@@ -12,6 +12,7 @@ import java.sql.SQLException;
 
 public class ImpRegistrazionePasseggeroDAO implements RegistrazionePasseggeroDAO {
     private Connection connection;
+
     public ImpRegistrazionePasseggeroDAO(){
         try {
             connection = ConnessioneDatabase.getInstance().connection;

@@ -13,6 +13,7 @@ import java.sql.SQLException;
 
 public class ImpGetPostiDisponibiliDAO implements GetPostiDisponibiliDAO {
     private Connection connection;
+
     public ImpGetPostiDisponibiliDAO(){
         try {
             connection = ConnessioneDatabase.getInstance().connection;

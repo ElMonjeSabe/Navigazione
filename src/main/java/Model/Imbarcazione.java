@@ -13,9 +13,6 @@ public class Imbarcazione {
     private String nomeCompagniaPoss;
 
 
-
-
-
     public Imbarcazione(String codice, String nome, String tipo, int maxpersone, int maxveicoli, String compagnia){
         this.codiceImbarcazione=codice;
         this.nomeImbarcazione=nome;

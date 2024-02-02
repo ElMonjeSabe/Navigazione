@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class ImpGetCodCorseDAO implements GetCodCorseDAO {
 
     private Connection connection;
+
     public ImpGetCodCorseDAO(){
         try {
             connection = ConnessioneDatabase.getInstance().connection;

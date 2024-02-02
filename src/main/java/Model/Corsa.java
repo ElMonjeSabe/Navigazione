@@ -1,7 +1,6 @@
 package Model;
 
 
-
 public class Corsa {
     public String codiceCorsa;
     private double costoCorsa;
@@ -11,7 +10,7 @@ public class Corsa {
     private Compagnia compagniaOfferente;
 
 
-   public Corsa(String codice, double costo, String avviso, String stato, Imbarcazione imbarcazione, Compagnia compagnia){
+    public Corsa(String codice, double costo, String avviso, String stato, Imbarcazione imbarcazione, Compagnia compagnia){
         this.codiceCorsa=codice;
         this.costoCorsa=costo;
         this.avviso=avviso;

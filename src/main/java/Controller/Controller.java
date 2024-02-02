@@ -32,18 +32,15 @@ public class Controller {
     }
 
 
-
     public Passeggero getPasseggero() {
         return passeggero;
     }
-
 
 
     public void setCompagnia(String nome, String password, String email, String telefono, String sito)
     {
         compagnia=new Compagnia(nome,password, email,telefono,sito);
     }
-
 
 
     public void LeggiCorseDAO() {
@@ -56,7 +53,6 @@ public class Controller {
     }
 
 
-
     public void LeggiCorseCompagniaDAO(String nomeCompagnia) {
         CorseDAO l=new ImplementazioneLeggiCorseDAO();
         corse.clear();
@@ -67,7 +63,6 @@ public class Controller {
     }
 
 
-
     public void LeggiCorseFiltrateDAO(String TipoImb, int prezzo, String comp) {
         CorseDAO l=new ImplementazioneLeggiCorseDAO();
         corse.clear();
@@ -75,7 +70,6 @@ public class Controller {
 
         // costruisce gli oggetti Model a partire dai risultati del db
     }
-
 
 
     public void LeggiCorseCompagniaFiltrateDAO(String TipoImb, int prezzo, String comp) {
@@ -88,11 +82,9 @@ public class Controller {
     }
 
 
-
     public ArrayList<CorsaTabellone> getCorse() {
         return this.corse;
     }
-
 
 
     public int AcquistaBigliettoDAO(ArrayList<Biglietto> b){
@@ -102,11 +94,9 @@ public class Controller {
     }
 
 
-
     public ArrayList<Compagnia> getCompagnie(){
         return compagnie;
     }
-
 
 
     public boolean ModificaCorsa(String CodiceCorsa, String Avviso, String Stato, String NomeCompagnia){
@@ -115,12 +105,10 @@ public class Controller {
     }
 
 
-
     public int AggiungiPasseggero(Passeggero p){
         RegistrazionePasseggeroDAO GP = new ImpRegistrazionePasseggeroDAO();
         return GP.AggiungiPasseggeroDB(p);
     }
-
 
 
     public Passeggero loginPasseggero(String email, String password){
@@ -129,12 +117,10 @@ public class Controller {
     }
 
 
-
     public Compagnia loginCompagnia(String email, String password) {
         LoginCompagniaDAO GC = new ImpLoginCompagniaDAO();
         return GC.loginCompagniaDB(email, password);
     }
-
 
 
     //metodo usato per prelevare le imbarcazioni possedute da una
@@ -145,12 +131,10 @@ public class Controller {
     }
 
 
-
     public ArrayList<Imbarcazione> GetImbarcazioni(String nomeComp) {
         GetImbarcazioniDAO getImb = new ImpGetImbarcazioniDAO();
         return getImb.GetImbarcazioniDB(nomeComp);
     }
-
 
 
     public ArrayList<Porto> GetPorti() {
@@ -159,12 +143,10 @@ public class Controller {
     }
 
 
-
     public boolean AggiungiCorse(ArrayList<Percorso> percorsi, ArrayList<Corsa> corse) {
         AggiungiCorseDAO addCors= new ImpAggiungiCorseDAO();
         return addCors.AggiungiCorseDB(percorsi, corse);
     }
-
 
 
     public CorsaTabellone GetCorsa(String CodCorsa){
@@ -173,19 +155,16 @@ public class Controller {
     }
 
 
-
     public boolean RegistrazioneCompagnia(Compagnia comp, Imbarcazione imb){
         RegistrazioneCompagniaDAO regComp= new ImpRegistrazioneCompagniaDAO();
         return regComp.RegistrazioneCompagniaDB(comp, imb);
     }
 
 
-
     public boolean AggiungiSocial(Social soc){
         AggiungiSocialDAO aggSoc= new ImpAggiungiSocialDAO();
         return aggSoc.AggiungiSocialDB(soc);
     }
-
 
 
     //mi prendo tutte le codice di una compagnia, utilizzato durante la modifica della corsa
@@ -195,13 +174,11 @@ public class Controller {
     }
 
 
-
     //senza passare nessuna compagnia, utilizzato durante l'acquisto di biglietti
     public ArrayList<String> GetCodiceCorse() {
         GetCodCorseDAO getCodCorse = new ImpGetCodCorseDAO();
         return getCodCorse.GetCodCorseDB();
     }
-
 
 
     public boolean CancellaCorsa(String codice){
@@ -210,12 +187,10 @@ public class Controller {
     }
 
 
-
     public ArrayList<Compagnia> CaricaCompagnie(){
         CaricaCompagnieDAO car = new ImpCaricaCompagnieDAO();
         return car.CaricaCompagnieDB();
     }
-
 
 
     public Compagnia getCompagnia() {
@@ -223,12 +198,9 @@ public class Controller {
     }
 
 
-
-
     public void setCompagnia(Compagnia c){
         this.compagnia = c;
     }
-
 
 
     public void leggiBigliettiAcquistatiUtente(){
@@ -238,13 +210,11 @@ public class Controller {
     }
 
 
-
     public void leggiBigliettiAcquistatiCompagnia(String nomeCompagnia){
         BigliettiAcquistatiDAO BA = new ImpBigliettiAcquistatiDAO();
         biglietti.clear();
         BA.leggiBigliettiAcquistatiCompagniaDB(biglietti, compagnia.getNomeCompagnia());
     }
-
 
 
     public void leggiBigliettiFiltratiAcquistatiCompagnia(String codiceCorsa, int prezzo,String nomeCompagnia){
@@ -254,17 +224,14 @@ public class Controller {
     }
 
 
-
     public ArrayList<BigliettiAcquistati> getBiglietti() {
         return biglietti;
     }
 
 
-
     public Integer getPostiPersoneDisp() {
         return postiPersoneDisp;
     }
-
 
 
     public Integer getPostiVeicoliDisp() {

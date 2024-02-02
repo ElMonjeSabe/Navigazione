@@ -38,7 +38,6 @@ public class RegCompagnia {
     private Controller controller;
 
 
-
     public RegCompagnia(JFrame farmeChiamante, Controller controller) {
 
         this.frameChiamante = farmeChiamante;

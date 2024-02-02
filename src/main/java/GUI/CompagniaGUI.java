@@ -32,7 +32,6 @@ public class CompagniaGUI {
     private Compagnia c;
 
 
-
     public CompagniaGUI(JFrame frameChiamante, Controller controller) {
 
         this.frameChiamante = frameChiamante;

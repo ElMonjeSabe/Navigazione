@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class ImpGetImbarcazioniDAO implements GetImbarcazioniDAO {
 
     private Connection connection;
+
     public ImpGetImbarcazioniDAO(){
         try {
             connection = ConnessioneDatabase.getInstance().connection;

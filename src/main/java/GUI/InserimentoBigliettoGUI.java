@@ -25,10 +25,6 @@ public class InserimentoBigliettoGUI {
     Passeggero p;
 
 
-
-
-
-
     InserimentoBigliettoGUI(JFrame frameChiamante, Controller controller) {
         this.frameChiamante = frameChiamante;
         this.controller = controller;
