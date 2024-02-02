@@ -68,6 +68,11 @@ public class CompagniaGUI {
 
 
         aggiungiCorsaButton.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e the event to be processed
+             */
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -103,8 +108,6 @@ public class CompagniaGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ModificaCorsa frameModificaCorsa = new ModificaCorsa(frame, controller, c);
-                frameModificaCorsa.getFrame().setVisible(true);
-
                 frame.setVisible(false);
 
             }
@@ -120,7 +123,6 @@ public class CompagniaGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 AggiungiImbarcazione frameImbarcazione = new AggiungiImbarcazione(frame, controller, NomeComp.getText());
-                frameImbarcazione.getFrame().setVisible(true);
 
                 frame.setVisible(false);
             }
@@ -136,7 +138,7 @@ public class CompagniaGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 SocialGUI social = new SocialGUI(frame,controller,c);
-                social.getFrame().setVisible(true);
+
 
                 frame.setVisible(false);
             }
@@ -153,7 +155,6 @@ public class CompagniaGUI {
             public void actionPerformed(ActionEvent e) {
                 controller.LeggiCorseCompagniaDAO(c.getNomeCompagnia());
                 ListaCorseCompagnia frameListaCorseCompagnia = new ListaCorseCompagnia(frame, controller,c);
-                frameListaCorseCompagnia.getFrame().setVisible(true);
                 frame.setVisible(false);
 
             }

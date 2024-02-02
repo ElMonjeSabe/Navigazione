@@ -57,6 +57,11 @@ public class PasseggeroGUI {
 
 
         visualizzaCorseButton.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e the event to be processed
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 controller.LeggiCorseDAO();
@@ -68,6 +73,11 @@ public class PasseggeroGUI {
 
 
         visualizzaBigliettiAcquistatiButton.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e the event to be processed
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 controller.leggiBigliettiAcquistatiUtente();

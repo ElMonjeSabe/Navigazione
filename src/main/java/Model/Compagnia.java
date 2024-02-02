@@ -15,6 +15,15 @@ public class Compagnia {
     private String sitoWeb;
 
 
+    /**
+     * Costruttore di Compagnia.
+     *
+     * @param nome     il nome della compagnia
+     * @param password la password
+     * @param telefono il numero di telefono
+     * @param email    l'email
+     * @param sitoWeb  il sito web
+     */
     public Compagnia(String nome, String password,String telefono, String email, String sitoWeb){
         this.nomeCompagnia=nome;
         this.passwCompagnia=password;
@@ -24,6 +33,11 @@ public class Compagnia {
     }
 
 
+    /**
+     * Restituisce il nome della compagnia.
+     *
+     * @return nomeCompagnia
+     */
     public String getNomeCompagnia(){
         return nomeCompagnia;
     }

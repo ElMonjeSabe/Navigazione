@@ -28,6 +28,7 @@ public class ImplementazioneLeggiCorseDAO implements CorseDAO{
         }
     }
 
+
     @Override
     public void leggiCorseDB(ArrayList<CorsaTabellone> corse) {
 
@@ -177,6 +178,7 @@ public class ImplementazioneLeggiCorseDAO implements CorseDAO{
         }
 
     }
+
 
     @Override
     public void leggiCorseCompagniaFiltroDB(ArrayList<CorsaTabellone> corse, String TipoImb, int prezzo, String comp) {
