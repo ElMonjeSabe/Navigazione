@@ -13,6 +13,9 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.util.ArrayList;
 
+/**
+ * The type Biglietti passeggeri gui.
+ */
 public class BigliettiPasseggeriGUI {
     private JTable table;
     private JButton bTIndietro;
@@ -21,14 +24,30 @@ public class BigliettiPasseggeriGUI {
     private JLabel Prezzo;
     private JComboBox CBCorse;
     private JPanel panel;
+    /**
+     * The Frame chiamante.
+     */
     JFrame frameChiamante;
+    /**
+     * The Controller.
+     */
     Controller controller;
+    /**
+     * The Frame.
+     */
     JFrame frame;
     private ArrayList<String> codici;
     private ArrayList<BigliettiAcquistati> listaBA;
     private int i;
 
 
+    /**
+     * Instantiates a new Biglietti passeggeri gui.
+     *
+     * @param frameChiamante the frame chiamante
+     * @param controller     the controller
+     * @param comp           the comp
+     */
     public BigliettiPasseggeriGUI(JFrame frameChiamante, Controller controller, Compagnia comp){
         this.frameChiamante = frameChiamante;
         this.controller = controller;

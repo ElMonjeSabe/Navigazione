@@ -8,9 +8,15 @@ import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * Implementazione dell'interfaccia BigliettiAcquistatiDAO
+ */
 public class ImpBigliettiAcquistatiDAO implements BigliettiAcquistatiDAO {
     private Connection connection;
 
+    /**
+     * Costruttore che si connette al database
+     */
     public  ImpBigliettiAcquistatiDAO() {
 
         try {

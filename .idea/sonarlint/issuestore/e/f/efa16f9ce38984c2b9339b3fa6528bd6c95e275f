@@ -1,14 +1,5 @@
 
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á–Ì“8ñ÷ŒÔÃ1
-v	java:S116"ZRename this field "CodiceBiglietto" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ê¨…°8•ä«ÁÆ1
 r	java:S116"QRename this field "Prezzo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°ÚÂÛúÿÿÿÿ8ö÷ŒÔÃ1
-P
-java:S1172%"3Remove this unused method parameter "dataAcquisto".(Ãƒå8±ä«ÁÆ1
-P
-java:S1068"3Remove this unused "CodiceBiglietto" private field.(Ê¨…°8Êøõ®Ö1
 M
 java:S1068"0Remove this unused "dataAcquisto" private field.(›—¿8¦ßõ®Ö1
-M
-java:S1068"0Remove this unused "prenotazione" private field.(•½äŞ8§ßõ®Ö1
-J
-java:S1068".Remove this unused "possessore" private field.(„U8§ßõ®Ö1

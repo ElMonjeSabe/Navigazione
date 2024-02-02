@@ -14,6 +14,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+/**
+ * La GUI per aggiungere un'imbarcazione della compagnia
+ */
 public class AggiungiImbarcazione {
     private JTextField textNomei;
     private JButton indietroButton;
@@ -26,10 +29,20 @@ public class AggiungiImbarcazione {
     private JLabel CVL;
     private JFrame frame;
 
+    /**
+     * Il Frame chiamante.
+     */
     public JFrame frameChiamante;
     private Controller controller;
 
 
+    /**
+     * Costruttore per la gui AggiungiImbarcazione
+     *
+     * @param frameChiamante il frame chiamante
+     * @param controller     il controller
+     * @param nomeComp       il nome della compagnia
+     */
     public AggiungiImbarcazione(JFrame frameChiamante, Controller controller, String nomeComp) {
         //aggiorna la lista di Compangie nel controller
 
@@ -58,9 +71,9 @@ public class AggiungiImbarcazione {
 
         confermaButton.addActionListener(new ActionListener() {
             /**
-             * Invoked when an action occurs.
+             * viene eseguito dopo aver premuto il tasto conferma. Manda i dati al database
              *
-             * @param e the event to be processed
+             * @param e l'evento
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -97,9 +110,9 @@ public class AggiungiImbarcazione {
 
         indietroButton.addActionListener(new ActionListener() {
             /**
-             * Invoked when an action occurs.
+             * viene eseguito dopo aver premuto il tasto Indietro. Va nella Schermata di Compagnia
              *
-             * @param e the event to be processed
+             * @param e l'evento
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -113,9 +126,9 @@ public class AggiungiImbarcazione {
 
         CBTipo.addActionListener(new ActionListener() {
             /**
-             * Invoked when an action occurs.
+             * eseguito dopo aver selezionato un nuovo valore nella checkBox Tipo, per cambiare tipologia di imbarcazione
              *
-             * @param e the event to be processed
+             * @param e l'evento
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -223,10 +236,6 @@ public class AggiungiImbarcazione {
 
     }
 
-
-    public JFrame getFrame() {
-        return frame;
-    }
 
 
 }

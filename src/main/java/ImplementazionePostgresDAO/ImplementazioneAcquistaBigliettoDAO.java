@@ -10,10 +10,16 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.util.*;
 
+/**
+ * Implementazione dell'interfaccia AcquistaBigliettoDAO
+ */
 public class ImplementazioneAcquistaBigliettoDAO implements AcquistaBigliettoDAO {
     private Connection connection;
     private PreparedStatement pstmt;
 
+    /**
+     * Costruttore che si connette al database
+     */
     public ImplementazioneAcquistaBigliettoDAO() {
         try {
             connection = ConnessioneDatabase.getInstance().connection;

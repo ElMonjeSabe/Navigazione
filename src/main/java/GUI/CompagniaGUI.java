@@ -11,10 +11,19 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 
+/**
+ * La GUI che rappresenta la schermata principale della compagnia con tutte le sue operazioni utili per operare i suoi dati
+ */
 public class CompagniaGUI {
 
+    /**
+     * The Frame.
+     */
     public JFrame frame;
 
+    /**
+     * The Frame chiamante.
+     */
     public JFrame frameChiamante;
     private JPanel panel;
     private JButton aggiungiCorsaButton;
@@ -32,6 +41,12 @@ public class CompagniaGUI {
     private Compagnia c;
 
 
+    /**
+     * Costruttore per CompagniaGUI
+     *
+     * @param frameChiamante il frame chiamante
+     * @param controller     il controller
+     */
     public CompagniaGUI(JFrame frameChiamante, Controller controller) {
 
         this.frameChiamante = frameChiamante;

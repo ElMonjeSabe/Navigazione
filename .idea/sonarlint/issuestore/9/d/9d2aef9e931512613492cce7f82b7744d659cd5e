@@ -1,6 +1,6 @@
 
 {
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(š…Ï¡úÿÿÿÿ8ÙðÏ¯Ã1
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(š…Ï¡úÿÿÿÿ8ÙðÏ¯Ã1
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á–Ì“8ÚðÏ¯Ã1
 S
-java:S1068"1Remove this unused "compagniaPoss" private field.(£¨¸¼úÿÿÿÿ8ßðÏ¯Ã1
+java:S1068"1Remove this unused "compagniaPoss" private field.(£¨¸¼úÿÿÿÿ8ßðÏ¯Ã1

@@ -9,9 +9,15 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Implementazione dell'interfaccia GestisciCorsaDAO
+ */
 public class ImpGestisciCorsaDAO implements GestisciCorsaDAO {
     private Connection connection;
 
+    /**
+     * Costruttore che si connette al database
+     */
     public ImpGestisciCorsaDAO() {
         try {
             connection = ConnessioneDatabase.getInstance().connection;

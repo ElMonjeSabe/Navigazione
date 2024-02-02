@@ -7,6 +7,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * La Schermata Principale Del Programma. Puoi registrari, accedere e visualizzare le corse entro 24 ore
+ */
 public class Home {
     private JButton btCompagnia;
     private JButton btUtente;
@@ -16,14 +19,25 @@ public class Home {
     private JButton visualizzaCorseButton;
 
 
+    /**
+     * Il Controller
+     */
     Controller controller = new Controller();
 
+    /**
+     * Gets frame.
+     *
+     * @return the frame
+     */
     public static JFrame getFrame() {
 
         return frame;
     }
 
 
+    /**
+     * Costruttore per la GUI Home
+     */
     public Home() {
 
         btUtente.addActionListener(new ActionListener() {
@@ -68,6 +82,11 @@ public class Home {
     }
 
 
+    /**
+     * Il punto d'inizio del programma
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         frame = new JFrame("Schermata Principale");
         frame.setContentPane(new Home().panel);

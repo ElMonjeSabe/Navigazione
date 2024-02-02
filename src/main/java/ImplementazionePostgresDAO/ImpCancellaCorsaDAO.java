@@ -8,11 +8,20 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ * Implementazione dell'interfaccia CancellaCorsaDAO
+ */
 public class ImpCancellaCorsaDAO implements CancellaCorsaDAO {
     private Connection connection;
+    /**
+     * The Esito.
+     */
     boolean esito=true;
     private PreparedStatement pstmt;
 
+    /**
+     * Costruttore che si connette al database
+     */
     public ImpCancellaCorsaDAO() {
         try {
             connection = ConnessioneDatabase.getInstance().connection;

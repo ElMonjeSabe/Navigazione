@@ -8,6 +8,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * GUI che permette di svolgere le operaioni di passeggero,
+ * come comprare un biglietto, visualizzare le corse o i biglietti precedentemente acquistati
+ */
 public class PasseggeroGUI {
     private JButton visualizzaCorseButton;
     private JButton visualizzaBigliettiAcquistatiButton;
@@ -24,6 +28,12 @@ public class PasseggeroGUI {
     private Passeggero p;
 
 
+    /**
+     * Costruttore di PasseggeroGUI
+     *
+     * @param frameChiamante il frame chiamante
+     * @param controller     il controller
+     */
     public PasseggeroGUI(JFrame frameChiamante, Controller controller) {
 
         this.frameChiamante = frameChiamante;

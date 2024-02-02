@@ -9,15 +9,33 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+/**
+ * La GUI utilizzata per visualizzare i biglietti
+ */
 public class BigliettiAcquistatiGUI {
     private JButton bTIndietro;
     private JTable table;
     private JPanel panel;
+    /**
+     * The Frame chiamante.
+     */
     JFrame frameChiamante;
+    /**
+     * The Controller.
+     */
     Controller controller;
+    /**
+     * The Frame.
+     */
     JFrame frame;
 
 
+    /**
+     * Costruttore per BigliettiAcquistatiGui.
+     *
+     * @param frameChiamante il frame chiamante
+     * @param controller     il controller
+     */
     public BigliettiAcquistatiGUI(JFrame frameChiamante, Controller controller){
         this.frameChiamante = frameChiamante;
         this.controller = controller;

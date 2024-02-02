@@ -11,9 +11,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
+/**
+ * Implementazione dell'interfaccia GetPortiDisponibiliDAO
+ */
 public class ImpGetPostiDisponibiliDAO implements GetPostiDisponibiliDAO {
     private Connection connection;
 
+    /**
+     * Costruttore che si connette al database
+     */
     public ImpGetPostiDisponibiliDAO(){
         try {
             connection = ConnessioneDatabase.getInstance().connection;

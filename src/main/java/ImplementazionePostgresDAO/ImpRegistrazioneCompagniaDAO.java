@@ -8,11 +8,20 @@ import Model.Imbarcazione;
 import javax.swing.*;
 import java.sql.*;
 
+/**
+ * Implementazione dell'interfaccia RegistrazioneCompagniaDAO.
+ */
 public class ImpRegistrazioneCompagniaDAO implements RegistrazioneCompagniaDAO {
     private Connection connection;
+    /**
+     * The Esito.
+     */
     boolean esito=true;
     private PreparedStatement pstmt;
 
+    /**
+     * Costruttore che si connette al database
+     */
     public ImpRegistrazioneCompagniaDAO() {
         try {
             connection = ConnessioneDatabase.getInstance().connection;

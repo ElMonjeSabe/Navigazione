@@ -16,6 +16,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+/**
+ * GUI che permette la registrazione di una nuova compagnia.
+ */
 public class RegCompagnia {
 
     private JTextField tFNomeCompagnia;
@@ -38,6 +41,12 @@ public class RegCompagnia {
     private Controller controller;
 
 
+    /**
+     * Costruttore di RegCompagnia.
+     *
+     * @param farmeChiamante il farme chiamante
+     * @param controller     il controller
+     */
     public RegCompagnia(JFrame farmeChiamante, Controller controller) {
 
         this.frameChiamante = farmeChiamante;

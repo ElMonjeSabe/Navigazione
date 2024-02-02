@@ -11,10 +11,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Implementazione dell'interfaccia CaricaCompagnieDAO
+ */
 public class ImpCaricaCompagnieDAO implements CaricaCompagnieDAO
 {
     private Connection connection;
 
+    /**
+     * Costruttore che si connette al database
+     */
     public ImpCaricaCompagnieDAO() {
         try {
             connection = ConnessioneDatabase.getInstance().connection;

@@ -13,6 +13,9 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 
+/**
+ * LA GUI Per visualizzare il tabellone e per scegliere la corse per poi acquistare il biglietto
+ */
 public class ListaCorse {
     private JTable table;
     private JPanel panel;
@@ -24,10 +27,20 @@ public class ListaCorse {
     private JComboBox CBCompagnie;
     private Controller controller;
     private JFrame frameChiamante;
+    /**
+     * The Frame.
+     */
     static JFrame frame;
     private ArrayList<Compagnia> compagnie;
 
 
+    /**
+     * Costruttore per ListaCorse
+     *
+     * @param frameChiamante il frame chiamante
+     * @param controller     il controller
+     * @param p              il passeggero
+     */
     public ListaCorse(JFrame frameChiamante, Controller controller, Passeggero p) {
 
         this.frameChiamante = frameChiamante;

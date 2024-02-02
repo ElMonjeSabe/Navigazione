@@ -7,9 +7,15 @@ import Model.Imbarcazione;
 import javax.swing.*;
 import java.sql.*;
 
+/**
+ * Implementazione dell'interfaccia AggiungiImbarcazioneDAO
+ */
 public class ImpAggiungiImbarcazioneDAO implements AggiungiImbarcazioneDAO {
     private Connection connection;
 
+    /**
+     * Costruttore che si connette al database
+     */
     public ImpAggiungiImbarcazioneDAO() {
         try {
             connection = ConnessioneDatabase.getInstance().connection;

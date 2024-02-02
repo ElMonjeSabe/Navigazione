@@ -10,10 +10,16 @@ import Model.CorsaTabellone;
 
 import javax.swing.*;
 
+/**
+ * Implementazione dell'interfaccia CorseDAO
+ */
 public class ImplementazioneLeggiCorseDAO implements CorseDAO{
 
     private Connection connection;
 
+    /**
+     * Costruttore che si connette al database
+     */
     public ImplementazioneLeggiCorseDAO() {
         try {
             connection = ConnessioneDatabase.getInstance().connection;
@@ -65,6 +71,7 @@ public class ImplementazioneLeggiCorseDAO implements CorseDAO{
             JOptionPane.showMessageDialog(null, "Errore: " + e.getMessage());
         }
     }
+
 
     public void leggiCorseCompagniaDB(ArrayList<CorsaTabellone> corse, String nomeCompagnia) {
         try {

@@ -13,6 +13,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * GUI che permette l'inserimento di social e associarla ad una compagnia
+ */
 public class SocialGUI {
 
     private JTextField textURL;
@@ -25,6 +28,13 @@ public class SocialGUI {
     public JFrame frameChiamante;
 
 
+    /**
+     * Costruttore di Social GUI.
+     *
+     * @param frameChiamante il frame chiamante
+     * @param controller     il controller
+     * @param comp           la compagnia associata la social
+     */
     public SocialGUI(JFrame frameChiamante, Controller controller,Compagnia comp) {
 
         this.frameChiamante = frameChiamante;
@@ -114,9 +124,5 @@ public class SocialGUI {
 
     }
 
-
-    public JFrame getFrame() {
-        return frame;
-    }
 
 }

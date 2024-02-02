@@ -9,11 +9,20 @@ import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * Implementazione dell'interfaccia AggiungiCorseDAO
+ */
 public class ImpAggiungiCorseDAO implements AggiungiCorseDAO {
     private Connection connection;
+    /**
+     * l'Esito.
+     */
     boolean esito=true;
     private PreparedStatement pstmt;
 
+    /**
+     * Costruttore che si connette al database
+     */
     public ImpAggiungiCorseDAO() {
         try {
             connection = ConnessioneDatabase.getInstance().connection;

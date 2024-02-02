@@ -11,10 +11,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Implementazione dell'interfaccia GetImbarcazioniDAO
+ */
 public class ImpGetImbarcazioniDAO implements GetImbarcazioniDAO {
 
     private Connection connection;
 
+    /**
+     * Costruttore che si connette al database
+     */
     public ImpGetImbarcazioniDAO(){
         try {
             connection = ConnessioneDatabase.getInstance().connection;

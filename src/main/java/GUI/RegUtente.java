@@ -14,6 +14,9 @@ import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.Period;
 
+/**
+ * GUI che permette la registrazione di un nuovo utente
+ */
 public class RegUtente {
 
     private JPanel panel1;
@@ -34,6 +37,12 @@ public class RegUtente {
     public JFrame frameChiamante;
 
 
+    /**
+     * Costruttore di RegUtente
+     *
+     * @param frameChiamante il frame chiamante
+     * @param controller     il controller
+     */
     public RegUtente(JFrame frameChiamante, Controller controller) {
         this.controller = controller;
         this.frameChiamante = frameChiamante;

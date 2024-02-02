@@ -9,10 +9,19 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ * Implementazione dell'interfaccia AggiungiSocialDAO
+ */
 public class ImpAggiungiSocialDAO implements AggiungiSocialDAO {
     private Connection connection;
+    /**
+     * The Esito.
+     */
     boolean esito=true;
 
+    /**
+     * Costruttore che si connette al database
+     */
     public ImpAggiungiSocialDAO() {
         try {
             connection = ConnessioneDatabase.getInstance().connection;

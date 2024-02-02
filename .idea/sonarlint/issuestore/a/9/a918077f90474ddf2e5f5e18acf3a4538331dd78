@@ -1,7 +1,4 @@
 
-v
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(›ÐÍÕ8®í©·Î1
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á–Ì“8ŸùˆÔÃ1
 >
 java:S1116&"Remove this empty statement.(ôŸŽìúÿÿÿÿ8¼í©·Î1
-o	java:S1001"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñ¥éþûÿÿÿÿ8·­ç•Ö1

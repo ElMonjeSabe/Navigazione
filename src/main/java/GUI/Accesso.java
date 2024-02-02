@@ -13,6 +13,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * La GUI usata da compagnia e utente per accedere e utilizzare funzionalità.
+ */
 public class Accesso {
     private JTextField tFEmail;
     private JTextField tFPassword;
@@ -22,11 +25,20 @@ public class Accesso {
     private JRadioButton rdPasseggero;
     private JRadioButton rdCompagnia;
 
+    /**
+     * Il frame della GUI
+     */
     public JFrame frame;
     private JFrame frameChiamante;
     private Controller controller;
 
 
+    /**
+     * Costrutture di Accesso
+     *
+     * @param frameChiamante il frameChiamante
+     * @param controller     il controller
+     */
     public Accesso(JFrame frameChiamante, Controller controller){
         this.frameChiamante = frameChiamante;
         this.controller = controller;
@@ -118,6 +130,7 @@ public class Accesso {
 
         //Definisce il massimo numero di caratteri di Password
         ((AbstractDocument) tFPassword.getDocument()).setDocumentFilter(new DocumentFilter() {
+
             @Override
             public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
 

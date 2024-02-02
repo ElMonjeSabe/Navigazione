@@ -13,6 +13,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+/**
+ * GUI che permette la modifica di stato avviso di corse già esistenti
+ */
 public class ModificaCorsa {
     private JTextField textAvviso;
     private JButton indietroButton;
@@ -28,6 +31,13 @@ public class ModificaCorsa {
     public JFrame frameChiamante;
 
 
+    /**
+     * Costruttore di ModificaCorsa
+     *
+     * @param frameChiamante il frame chiamante
+     * @param controller     il controller
+     * @param c              è la compagnia che sta chedendo la modifica della corsa. Questa ci serve per controllare che non modifichi corse di altre compagnie
+     */
     public ModificaCorsa(JFrame frameChiamante, Controller controller, Compagnia c) {
 
         this.controller = controller;
@@ -144,8 +154,4 @@ public class ModificaCorsa {
 
 }
 
-    public JFrame getFrame() {
-
-        return frame;
-    }
 }

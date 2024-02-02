@@ -3,6 +3,9 @@ package Model;
 import java.util.ArrayList;
 
 
+/**
+ * La classe Compagnia.
+ */
 public class Compagnia {
     private String nomeCompagnia;
     private String passwCompagnia;
@@ -25,18 +28,38 @@ public class Compagnia {
         return nomeCompagnia;
     }
 
+    /**
+     * Restituisce la password della compagnia.
+     *
+     * @return the passwCompagnia
+     */
     public String getPasswCompagnia() {
         return passwCompagnia;
     }
 
+    /**
+     *  Restituisce l'email della compagnia.
+     *
+     * @return the emailCompagnia
+     */
     public String getEmailCompagnia() {
         return emailCompagnia;
     }
 
+    /**
+     *  Restituisce il numero di telefono della compagnia.
+     *
+     * @return telefono
+     */
     public String getTelefono() {
         return telefono;
     }
 
+    /**
+     * Restituisce il sito web della compagnia.
+     *
+     * @return the sitoWeb
+     */
     public String getSitoWeb() {
         return sitoWeb;
     }

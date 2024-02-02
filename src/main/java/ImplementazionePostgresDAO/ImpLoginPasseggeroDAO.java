@@ -12,9 +12,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
+/**
+ * Implementazione dell'interfaccia loginPasseggeroDAO
+ */
 public class ImpLoginPasseggeroDAO implements loginPasseggeroDAO {
     private Connection connection;
 
+    /**
+     * Costruttore che si connette al database
+     */
     public ImpLoginPasseggeroDAO(){
         try {
             connection = ConnessioneDatabase.getInstance().connection;

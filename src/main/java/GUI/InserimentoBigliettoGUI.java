@@ -8,6 +8,9 @@ import java.awt.event.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ * La GUI utilizzata per comprare i biglietti
+ */
 public class InserimentoBigliettoGUI {
     private JPanel panel;
     private JButton btoAcquista;
@@ -19,12 +22,30 @@ public class InserimentoBigliettoGUI {
     private JLabel jlPPD;
     private JLabel labelCodCorsa;
 
+    /**
+     * The Frame chiamante.
+     */
     public JFrame frameChiamante;
+    /**
+     * The Frame.
+     */
     JFrame frame;
+    /**
+     * The Controller.
+     */
     Controller controller;
+    /**
+     * The P.
+     */
     Passeggero p;
 
 
+    /**
+     * Costruttore per la GUI InserimentoBigliettoGUI
+     *
+     * @param frameChiamante il frame chiamante
+     * @param controller     il controller
+     */
     InserimentoBigliettoGUI(JFrame frameChiamante, Controller controller) {
         this.frameChiamante = frameChiamante;
         this.controller = controller;

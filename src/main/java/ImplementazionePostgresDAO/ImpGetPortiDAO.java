@@ -11,9 +11,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Implementazione dell'interfaccia GetPortiDAO
+ */
 public class ImpGetPortiDAO implements GetPortiDAO {
     private Connection connection;
 
+    /**
+     * Costruttore che si connette al database
+     */
     public ImpGetPortiDAO(){
         try {
             connection = ConnessioneDatabase.getInstance().connection;

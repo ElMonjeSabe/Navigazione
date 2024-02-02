@@ -10,10 +10,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Implementazione dell'interfaccia GetCodCorseDAO
+ */
 public class ImpGetCodCorseDAO implements GetCodCorseDAO {
 
     private Connection connection;
 
+    /**
+     * Costruttore che si connette al database
+     */
     public ImpGetCodCorseDAO(){
         try {
             connection = ConnessioneDatabase.getInstance().connection;

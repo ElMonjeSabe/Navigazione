@@ -45,10 +45,6 @@ P
  src/main/java/Gui/RegUtente.java,1\9\19664063ae498cb3f82f8c952424c6f77b87c1f9
 S
 #src/main/java/Gui/RegCompagnia.form,9\6\968076005a4f2613c4d0b8979d889b3a6247316d
-\
-,src/main/java/DAO/GestionePasseggeroDAO.java,8\9\89d83a23379afdf822f801aee037fa430e7c571b
-v
-Fsrc/main/java/ImplementazionePostgresDAO/ImpGestionePasseggeroDAO.java,4\8\486f1311ade5b844a037249c673df6e8ef6a9233
 x
 Hsrc/main/java/ImplementazionePostgresDAO/ImpAggiungiImbarcazioneDAO.java,6\f\6f6548f987839cd0f90d67af9a67614381900c9f
 T
@@ -331,3 +327,13 @@ A
 doc/link.svg,7\6\7620f87f796eb8a4531f4c78e1e5ee0d455ffdd5
 J
 doc/member-search-index.js,3\d\3d684bb25c3addb381dd3de62354644e25eb33f9
+F
+doc/GUI/SocialGUI.html,6\9\6911f6bffc85c6417d6256a17722d7114674621b
+P
+ src/main/java/GUI/RegUtente.form,e\0\e054092a46d0b1f6607165bce1183747d2d2e9f1
+[
++src/main/java/GUI/AggiungiImbarcazione.form,2\2\229ebaade37c78be630c72be59aadf566a92037d
+]
+-src/main/java/DAO/GetPostiDisponibiliDAO.java,c\f\cffe258299f46fa2897e0a23ee0cf7f683f7724c
+a
+1src/main/java/DAO/RegistrazionePasseggeroDAO.java,5\e\5e7c1e7fe72f6eee0ebb8212fdf7be2358e3aa44

@@ -23,6 +23,9 @@ import java.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.Locale;
 
+/**
+ * La GUI utilizzare per aggiungi un certo numero di Corse della Compagnia
+ */
 public class AggiungiCorsa {
     //elementi della gui
     private JPanel panel;
@@ -94,12 +97,24 @@ public class AggiungiCorsa {
     //rappresenta l'orario di arrivo al porto di arrivo, dal porto di partenza/scalo
     private LocalTime timeAOut;
 
+    /**
+     * il Frame chiamante.
+     */
     public JFrame frameChiamante;
     private Porto portoiniziale;
     private Porto portofinale;
     private Porto portoscalo;
 
 
+    /**
+     * Costruttutore della GUI AggiungiCorsa
+     *
+     * @param frameChiamante il frame chiamante
+     * @param controller     il controller
+     * @param imbarcazioni   l'arraylist di imbarcazioni
+     * @param porti          l'arraylist di porti
+     * @param compagnia      Classe Compagnia
+     */
     public AggiungiCorsa(JFrame frameChiamante, Controller controller,  ArrayList<Imbarcazione> imbarcazioni, ArrayList<Porto> porti, Compagnia compagnia) {
 
         this.frameChiamante = frameChiamante;
@@ -183,9 +198,9 @@ public class AggiungiCorsa {
 
         indietroButton.addActionListener(new ActionListener() {
             /**
-             * Invoked when an action occurs.
+             * viene eseguito dopo aver premuto il tasto Indietro. Ritornerà alla schermata principale della compagnia
              *
-             * @param e the event to be processed
+             * @param e l'evento
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -197,9 +212,9 @@ public class AggiungiCorsa {
 
         confermaButton.addActionListener(new ActionListener() {
             /**
-             * Invoked when an action occurs.
+             * viene eseguito dopo aver premuto il tasto confermo. Eseguirà tutti i calcoli necessari per la generazione di corse e percorsi. Manda i dati al database
              *
-             * @param e the event to be processed
+             * @param e l'evento
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -471,9 +486,9 @@ public class AggiungiCorsa {
         });
         CBAnnoIn.addActionListener(new ActionListener() {
             /**
-             * Invoked when an action occurs.
+             * viene eseguito dopo aver selezionato un valore nella checkbox CBAnnoIn. Cambierà l'anno minimo in CBAnnoOut
              *
-             * @param e the event to be processed
+             * @param e l'evento
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -491,9 +506,9 @@ public class AggiungiCorsa {
 
         scaloCheckBox.addActionListener(new ActionListener() {
             /**
-             * Invoked when an action occurs.
+             * viene eseguito dopo aver selezionato la checkbox scaloCheckBox. Disattiverà o attiverà le impostazioni per aggiungi il porto di scalo
              *
-             * @param e the event to be processed
+             * @param e l'evento
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -602,11 +617,21 @@ public class AggiungiCorsa {
 
     }
 
+    /**
+     * Metodo getter per il frame
+     *
+     * @return il frame
+     */
     public JFrame getFrame() {
         return frame;
     }
 
-    //funzione per riempire e calcolare le date in baso al periodo selezionato e alle giornate scelte
+    /**
+     * Calcolo delle date per le corse, in base all'intervallo di tempo e ai giorni scelti
+     *
+     * @return ArrayList di LocalDate
+     */
+//funzione per riempire e calcolare le date in baso al periodo selezionato e alle giornate scelte
     public ArrayList<LocalDate> calcoloDate(){
 
         ArrayList<LocalDate> days=new ArrayList<LocalDate>();

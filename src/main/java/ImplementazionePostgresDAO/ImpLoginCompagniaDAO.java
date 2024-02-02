@@ -13,9 +13,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * Implementazione dell'interfaccia LoginCompagniaDAO
+ */
 public class ImpLoginCompagniaDAO implements LoginCompagniaDAO {
     private Connection connection;
 
+    /**
+     * Costruttore che si connette al database
+     */
     public ImpLoginCompagniaDAO(){
         try {
             connection = ConnessioneDatabase.getInstance().connection;

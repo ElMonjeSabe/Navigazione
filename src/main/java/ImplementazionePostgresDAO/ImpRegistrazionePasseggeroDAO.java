@@ -10,9 +10,15 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ * Implementazione dell'interfaccia RegistrazionePasseggeroDAO
+ */
 public class ImpRegistrazionePasseggeroDAO implements RegistrazionePasseggeroDAO {
     private Connection connection;
 
+    /**
+     * Costruttore che si connette al database
+     */
     public ImpRegistrazionePasseggeroDAO(){
         try {
             connection = ConnessioneDatabase.getInstance().connection;

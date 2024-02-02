@@ -13,6 +13,9 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.util.ArrayList;
 
+/**
+ * La GUI che permette di visualizzare tutte le corse della compagnia che l'ha chiamata
+ */
 public class ListaCorseCompagnia {
     private JTable table;
     private JButton buttonHome;
@@ -26,6 +29,13 @@ public class ListaCorseCompagnia {
     static JFrame frame;
 
 
+    /**
+     * Costruttore ListaCorseCompagnia.
+     *
+     * @param frameChiamante il frame chiamante
+     * @param controller     il controller
+     * @param comp           la compagnia di cui si vogliono sapere tutte le corse
+     */
     public ListaCorseCompagnia(JFrame frameChiamante, Controller controller, Compagnia comp) {
 
         this.frameChiamante = frameChiamante;
@@ -154,7 +164,5 @@ public class ListaCorseCompagnia {
     }
 
 
-    public JFrame getFrame() {
-        return frame;
-    }
+
 }
