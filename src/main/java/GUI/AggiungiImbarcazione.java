@@ -4,8 +4,15 @@ import Controller.Controller;
 import Model.Imbarcazione;
 
 import javax.swing.*;
+import javax.swing.text.AbstractDocument;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.DocumentFilter;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class AggiungiImbarcazione {
     private JTextField textNomei;
@@ -16,6 +23,7 @@ public class AggiungiImbarcazione {
     private JPanel panel;
     private JTextField textCapienzaP;
     private JTextField textCapienzaV;
+    private JLabel CVL;
     private JFrame frame;
 
     public JFrame frameChiamante;
@@ -116,20 +124,112 @@ public class AggiungiImbarcazione {
                 {
                     textCapienzaV.setEditable(false);
                     textCapienzaV.setVisible(false);
+                    CVL.setVisible(false);
                     textCapienzaV.setText("0");
                 }
                 else
                 {
                     textCapienzaV.setEditable(true);
                     textCapienzaV.setVisible(true);
+                    CVL.setVisible(true);
                 }
             }
         });
+
+
+        ((AbstractDocument) textCodice.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+
+                if (text == null || (fb.getDocument().getLength() + text.length()) <= 5) { // Se il testo è null, l'utente sta cancellando, quindi permetti l'operazione
+                    super.replace(fb, offset, length, text, attrs);
+                } else {
+                    // Altrimenti, l'utente sta cercando di inserire nuovi caratteri, quindi nega l'operazione
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        });
+
+        ((AbstractDocument) textNomei.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+
+                if (text == null || (fb.getDocument().getLength() + text.length()) <= 30) { // Se il testo è null, l'utente sta cancellando, quindi permetti l'operazione
+                    super.replace(fb, offset, length, text, attrs);
+                } else {
+                    // Altrimenti, l'utente sta cercando di inserire nuovi caratteri, quindi nega l'operazione
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        });
+
+        ((AbstractDocument) textCapienzaP.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+
+                if (text == null || (fb.getDocument().getLength() + text.length()) <= 5) { // Se il testo è null, l'utente sta cancellando, quindi permetti l'operazione
+                    super.replace(fb, offset, length, text, attrs);
+                } else {
+                    // Altrimenti, l'utente sta cercando di inserire nuovi caratteri, quindi nega l'operazione
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        });
+
+        ((AbstractDocument) textCapienzaV.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+
+                if (text == null || (fb.getDocument().getLength() + text.length()) <= 4) { // Se il testo è null, l'utente sta cancellando, quindi permetti l'operazione
+                    super.replace(fb, offset, length, text, attrs);
+                } else {
+                    // Altrimenti, l'utente sta cercando di inserire nuovi caratteri, quindi nega l'operazione
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        });
+
+
+
+
+
+
+
+        //Permette di inserire solo numeri come capienza persone di un'imbarcazione
+        textCapienzaP.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                super.keyTyped(e);
+                char c = e.getKeyChar();
+                if (!Character.isDigit(c)) {
+                    e.consume();  // Ignora l'evento del tasto
+                }
+
+            }
+        });
+
+
+        //Permette di inserire solo numeri come capienza veicoli di un'imbarcazione
+        textCapienzaV.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                super.keyTyped(e);
+                char c = e.getKeyChar();
+                if (!Character.isDigit(c)) {
+                    e.consume();  // Ignora l'evento del tasto
+                }
+
+            }
+        });
+
     }
+
 
 
 
    public JFrame getFrame() {
         return frame;
     }
+
+
 }

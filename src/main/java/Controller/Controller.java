@@ -117,7 +117,7 @@ public class Controller {
 
 
     public int AggiungiPasseggero(Passeggero p){
-        GestionePasseggeroDAO GP = new ImpGestionePasseggeroDAO();
+        RegistrazionePasseggeroDAO GP = new ImpRegistrazionePasseggeroDAO();
         return GP.AggiungiPasseggeroDB(p);
     }
 

@@ -68,7 +68,18 @@ public class ImpAggiungiCorseDAO implements AggiungiCorseDAO {
 
         } catch (SQLException e) {
 
-            JOptionPane.showMessageDialog(null, "Errore: " + e.getMessage());
+            if(e.getMessage().contains("corsa_pkey")){
+
+                JOptionPane.showMessageDialog(null,"Codice corsa già utilizzata");
+
+            }else{
+
+                JOptionPane.showMessageDialog(null,"Errore sconosciuto, riprova più tardi");
+                System.out.println(e.getMessage());
+
+
+            }
+
 
             try{
                 pstmt=connection.prepareStatement("rollback ;");

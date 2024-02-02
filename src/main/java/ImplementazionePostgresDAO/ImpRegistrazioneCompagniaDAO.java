@@ -3,13 +3,10 @@ package ImplementazionePostgresDAO;
 import DAO.RegistrazioneCompagniaDAO;
 import Database.ConnessioneDatabase;
 import Model.Compagnia;
-import Model.Corsa;
 import Model.Imbarcazione;
-import Model.Percorso;
 
 import javax.swing.*;
 import java.sql.*;
-import java.util.ArrayList;
 
 public class ImpRegistrazioneCompagniaDAO implements RegistrazioneCompagniaDAO {
     private Connection connection;
@@ -29,9 +26,7 @@ public class ImpRegistrazioneCompagniaDAO implements RegistrazioneCompagniaDAO {
 
         //avvio una transazione
         try {
-            pstmt=connection.prepareStatement("begin;");
-            pstmt.execute();
-            pstmt.close();
+
 
             pstmt = connection.prepareStatement("insert into Compagnia values(?,?,?,?,?);");
 
@@ -61,31 +56,43 @@ public class ImpRegistrazioneCompagniaDAO implements RegistrazioneCompagniaDAO {
             pstmt.close();
 
 
-            pstmt=connection.prepareStatement("commit;");
-            pstmt.execute();
-            pstmt.close();
 
 
             connection.close();
 
         } catch (SQLException e) {
-            // gestisci altri errori SQL
-            JOptionPane.showMessageDialog(null, "Errore: " + e.getMessage());
 
-            try{
-                pstmt=connection.prepareStatement("rollback ;");
-                pstmt.execute();
-                pstmt.close();
-                connection.close();
+            if (e.getMessage().contains("emailunicac")) {
+
+                JOptionPane.showMessageDialog(null, "Email già utilizzata");
+                System.out.println("Email già utilizzata"+e.getMessage());
+
+            } else if(e.getMessage().contains("formatoemail")) {
+
+                JOptionPane.showMessageDialog(null, "Email nel formato sbagliato");
+                System.out.println("Email nel formato sbagliato" + e.getMessage());
+
+            }else if(e.getMessage().contains("compagnia_pkey")){
+
+                JOptionPane.showMessageDialog(null, "Esiste già una compagnia con questo nome");
+                System.out.println("Nome compagnia già utilizzato" + e.getMessage());
+
+            } else if (e.getMessage().contains("imbarcazione_pkey")) {
+
+                JOptionPane.showMessageDialog(null, "Codice imbarcazione non valido");
+                System.out.println("Codice imbarcazione già in uso" + e.getMessage());
+
+            }else{
+
+                JOptionPane.showMessageDialog(null, "Errore sconosciuto, riporva più tardi");
+                System.out.println(e.getMessage());
+
             }
-            catch (SQLException ee){
-                JOptionPane.showMessageDialog(null, "Errore: " + ee.getMessage());
-            }
-
-
-            esito=false;
+            return false;
         }
 
-        return esito;
+
+
+        return true;
     }
 }

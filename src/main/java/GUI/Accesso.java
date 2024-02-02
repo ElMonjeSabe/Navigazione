@@ -5,6 +5,11 @@ import Model.Compagnia;
 import Model.Passeggero;
 
 import javax.swing.*;
+import javax.swing.text.AbstractDocument;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.DocumentFilter;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -94,5 +99,40 @@ public class Accesso {
 
             }
         });
+
+
+
+
+        //Definisce il massimo numero di caratteri di Email
+        ((AbstractDocument) tFEmail.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+
+                if (text == null || (fb.getDocument().getLength() + text.length()) <= 30) { // Se il testo è null, l'utente sta cancellando, quindi permetti l'operazione
+                    super.replace(fb, offset, length, text, attrs);
+                } else {
+                    // Altrimenti, l'utente sta cercando di inserire nuovi caratteri, quindi nega l'operazione
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        });
+
+        //Definisce il massimo numero di caratteri di Password
+        ((AbstractDocument) tFPassword.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+
+                if (text == null || (fb.getDocument().getLength() + text.length()) <= 30) { // Se il testo è null, l'utente sta cancellando, quindi permetti l'operazione
+                    super.replace(fb, offset, length, text, attrs);
+                } else {
+                    // Altrimenti, l'utente sta cercando di inserire nuovi caratteri, quindi nega l'operazione
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        });
+
+
+
+
     }
 }

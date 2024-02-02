@@ -9,7 +9,6 @@ import java.sql.*;
 
 public class ImpAggiungiImbarcazioneDAO implements AggiungiImbarcazioneDAO {
     private Connection connection;
-    boolean esito=true;
 
     public ImpAggiungiImbarcazioneDAO() {
         try {
@@ -37,18 +36,22 @@ public class ImpAggiungiImbarcazioneDAO implements AggiungiImbarcazioneDAO {
 
 
         } catch (SQLException e) {
-            if (e.getSQLState().equals("23505")) {
-                // gestisci l'errore di chiave duplicata
-                JOptionPane.showMessageDialog(null, "Errore: Codice non valido" );
 
-            } else {
-                // gestisci altri errori SQL
-                JOptionPane.showMessageDialog(null, "Errore: " + e.getMessage());
+            if (e.getMessage().contains("imbarcazione_pkey")) {
+
+                JOptionPane.showMessageDialog(null, "Codice imbarcazione non valido");
+                System.out.println("Codice imbarcazione già in uso" + e.getMessage());
+
+            }else{
+
+                JOptionPane.showMessageDialog(null, "Errore sconosciuto, riporva più tardi");
+                System.out.println(e.getMessage());
+
             }
-            esito=false;
+            return false;
         }
 
-        return esito;
+        return true;
     }
 
 

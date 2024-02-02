@@ -41,7 +41,7 @@ public class PasseggeroGUI {
         frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
-        frame.setSize(500, 250);
+        frame.setSize(600, 300);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 

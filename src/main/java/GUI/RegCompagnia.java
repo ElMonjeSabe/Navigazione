@@ -6,8 +6,15 @@ import Model.Compagnia;
 import Model.Imbarcazione;
 
 import javax.swing.*;
+import javax.swing.text.AbstractDocument;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.DocumentFilter;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class RegCompagnia {
 
@@ -53,6 +60,11 @@ public class RegCompagnia {
 
 
         indietroButton.addActionListener(new ActionListener() {
+            /**
+             * Invoked when an action occurs.
+             *
+             * @param e the event to be processed
+             */
             @Override
             public void actionPerformed(ActionEvent e) {
                 frameChiamante.setVisible(true);
@@ -60,6 +72,8 @@ public class RegCompagnia {
                 frame.dispose();
             }
         });
+
+
         confermaButton.addActionListener(new ActionListener() {
             /**
              * Invoked when an action occurs.
@@ -80,8 +94,7 @@ public class RegCompagnia {
 
                 }
                 else{
-                    if(codice.length()<=5 && tFNomeCompagnia.getText().length()<=30)
-                    {
+
                         Compagnia comp = new Compagnia(tFNomeCompagnia.getText(), tFPassword.getText(), tfTelefono.getText(), tfEmail.getText(), tfSitoWeb.getText());
                         Imbarcazione imb= new Imbarcazione(codice,nomei,(String) CBTipo.getSelectedItem(),capienzap,capienzav,tFNomeCompagnia.getText());
                         if (controller.RegistrazioneCompagnia(comp,imb)) {
@@ -91,15 +104,9 @@ public class RegCompagnia {
                             CompagniaGUI frameCompagniaGUI = new CompagniaGUI(frame, controller);
                             frameCompagniaGUI.frame.setVisible(true);
                             frame.setVisible(false);
-                        } else {
-                            JOptionPane.showMessageDialog(null, "Errore durante la registrazione. " +
-                                    "\nricontrolla i dati inseriti");
 
-                        }
                     }
-                    else {
-                        JOptionPane.showMessageDialog(null, "valori troppo lunghi");
-                    }
+
 
                 }
 
@@ -127,6 +134,191 @@ public class RegCompagnia {
                     textCapienzaV.setEditable(true);
                     textCapienzaV.setVisible(true);
                     LCV.setVisible(true);
+                }
+            }
+        });
+
+
+
+
+
+
+        //CONTROLLI NUMERO MASSIMO DI CARATTERI NEGLI ATTRIBUTI DI COMPAGNIA
+
+        //Definisce il massimo numero di caratteri di NomeCompagnia
+        ((AbstractDocument) tFNomeCompagnia.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+
+                if (text == null || (fb.getDocument().getLength() + text.length()) <= 50) { // Se il testo è null, l'utente sta cancellando, quindi permetti l'operazione
+                    super.replace(fb, offset, length, text, attrs);
+                } else {
+                    // Altrimenti, l'utente sta cercando di inserire nuovi caratteri, quindi nega l'operazione
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        });
+
+
+
+        ((AbstractDocument) tFPassword.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+
+                if (text == null || (fb.getDocument().getLength() + text.length()) <= 30) { // Se il testo è null, l'utente sta cancellando, quindi permetti l'operazione
+                    super.replace(fb, offset, length, text, attrs);
+                } else {
+                    // Altrimenti, l'utente sta cercando di inserire nuovi caratteri, quindi nega l'operazione
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        });
+
+
+        ((AbstractDocument) tfTelefono.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+
+                if (text == null || (fb.getDocument().getLength() + text.length()) <= 11) { // Se il testo è null, l'utente sta cancellando, quindi permetti l'operazione
+                    super.replace(fb, offset, length, text, attrs);
+                } else {
+                    // Altrimenti, l'utente sta cercando di inserire nuovi caratteri, quindi nega l'operazione
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        });
+
+
+
+        ((AbstractDocument) tfEmail.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+
+                if (text == null || (fb.getDocument().getLength() + text.length()) <= 30) { // Se il testo è null, l'utente sta cancellando, quindi permetti l'operazione
+                    super.replace(fb, offset, length, text, attrs);
+                } else {
+                    // Altrimenti, l'utente sta cercando di inserire nuovi caratteri, quindi nega l'operazione
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        });
+
+
+        ((AbstractDocument) tfSitoWeb.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+
+                if (text == null || (fb.getDocument().getLength() + text.length()) <= 50) { // Se il testo è null, l'utente sta cancellando, quindi permetti l'operazione
+                    super.replace(fb, offset, length, text, attrs);
+                } else {
+                    // Altrimenti, l'utente sta cercando di inserire nuovi caratteri, quindi nega l'operazione
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        });
+
+
+
+        //CONTROLLI INSERIMENTO IMBARCAZIONE
+
+        ((AbstractDocument) textCodice.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+
+                if (text == null || (fb.getDocument().getLength() + text.length()) <= 5) { // Se il testo è null, l'utente sta cancellando, quindi permetti l'operazione
+                    super.replace(fb, offset, length, text, attrs);
+                } else {
+                    // Altrimenti, l'utente sta cercando di inserire nuovi caratteri, quindi nega l'operazione
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        });
+
+        ((AbstractDocument) textNomei.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+
+                if (text == null || (fb.getDocument().getLength() + text.length()) <= 30) { // Se il testo è null, l'utente sta cancellando, quindi permetti l'operazione
+                    super.replace(fb, offset, length, text, attrs);
+                } else {
+                    // Altrimenti, l'utente sta cercando di inserire nuovi caratteri, quindi nega l'operazione
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        });
+
+        ((AbstractDocument) textCapienzaP.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+
+                if (text == null || (fb.getDocument().getLength() + text.length()) <= 5) { // Se il testo è null, l'utente sta cancellando, quindi permetti l'operazione
+                    super.replace(fb, offset, length, text, attrs);
+                } else {
+                    // Altrimenti, l'utente sta cercando di inserire nuovi caratteri, quindi nega l'operazione
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        });
+
+        ((AbstractDocument) textCapienzaV.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+
+                if (text == null || (fb.getDocument().getLength() + text.length()) <= 4) { // Se il testo è null, l'utente sta cancellando, quindi permetti l'operazione
+                    super.replace(fb, offset, length, text, attrs);
+                } else {
+                    // Altrimenti, l'utente sta cercando di inserire nuovi caratteri, quindi nega l'operazione
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+        //Permette di inserire solo numeri come capienza persone di un'imbarcazione
+        textCapienzaP.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                super.keyTyped(e);
+                char c = e.getKeyChar();
+                if (!Character.isDigit(c)) {
+                    e.consume();  // Ignora l'evento del tasto
+                }
+
+            }
+        });
+
+
+        //Permette di inserire solo numeri come capienza veicoli di un'imbarcazione
+        textCapienzaV.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                super.keyTyped(e);
+                char c = e.getKeyChar();
+                if (!Character.isDigit(c)) {
+                    e.consume();  // Ignora l'evento del tasto
+                }
+
+            }
+        });
+
+
+
+        //Permette di inserire solo numeri nel riquadro per i numeri di telefono
+        tfTelefono.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                super.keyTyped(e);
+                char c = e.getKeyChar();
+                if (!Character.isDigit(c)) {
+                    e.consume();  // Ignora l'evento del tasto
                 }
             }
         });

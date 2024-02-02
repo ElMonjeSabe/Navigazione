@@ -4,8 +4,13 @@ import Controller.Controller;
 import Model.Passeggero;
 
 import javax.swing.*;
+import javax.swing.text.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.InputMethodEvent;
+import java.awt.event.InputMethodListener;
+import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -49,6 +54,7 @@ public class RegUtente {
         }
 
 
+
         frame = new JFrame("Registrazione Utente");
         frame.setContentPane(panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -75,7 +81,9 @@ public class RegUtente {
                 if (tfCF.getText().equals("") || tfNome.getText().equals("") || tfCognome.getText().equals("") || tfEmail.getText().equals("") || tfPassword.getText().equals("")) {
                     JOptionPane.showMessageDialog(null, "Inserisci tutti i campi!");
 
-                } else {
+                } else if(tfCF.getText().length()!=16){
+                    JOptionPane.showMessageDialog(null, "Codice fiscale non valido!");
+                }else {
 
                     LocalDate data = LocalDate.of((Integer) comboBoxAnno.getSelectedItem(), (Integer) comboBoxMese.getSelectedItem(), (Integer) comboBoxGiorno.getSelectedItem());
                     if( Period.between(data, LocalDate.now()).getYears() >= 18) {
@@ -88,9 +96,6 @@ public class RegUtente {
                             framePasseggeroGUI.frame.setVisible(true);
                             frame.setVisible(false);
 
-                        } else {
-                            JOptionPane.showMessageDialog(null, "Errore durante la registrazione");
-
                         }
                     }else{
                         JOptionPane.showMessageDialog(null, "Devi essere maggiorenne per poterti inscrivere");
@@ -98,5 +103,87 @@ public class RegUtente {
                 }
             }
         });
+
+
+
+        //Definisce il massimo numero di caratteri di Nome
+        ((AbstractDocument) tfNome.getDocument()).setDocumentFilter(new DocumentFilter() {
+               @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+
+                if (text == null || (fb.getDocument().getLength() + text.length()) <= 20) { // Se il testo è null, l'utente sta cancellando, quindi permetti l'operazione
+                    super.replace(fb, offset, length, text, attrs);
+                } else {
+                    // Altrimenti, l'utente sta cercando di inserire nuovi caratteri, quindi nega l'operazione
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        });
+
+
+        //Definisce il massimo numero di caratteri di Cognome
+        ((AbstractDocument) tfCognome.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+
+                if (text == null || (fb.getDocument().getLength() + text.length()) <= 30) { // Se il testo è null, l'utente sta cancellando, quindi permetti l'operazione
+                    super.replace(fb, offset, length, text, attrs);
+                } else {
+                    // Altrimenti, l'utente sta cercando di inserire nuovi caratteri, quindi nega l'operazione
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        });
+
+
+
+        //Definisce il massimo numero di caratteri di Email
+        ((AbstractDocument) tfEmail.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+
+                if (text == null || (fb.getDocument().getLength() + text.length()) <= 30) { // Se il testo è null, l'utente sta cancellando, quindi permetti l'operazione
+                    super.replace(fb, offset, length, text, attrs);
+                } else {
+                    // Altrimenti, l'utente sta cercando di inserire nuovi caratteri, quindi nega l'operazione
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        });
+
+        //Definisce il massimo numero di caratteri di Password
+        ((AbstractDocument) tfPassword.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+
+                if (text == null || (fb.getDocument().getLength() + text.length()) <= 30) { // Se il testo è null, l'utente sta cancellando, quindi permetti l'operazione
+                    super.replace(fb, offset, length, text, attrs);
+                } else {
+                    // Altrimenti, l'utente sta cercando di inserire nuovi caratteri, quindi nega l'operazione
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        });
+
+
+        //Definisce il massimo numero di caratteri di CF
+        ((AbstractDocument) tfCF.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+
+                if (text == null || (fb.getDocument().getLength() + text.length()) <= 16) { // Se il testo è null, l'utente sta cancellando, quindi permetti l'operazione
+                    super.replace(fb, offset, length, text, attrs);
+                } else {
+                    // Altrimenti, l'utente sta cercando di inserire nuovi caratteri, quindi nega l'operazione
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        });
+
+
+
+
     }
+
+
 }

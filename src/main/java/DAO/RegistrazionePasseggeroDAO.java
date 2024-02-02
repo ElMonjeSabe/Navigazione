@@ -2,6 +2,6 @@ package DAO;
 
 import Model.Passeggero;
 
-public interface GestionePasseggeroDAO {
+public interface RegistrazionePasseggeroDAO {
     public int AggiungiPasseggeroDB(Passeggero p);
 }

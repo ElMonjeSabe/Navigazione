@@ -6,10 +6,16 @@ import Model.*;
 
 
 import javax.swing.*;
+import javax.swing.text.AbstractDocument;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.DocumentFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -219,7 +225,7 @@ public class AggiungiCorsa {
                     } catch(NumberFormatException err){
                         JOptionPane.showMessageDialog(null, "inserisci un codice, un giorno o un prezzo numerico");
                     }
-                    if(costo<0 || giorniPartenza<0 || giorniScalo<0 || giorniAttesa<0 || codice>9999999 || codice<0) //controllo se sono positivi (codice di max 7 cifre)
+                    if(costo<=0 || giorniPartenza<0 || giorniScalo<0 || giorniAttesa<0 || codice>9999999 || codice<0) //controllo se sono positivi (codice di max 7 cifre)
                     {
                         JOptionPane.showMessageDialog(null, "inserisci un codice, un giorno o un prezzo numerico positivo");
                     }
@@ -517,6 +523,83 @@ public class AggiungiCorsa {
             }
         });
 
+
+
+
+        ((AbstractDocument) textAvviso.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+
+                if (text == null || (fb.getDocument().getLength() + text.length()) <= 40) { // Se il testo è null, l'utente sta cancellando, quindi permetti l'operazione
+                    super.replace(fb, offset, length, text, attrs);
+                } else {
+                    // Altrimenti, l'utente sta cercando di inserire nuovi caratteri, quindi nega l'operazione
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        });
+
+
+
+
+
+        ((AbstractDocument) textCodice.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+
+                if (text == null || (fb.getDocument().getLength() + text.length()) <= 7) { // Se il testo è null, l'utente sta cancellando, quindi permetti l'operazione
+                    super.replace(fb, offset, length, text, attrs);
+                } else {
+                    // Altrimenti, l'utente sta cercando di inserire nuovi caratteri, quindi nega l'operazione
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        });
+
+        //Permette di inserire solo numeri nel codce corsa
+        textCodice.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                super.keyTyped(e);
+                char c = e.getKeyChar();
+                if (!Character.isDigit(c)) {
+                    e.consume();  // Ignora l'evento del tasto
+                }
+
+            }
+        });
+
+
+
+
+
+
+        //limito i numeri di cifre del prezzo
+        ((AbstractDocument) tfCosto.getDocument()).setDocumentFilter(new DocumentFilter() {
+            @Override
+            public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+
+                if (text == null || (fb.getDocument().getLength() + text.length()) <= 5) { // Se il testo è null, l'utente sta cancellando, quindi permetti l'operazione
+                    super.replace(fb, offset, length, text, attrs);
+                } else {
+                    // Altrimenti, l'utente sta cercando di inserire nuovi caratteri, quindi nega l'operazione
+                    Toolkit.getDefaultToolkit().beep();
+                }
+            }
+        });
+
+        //Permette di inserire solo numeri nel prezzo
+        tfCosto.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                super.keyTyped(e);
+                char c = e.getKeyChar();
+                if (!Character.isDigit(c)) {
+                    e.consume();  // Ignora l'evento del tasto
+                }
+
+            }
+        });
 
     }
 

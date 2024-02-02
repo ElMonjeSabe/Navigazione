@@ -37,12 +37,19 @@ public class ImpAggiungiSocialDAO implements AggiungiSocialDAO {
 
         } catch (SQLException e) {
 
-            // gestisci altri errori SQL
-            JOptionPane.showMessageDialog(null, "Errore: " + e.getMessage());
 
-            esito=false;
+            if(e.getMessage().contains("social_pkey")){
+                JOptionPane.showMessageDialog(null, "Questo URL è già utilizzato");
+                System.out.println(e.getMessage());
+
+            }else {
+                // gestisci altri errori SQL
+                JOptionPane.showMessageDialog(null, "Errore sconosciuto, rprova più tardi");
+                System.out.println(e.getMessage());
+            }
+            return false;
         }
 
-        return esito;
+        return true;
     }
 }

@@ -12,6 +12,7 @@ import java.util.*;
 
 public class ImplementazioneAcquistaBigliettoDAO implements AcquistaBigliettoDAO {
     private Connection connection;
+    private PreparedStatement pstmt;
 
     public ImplementazioneAcquistaBigliettoDAO() {
         try {
@@ -25,11 +26,14 @@ public class ImplementazioneAcquistaBigliettoDAO implements AcquistaBigliettoDAO
     public int AcquistaBigliettoDB(ArrayList<Biglietto> b) {
         int v=0;
         try {
+            pstmt=connection.prepareStatement("begin");
+            pstmt.execute();
+            pstmt.close();
 
             //genera il codice del biglietto
             for (int i = 0; i < b.size(); i++) {
 
-                PreparedStatement pstmt = connection.prepareStatement("SELECT codicebiglietto FROM Biglietto");
+                pstmt = connection.prepareStatement("SELECT codicebiglietto FROM Biglietto");
                 ResultSet rs = pstmt.executeQuery();
 
                 Set<String> codiciBiglietti = new HashSet<>();
@@ -65,6 +69,9 @@ public class ImplementazioneAcquistaBigliettoDAO implements AcquistaBigliettoDAO
                 }
 
             }
+            pstmt=connection.prepareStatement("END;");
+            pstmt.execute();
+            pstmt.close();
 
             connection.close();
 
@@ -82,6 +89,19 @@ public class ImplementazioneAcquistaBigliettoDAO implements AcquistaBigliettoDAO
                  //System.out.println(e.getMessage());
 
              }
+             try{
+                pstmt=connection.prepareStatement("rollback ;");
+                pstmt.execute();
+                pstmt.close();
+                connection.close();
+            }
+            catch (SQLException ee){
+                JOptionPane.showMessageDialog(null, "Errore: " + ee.getMessage());
+            }
+
+
+
+
             return 0;
             }
 

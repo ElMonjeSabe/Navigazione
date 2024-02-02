@@ -1,6 +1,6 @@
 package ImplementazionePostgresDAO;
 
-import DAO.GestionePasseggeroDAO;
+import DAO.RegistrazionePasseggeroDAO;
 import Database.ConnessioneDatabase;
 import Model.Passeggero;
 
@@ -10,9 +10,9 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class ImpGestionePasseggeroDAO implements GestionePasseggeroDAO {
+public class ImpRegistrazionePasseggeroDAO implements RegistrazionePasseggeroDAO {
     private Connection connection;
-    public ImpGestionePasseggeroDAO(){
+    public ImpRegistrazionePasseggeroDAO(){
         try {
             connection = ConnessioneDatabase.getInstance().connection;
         } catch (SQLException e) {
@@ -20,6 +20,8 @@ public class ImpGestionePasseggeroDAO implements GestionePasseggeroDAO {
         }
 
     }
+
+
     @Override
     public int AggiungiPasseggeroDB(Passeggero p) {
         try {
@@ -39,13 +41,26 @@ public class ImpGestionePasseggeroDAO implements GestionePasseggeroDAO {
             connection.close();
 
         } catch (SQLException e) {
-            if (e.getSQLState().equals("23505")) {
-                // gestisci l'errore di chiave duplicata
-                JOptionPane.showMessageDialog(null, "Email già utilizzata"+e.getMessage() );
+            if (e.getMessage().contains("emailunicap")) {
 
-            } else {
-                // gestisci altri errori SQL
-                JOptionPane.showMessageDialog(null, "Errore: " + e.getMessage());
+                JOptionPane.showMessageDialog(null, "Email già utilizzata");
+                System.out.println("Email già utilizzata"+e.getMessage());
+
+            } else if(e.getMessage().contains("formatoemail")) {
+
+                JOptionPane.showMessageDialog(null, "Email nel formato sbagliato");
+                System.out.println("Email nel formato sbagliato" + e.getMessage());
+
+            }else if(e.getMessage().contains("passeggero_pkey")){
+
+                JOptionPane.showMessageDialog(null, "Già esiste un account con questo codice fiscale");
+                System.out.println("Codice fiscale già esistente" + e.getMessage());
+
+            }else{
+
+                JOptionPane.showMessageDialog(null, "Errore sconosciuto, riporva più tardi");
+                System.out.println(e.getMessage());
+
             }
             return 0;
         }
